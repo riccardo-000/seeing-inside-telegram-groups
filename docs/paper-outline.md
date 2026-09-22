@@ -3,6 +3,11 @@
 Working title: *Seeing inside Telegram groups: admins, users and scams in crypto and
 conspiracy communities*
 
+**Constraints:** Springer LNCS template, max 16 pages excl. references, due 3 Jan 2027
+(DTU Learn). Must state who did what. See `memory/course-and-supervisor.md`.
+
+**Centerpiece figure/table:** _TBD — decide in week one (supervisor's advice)._
+
 ## Abstract
 
 _(~150–200 words, write last.)_ Problem: scams on Telegram spread both through channels
@@ -62,5 +67,9 @@ research account's status as a member. (Mirror README "Ethics & scope".)
 - Observation window length.
 
 ## 9. Conclusion
+
+## Author contributions
+
+Required by the course (individual evaluation): who did what.
 
 ## References

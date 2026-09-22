@@ -27,3 +27,17 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Why:** Keeps ids linkable across chats (needed for admin-vs-DM-sender analysis)
   without storing direct identifiers; a plain hash of a Telegram id is trivially reversible.
 - **Impact:** `src/analyze/authors.py::pseudonymize`, Ethics section. To confirm with team.
+
+## 2026-09-22 — Dedicated Telegram research account
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** Use a dedicated Telegram account (not a personal number) for joining and DM logging.
+- **Why:** Isolates the team's personal accounts; ban/restriction risk is accepted and
+  noted as a limitation.
+- **Impact:** `.env` (local), paper Limitations.
+
+## 2026-09-22 — No formal ethics/DPO review requested
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** No separate ethics board / DPO consultation before collection; proceed under
+  the scope agreed with the supervisor and the safeguards in README "Ethics & scope".
+- **Why:** Team decision.
+- **Impact:** Paper Ethics section must justify the safeguards explicitly.
