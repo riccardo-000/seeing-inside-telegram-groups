@@ -38,4 +38,6 @@ To be decided by the team; log it in `memory/decisions.md`. The paper must state
 - Start each session: have the assistant read `CLAUDE.md` and `memory/`.
 - End each session: decisions → `memory/decisions.md`, then commit + push.
 - Watch the first real collection run against Telegram yourself (rate limits, nothing sent).
-- Only one member runs the research Telegram account at a time; session files are per-machine.
+- The research Telegram account is shared: everyone logs in on their own machine (own
+  `.env` with the same values, own `.session`). Coordinate via `memory/collection-log.md`.
+  `.env` values are passed in person / password manager, never via git or group chats.

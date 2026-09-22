@@ -30,7 +30,12 @@ Stack: Python ≥ 3.11, Telethon, pandas, python-dotenv, tqdm.
 6. Do not install dependencies without asking the human.
 7. Everyone works directly on `main`: `git pull` before starting, commit + push at the end
    of the session (see `CONTRIBUTING.md`). No PR process.
-8. **Privacy handling is deferred** to the paper-writing phase (team decision). Collectors
+8. **One shared Telegram account, three machines.** Before running anything that talks to
+   Telegram, `git pull` and check/update `memory/collection-log.md`. Joins: one person at a
+   time. Dumps: only your assigned chats, one file per chat. DM logger: one instance at a
+   time. On FloodWait or any restriction: stop, log it, tell the others.
+   Collectors must be resumable and deduplicate by (chat_id, message_id).
+9. **Privacy handling is deferred** to the paper-writing phase (team decision). Collectors
    may store data as collected for now. `src/utils/privacy.py` and
    `memory/data-protection.md` hold the design to apply later.
 
@@ -52,7 +57,7 @@ Stack: Python ≥ 3.11, Telethon, pandas, python-dotenv, tqdm.
 │   ├── interim/         # intermediate files
 │   └── processed/       # analysis outputs
 ├── docs/                # paper-outline.md, meeting-notes.md
-└── memory/              # shared AI/team memory: decisions.md, data-protection.md, ...
+└── memory/              # shared AI/team memory: decisions.md, collection-log.md, ...
 ```
 
 ## Shared memory

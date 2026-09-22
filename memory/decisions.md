@@ -81,3 +81,13 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   Notes: files must be < 100 MB (GitHub limit); anything committed stays in git history,
   so removing it later requires rewriting history. Supervisor's brief says "store no
   personal data" — to reconcile in the Ethics section / with the supervisor.
+
+## 2026-09-22 — One shared Telegram research account on three machines
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** A single research account; all three members log in from their own machine
+  (own `.env` with the same values, own `.session`) and run scripts. Coordination through
+  `memory/collection-log.md`: joins one person at a time, disjoint chat assignment for
+  dumps, a single DM logger instance, shared FloodWait log.
+- **Why:** Everyone will run collection scripts; only one number available.
+- **Impact:** `CLAUDE.md` rule 8, `CONTRIBUTING.md`, collectors must be resumable and
+  deduplicate by (chat_id, message_id). Rate limits and the 500-chat cap are shared.
