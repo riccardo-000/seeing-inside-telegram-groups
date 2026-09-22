@@ -17,22 +17,22 @@ Stack: Python ≥ 3.11, Telethon, pandas, python-dotenv, tqdm.
 1. **Never commit secrets.** No `*.session`, `*.session-journal`, `.env`, API ids/hashes,
    phone numbers, or salts in any tracked file, commit message, or log output.
    Config is read only through `src/utils/config.py`.
-2. **Never commit raw or intermediate data.** `data/raw/` and `data/interim/` stay local.
-   Only pseudonymized, aggregated outputs may go in `data/processed/`, after review.
+2. **Collected data is shared via this private repo** (`data/raw/`, `data/interim/`,
+   `data/processed/`). Keep each file < 100 MB (GitHub limit): one file per chat, gzip
+   large dumps (`.jsonl.gz`). Never make the repo public.
 3. **Passive observation only.** Code must never send messages, reply, react, click links,
    or answer DMs. Only public chats may be joined. If a task seems to require interaction,
    stop and ask.
 4. **Log every project decision** in `memory/decisions.md` (date, author, decision, why).
    This includes methodology choices (seed selection, labels, thresholds) — they end up in
    the paper.
-5. Before committing, run `git status` and check that nothing under `data/raw/`,
-   `data/interim/`, or any `.session`/`.env` file is staged.
+5. Before committing, run `git status` and check that no `.session`/`.env` file is staged.
 6. Do not install dependencies without asking the human.
 7. Everyone works directly on `main`: `git pull` before starting, commit + push at the end
    of the session (see `CONTRIBUTING.md`). No PR process.
-8. **Personal data is pseudonymized at ingestion** via `src/utils/privacy.py` — collectors
-   must never write raw user ids, usernames, names or phones to disk
-   (see `memory/data-protection.md`).
+8. **Privacy handling is deferred** to the paper-writing phase (team decision). Collectors
+   may store data as collected for now. `src/utils/privacy.py` and
+   `memory/data-protection.md` hold the design to apply later.
 
 ## Layout
 
@@ -48,9 +48,9 @@ Stack: Python ≥ 3.11, Telethon, pandas, python-dotenv, tqdm.
 │   ├── analyze/         # authors.py, tone.py (pandas)
 │   └── utils/           # config.py (.env loading), privacy.py (pseudonymization)
 ├── data/
-│   ├── raw/             # gitignored
-│   ├── interim/         # gitignored
-│   └── processed/       # pseudonymized aggregates only
+│   ├── raw/             # collected dumps (shared via git, < 100 MB per file)
+│   ├── interim/         # intermediate files
+│   └── processed/       # analysis outputs
 ├── docs/                # paper-outline.md, meeting-notes.md
 └── memory/              # shared AI/team memory: decisions.md, data-protection.md, ...
 ```

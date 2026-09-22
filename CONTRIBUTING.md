@@ -7,7 +7,7 @@ Three people, all using AI assistants. Keep it simple: everyone works on `main`.
 ```bash
 git pull                 # always, before starting
 # ... work ...
-git status               # check nothing sensitive is listed (see below)
+git status               # check no .session / .env is listed
 git add <files>
 git commit -m "docs(memory): add seed selection criteria"
 git push                 # if rejected: git pull, then push again
@@ -27,7 +27,6 @@ Short, with a type prefix (Conventional Commits, loosely):
 ## Never commit
 
 - `*.session`, `.env` — Telegram credentials / API keys / salt.
-- `data/raw/`, `data/interim/` — collected data (gitignored, but double-check `git status`).
 - Notebook outputs showing messages.
 
 ## Who does what

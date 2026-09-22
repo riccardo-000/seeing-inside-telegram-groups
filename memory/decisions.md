@@ -69,3 +69,15 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   branches or PR reviews required.
 - **Why:** Repo is mainly shared memory, docs and some code; PR process is overkill for 3 people.
 - **Impact:** `CONTRIBUTING.md`, `CLAUDE.md` rule 7.
+
+## 2026-09-22 — Raw data shared via repo; privacy deferred
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** `data/raw/` and `data/interim/` are committed to the private repo so all
+  three members can see what is found. Pseudonymization/redaction is deferred to the
+  paper-writing phase (supersedes "Pseudonymization at ingestion"). `.session`/`.env` stay
+  out of git.
+- **Why:** Team needs a simple way to share findings; privacy to be handled before publishing.
+- **Impact:** `.gitignore`, `CLAUDE.md` rules 2/5/8, README Ethics, `memory/data-protection.md`.
+  Notes: files must be < 100 MB (GitHub limit); anything committed stays in git history,
+  so removing it later requires rewriting history. Supervisor's brief says "store no
+  personal data" — to reconcile in the Ethics section / with the supervisor.

@@ -36,9 +36,9 @@ src/
   analyze/   authors.py (admin vs user roles), tone.py (tone + scam labels)
   utils/     config.py (.env loading), privacy.py (pseudonymization at ingestion)
 data/
-  raw/       raw dumps — gitignored, never committed
-  interim/   intermediate files — gitignored
-  processed/ pseudonymized, aggregated outputs only
+  raw/       collected dumps (shared via this private repo, < 100 MB per file)
+  interim/   intermediate files
+  processed/ analysis outputs
 docs/        paper-outline.md, meeting-notes.md
 memory/      shared context/decision log for the team's AI sessions
 ```
@@ -71,12 +71,12 @@ be shared or committed.
   groups, no deception to gain access.
 - **No interaction with users.** Nobody is contacted; incoming DMs are logged, not answered.
   Links and attachments in scam messages are not opened.
-- **Pseudonymized at ingestion.** User IDs are replaced by keyed hashes (HMAC with a secret salt
-  kept outside the repo) before anything is written to disk; message text is redacted of
-  phones, emails and user mentions; usernames, display names and phone numbers are
-  dropped. Raw data stays on the collectors' machines (`data/raw/`, gitignored) and is not
-  shared publicly. The paper reports only aggregate results; quoted messages are
-  paraphrased or redacted so they cannot be searched back to an individual.
+- **Data handling (to be finalized).** Collected data is shared among the three team
+  members through this private repository and is never made public. Pseudonymization of
+  user identifiers and redaction of personal data (design in `memory/data-protection.md`)
+  will be applied before any analysis output or quote is published. The paper reports only
+  aggregate results; quoted messages are paraphrased or redacted so they cannot be searched
+  back to an individual.
 - **Minimization.** We collect message text and metadata needed for the research
   questions; no media is downloaded.
 - **Rate limiting.** Collection respects Telegram flood limits and the Telegram ToS.

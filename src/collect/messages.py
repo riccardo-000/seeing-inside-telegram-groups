@@ -1,4 +1,4 @@
-"""Dump of channel and group messages to ``data/raw/`` (gitignored).
+"""Dump of channel and group messages to ``data/raw/`` (shared via the private repo).
 
 Read-only: iterates message history, never sends, reacts or replies.
 Every message goes through ``privacy.sanitize_message`` before being written:

@@ -9,13 +9,10 @@
 !.env.example
 
 # ------------------------------------------------------------------
-# DATA — raw/intermediate dumps contain personal data (user IDs,
-# usernames, message text). Only pseudonymized, aggregated outputs
-# in data/processed/ may be committed, and only after review.
+# DATA — raw data IS shared through this private repo (team decision
+# 2026-09-22, see memory/decisions.md). Only local DB files are ignored.
+# GitHub rejects files > 100 MB: split dumps per chat / gzip them.
 # ------------------------------------------------------------------
-data/raw/
-data/interim/
-# (data/raw/.gitkeep is force-added once: `git add -f data/raw/.gitkeep`)
 *.sqlite
 *.db
 

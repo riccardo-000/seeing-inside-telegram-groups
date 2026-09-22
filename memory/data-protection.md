@@ -1,6 +1,7 @@
 # Data protection: how personal data is obfuscated
 
-Status: **design agreed in principle (2026-09-22), details open** — see "Open questions".
+Status: **deferred** — team decided (2026-09-22) to collect and share data as-is for now
+and apply this design when writing the paper. See decisions.md.
 Code: `src/utils/privacy.py` (skeleton). Supervisor's brief: "Store no personal data";
 "redact personal data at ingestion, report only in aggregate".
 
