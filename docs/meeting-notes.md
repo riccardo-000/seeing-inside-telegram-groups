@@ -26,4 +26,8 @@ Newest first. Decisions go in `memory/decisions.md` too.
 **Action items:**
 - [ ] all — assign owners in `CONTRIBUTING.md`
 - [ ] all — obtain TGDataset locally
-- [ ] _TBD_ — create dedicated Telegram research account and API credentials
+- [x] all — create dedicated Telegram research account (shared, logged in on all 3 machines)
+- [ ] _TBD_ — API credentials from my.telegram.org: "[object Object]" error on app creation,
+      likely because the account is brand new → retry after 24–48 h, no VPN, try phone hotspot
+- [ ] all — once credentials exist: each creates local `.env` (values passed in person)
+- [ ] Riccardo — decide on installing Python 3.12 (brew) + `.venv` for the first login test
