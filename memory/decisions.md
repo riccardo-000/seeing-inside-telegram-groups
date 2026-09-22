@@ -41,3 +41,31 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   the scope agreed with the supervisor and the safeguards in README "Ethics & scope".
 - **Why:** Team decision.
 - **Impact:** Paper Ethics section must justify the safeguards explicitly.
+
+## 2026-09-22 — Seed and group sources beyond TGDataset
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** TGDataset is the starting point (topic labels), but groups and channels are
+  not limited to it: (1) groups advertised via t.me / public invite links in channels'
+  *recent* posts, (2) TeraGram (ICWSM '26, 2015–2025, includes discussion groups — check
+  access), (3) Telegram public search by keyword. Each seed records its `source`.
+- **Why:** TGDataset stops in July 2022 and many channels will be dead; supervisor's brief
+  also points to invite links in channel posts.
+- **Impact:** `src/collect/channels.py`, README scope, Methodology 4.1. **Related work:**
+  TeraGram already covers discussion groups → our novelty must be sharpened (admin vs user
+  scam roles, received DMs, live observation of malicious groups). To mention to supervisor.
+
+## 2026-09-22 — Pseudonymization at ingestion (supersedes "Pseudonymization approach (proposed)")
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** Pseudonymize user ids (HMAC with shared salt) and redact personal data from
+  text **before writing to disk**, not at analysis time. Details and open questions in
+  `memory/data-protection.md`.
+- **Why:** Supervisor's brief: "Store no personal data" / "redact at ingestion".
+- **Impact:** new `src/utils/privacy.py`; `collect/messages.py`, `collect/dms.py`,
+  `analyze/authors.py` now work on pseudonyms only.
+
+## 2026-09-22 — Simple git workflow
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** Everyone works directly on `main` (pull → commit → push). No feature
+  branches or PR reviews required.
+- **Why:** Repo is mainly shared memory, docs and some code; PR process is overkill for 3 people.
+- **Impact:** `CONTRIBUTING.md`, `CLAUDE.md` rule 7.

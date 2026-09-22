@@ -1,56 +1,42 @@
 # Contributing
 
-Three people, all using AI assistants. These rules keep the repo consistent and safe.
+Three people, all using AI assistants. Keep it simple: everyone works on `main`.
 
-## Branches
+## Workflow
 
-- `main` is always working and reviewed. No direct pushes.
-- One branch per feature: `feat/<topic>`, `fix/<topic>`, `docs/<topic>`, `analysis/<topic>`
-  (e.g. `feat/join-channels`, `analysis/tone-baseline`).
-- Open a PR into `main`; at least **one other member** reviews before merging.
-- Keep branches short-lived; rebase on `main` before opening the PR.
-
-## Commits
-
-[Conventional Commits](https://www.conventionalcommits.org/):
-
-```
-<type>(<scope>): <short summary>
-
-feat(collect): add resumable message dump
-fix(dms): handle FloodWaitError
-docs(paper): draft methodology section
+```bash
+git pull                 # always, before starting
+# ... work ...
+git status               # check nothing sensitive is listed (see below)
+git add <files>
+git commit -m "docs(memory): add seed selection criteria"
+git push                 # if rejected: git pull, then push again
 ```
 
-Types: `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, `analysis`.
-Scopes: `collect`, `analyze`, `utils`, `paper`, `memory`, `repo`.
+- Commit small and often, push at the end of each session so the others see
+  `memory/` updates.
+- If you are about to do something big or experimental, a branch is fine, but not required.
+- Conflicts in `memory/decisions.md`: keep both entries, in date order.
 
-AI-assisted commits are fine; the human committing is responsible for the content.
-Keep any co-author trailer the assistant adds.
+## Commit messages
 
-## Before every commit / PR
+Short, with a type prefix (Conventional Commits, loosely):
+`feat`, `fix`, `docs`, `analysis`, `chore` — e.g. `feat(collect): resumable message dump`,
+`docs(memory): log seed selection`.
 
-- [ ] `git status` shows no `*.session`, `.env`, `data/raw/`, `data/interim/` files.
-- [ ] No API ids, hashes, phone numbers, usernames or user ids in code, notebooks or outputs.
-- [ ] Notebooks cleared of outputs that contain raw messages.
-- [ ] New decisions logged in `memory/decisions.md`.
+## Never commit
+
+- `*.session`, `.env` — Telegram credentials / API keys / salt.
+- `data/raw/`, `data/interim/` — collected data (gitignored, but double-check `git status`).
+- Notebook outputs showing messages.
 
 ## Who does what
 
-| Area | Owner | Backup |
-|---|---|---|
-| Collection: seed list, joins, message dump (`src/collect/channels.py`, `messages.py`) | _TBD_ | _TBD_ |
-| DM logging + admin/user roles (`src/collect/dms.py`, `src/analyze/authors.py`) | _TBD_ | _TBD_ |
-| Tone & scam classification, channel vs group (`src/analyze/tone.py`) | _TBD_ | _TBD_ |
-| Paper writing / related work (`docs/paper-outline.md`) | shared | — |
-
-Fill in names at the first meeting and log it in `memory/decisions.md`.
+To be decided by the team; log it in `memory/decisions.md`. The paper must state who did what.
 
 ## Working with AI assistants
 
-- Start each session by having the assistant read `CLAUDE.md` and `memory/`.
-- Decisions made during a session → `memory/decisions.md` before ending it.
-- Don't let the assistant run collection against Telegram without you watching it
-  the first time; check rate limits and that it never sends anything.
-- Only one member runs the research Telegram account at a time (session files are
-  per-machine and must not be shared through git).
+- Start each session: have the assistant read `CLAUDE.md` and `memory/`.
+- End each session: decisions → `memory/decisions.md`, then commit + push.
+- Watch the first real collection run against Telegram yourself (rate limits, nothing sent).
+- Only one member runs the research Telegram account at a time; session files are per-machine.

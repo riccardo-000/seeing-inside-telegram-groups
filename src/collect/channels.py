@@ -1,8 +1,11 @@
-"""Seed selection from TGDataset and joining of channels / linked groups.
+"""Seed selection and joining of channels / public groups.
 
-Scope: ~100 crypto channels and ~100 conspiracy/malicious channels taken
-from TGDataset. Only PUBLIC channels and their PUBLIC linked discussion
-groups are joined. Joining is the only "action" taken; no messages are sent.
+Scope: ~100 crypto channels and ~100 conspiracy/malicious channels. Sources
+(see ``memory/decisions.md``): TGDataset as the labelled starting point, plus
+newer sources (still-active channels' recent messages, TeraGram, keyword
+search). Groups are found as linked discussion groups AND as public invite
+links / t.me links posted in recent channel messages. Only PUBLIC chats are
+joined. Joining is the only "action" taken; no messages are sent.
 """
 
 from __future__ import annotations
@@ -16,18 +19,20 @@ Category = Literal["crypto", "conspiracy"]
 
 @dataclass
 class SeedChannel:
-    """A channel selected from TGDataset.
+    """A seed channel.
 
     Attributes:
-        channel_id: Telegram channel id as reported in TGDataset.
+        channel_id: Telegram channel id.
         username: Public @username, if any (required to join passively).
         category: Seed category ("crypto" or "conspiracy").
+        source: Where the seed came from ("tgdataset", "teragram", "search", "forward").
         linked_group_id: Id of the linked discussion group, filled after resolution.
     """
 
     channel_id: int
     username: str | None
     category: Category
+    source: str = "tgdataset"
     linked_group_id: int | None = None
 
 
@@ -56,6 +61,38 @@ async def resolve_linked_group(client, seed: SeedChannel) -> SeedChannel:
     Returns:
         The same seed with ``linked_group_id`` set, or unchanged if the
         channel has no public linked group.
+    """
+    raise NotImplementedError
+
+
+async def discover_groups_from_messages(client, seed: SeedChannel, since_days: int = 180) -> list[str]:
+    """Extract public group links (``t.me/<name>``, public invite links) from recent posts.
+
+    Only links that resolve to PUBLIC groups are returned; private invite
+    links (``t.me/+...`` / ``joinchat``) are recorded as counts only, never joined.
+
+    Args:
+        client: Connected ``telethon.TelegramClient``.
+        seed: Channel whose recent messages are scanned.
+        since_days: How far back to scan.
+
+    Returns:
+        Public group usernames/links found in the channel.
+    """
+    raise NotImplementedError
+
+
+def search_public_chats(client, keywords: list[str]) -> list[dict]:
+    """Find newer public channels/groups by keyword via Telegram's public search.
+
+    Complements TGDataset (collected up to July 2022) with currently active chats.
+
+    Args:
+        client: Connected ``telethon.TelegramClient``.
+        keywords: Search terms (e.g. "airdrop", "signals", "cvv"), logged in decisions.md.
+
+    Returns:
+        Candidate chats with id, username, type, member count, and matching keyword.
     """
     raise NotImplementedError
 

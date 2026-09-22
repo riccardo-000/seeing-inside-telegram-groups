@@ -1,6 +1,8 @@
 """Dump of channel and group messages to ``data/raw/`` (gitignored).
 
 Read-only: iterates message history, never sends, reacts or replies.
+Every message goes through ``privacy.sanitize_message`` before being written:
+no raw user id, username or name ever reaches disk.
 """
 
 from __future__ import annotations
@@ -19,7 +21,7 @@ async def dump_chat(
     """Download the message history of one channel or group.
 
     Each message is written as one JSON line with: message id, date,
-    sender id, sender type (user/channel/anonymous admin), text,
+    sender pseudonym, sender type (user/channel/anonymous admin), text,
     reply_to, forward info, views, and media type (no media download).
 
     Args:
@@ -43,7 +45,7 @@ async def fetch_admins(client, chat_id: int) -> list[dict]:
         chat_id: Group or channel id.
 
     Returns:
-        Records with user id, admin title, and whether the user is the creator.
+        Records with admin pseudonym, admin title, and whether the user is the creator.
         Empty if the admin list is not accessible.
     """
     raise NotImplementedError

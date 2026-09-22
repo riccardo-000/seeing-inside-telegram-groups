@@ -28,7 +28,11 @@ Stack: Python ≥ 3.11, Telethon, pandas, python-dotenv, tqdm.
 5. Before committing, run `git status` and check that nothing under `data/raw/`,
    `data/interim/`, or any `.session`/`.env` file is staged.
 6. Do not install dependencies without asking the human.
-7. Work on a feature branch, not directly on `main` (see `CONTRIBUTING.md`).
+7. Everyone works directly on `main`: `git pull` before starting, commit + push at the end
+   of the session (see `CONTRIBUTING.md`). No PR process.
+8. **Personal data is pseudonymized at ingestion** via `src/utils/privacy.py` — collectors
+   must never write raw user ids, usernames, names or phones to disk
+   (see `memory/data-protection.md`).
 
 ## Layout
 
@@ -36,19 +40,19 @@ Stack: Python ≥ 3.11, Telethon, pandas, python-dotenv, tqdm.
 .
 ├── CLAUDE.md            # this file
 ├── README.md            # scope, setup, ethics
-├── CONTRIBUTING.md      # branches, commits, who does what
+├── CONTRIBUTING.md      # git workflow, commits, who does what
 ├── requirements.txt
 ├── .env.example         # template; real .env is gitignored
 ├── src/
 │   ├── collect/         # channels.py, messages.py, dms.py (Telethon, read-only)
 │   ├── analyze/         # authors.py, tone.py (pandas)
-│   └── utils/config.py  # .env loading, data paths
+│   └── utils/           # config.py (.env loading), privacy.py (pseudonymization)
 ├── data/
 │   ├── raw/             # gitignored
 │   ├── interim/         # gitignored
 │   └── processed/       # pseudonymized aggregates only
 ├── docs/                # paper-outline.md, meeting-notes.md
-└── memory/              # shared AI/team memory: README.md, decisions.md
+└── memory/              # shared AI/team memory: decisions.md, data-protection.md, ...
 ```
 
 ## Shared memory

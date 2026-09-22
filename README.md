@@ -16,9 +16,12 @@ discussion groups, to be written up as a paper.
 
 ## Scope (agreed with the supervisor)
 
-- Seed: ~100 **crypto** channels and ~100 **conspiracy/malicious** channels from
-  [TGDataset](https://github.com/SystemsLab-Sapienza/TGDataset).
-- Join the channels and their linked groups — **public groups only**, passive observation.
+- Seed: ~100 **crypto** channels and ~100 **conspiracy/malicious** channels, starting from
+  [TGDataset](https://github.com/SystemsLab-Sapienza/TGDataset) (collected up to July 2022)
+  and complemented with newer sources: still-active channels' recent posts, TeraGram
+  (ICWSM '26, up to 2025), and Telegram public search.
+- Join the channels and their groups — both linked discussion groups and public groups
+  advertised via links in channel posts — **public groups only**, passive observation.
 - Automatically download the chat history.
 - Analyze message tone and authors: distinguish admins from users attempting scams.
 - Count scam DMs received by the research account and check whether senders are
@@ -30,8 +33,8 @@ discussion groups, to be written up as a paper.
 ```
 src/
   collect/   channels.py (seed + join), messages.py (dump), dms.py (DM logging)
-  analyze/   authors.py (roles, pseudonymization), tone.py (tone + scam labels)
-  utils/     config.py (.env loading)
+  analyze/   authors.py (admin vs user roles), tone.py (tone + scam labels)
+  utils/     config.py (.env loading), privacy.py (pseudonymization at ingestion)
 data/
   raw/       raw dumps — gitignored, never committed
   interim/   intermediate files — gitignored
@@ -64,12 +67,13 @@ be shared or committed.
 - **Passive observation only.** The research account joins chats and reads history.
   It never posts, replies, reacts, votes, or clicks links, and never answers DMs.
 - **Public chats only.** We only join channels and groups that are publicly reachable
-  (public `@username` or public linked discussion group). No invite-only or private
+  (public `@username`, public linked discussion group, or public invite link). No invite-only or private
   groups, no deception to gain access.
 - **No interaction with users.** Nobody is contacted; incoming DMs are logged, not answered.
   Links and attachments in scam messages are not opened.
-- **Pseudonymized data.** User IDs are replaced by keyed hashes (HMAC with a secret salt
-  kept outside the repo) before analysis; usernames, display names and phone numbers are
+- **Pseudonymized at ingestion.** User IDs are replaced by keyed hashes (HMAC with a secret salt
+  kept outside the repo) before anything is written to disk; message text is redacted of
+  phones, emails and user mentions; usernames, display names and phone numbers are
   dropped. Raw data stays on the collectors' machines (`data/raw/`, gitignored) and is not
   shared publicly. The paper reports only aggregate results; quoted messages are
   paraphrased or redacted so they cannot be searched back to an individual.
