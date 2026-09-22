@@ -1,0 +1,45 @@
+# ------------------------------------------------------------------
+# SECRETS — never commit.
+# Telethon .session files are live credentials for a Telegram account.
+# ------------------------------------------------------------------
+*.session
+*.session-journal
+.env
+.env.*
+!.env.example
+
+# ------------------------------------------------------------------
+# DATA — raw/intermediate dumps contain personal data (user IDs,
+# usernames, message text). Only pseudonymized, aggregated outputs
+# in data/processed/ may be committed, and only after review.
+# ------------------------------------------------------------------
+data/raw/
+data/interim/
+# (data/raw/.gitkeep is force-added once: `git add -f data/raw/.gitkeep`)
+*.sqlite
+*.db
+
+# ------------------------------------------------------------------
+# Python / tooling
+# ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.ipynb_checkpoints
+
+# ------------------------------------------------------------------
+# OS / editors
+# ------------------------------------------------------------------
+.DS_Store
+.vscode/
+.idea/
+
+# ------------------------------------------------------------------
+# Local AI session state (shared memory lives in memory/, not here)
+# ------------------------------------------------------------------
+.claude/settings.local.json

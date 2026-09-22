@@ -1,0 +1,5 @@
+# Requires Python >= 3.11 (pandas 3.x)
+telethon==1.45.0
+python-dotenv==1.2.3
+pandas==3.0.6
+tqdm==4.70.1
