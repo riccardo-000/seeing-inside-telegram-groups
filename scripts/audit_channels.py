@@ -151,6 +151,7 @@ class Auditor:
         self.q_known: list[dict] = []
         self.q_rec: list[dict] = []
         self.q_linked: list[dict] = []
+        self.q_priority: list[dict] = []
         self.tgd_rows_seen: dict[str, int] = {}
         self.verdicts = Counter()
         self.aggregators_first = False
@@ -180,6 +181,28 @@ class Auditor:
                 self.add(self.q_tgd, r.get("username", ""), "tgdataset", channel_id=r.get("channel_id", ""))
             self.tgd_rows_seen[f.name] = len(rows)
 
+    def load_master(self) -> None:
+        """Priority queue from data/interim/master.csv (scripts/build_master.py):
+        1. project channels linked to an active community but never audited;
+        2. groups/channels named by the manual review and not yet verified;
+        3. aggregators marked MANY in the manual review.
+        """
+        path = DATA_INTERIM / "master.csv"
+        if not path.exists():
+            return
+        with open(path, newline="", encoding="utf-8-sig") as fh:
+            rows = list(csv.DictReader(fh))
+        for r in rows:
+            if r["channel"] and r["channel_status"] == "not_checked":
+                self.add(self.q_priority, r["channel"].lstrip("@"), "master:project_channel")
+        for r in rows:
+            g = r["group"]
+            if g.startswith("@") and r["group_type"] == "unverified":
+                self.add(self.q_priority, g.lstrip("@"), f"master:manual_check_of_{r['channel']}")
+        for r in rows:
+            if r["channel"] and (r.get("manual_group") or "").strip().upper() == "MANY":
+                self.add(self.q_priority, r["channel"].lstrip("@"), "master:aggregator")
+
     def load_known(self) -> None:
         path = DATA_INTERIM / "pairs" / "chats.csv"
         if not path.exists():
@@ -197,8 +220,8 @@ class Auditor:
 
     def next_item(self):
         self.refresh_tgdataset()
-        for q in ((self.q_known, self.q_linked, self.q_tgd, self.q_rec) if self.aggregators_first
-                  else (self.q_tgd, self.q_known, self.q_linked, self.q_rec)):
+        for q in ((self.q_priority, self.q_known, self.q_linked, self.q_tgd, self.q_rec) if self.aggregators_first
+                  else (self.q_priority, self.q_tgd, self.q_known, self.q_linked, self.q_rec)):
             if q:
                 return q.pop(0)
         return None
@@ -432,7 +455,9 @@ async def main_async(args) -> None:
     api = Api(client, args.delay, args.max_resolves, args.hours)
     aud = Auditor(api)
     aud.aggregators_first = args.aggregators_first
+    aud.load_master()
     aud.load_known()
+    print(f"priority queue from master.csv: {len(aud.q_priority)}", flush=True)
     t0 = time.time()
     reason = ""
     try:
@@ -463,7 +488,7 @@ async def main_async(args) -> None:
                 errors_in_row = 0
             if len(aud.done) % 10 == 0:
                 print(f"== {(time.time()-t0)/60:.0f} min | audited {sum(aud.verdicts.values())} | "
-                      f"{dict(aud.verdicts)} | queue tgd={len(aud.q_tgd)} known={len(aud.q_known)} linked={len(aud.q_linked)} rec={len(aud.q_rec)}", flush=True)
+                      f"{dict(aud.verdicts)} | queue prio={len(aud.q_priority)} tgd={len(aud.q_tgd)} known={len(aud.q_known)} linked={len(aud.q_linked)} rec={len(aud.q_rec)}", flush=True)
     except Stop as e:
         reason = str(e)
     finally:

@@ -135,7 +135,11 @@ def main() -> None:
         if r["kind"] == "channel" and via.startswith("about of @"):
             edge(key(r["username"]), key(via[len("about of @"):]), "description", "script")
     for ch, m in manual.items():
-        for token in re.split(r"[\s,;]+", m["manual_group"] or ""):
+        cell = (m["manual_group"] or "").strip()
+        # free text like "PREMIUM GROUP" is kept in manual_group but not turned into links
+        if " " in cell and "t.me/" not in cell and "@" not in cell:
+            continue
+        for token in re.split(r"[\s,;]+", cell):
             if not token:
                 continue
             if token.upper() == "MANY":
