@@ -37,3 +37,4 @@ Newest at the bottom.
 | 2026-09-29 | 2026-09-29 | Riccardo | Read-only peek (`scripts/peek_channel.py`): last 200 posts + comments of top 10 threads, no joins | 2 crypto channels (TGDataset test) | OK: ~16 requests, no FloodWait. Comments of linked group readable without joining. |
 | 2026-09-29 | 2026-09-29 | Riccardo | Read-only: history of MoneroEconomicForum linked group (last 100 msgs) + 6 joiner profiles, no joins | 1 group | OK, readable without joining. No FloodWait. |
 | 2026-09-29 | 2026-09-29 | Riccardo | Read-only: sponsored messages (ads) shown in MoneroEconomicForum (GetSponsoredMessages; no view/click reports) | 1 channel | OK, 1 ad returned. No FloodWait. |
+| 2026-09-29 | | Riccardo | Read-only search for channel + standalone group pairs (`scripts/find_pairs.py`): keyword search, channel info/posts, group history; no joins; 7 s/request, 30 s/search, cap 400 requests / 60 min | crypto keyword search | |
