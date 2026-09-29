@@ -57,6 +57,7 @@ Stack: Python ≥ 3.11, Telethon, pandas, python-dotenv, tqdm.
 │   ├── interim/         # intermediate files
 │   └── processed/       # analysis outputs
 ├── docs/                # paper-outline.md, meeting-notes.md
+├── shared/              # drop-box per person (Marco/, Simone/, Riccardo/); paper is on Overleaf
 └── memory/              # shared AI/team memory: decisions.md, collection-log.md, ...
 ```
 
