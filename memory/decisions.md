@@ -111,3 +111,30 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   the paper to "state clearly who did what" → keep the git log / decisions.md author field
   accurate so concrete contributions can be listed if asked. Chat assignment for message
   dumps (collection-log.md) still applies: it is coordination, not a role split.
+
+## 2026-09-29 — Username-resolve budget for the shared account
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** At most ~100 username resolves per day for the whole account (all people, all
+  scripts), logged in `collection-log.md`. Scripts reuse the local session cache so already
+  known chats cost nothing; 1 request every 6 s; stop at the first long FloodWait.
+- **Why:** On 2026-09-29 ~250–300 resolves in one day on a new account triggered a 19 h
+  FloodWait (68,674 s). Other read-only calls (history, channel info) were not the problem.
+- **Impact:** `scripts/audit_channels.py --max-resolves`, collection-log, paper Limitations
+  (collection speed).
+
+## 2026-09-29 — What counts as "channel with a group"; single master file
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** A channel "has a group" if it points (description, posts, hidden links,
+  buttons, @mentions) to a public supergroup that is active, or if its linked discussion group
+  has a public username and is used as a chat. Thresholds (last 7 days): standalone group
+  ≥ 20 messages from ≥ 5 users; linked "community" ≥ 10 free messages (not replies to posts)
+  from ≥ 5 users. Private invite links are recorded but never opened. All channels/groups go
+  into one file, `data/interim/master.csv`, rebuilt by `scripts/build_master.py` (manual columns
+  are preserved); manual checks are done there.
+- **Why:** Keyword search showed ~2% of active crypto channels link a standalone public group,
+  but airdrop aggregators (@AirdropDetective, @Airdrop) link many project channels whose
+  linked chat is an active community → project channel + community is the pair we study.
+  Manual review of 42 channels (team, 2026-09-29) agreed with the script on aggregators and
+  on "signals" channels having no public group.
+- **Impact:** seed selection (Methodology), `audit_channels.py`, `build_master.py`,
+  `master.csv`. Thresholds to be defended in the paper.
