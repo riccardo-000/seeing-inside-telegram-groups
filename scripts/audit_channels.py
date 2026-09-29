@@ -45,6 +45,8 @@ from peek_channel import TME_RE, extract_links
 from src.utils.budget import BudgetExceeded, ResolveBudget
 from src.utils.config import DATA_INTERIM, load_config, session_path
 
+csv.field_size_limit(sys.maxsize)  # t.me link lists of aggregator channels are huge
+
 OUT = DATA_INTERIM / "audit"
 ACTIVE_DAYS = 30
 GROUP_MIN_MSGS, GROUP_MIN_USERS = 20, 5          # standalone group, last 7 days
@@ -160,6 +162,13 @@ class Auditor:
             queue.append({"username": username, "source": source, **extra})
 
     def refresh_tgdataset(self) -> None:
+        # best candidates first (scripts/rank_tgdataset.py), then anything newer from Zenodo
+        queue = DATA_INTERIM / "tgdataset_queue.csv"
+        if queue.exists() and "queue" not in self.tgd_rows_seen:
+            with open(queue, newline="", encoding="utf-8") as fh:
+                for r in csv.DictReader(fh):
+                    self.add(self.q_tgd, r["username"], "tgdataset", channel_id=r["channel_id"])
+            self.tgd_rows_seen["queue"] = 1
         for f in sorted(DATA_INTERIM.glob("seeds_tgdataset_crypto_*.csv")):
             if f.name.endswith("_alive.csv"):
                 continue
