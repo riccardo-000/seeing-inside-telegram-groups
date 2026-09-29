@@ -31,7 +31,9 @@ Short, with a type prefix (Conventional Commits, loosely):
 
 ## Who does what
 
-To be decided by the team; log it in `memory/decisions.md`. The paper must state who did what.
+No fixed roles: everyone works on everything, equal contribution (decisions.md, 2026-09-29).
+The course requires the paper to state who did what, so keep commit authors and the
+`Author` field in `memory/decisions.md` accurate.
 
 ## Working with AI assistants
 

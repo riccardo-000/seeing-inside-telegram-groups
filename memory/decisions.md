@@ -101,3 +101,13 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   Logins on different machines should be spaced out (new-device logins on a fresh account
   can trigger Telegram's anti-abuse checks).
 - **Impact:** `src/utils/config.py`, `scripts/login.py`, `.venv` (Python 3.12, local).
+
+## 2026-09-29 — No task split: equal contribution
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** No fixed roles; all three members work on every part (seeds, collection,
+  analysis, writing). The paper states equal contribution.
+- **Why:** Team decision.
+- **Impact:** `CONTRIBUTING.md` "Who does what"; paper contribution statement. Course requires
+  the paper to "state clearly who did what" → keep the git log / decisions.md author field
+  accurate so concrete contributions can be listed if asked. Chat assignment for message
+  dumps (collection-log.md) still applies: it is coordination, not a role split.
