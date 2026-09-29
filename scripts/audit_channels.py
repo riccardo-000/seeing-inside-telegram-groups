@@ -42,6 +42,7 @@ from telethon.tl.types import Channel, InputPeerChannel, InputPeerUser, PeerUser
 
 from find_pairs import GROUP_HINT, link_usernames, mentions
 from peek_channel import TME_RE, extract_links
+from src.utils.budget import BudgetExceeded, ResolveBudget
 from src.utils.config import DATA_INTERIM, load_config, session_path
 
 OUT = DATA_INTERIM / "audit"
@@ -75,6 +76,7 @@ class Api:
         self.deadline = time.time() + hours * 3600
         self.requests = self.resolves = 0
         self.floodwaits = 0
+        self.budget = ResolveBudget("audit_channels")
 
     async def tick(self):
         if (OUT / "STOP").exists():
@@ -106,6 +108,10 @@ class Api:
             pass
         if self.resolves >= self.max_resolves:
             raise Stop("username resolve cap reached")
+        try:
+            self.budget.take()  # shared daily budget for the whole account
+        except BudgetExceeded as e:
+            raise Stop(str(e))
         self.resolves += 1
         try:
             return await self.run(lambda: self.client.get_input_entity(username))
