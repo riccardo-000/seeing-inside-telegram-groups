@@ -91,3 +91,13 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Why:** Everyone will run collection scripts; only one number available.
 - **Impact:** `CLAUDE.md` rule 8, `CONTRIBUTING.md`, collectors must be resumable and
   deduplicate by (chat_id, message_id). Rate limits and the 500-chat cap are shared.
+
+## 2026-09-29 — Config loading and per-machine login
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** `src/utils/config.py` reads `.env` (api id/hash + phone required); each member
+  runs `scripts/login.py` once on their own machine to create a local `research.session`.
+  Session files are never copied between machines.
+- **Why:** `.session` is a full account credential; one login per machine keeps it local.
+  Logins on different machines should be spaced out (new-device logins on a fresh account
+  can trigger Telegram's anti-abuse checks).
+- **Impact:** `src/utils/config.py`, `scripts/login.py`, `.venv` (Python 3.12, local).

@@ -31,4 +31,4 @@ Newest at the bottom.
 
 | Start | End | Who | Job | Chats | Outcome / FloodWait |
 |---|---|---|---|---|---|
-| 2026-09-29 | | Riccardo | First Telethon login (`scripts/login.py`), creates local `.session` | — | |
+| 2026-09-29 | 2026-09-29 | Riccardo | First Telethon login (`scripts/login.py`), creates local `.session` | — | OK, authorized. No FloodWait. |

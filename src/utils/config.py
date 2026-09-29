@@ -6,6 +6,7 @@ All secrets come from the environment (populated from a local, gitignored
 
 from __future__ import annotations
 
+import os
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -48,7 +49,20 @@ def load_config(env_file: Path | None = None) -> TelegramConfig:
         RuntimeError: If a required variable (``TELEGRAM_API_ID``,
             ``TELEGRAM_API_HASH``, ``TELEGRAM_PHONE``) is missing.
     """
-    raise NotImplementedError
+    from dotenv import load_dotenv
+
+    load_dotenv(env_file or PROJECT_ROOT / ".env")
+    required = ("TELEGRAM_API_ID", "TELEGRAM_API_HASH", "TELEGRAM_PHONE")
+    missing = [name for name in required if not os.environ.get(name, "").strip()]
+    if missing:
+        raise RuntimeError(f"Missing in .env: {', '.join(missing)}")
+    return TelegramConfig(
+        api_id=int(os.environ["TELEGRAM_API_ID"]),
+        api_hash=os.environ["TELEGRAM_API_HASH"].strip(),
+        phone=os.environ["TELEGRAM_PHONE"].strip(),
+        session_name=os.environ.get("TELEGRAM_SESSION_NAME", "").strip() or "research",
+        pseudonym_salt=os.environ.get("PSEUDONYM_SALT", "").strip(),
+    )
 
 
 def session_path(config: TelegramConfig) -> Path:
@@ -61,4 +75,4 @@ def session_path(config: TelegramConfig) -> Path:
         Path to ``<PROJECT_ROOT>/<session_name>.session``; gitignored via
         the ``*.session`` rule.
     """
-    raise NotImplementedError
+    return PROJECT_ROOT / f"{config.session_name}.session"
