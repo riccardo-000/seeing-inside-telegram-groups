@@ -32,3 +32,4 @@ Newest at the bottom.
 | Start | End | Who | Job | Chats | Outcome / FloodWait |
 |---|---|---|---|---|---|
 | 2026-09-29 | 2026-09-29 | Riccardo | First Telethon login (`scripts/login.py`), creates local `.session` | — | OK, authorized. No FloodWait. |
+| 2026-09-29 | | Riccardo | Liveness check test (`scripts/check_alive.py`), resolve + channel info only, no joins, 10 s delay | 5 crypto seeds (TGDataset) | |
