@@ -32,4 +32,8 @@ Newest at the bottom.
 | Start | End | Who | Job | Chats | Outcome / FloodWait |
 |---|---|---|---|---|---|
 | 2026-09-29 | 2026-09-29 | Riccardo | First Telethon login (`scripts/login.py`), creates local `.session` | — | OK, authorized. No FloodWait. |
-| 2026-09-29 | | Riccardo | Liveness check test (`scripts/check_alive.py`), resolve + channel info only, no joins, 10 s delay | 5 crypto seeds (TGDataset) | |
+| 2026-09-29 | 2026-09-29 | Riccardo | Liveness check test (`scripts/check_alive.py`), resolve + channel info only, no joins, 10 s delay | 5 crypto seeds (TGDataset) | OK: 4 alive, 1 not found. No FloodWait. |
+| 2026-09-29 | 2026-09-29 | Riccardo | Liveness check (`scripts/check_alive.py`), no joins, 10 s delay | 2 more crypto seeds (TGDataset) | OK: 0 alive, 2 not found. No FloodWait. Zenodo downloads stopped at 7 candidates. |
+| 2026-09-29 | 2026-09-29 | Riccardo | Read-only peek (`scripts/peek_channel.py`): last 200 posts + comments of top 10 threads, no joins | 2 crypto channels (TGDataset test) | OK: ~16 requests, no FloodWait. Comments of linked group readable without joining. |
+| 2026-09-29 | 2026-09-29 | Riccardo | Read-only: history of MoneroEconomicForum linked group (last 100 msgs) + 6 joiner profiles, no joins | 1 group | OK, readable without joining. No FloodWait. |
+| 2026-09-29 | 2026-09-29 | Riccardo | Read-only: sponsored messages (ads) shown in MoneroEconomicForum (GetSponsoredMessages; no view/click reports) | 1 channel | OK, 1 ad returned. No FloodWait. |
