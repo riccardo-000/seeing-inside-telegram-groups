@@ -42,6 +42,7 @@ from telethon.tl.types import Channel, InputPeerChannel, InputPeerUser, PeerUser
 
 from find_pairs import GROUP_HINT, link_usernames, mentions
 from peek_channel import TME_RE, extract_links
+import prefilter_tme
 from src.utils.budget import BudgetExceeded, ResolveBudget
 from src.utils.config import DATA_INTERIM, load_config, session_path
 
@@ -79,6 +80,9 @@ class Api:
         self.requests = self.resolves = 0
         self.floodwaits = 0
         self.budget = ResolveBudget("audit_channels")
+        self.web_delay = 2.0
+        self.web_requests = 0
+        self.max_new_resolves_per_channel = 8
 
     async def tick(self):
         if (OUT / "STOP").exists():
@@ -96,11 +100,30 @@ class Api:
                 return await make_coro()
             except errors.FloodWaitError as e:
                 self.floodwaits += 1
-                if e.seconds > 60:
-                    raise Stop(f"FLOODWAIT {e.seconds}s")
+                # be conservative with the shared account: stop on any long wait or on the 2nd wait
+                if e.seconds > 30 or self.floodwaits >= 2:
+                    raise Stop(f"FLOODWAIT {e.seconds}s (#{self.floodwaits})")
                 print(f"  short FloodWait {e.seconds}s: waiting and slowing down", flush=True)
                 self.delay *= 1.5
                 await asyncio.sleep(e.seconds + 5)
+
+    def cached(self, username: str) -> bool:
+        try:
+            self.client.session.get_input_entity(username)
+            return True
+        except (ValueError, KeyError, TypeError):
+            return False
+
+    async def web(self, username: str) -> dict:
+        """Free check on the public t.me web preview (no API call, no resolve)."""
+        await asyncio.sleep(self.web_delay)
+        self.web_requests += 1
+        try:
+            return await asyncio.to_thread(prefilter_tme.check, username, 20.0, False)
+        except SystemExit as e:  # HTTP 429 from t.me
+            raise Stop(str(e))
+        except OSError as e:
+            return {"status": f"web_error_{type(e).__name__}", "kind": ""}
 
     async def input_entity(self, username: str):
         """Input peer for a username; a network resolve only if not cached."""
@@ -162,13 +185,28 @@ class Auditor:
             self.queued.add(username.lower())
             queue.append({"username": username, "source": source, **extra})
 
+    def web_says_skip(self, username: str) -> bool:
+        """True if scripts/prefilter_tme.py already saw this channel dead or inactive (no API needed)."""
+        if not hasattr(self, "_prefilter"):
+            self._prefilter = {}
+            for f in DATA_INTERIM.glob("tme_prefilter*.csv"):
+                with open(f, newline="", encoding="utf-8") as fh:
+                    for r in csv.DictReader(fh):
+                        self._prefilter[r["username"].lower()] = r
+        r = self._prefilter.get(username.lower())
+        if r is None:
+            return False
+        return not (r["status"] == "alive" and r["kind"] in ("channel", "channel_no_preview")
+                    and (r["kind"] == "channel_no_preview" or int(r.get("posts_30d") or 0) > 0))
+
     def refresh_tgdataset(self) -> None:
         # best candidates first (scripts/rank_tgdataset.py), then anything newer from Zenodo
         queue = DATA_INTERIM / "tgdataset_queue.csv"
         if queue.exists() and "queue" not in self.tgd_rows_seen:
             with open(queue, newline="", encoding="utf-8") as fh:
                 for r in csv.DictReader(fh):
-                    self.add(self.q_tgd, r["username"], "tgdataset", channel_id=r["channel_id"])
+                    if not self.web_says_skip(r["username"]):
+                        self.add(self.q_tgd, r["username"], "tgdataset", channel_id=r["channel_id"])
             self.tgd_rows_seen["queue"] = 1
         for f in sorted(DATA_INTERIM.glob("seeds_tgdataset_crypto_*.csv")):
             if f.name.endswith("_alive.csv"):
@@ -178,6 +216,8 @@ class Auditor:
                 text = text[: text.rfind("\n") + 1]
             rows = list(csv.DictReader(text.splitlines()))
             for r in rows[self.tgd_rows_seen.get(f.name, 0):]:
+                if self.web_says_skip(r.get("username", "")):
+                    continue
                 self.add(self.q_tgd, r.get("username", ""), "tgdataset", channel_id=r.get("channel_id", ""))
             self.tgd_rows_seen[f.name] = len(rows)
 
@@ -292,6 +332,16 @@ class Auditor:
 
         name = item["username"]
         row = {"channel": name, "source": item["source"], "checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds")}
+        if not self.api.cached(name):
+            w = await self.api.web(name)  # free: spend a resolve only on chats that are alive
+            if w.get("status") in ("not_found", "empty_page"):
+                return self.save(row | {"status": "not_found_web", "verdict": "dead"})
+            if w.get("kind") == "user_or_bot":
+                return self.save(row | {"status": "user_or_bot_web", "verdict": "dead"})
+            if w.get("kind") == "channel" and w.get("last_post") and not int(w.get("posts_30d") or 0):
+                return self.save(row | {"status": "alive_web", "verdict": "inactive", "title": w.get("title"),
+                                        "subscribers": w.get("subscribers"), "last_post": w["last_post"][:10],
+                                        "posts_30d": 0, "description": w.get("description")})
         inp = await self.api.input_entity(name)
         if inp is None:
             return self.save(row | {"status": "not_found", "verdict": "dead"})
@@ -375,9 +425,27 @@ class Auditor:
         cands = sorted(found.items(), key=lambda kv: (kv[1] != "description", not GROUP_HINT.search(kv[0]), -freq[kv[0].lower()]))
         row |= {"n_candidates": len(cands), "n_private_invites": len(invites)}
 
-        active_groups, inactive_groups, checked = [], [], 0
+        active_groups, inactive_groups, checked, new_resolves = [], [], 0, 0
         for u, where in cands[:MAX_CANDIDATES]:
             key = u.lower()
+            if key not in self.types and not self.api.cached(u):
+                w = await self.api.web(u)  # free classification first
+                if w.get("status") in ("not_found", "empty_page"):
+                    self.types[key] = ("not_found", "")
+                elif w.get("kind") == "user_or_bot":
+                    self.types[key] = ("user_or_bot", "")
+                elif w.get("kind") in ("channel", "channel_no_preview"):
+                    self.types[key] = ("channel", w.get("title") or "")  # audited later from the queue
+                elif new_resolves >= self.api.max_new_resolves_per_channel:
+                    self.types.setdefault(key, None)
+                    checked += 1
+                    append(OUT / "channel_links.csv", LINK_COLS, {
+                        "channel": name, "target": u, "found_in": where, "target_type": w.get("kind") or "unknown",
+                        "target_title": w.get("title") or "", "note": "not resolved (per-channel cap)"})
+                    self.types.pop(key, None)
+                    continue
+                else:
+                    new_resolves += 1
             if key not in self.types:
                 inp_u = await self.api.input_entity(u)
                 if inp_u is None:
@@ -455,6 +523,7 @@ async def main_async(args) -> None:
     api = Api(client, args.delay, args.max_resolves, args.hours)
     aud = Auditor(api)
     aud.aggregators_first = args.aggregators_first
+    api.max_new_resolves_per_channel = args.max_resolves_per_channel
     aud.load_master()
     aud.load_known()
     print(f"priority queue from master.csv: {len(aud.q_priority)}", flush=True)
@@ -493,7 +562,7 @@ async def main_async(args) -> None:
         reason = str(e)
     finally:
         await client.disconnect()
-    print(f"\nDONE ({reason}): {api.requests} requests, {api.resolves} resolves, {api.floodwaits} short FloodWaits, "
+    print(f"\nDONE ({reason}): {api.requests} requests, {api.resolves} resolves, {api.web_requests} web checks, {api.floodwaits} short FloodWaits, "
           f"{(time.time()-t0)/60:.0f} min\nverdicts: {dict(aud.verdicts)}", flush=True)
 
 
@@ -501,6 +570,8 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--delay", type=float, default=6.0, help="seconds before each request")
     ap.add_argument("--max-resolves", type=int, default=250, help="max uncached username lookups")
+    ap.add_argument("--max-resolves-per-channel", type=int, default=8,
+                    help="new username resolves spent on one channel's links")
     ap.add_argument("--aggregators-first", action="store_true",
                     help="known channels and their links before TGDataset candidates")
     ap.add_argument("--hours", type=float, default=8.0, help="hard time cap")

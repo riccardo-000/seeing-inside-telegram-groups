@@ -36,6 +36,7 @@ from __future__ import annotations
 import argparse
 import csv
 import html
+import http.client
 import re
 import sys
 import time
@@ -82,13 +83,20 @@ def text(fragment: str) -> str:
     return html.unescape(TAGS.sub(" ", fragment)).replace("\xa0", " ").strip()
 
 
-def get(url: str, timeout: float) -> tuple[int, str]:
+def get(url: str, timeout: float, retries: int = 3) -> tuple[int, str]:
+    """GET with a few retries on network errors (truncated reads, timeouts)."""
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en"})
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as resp:
-            return resp.status, resp.read().decode("utf-8", "replace")
-    except urllib.error.HTTPError as e:
-        return e.code, ""
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return resp.status, resp.read().decode("utf-8", "replace")
+        except urllib.error.HTTPError as e:
+            return e.code, ""
+        except (http.client.HTTPException, urllib.error.URLError, TimeoutError, OSError):
+            if attempt == retries - 1:
+                return 0, ""  # recorded as http_0: network problem, not a verdict
+            time.sleep(5 * (attempt + 1))
+    return 0, ""
 
 
 def parse_count(fragment: str, word: str) -> str:
