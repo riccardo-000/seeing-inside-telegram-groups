@@ -127,6 +127,8 @@ class Api:
 
     async def input_entity(self, username: str):
         """Input peer for a username; a network resolve only if not cached."""
+        if not prefilter_tme.VALID_USERNAME.match(username or ""):
+            return None
         try:
             return self.client.session.get_input_entity(username)
         except (ValueError, KeyError, TypeError):

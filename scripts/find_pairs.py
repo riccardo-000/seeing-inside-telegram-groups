@@ -94,7 +94,7 @@ def link_usernames(text_links: list[str]) -> list[str]:
     return out
 
 
-MENTION_RE = re.compile(r"(?<![\w/])@([A-Za-z]\w{4,31})")
+MENTION_RE = re.compile(r"(?<![\w/])@([A-Za-z][A-Za-z0-9_]{4,31})(?![\w])")  # usernames are ASCII
 
 
 def mentions(text: str) -> list[str]:

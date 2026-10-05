@@ -106,10 +106,16 @@ def parse_count(fragment: str, word: str) -> str:
     return ""
 
 
+VALID_USERNAME = re.compile(r"^[A-Za-z][A-Za-z0-9_]{3,31}$")
+
+
 def check(user: str, timeout: float, dump: bool) -> dict:
     now = datetime.now(timezone.utc)
     row = {c: "" for c in COLS}
     row["username"], row["checked_at"] = user, now.isoformat(timespec="seconds")
+    if not VALID_USERNAME.match(user):
+        row["status"] = "not_found"  # cannot be a Telegram username: no request made
+        return row
 
     code, page = get(f"https://t.me/s/{user}", timeout)
     row["http"] = code
