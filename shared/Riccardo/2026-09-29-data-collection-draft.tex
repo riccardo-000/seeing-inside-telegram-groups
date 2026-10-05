@@ -1,0 +1,181 @@
+% ============================================================================
+% DRAFT — Section "Data Collection and Methodology"  (Riccardo + Claude Code, 2026-09-29)
+% Paste into Overleaf. Needs \usepackage{xcolor}. \TODO marks numbers/choices
+% that are not final: fill them only once collection is stable.
+% Everything described here matches what the scripts in the repo actually do
+% (scripts/*.py, src/collect/*.py) as of 2026-09-29.
+% ============================================================================
+\providecommand{\TODO}[1]{\textcolor{red}{[TODO: #1]}}
+
+\section{Data Collection and Methodology}
+\label{sec:data}
+
+Our goal is a corpus of \emph{paired observations}: a Telegram channel together
+with the public group(s) it is associated with, both still active at collection
+time. The pipeline combines automated steps, performed with a read-only
+Telegram client, and manual steps, performed by the authors through the
+official Telegram application. Table~\ref{tab:pipeline} \TODO{add table}
+summarises which steps are automated and which are manual. Throughout the
+collection the research account never joined a chat, sent a message, reacted,
+clicked a link or requested access to a private chat.
+
+\subsection{Seed Dataset}
+\label{subsec:seed-dataset}
+
+We use TGDataset~\cite{tgdataset} as a seed source. TGDataset contains
+120{,}979 public Telegram channels and their messages, collected between
+January 2021 and July 2022, and releases topic labels for the 19{,}768
+English-language channels. It is the largest public collection of Telegram
+channels with topic annotations, which lets us start from an externally defined
+set of channels rather than from our own keyword choices.
+
+TGDataset is a \emph{historical} seed: it does not describe Telegram in 2026,
+and many of its channels have since been deleted, renamed or abandoned. We
+therefore use it only to obtain candidate channels, and every candidate is
+re-validated against the live platform (Section~\ref{subsec:channel-verification}).
+In this pilot we consider the \emph{Crypto} topic (563 channels).
+\TODO{other topics (e.g.\ Carding) if we extend beyond the pilot}
+
+\subsection{Candidate Channel Selection}
+\label{subsec:candidate-selection}
+
+The topic labels identify channels only by numeric id, which is not sufficient
+to open a channel through the Telegram API. We therefore stream the four
+TGDataset archives from Zenodo (about 71\,GB compressed) and, for every channel
+labelled \emph{Crypto}, extract only its metadata: username, title,
+description, Telegram's \texttt{scam} and \texttt{verified} flags, number of
+subscribers, date of its last message in the dataset, and the \texttt{t.me}
+links that appear in its messages. No message content is retained at this stage.
+This yields \TODO{N} candidates with a username \TODO{N without username, excluded}.
+
+Because re-validation is rate-limited (Section~\ref{subsec:channel-verification}),
+candidates are ranked offline before any request is made. The score favours
+channels that were still posting in the last months covered by TGDataset, had
+many subscribers, and linked to usernames that look like groups (e.g.\
+containing \emph{chat}, \emph{group}, \emph{community}).
+\TODO{decide: ranking only orders the queue, or also excludes low-score candidates}
+
+\paragraph{Additional sources.}
+TGDataset contains few channels that are both still active and associated with
+a public group. We therefore add candidates from three live sources, recording
+the source of every channel:
+(i) Telegram's public search with \TODO{15} English crypto keywords
+(e.g.\ \emph{crypto signals}, \emph{airdrop}, \emph{memecoin});
+(ii) channels linked from the posts of the channels already verified, in
+particular airdrop \emph{aggregators} that advertise many crypto projects, each
+with its own channel and community group; and
+(iii) channels that Telegram recommends as similar to a verified channel.
+Duplicates are removed by username (case-insensitive).
+\TODO{check: does the supervisor accept sources beyond TGDataset? (decisions.md, 2026-09-22)}
+
+\subsection{Current Channel Verification}
+\label{subsec:channel-verification}
+
+Every candidate is verified automatically with a read-only client built on
+Telethon~\cite{telethon}, using the MTProto API with a dedicated research
+account. For each candidate the verifier:
+\begin{enumerate}
+  \item resolves the username; if it no longer exists, or now belongs to a user
+        or bot, the channel is marked \emph{dead};
+  \item checks that the username still points to the same channel id as in
+        TGDataset (usernames can be reused after deletion);
+  \item reads the public channel information (title, description,
+        subscribers, flags, pinned message, linked discussion group);
+  \item reads the last 200 posts and marks the channel \emph{active} if at
+        least one was published in the 30 days before the verification date,
+        \emph{inactive} otherwise.
+\end{enumerate}
+None of these operations requires joining the channel. The verification date
+is stored with every record. \TODO{verification period: from ... to ...}
+
+\paragraph{Rate limiting.}
+All requests are serialised with a pause of 6\,s, and username resolutions
+(the operation Telegram limits most strictly) are capped at 100 per day for
+the whole account. During the pilot, about 250--300 resolutions in one day
+triggered a 19-hour \texttt{FloodWait}; since then the collector stops at the
+first wait longer than 60\,s and resumes the next day. Network errors are
+recorded per channel; the run stops after three consecutive errors. All runs are
+resumable and never re-verify a channel already verified.
+
+\subsection{Group Discovery}
+\label{subsec:group-discovery}
+
+We call a group \emph{associated} with a channel when the channel explicitly
+points to it and the group is public at collection time.
+\TODO{confirm this definition with Marco/Simone; see decisions.md 2026-09-29}
+For every active channel we search for such pointers in:
+\begin{itemize}
+  \item the channel description;
+  \item the pinned message and the last 200 posts, including plain URLs, links
+        hidden behind text, URL buttons and \texttt{@mentions};
+  \item the channel's \emph{linked discussion group}, i.e.\ the group Telegram
+        uses for comments.
+\end{itemize}
+Every username found is resolved and classified as group, channel, user, bot or
+non-existent; private invite links (\texttt{t.me/+\ldots}) are recorded but never
+opened. Discovery is performed automatically by the verifier and, in parallel,
+manually by two authors who inspect each active channel in the Telegram app and
+record the groups they find (Section~\ref{subsec:manual-validation}).
+
+A linked discussion group is often only a comment section. We count it as a
+group only if it has a public username and is used as a chat: at least
+\TODO{10} messages that are not replies to channel posts, written by at least
+\TODO{5} distinct users, in the last 7 days. A standalone group is considered
+active with at least \TODO{20} messages from at least \TODO{5} distinct users in
+the last 7 days. Activity is measured on the last 100 messages, which are
+readable without joining.
+
+\subsection{Manual Validation}
+\label{subsec:manual-validation}
+
+Two authors (Marco and Simone) inspect every active channel and, for each
+candidate group, check that:
+(i) the link resolves;
+(ii) the destination is a group and not a channel or bot;
+(iii) the group is public and readable;
+(iv) the association with the source channel is explicit;
+(v) the pair is not a duplicate.
+They record the result, the date and their name in the shared master table.
+The manual and automated results are compared pair by pair; disagreements are
+resolved by discussion and reported as the error rate of the automated
+discovery. \TODO{agreement measure (e.g.\ Cohen's $\kappa$ on a double-coded sample of N channels)}
+
+\subsection{Dataset Construction}
+\label{subsec:dataset-construction}
+
+Figure~\ref{fig:funnel} \TODO{funnel figure} reports the number of channels
+retained at each step:
+candidate channels $\rightarrow$ existing channels $\rightarrow$ active
+channels $\rightarrow$ channels pointing to a group $\rightarrow$ active public
+groups $\rightarrow$ unique channel--group pairs.
+\TODO{numbers once collection is stable}
+% Preliminary, 2026-09-29 (NOT final, for us only):
+%  - keyword search: 69 channels (42 active), 69 groups (8 standalone active);
+%  - only 1 of ~43 active keyword channels linked a standalone public group;
+%  - aggregators @AirdropDetective and @Airdrop: ~21 project channel + community pairs;
+%  - first ~30 TGDataset crypto channels verified: mostly dead or inactive, 1 with an active group.
+These counts describe how the corpus was built; they are not yet our research
+results.
+
+\subsection{Collected Information}
+\label{subsec:collected-information}
+
+For each chat we store only the following.
+\emph{Channel and group metadata}: username, title, description, number of
+subscribers/members, Telegram's \texttt{scam}/\texttt{fake}/\texttt{verified}
+flags, linked chat, date of verification.
+\emph{Messages} (last \TODO{90} days, one file per chat): message id, date,
+sender type (user, the channel itself, anonymous admin), sender identifier,
+admin signature when the channel shows it, text, reply target and thread,
+forward source, views, forwards, number of replies, media \emph{type} (no media
+file is downloaded), service-message type, and the URLs and \texttt{t.me} links
+contained in the message.
+\emph{Administrators}: the list of admins of each chat, where Telegram shows it
+to non-members, with their admin title.
+\emph{Direct messages}: unsolicited messages received by the research account,
+with the same fields plus whether the sender is an admin or member of one of
+the monitored chats; the account never replies.
+
+We do not store user names, usernames, phone numbers, bios or profile
+pictures. \TODO{pseudonymisation of user ids and redaction of phone numbers,
+emails and user mentions in text: implemented, activation pending team decision}

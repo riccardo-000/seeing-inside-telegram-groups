@@ -1,0 +1,8 @@
+channel_id,username,status,checked_at,id_matches,is_broadcast,title_now,subscribers_now,scam,fake,verified,restricted,linked_chat_id,linked_chat_username,error
+1368955731,economemtrics,not_found,2026-09-29T09:52:02+00:00,,,,,,,,,,,UsernameInvalidError
+1196988334,MoneroEconomicForum,alive,2026-09-29T09:52:12+00:00,True,True,Monero Economic Forum,1747,False,False,False,False,1569717811,,
+1355176989,MoneroOrangePills,alive,2026-09-29T09:52:23+00:00,True,True,Monero Orange Pills 🟠,1280,False,False,False,False,,,
+1402529553,moneyhesitfreesignals,alive,2026-09-29T09:52:33+00:00,True,True,MONEY HEIST FREE SIGNALS,168,False,False,False,False,,,
+1545641939,voluntarily_e,alive,2026-09-29T09:52:44+00:00,True,True,Voluntarily,28,False,False,False,False,,,
+1457955475,OccupyWallStreet2,not_found,2026-09-29T09:55:23+00:00,,,,,,,,,,,ValueError
+1411132087,vseobiabloke,not_found,2026-09-29T09:55:33+00:00,,,,,,,,,,,ValueError
