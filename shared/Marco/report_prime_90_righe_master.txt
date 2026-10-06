@@ -1,4 +1,4 @@
-1. @Airdrop : @AirdropGroup : presente
+1. @Airdrop : @AirdropGroup : presente su master.csv
 2. @AirdropDetective : https://t.me/emberwing_group , non segnalato su master.csv
 3. @wavesnews : @Wavescommunity : presente su master.csv
 4. @unitsnews : @unitsnetwork : non segnalato su master.csv
