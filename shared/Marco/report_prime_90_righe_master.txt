@@ -1,0 +1,20 @@
+1. @Airdrop : @AirdropGroup : presente su master.csv
+2. @AirdropDetective : https://t.me/emberwing_group , non segnalato su master.csv
+3. @wavesnews : @Wavescommunity : presente su master.csv
+4. @unitsnews : @unitsnetwork : non segnalato su master.csv
+5. @airdropinspector : il principale è @AirdropSupportGroup ma è presente anche questo che non è in master.csv : https://t.me/StarPhoneCC 
+6. @bitcoin_industry : nessun gruppo corrispondente trovato, @cnktplus è valido ma non connesso al canale, mentre quello segnalato su master.csv @OpenledgerKorea è gestito da un bot, dunque inutile
+7. @AirdropO : trovato https://t.me/cryptogamingtech con gruppo attivo, mentre quello segnalato su master @AirdropNinjaGroup è gestito da un bot dunque inutile
+8. @Whalesguide : @Whalescryptos segnalato anche su master.csv
+9. @cancore_io : @cancore_chat segnalato anche su master.csv
+10. @ScandicCoin : @ScandicCoin_Group segnalato anche su master.csv
+11. @Kucoin_News : @Kucoin_Exchange segnalato anche su master.csv
+12. @CryptoLibrarysAirdrop : il gruppo segnalato su master è attivo e va bene: @CryptoLibraryDiscussion
+13. @iotradersio : per questo, la community è presente al link: https://x.com/iotraderio non segnalato su master.csv
+14. @crypgpttoken : @crypgptcommunity segnalato sul master, va bene come gruppo
+15. @CryptoWorldNews : @zcash_community_chat gruppo attivo
+16. @Slidefunchannel : @slidefunchat come segnalato su master
+17. @bitcoinbase_news : bitcoinbase_community come segnalato su master
+18. @QuantumStellarInitiative : @QuantumStellarInitiativeChat
+19. @daomaker_ann : groupchat presente a https://t.me/daomaker , non segnalato su master.csv
+
