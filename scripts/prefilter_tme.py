@@ -27,7 +27,7 @@ HTTP 429 appears.
 Resumable: usernames already in the output file are skipped.
 
 Usage:
-    python scripts/prefilter_tme.py --in data/interim/seeds_conspiracy_candidates.csv --limit 300
+    python scripts/prefilter_tme.py --in data/interim/conspiracy/seeds_conspiracy_candidates.csv --out data/interim/conspiracy/tme_prefilter_conspiracy.csv --limit 300
     python scripts/prefilter_tme.py --users MoneroEconomicForum AirdropGroup --dump-html
 """
 
@@ -186,7 +186,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--in", dest="infile", type=Path,
-                    default=DATA_INTERIM / "seeds_conspiracy_candidates.csv")
+                    default=DATA_INTERIM / "conspiracy" / "seeds_conspiracy_candidates.csv")
     ap.add_argument("--users", nargs="*", help="check these usernames instead of --in")
     ap.add_argument("--limit", type=int, default=200, help="how many to check this run")
     ap.add_argument("--delay", type=float, default=1.5, help="seconds between requests")
