@@ -1,0 +1,31 @@
+20. @bullionbitcoinbs : non attiva
+21. @SweepGlobal : @SweepGlobal_Chat
+22. @Binance_MENA_Annoucements : @BinanceMENAEnglish
+23. @rektplebs : @rektplebssubmission
+24. @cryptoizoffice : @cryptoizindonesia
+25. @coingeckonews : @coingecko
+26. @AgentAiCashAnn : @AgentAiCash
+27. @mstblockchain : @mstblockchainchat
+28. @massa_latest_news : non più esistente
+29. @Meta_Earth_Announcement : @Meta_Earth_Community
+30. @zilliqa : @zilliqachat
+31. @cotichannel : @COTInetwork
+32. @biconomy_Ann : @BiconomyCom
+33. @GoldenFrogHouse : non esiste più
+34. @slashbizchannel : non esiste più
+35. @anrknetworkann : https://t.me/ankrnetwork non presente in master.csv
+36. @OntologyAnnouncements : @OntologyNetwork
+37. @ApeBond_News : @ape_bond
+38. @chromia_announcements : @hellochromia
+39. @officialkybernetwork : @kybernetwork
+40. @PowerXOneAnnouncement : @PowerXOne
+41. @adspoweren : @adspowerenchat
+42. @dextrobot_ai : il gruppo relativo è un bot
+43. @OpenledgerKoreaANN : @OpenledgerKorea
+44. @GiveawaysCryptobot : @detrade_global
+45. @coinlotto_xyz : @coinlotto_chat
+46. @Detrade_Exchange : @detrade_global
+47. @official_tapzi : @tapzi_official
+48. @wocnews : @WavesOnChains non presente sul master.csv
+49. @HoodinalsNews : @hoodinals
+50. @CryptoRankNews : @CryptoRankEn
