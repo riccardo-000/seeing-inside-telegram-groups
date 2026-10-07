@@ -1,6 +1,8 @@
-# Collection log — who is running what on the shared Telegram account
+# Collection log — who is running what on the shared Telegram accounts
 
-One research account, used by all three from their own machines. Before starting any
+Two research accounts since 2026-10-07: **crypto** (the original one) and **conspiracy**,
+used by all three from their own machines. Scripts pick one with `--topic`; write the
+account in the *Chats* column of every entry. Limits below apply **per account**. Before starting any
 script that talks to Telegram: `git pull`, read the last entries, add yours, commit + push.
 When done: fill in the end time and outcome, commit + push.
 
@@ -10,7 +12,7 @@ When done: fill in the end time and outcome, commit + push.
   on `FloodWaitError`: note the wait time here.
 - **Message dumps:** each person dumps only the chats assigned to them (see below). One file
   per chat in `data/raw/`, so git never conflicts.
-- **DM logger:** only one instance running at a time (DMs arrive per account, not per machine).
+- **DM logger:** only one instance per account at a time (DMs arrive per account, not per machine).
 - **FloodWait / warnings / restrictions:** log them here immediately and tell the others.
   If the account gets restricted, everyone stops.
 - Max **500 channels + supergroups** per account: track the running total below.
@@ -52,4 +54,5 @@ Newest at the bottom.
 | 2026-10-06 11:02 | 2026-10-06 12:36 | Riccardo | No Telegram API: web prefilter (`prefilter_tme.py`, t.me/s pages, no account) of conspiracy candidates, priority order (labelled first), 2 s/request. Output now in `data/interim/conspiracy/` | 4,881 labelled conspiracy candidates | Stopped by hand at 1,783/4,881 (Extremists, Covid, part of US news); resumable. 386 active (posts in 30 d), 631 inactive, 231 no preview, 498 dead/empty. No HTTP 429, 0 resolves. |
 | 2026-10-06 15:15 | 2026-10-06 16:23 | Riccardo | No Telegram API: web prefilter resumed (same command, run2), remaining labelled conspiracy candidates, 2 s/request | 3,098 labelled conspiracy candidates | Stopped by hand at 3,482/4,881 total (1,699 this run). Cumulative: 806 active (posts in 30 d), 1,259 inactive, 414 no preview, 939 dead/empty. No HTTP 429, 0 resolves. |
 | 2026-10-07 09:15 | 2026-10-07 09:47 | Riccardo | API audit (`audit_channels.py`) to find more crypto pairs, same rules as 2026-10-06 (priority from master.csv, then TGDataset web-alive, then known); **bot messages now excluded from group activity**; no joins; 6 s/request; ≤100 resolves (ledger), ≤8 new per channel; stop on FloodWait > 30 s or 2nd | crypto| Paused by hand (Riccardo editing files). 52 resolves (ledger), 0 FloodWait, 1 transient Telegram RpcCallFail (server side). 48 left today. |
-| 2026-10-07 09:18 | — | Riccardo | No Telegram API: web prefilter run3 (same command), all remaining conspiracy candidates: rest of labelled, then unlabelled; 2 s/request | 8,088 conspiracy candidates | running, 0 resolves |
+| 2026-10-07 09:18 | 2026-10-07 ~09:50 | Riccardo | No Telegram API: web prefilter run3 (same command), all remaining conspiracy candidates: rest of labelled, then unlabelled; 2 s/request | 8,088 conspiracy candidates | Stopped by hand for the per-topic folder refactor at ~774/8,088 (4,256/11,570 total in `data/interim/conspiracy/prefilter/tme_prefilter.csv`). 0 resolves. Resume with `prefilter_tme.py --topic conspiracy`. |
+| 2026-10-07 09:58 | 2026-10-07 09:58 | Riccardo | First Telethon login of the new **conspiracy** account (`login.py --topic conspiracy`), creates local `research_conspiracy.session` | conspiracy account | OK, authorized. No FloodWait. New account: start slow (few resolves/joins per day). |

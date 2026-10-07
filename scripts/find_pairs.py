@@ -9,11 +9,12 @@ A "real group" is a public supergroup (has @username) that is NOT the
 comment/discussion group of a channel, with >= MIN_MSGS messages from
 >= MIN_USERS distinct users in the last 7 days.
 
-Outputs (data/interim/pairs/): chats.csv (every evaluated chat), pairs.csv
-(channel -> real group). Prints only counts and public chat usernames.
+Outputs (data/interim/<topic>/pairs/): chats.csv (every evaluated chat),
+pairs.csv (channel -> real group). Prints only counts and public chat usernames.
+The built-in keyword list is for crypto; conspiracy needs --keywords.
 
 Usage:
-    python scripts/find_pairs.py --budget 400 --minutes 60
+    python scripts/find_pairs.py --topic crypto --budget 400 --minutes 60
 """
 
 from __future__ import annotations
@@ -30,13 +31,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from telethon import TelegramClient, errors
+from telethon import errors
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.functions.contacts import SearchRequest
 from telethon.tl.types import Channel, PeerUser
 
 from peek_channel import TME_RE, extract_links
-from src.utils.config import DATA_INTERIM, load_config, session_path
+from src.utils.config import add_topic_arg, load_config, make_client, paths
 
 KEYWORDS = [
     "crypto signals", "crypto pump", "airdrop", "bitcoin trading", "altcoin gems",
@@ -211,7 +212,7 @@ def write_outputs(out_dir: Path, chats: dict, pairs: list) -> None:
 
 
 async def main_async(args) -> None:
-    base = DATA_INTERIM / "pairs"
+    base = paths(args.topic).pairs
     out_dir = base / args.tag if args.tag else base
     out_dir.mkdir(parents=True, exist_ok=True)
     # Chats already evaluated in earlier runs are skipped.
@@ -220,10 +221,13 @@ async def main_async(args) -> None:
         if f.parent != out_dir:
             with open(f, newline="", encoding="utf-8") as fh:
                 done |= {r["username"].lower() for r in csv.DictReader(fh) if r.get("username")}
+    if not args.keywords and args.topic != "crypto":
+        raise SystemExit("The built-in keywords are for crypto: pass --keywords for this topic.")
     keywords = [k.strip() for k in args.keywords.split(",")] if args.keywords else KEYWORDS
+    print(f"topic: {args.topic} | output: {out_dir}")
     print(f"{len(done)} chats already evaluated in earlier runs; {len(keywords)} keywords")
-    config = load_config()
-    client = TelegramClient(str(session_path(config).with_suffix("")), config.api_id, config.api_hash)
+    config = load_config(args.topic)
+    client = make_client(config)
     await client.connect()
     if not await client.is_user_authorized():
         raise SystemExit("Not logged in: run scripts/login.py first.")
@@ -280,12 +284,13 @@ async def main_async(args) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    add_topic_arg(ap)
     ap.add_argument("--budget", type=int, default=400, help="max API requests")
     ap.add_argument("--minutes", type=float, default=60)
     ap.add_argument("--delay", type=float, default=7.0, help="seconds before each request")
     ap.add_argument("--search-delay", type=float, default=30.0)
     ap.add_argument("--keywords", default="", help="comma-separated keywords (default: built-in list)")
-    ap.add_argument("--tag", default="", help="output subfolder of data/interim/pairs/")
+    ap.add_argument("--tag", default="", help="output subfolder of data/interim/<topic>/pairs/")
     asyncio.run(main_async(ap.parse_args()))
 
 

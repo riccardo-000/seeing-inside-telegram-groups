@@ -54,8 +54,11 @@ pip install -r requirements.txt
 cp .env.example .env   # then fill in your own values
 ```
 
-Get `TELEGRAM_API_ID` / `TELEGRAM_API_HASH` from <https://my.telegram.org> → *API development tools*.
-Use a **dedicated research account**, not a personal one. The Telethon `*.session` file
+Get the API id / hash from <https://my.telegram.org> → *API development tools*.
+There are **two dedicated research accounts**, one per arm (crypto, conspiracy), never a
+personal one: `.env` holds both (`..._CRYPTO` / `..._CONSPIRACY`, see `.env.example`), and
+every script takes `--topic crypto|conspiracy`. First login per account:
+`python scripts/login.py --topic <topic>`. The Telethon `*.session` file
 created on first login is a credential for that account: it is gitignored and must never
 be shared or committed.
 

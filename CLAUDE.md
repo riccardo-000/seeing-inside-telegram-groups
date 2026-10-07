@@ -30,10 +30,13 @@ Stack: Python ≥ 3.11, Telethon, pandas, python-dotenv, tqdm.
 6. Do not install dependencies without asking the human.
 7. Everyone works directly on `main`: `git pull` before starting, commit + push at the end
    of the session (see `CONTRIBUTING.md`). No PR process.
-8. **One shared Telegram account, three machines.** Before running anything that talks to
-   Telegram, `git pull` and check/update `memory/collection-log.md`. Joins: one person at a
-   time. Dumps: only your assigned chats, one file per chat. DM logger: one instance at a
-   time. On FloodWait or any restriction: stop, log it, tell the others.
+8. **Two shared Telegram accounts (crypto, conspiracy), three machines.** Every script takes
+   `--topic crypto|conspiracy`, which picks both the account and the data folders
+   (`src/utils/config.py`); the two arms may run in parallel. Before running anything that
+   talks to Telegram, `git pull` and check/update `memory/collection-log.md`. Per account:
+   joins one person at a time; DM logger one instance at a time; resolve budget in
+   `data/interim/accounts/`. Dumps: only your assigned chats, one file per chat. On FloodWait
+   or any restriction: stop, log it (with the account), tell the others.
    Collectors must be resumable and deduplicate by (chat_id, message_id).
 9. **Privacy handling is deferred** to the paper-writing phase (team decision). Collectors
    may store data as collected for now. `src/utils/privacy.py` and
@@ -51,11 +54,16 @@ Stack: Python ≥ 3.11, Telethon, pandas, python-dotenv, tqdm.
 ├── src/
 │   ├── collect/         # channels.py, messages.py, dms.py (Telethon, read-only)
 │   ├── analyze/         # authors.py, tone.py (pandas)
-│   └── utils/           # config.py (.env loading), privacy.py (pseudonymization)
+│   └── utils/           # config.py (.env, accounts, data paths), budget.py, privacy.py
+├── scripts/             # CLI entry points, all take --topic crypto|conspiracy
 ├── data/
 │   ├── raw/             # collected dumps (shared via git, < 100 MB per file)
-│   ├── interim/         # intermediate files
-│   └── processed/       # analysis outputs
+│   │   ├── <topic>/messages/
+│   │   └── dms/<topic>/ # DMs received by that topic's account
+│   ├── interim/
+│   │   ├── <topic>/     # seeds/, prefilter/, pairs/, audit/, peek/, master.csv
+│   │   └── accounts/    # resolve_ledger_<account>.csv (daily budget per account)
+│   └── processed/       # analysis outputs (both topics)
 ├── docs/                # paper-outline.md, meeting-notes.md
 ├── shared/              # drop-box per person (Marco/, Simone/, Riccardo/); paper is on Overleaf
 └── memory/              # shared AI/team memory: decisions.md, collection-log.md, ...

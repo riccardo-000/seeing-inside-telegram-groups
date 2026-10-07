@@ -1,24 +1,25 @@
-"""Merge every channel/group we know into one file: data/interim/master.csv.
+"""Merge every channel/group we know into one file: data/interim/<topic>/master.csv.
 
 Offline (no Telegram). One row per channel <-> group link; channels with no
 group and groups with no known channel get a row with the other side empty.
 
-Inputs (all optional):
-    data/interim/pairs/active_channels.csv  manual review (manual_* columns)
-    data/interim/pairs/chats.csv            keyword search run (find_pairs.py)
-    data/interim/audit/channels_audit.csv   full channel audit (audit_channels.py)
-    data/interim/audit/groups.csv           group activity checks
-    data/interim/audit/channel_links.csv    channel -> linked usernames
+Inputs (all optional, under data/interim/<topic>/):
+    pairs/active_channels.csv  manual review (manual_* columns)
+    pairs/chats.csv            keyword search run (find_pairs.py)
+    audit/channels_audit.csv   full channel audit (audit_channels.py)
+    audit/groups.csv           group activity checks
+    audit/channel_links.csv    channel -> linked usernames
 
 Manual columns already present in master.csv are preserved, so the file can
 be rebuilt after new runs without losing hand-written notes.
 
 Usage:
-    python scripts/build_master.py
+    python scripts/build_master.py --topic crypto
 """
 
 from __future__ import annotations
 
+import argparse
 import csv
 import re
 import sys
@@ -26,9 +27,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.utils.config import DATA_INTERIM
+from src.utils.config import add_topic_arg, paths
 
-OUT = DATA_INTERIM / "master.csv"
 MANUAL = ["manual_group", "manual_scam_signals", "checked_by", "notes"]
 COLS = [
     "channel", "channel_title", "channel_subs", "channel_last_post", "channel_status",
@@ -56,12 +56,16 @@ def is_private(name: str) -> bool:
 
 
 def main() -> None:
-    active = read(DATA_INTERIM / "pairs" / "active_channels.csv")
-    chats = read(DATA_INTERIM / "pairs" / "chats.csv")
-    audit = read(DATA_INTERIM / "audit" / "channels_audit.csv")
-    groups_rows = read(DATA_INTERIM / "audit" / "groups.csv")
-    links = read(DATA_INTERIM / "audit" / "channel_links.csv")
-    previous = {(r["channel"].lower(), r["group"].lower()): r for r in read(OUT)}
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    add_topic_arg(ap)
+    p = paths(ap.parse_args().topic)
+    out = p.master
+    active = read(p.pairs / "active_channels.csv")
+    chats = read(p.pairs / "chats.csv")
+    audit = read(p.audit / "channels_audit.csv")
+    groups_rows = read(p.audit / "groups.csv")
+    links = read(p.audit / "channel_links.csv")
+    previous = {(r["channel"].lower(), r["group"].lower()): r for r in read(out)}
 
     display: dict[str, str] = {}  # lowercase -> original spelling
 
@@ -200,14 +204,15 @@ def main() -> None:
     rows.sort(key=lambda r: (not r["channel"], order.get(r.get("channel_status", ""), 4),
                              str(r.get("group_active")) != "True", not r["group"],
                              -int(r.get("channel_subs") or 0)))
-    with open(OUT, "w", newline="", encoding="utf-8") as fh:
+    out.parent.mkdir(parents=True, exist_ok=True)
+    with open(out, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=COLS, extrasaction="ignore")
         w.writeheader()
         w.writerows(rows)
 
     pairs = [r for r in rows if r["channel"] and r["group"] and str(r.get("group_active")) == "True"
              and r.get("group_type") in ("community", "standalone")]
-    print(f"{len(rows)} rows -> {OUT.relative_to(Path.cwd())}")
+    print(f"{len(rows)} rows -> {out}")
     print(f"channels: {len(channels)} | groups: {len(groups)} | channel-group links: {len(edges)}")
     print(f"channel + ACTIVE group (community or standalone): {len(pairs)} rows, "
           f"{len({r['channel'] for r in pairs})} channels")

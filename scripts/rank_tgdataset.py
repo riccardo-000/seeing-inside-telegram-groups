@@ -1,6 +1,6 @@
 """Rank TGDataset crypto candidates offline, so username resolves go to the best ones.
 
-No Telegram. Reads data/interim/seeds_tgdataset_crypto_a*.csv (written by
+No Telegram. Reads data/interim/crypto/seeds/seeds_tgdataset_crypto_a*.csv (written by
 seeds_tgdataset.py; can be rerun while the Zenodo streams are still going),
 skips channels already audited, and scores each candidate on what TGDataset
 (2021 - Jul 2022) says about it:
@@ -11,7 +11,7 @@ skips channels already audited, and scores each candidate on what TGDataset
 - number of distinct t.me targets (aggregator-like channels)
 - Telegram's scam flag in 2022 (kept: interesting, small bonus)
 
-Output: data/interim/tgdataset_queue.csv, best first. audit_channels.py reads
+Output: data/interim/crypto/seeds/tgdataset_queue.csv, best first. audit_channels.py reads
 TGDataset candidates in this order when the file exists.
 
 Usage:
@@ -29,11 +29,12 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.utils.config import DATA_INTERIM
+from src.utils.config import paths
 
 csv.field_size_limit(sys.maxsize)  # t.me link lists of aggregator channels are huge
 
-OUT = DATA_INTERIM / "tgdataset_queue.csv"
+P = paths("crypto")  # crypto arm only: conspiracy seeds come from seeds_conspiracy.py
+OUT = P.seeds / "tgdataset_queue.csv"
 DATASET_END = date(2022, 7, 31)
 GROUPISH = re.compile(r"chat|group|talk|community|discuss|lounge|club|official_?ru|_en$", re.I)
 COLS = ["username", "channel_id", "score", "title", "n_subscribers_2022", "last_message_date",
@@ -71,11 +72,11 @@ def score(r: dict) -> tuple[float, dict]:
 
 def main() -> None:
     audited = set()
-    audit = DATA_INTERIM / "audit" / "channels_audit.csv"
+    audit = P.audit / "channels_audit.csv"
     if audit.exists():
         audited = {r["channel"].lower() for r in read(audit)}
     rows, seen = [], set()
-    for f in sorted(DATA_INTERIM.glob("seeds_tgdataset_crypto_a*.csv")):
+    for f in sorted(P.seeds.glob("seeds_tgdataset_crypto_a*.csv")):
         for r in read(f):
             u = (r.get("username") or "").strip()
             if not u or u.lower() in seen or u.lower() in audited:
@@ -92,7 +93,7 @@ def main() -> None:
         w.writerows(rows)
     alive_2022 = sum(1 for r in rows if r["months_before_end"] <= 3)
     grp = sum(1 for r in rows if r["groupish_links"])
-    print(f"{len(rows)} candidates not yet audited -> {OUT.relative_to(Path.cwd())}")
+    print(f"{len(rows)} candidates not yet audited -> {OUT}")
     print(f"posting in the last 3 months of TGDataset: {alive_2022} | with group-like links: {grp} | "
           f"both: {sum(1 for r in rows if r['months_before_end'] <= 3 and r['groupish_links'])}")
     print("top 15:")

@@ -12,7 +12,7 @@ t.me links -- those live only in the Zenodo JSON. Liveness therefore has to be
 tested. Do that with ``scripts/prefilter_tme.py`` (public web preview, zero
 username resolves) before spending any of the daily resolve budget.
 
-Output: data/interim/conspiracy/seeds_conspiracy_candidates.csv, best-first.
+Output: data/interim/conspiracy/seeds/seeds_conspiracy_candidates.csv, best-first.
 
 Usage:
     python scripts/seeds_conspiracy.py
@@ -28,7 +28,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.utils.config import DATA_INTERIM
+from src.utils.config import paths
 
 BASE = "https://raw.githubusercontent.com/SystemsLab-Sapienza/TGDataset/main/labeled_data"
 FILES = {
@@ -36,7 +36,7 @@ FILES = {
     "topics": f"{BASE}/ch_to_topic_mapping.csv",
     "sabmyk": f"{BASE}/sabmyk_network.csv",
 }
-OUT = DATA_INTERIM / "conspiracy" / "seeds_conspiracy_candidates.csv"
+OUT = paths("conspiracy").seeds / "seeds_conspiracy_candidates.csv"
 COLS = ["username", "channel_id", "topic", "in_sabmyk", "priority", "source"]
 
 # Lower is better. The study is about scams in conspiracy/malicious communities:

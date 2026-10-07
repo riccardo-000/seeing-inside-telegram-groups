@@ -7,7 +7,7 @@ FloodWait, which must be logged in memory/collection-log.md.
 Resumable: usernames already in the output file are skipped.
 
 Usage:
-    python scripts/check_alive.py data/interim/seeds_tgdataset_crypto_a4.csv
+    python scripts/check_alive.py --topic crypto data/interim/crypto/seeds/seeds_tgdataset_crypto_a4.csv
 """
 
 from __future__ import annotations
@@ -25,7 +25,7 @@ from telethon import TelegramClient, errors
 from telethon.tl.functions.channels import GetFullChannelRequest
 from telethon.tl.types import Channel
 
-from src.utils.config import load_config, session_path
+from src.utils.config import add_topic_arg, load_config, make_client
 
 COLUMNS = [
     "channel_id", "username", "status", "checked_at", "id_matches", "is_broadcast",
@@ -69,7 +69,7 @@ async def check_one(client: TelegramClient, row: dict) -> dict:
     return out
 
 
-async def run(in_path: Path, out_path: Path, delay: float, limit: int) -> None:
+async def run(topic: str, in_path: Path, out_path: Path, delay: float, limit: int) -> None:
     with open(in_path, newline="", encoding="utf-8") as fh:
         seeds = [r for r in csv.DictReader(fh) if r.get("username")]
     done = set()
@@ -81,8 +81,8 @@ async def run(in_path: Path, out_path: Path, delay: float, limit: int) -> None:
         todo = todo[:limit]
     print(f"{len(seeds)} seeds, {len(done)} already checked, {len(todo)} to check")
 
-    config = load_config()
-    client = TelegramClient(str(session_path(config).with_suffix("")), config.api_id, config.api_hash)
+    config = load_config(topic)
+    client = make_client(config)
     await client.connect()
     if not await client.is_user_authorized():
         raise SystemExit("Not logged in: run scripts/login.py first.")
@@ -113,13 +113,14 @@ async def run(in_path: Path, out_path: Path, delay: float, limit: int) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    add_topic_arg(ap)
     ap.add_argument("seeds", type=Path, help="CSV with channel_id,username columns")
     ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--delay", type=float, default=10.0, help="seconds between channels (default 10)")
     ap.add_argument("--limit", type=int, default=0, help="check at most N channels (0 = all)")
     args = ap.parse_args()
     out = args.out or args.seeds.with_name(args.seeds.stem + "_alive.csv")
-    asyncio.run(run(args.seeds, out, args.delay, args.limit))
+    asyncio.run(run(args.topic, args.seeds, out, args.delay, args.limit))
 
 
 if __name__ == "__main__":

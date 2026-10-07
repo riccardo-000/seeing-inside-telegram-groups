@@ -40,6 +40,6 @@ The course requires the paper to state who did what, so keep commit authors and 
 - Start each session: have the assistant read `CLAUDE.md` and `memory/`.
 - End each session: decisions → `memory/decisions.md`, then commit + push.
 - Watch the first real collection run against Telegram yourself (rate limits, nothing sent).
-- The research Telegram account is shared: everyone logs in on their own machine (own
-  `.env` with the same values, own `.session`). Coordinate via `memory/collection-log.md`.
+- The two research Telegram accounts (crypto, conspiracy) are shared: everyone logs in on
+  their own machine (own `.env` with the same values, own `.session` per account). Coordinate via `memory/collection-log.md`.
   `.env` values are passed in person / password manager, never via git or group chats.

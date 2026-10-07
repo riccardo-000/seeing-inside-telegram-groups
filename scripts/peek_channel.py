@@ -3,10 +3,10 @@
 Does NOT join: reads a public channel's history and, if it has a linked
 discussion group, the comment threads of its most-commented posts.
 Never sends, reacts or clicks anything. Prints only aggregate numbers;
-full data goes to data/interim/peek/<username>_{posts,comments}.jsonl.gz.
+full data goes to data/interim/<topic>/peek/<username>_{posts,comments}.jsonl.gz.
 
 Usage:
-    python scripts/peek_channel.py MoneroEconomicForum MoneroOrangePills --posts 200
+    python scripts/peek_channel.py --topic crypto MoneroEconomicForum MoneroOrangePills --posts 200
 """
 
 from __future__ import annotations
@@ -22,7 +22,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from telethon import TelegramClient, errors
+from telethon import errors
 from telethon.tl.types import (
     MessageEntityTextUrl,
     MessageEntityUrl,
@@ -30,7 +30,7 @@ from telethon.tl.types import (
     PeerUser,
 )
 
-from src.utils.config import DATA_INTERIM, load_config, session_path
+from src.utils.config import add_topic_arg, load_config, make_client, paths
 
 TME_RE = re.compile(r"(?:https?://)?(?:t\.me|telegram\.me)/(\+?[\w\-]+(?:/[\w\-]+)?)", re.I)
 
@@ -136,10 +136,11 @@ async def peek(client, username: str, n_posts: int, n_threads: int, per_thread: 
 
 
 async def main_async(args) -> None:
-    out_dir = DATA_INTERIM / "peek"
+    out_dir = paths(args.topic).peek
     out_dir.mkdir(parents=True, exist_ok=True)
-    config = load_config()
-    client = TelegramClient(str(session_path(config).with_suffix("")), config.api_id, config.api_hash)
+    config = load_config(args.topic)
+    print(f"topic: {args.topic} | output: {out_dir}")
+    client = make_client(config)
     await client.connect()
     if not await client.is_user_authorized():
         raise SystemExit("Not logged in: run scripts/login.py first.")
@@ -157,6 +158,7 @@ async def main_async(args) -> None:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    add_topic_arg(ap)
     ap.add_argument("usernames", nargs="+")
     ap.add_argument("--posts", type=int, default=200)
     ap.add_argument("--threads", type=int, default=10, help="most-commented posts whose comments are read")

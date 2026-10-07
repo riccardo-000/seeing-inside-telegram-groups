@@ -138,3 +138,26 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   on "signals" channels having no public group.
 - **Impact:** seed selection (Methodology), `audit_channels.py`, `build_master.py`,
   `master.csv`. Thresholds to be defended in the paper.
+
+## 2026-10-07 — Second Telegram account for the conspiracy arm; data split by topic
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** A second dedicated research account collects the conspiracy arm; the first
+  account keeps the crypto arm. One `.env` holds both (`TELEGRAM_*_CRYPTO`,
+  `TELEGRAM_*_CONSPIRACY`; unsuffixed variables still read as crypto). Every script takes a
+  required `--topic crypto|conspiracy` that selects both the account and the data folders
+  (`src/utils/config.py: paths()`): `data/interim/<topic>/{seeds,prefilter,pairs,audit,peek}/`,
+  `data/interim/<topic>/master.csv`, `data/raw/<topic>/messages/`, `data/raw/dms/<topic>/`.
+  The daily resolve budget (100/day) is now per account:
+  `data/interim/accounts/resolve_ledger_<account>.csv` (old ledger = crypto). Existing files
+  were moved with `git mv` (all audit/pairs/master rows were crypto). For conspiracy,
+  `audit_channels.py` queues only seed channels the web prefilter saw alive and posting.
+  `dm_logger.py` runs once per account and matches senders against the dumps of both topics.
+- **Why:** The resolve limit and FloodWaits are per account, so one shared account made the
+  two arms compete for 100 resolves/day; two accounts double throughput and let the arms run
+  in parallel without mixing files. Explicit `--topic` avoids writing one arm's data into the
+  other's folders.
+- **Impact:** all `scripts/`, `src/utils/config.py`, `src/utils/budget.py`, `.env.example`,
+  CLAUDE.md rule 8, collection-log (account per entry). Paper Methodology: two research
+  accounts; DM counts reported per account (a newer account may receive fewer/more DMs);
+  supersedes the single-account part of "One shared Telegram research account on three
+  machines" (2026-09-22).

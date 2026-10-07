@@ -29,7 +29,7 @@ import ijson
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.utils.config import DATA_INTERIM
+from src.utils.config import TOPICS, paths
 
 TOPICS_URL = (
     "https://raw.githubusercontent.com/SystemsLab-Sapienza/TGDataset/main/"
@@ -121,13 +121,15 @@ def to_row(c: dict, topic: str, archive: int, member: str) -> dict:
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--topic", default="Crypto")
+    ap.add_argument("--topic", default="Crypto", help="TGDataset topic label (not the study arm)")
     ap.add_argument("--archive", type=int, default=4, choices=[1, 2, 3, 4])
     ap.add_argument("--limit", type=int, default=0, help="stop after N candidates (0 = whole archive)")
     ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()
 
-    out = args.out or DATA_INTERIM / f"seeds_tgdataset_{args.topic.lower()}_a{args.archive}.csv"
+    if not args.out and args.topic.lower() not in TOPICS:
+        raise SystemExit(f"--out is required for the TGDataset label {args.topic!r}")
+    out = args.out or paths(args.topic.lower()).seeds / f"seeds_tgdataset_{args.topic.lower()}_a{args.archive}.csv"
     wanted = load_topic_ids(args.topic)
     print(f"{len(wanted)} channels labelled {args.topic!r}")
 

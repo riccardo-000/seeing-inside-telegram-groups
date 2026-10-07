@@ -24,11 +24,13 @@ needs the API; the preview is also capped at the last ~20 posts. Telegram may
 rate-limit the web endpoint by IP -- keep --delay at 1.5 s or more, and stop if
 HTTP 429 appears.
 
-Resumable: usernames already in the output file are skipped.
+Resumable: usernames already in the output file are skipped. --topic only
+picks the folders (no account is used): input defaults to the topic's seed
+list, output to data/interim/<topic>/prefilter/tme_prefilter.csv.
 
 Usage:
-    python scripts/prefilter_tme.py --in data/interim/conspiracy/seeds_conspiracy_candidates.csv --out data/interim/conspiracy/tme_prefilter_conspiracy.csv --limit 300
-    python scripts/prefilter_tme.py --users MoneroEconomicForum AirdropGroup --dump-html
+    python scripts/prefilter_tme.py --topic conspiracy --limit 300
+    python scripts/prefilter_tme.py --topic crypto --users MoneroEconomicForum AirdropGroup --dump-html
 """
 
 from __future__ import annotations
@@ -47,9 +49,9 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
-from src.utils.config import DATA_INTERIM
+from src.utils.config import add_topic_arg, paths
 
-OUT = DATA_INTERIM / "tme_prefilter.csv"
+SEEDS = {"crypto": "tgdataset_queue.csv", "conspiracy": "seeds_conspiracy_candidates.csv"}
 UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
       "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 COLS = ["username", "status", "kind", "title", "subscribers", "members", "last_post",
@@ -185,16 +187,21 @@ def load_done(path: Path) -> set[str]:
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--in", dest="infile", type=Path,
-                    default=DATA_INTERIM / "conspiracy" / "seeds_conspiracy_candidates.csv")
+    add_topic_arg(ap)
+    ap.add_argument("--in", dest="infile", type=Path, default=None,
+                    help="CSV with a username column (default: the topic's seed list)")
     ap.add_argument("--users", nargs="*", help="check these usernames instead of --in")
     ap.add_argument("--limit", type=int, default=200, help="how many to check this run")
     ap.add_argument("--delay", type=float, default=1.5, help="seconds between requests")
     ap.add_argument("--timeout", type=float, default=20.0)
-    ap.add_argument("--out", type=Path, default=OUT)
+    ap.add_argument("--out", type=Path, default=None)
     ap.add_argument("--dump-html", action="store_true",
                     help="save each fetched page as tme_<user>.html to check the parser")
     args = ap.parse_args()
+    p = paths(args.topic)
+    args.infile = args.infile or p.seeds / SEEDS[args.topic]
+    args.out = args.out or p.prefilter / "tme_prefilter.csv"
+    print(f"topic: {args.topic} | output: {args.out}")
 
     done = load_done(args.out)
     if args.users:
