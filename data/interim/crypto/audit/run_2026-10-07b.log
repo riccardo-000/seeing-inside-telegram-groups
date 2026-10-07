@@ -1,0 +1,110 @@
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/crypto/audit
+account: crypto | session: research.session
+priority queue from master.csv: 21
+[39 req, 8 resolves] @MEXC_ENchannel (master:project_channel): public_group_active -> MEXC_ENofficial MEXC_ENofficial gameterminalchat tinacommunity DustswapOnBase mexcenglish mexc0808stockseason mexcproduct
+[43 req, 8 resolves] @solidusaitech (master:project_channel): public_group_active -> solidusaichat
+[46 req, 8 resolves] @EvolveProportal (master:project_channel): public_group_active -> EvolveTKN
+[51 req, 8 resolves] @RetiumChain (master:project_channel): public_group_active -> RetiumBlockchain retiumblockchain
+[62 req, 9 resolves] @qiblockchainannouncement (master:project_channel): public_group_active -> HovRonQiblockchain HovRonQiblockchain weexglobal_group
+[67 req, 9 resolves] @trust_announcements (master:project_channel): public_group_active -> trustwallet trustwallet
+[71 req, 9 resolves] @gatearticlelist_English (master:project_channel): inactive
+[74 req, 9 resolves] @mtxto (master:project_channel): inactive
+== 10 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=13 tgd=119 known=65 linked=21 rec=20
+[76 req, 10 resolves] group @giverep (master:manual_check_of_@Airdro): ACTIVE
+== 11 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=12 tgd=119 known=65 linked=21 rec=20
+[77 req, 10 resolves] group @CertiK (master:manual_check_of_@GTProt): ACTIVE
+== 11 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=11 tgd=119 known=65 linked=21 rec=20
+[79 req, 11 resolves] group @BitgetWallet (master:manual_check_of_@iotrad): ACTIVE
+== 11 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=10 tgd=119 known=65 linked=21 rec=20
+[81 req, 12 resolves] group @TokenPocket_TP (master:manual_check_of_@credit): ACTIVE
+== 11 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=9 tgd=119 known=65 linked=21 rec=20
+[83 req, 13 resolves] group @JupiterExchange (master:manual_check_of_@credit): ACTIVE
+== 11 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=8 tgd=119 known=65 linked=21 rec=20
+[87 req, 14 resolves] group @tokenai_global (master:manual_check_of_@bsc_da): ACTIVE
+== 12 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=7 tgd=119 known=65 linked=21 rec=20
+[89 req, 15 resolves] group @MktsInsider (master:manual_check_of_@Meta_E): ACTIVE
+== 12 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=6 tgd=119 known=65 linked=21 rec=20
+[91 req, 16 resolves] group @AiDiscussion (master:manual_check_of_@Crypto): ACTIVE
+== 12 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=5 tgd=119 known=65 linked=21 rec=20
+[93 req, 17 resolves] group @StockMarkets (master:manual_check_of_@Crypto): ACTIVE
+== 13 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=4 tgd=119 known=65 linked=21 rec=20
+[95 req, 18 resolves] group @ClimateChange (master:manual_check_of_@Crypto): ACTIVE
+== 13 min | audited 8 | {'public_group_active': 6, 'inactive': 2} | queue prio=3 tgd=119 known=65 linked=21 rec=20
+Traceback (most recent call last):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/audit_channels.py", line 619, in <module>
+    main()
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/audit_channels.py", line 615, in main
+    asyncio.run(main_async(ap.parse_args()))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/audit_channels.py", line 581, in main_async
+    await aud.audit(item)
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/audit_channels.py", line 385, in audit
+    full = await self.api.run(lambda: self.api.client(GetFullChannelRequest(inp)))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/audit_channels.py", line 102, in run
+    return await make_coro()
+           ^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/client/users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/client/users.py", line 44, in _call
+    await r.resolve(self, utils)
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/tl/functions/channels.py", line 808, in resolve
+    self.channel = utils.get_input_channel(await client.get_input_entity(self.channel))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/utils.py", line 270, in get_input_channel
+    _raise_cast_fail(entity, 'InputChannel')
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/utils.py", line 134, in _raise_cast_fail
+    raise TypeError('Cannot cast {} to any kind of {}.'.format(
+TypeError: Cannot cast InputPeerChat to any kind of InputChannel.
+--- restarted after fix e0dec3c ---
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/crypto/audit
+account: crypto | session: research.session
+priority queue from master.csv: 13
+[2 req, 1 resolves] group @giverep (master:manual_check_of_@Airdro): ACTIVE
+== 0 min | audited 0 | {} | queue prio=12 tgd=119 known=65 linked=0 rec=0
+[3 req, 1 resolves] group @CertiK (master:manual_check_of_@GTProt): ACTIVE
+== 0 min | audited 0 | {} | queue prio=11 tgd=119 known=65 linked=0 rec=0
+[5 req, 2 resolves] group @BitgetWallet (master:manual_check_of_@iotrad): ACTIVE
+== 1 min | audited 0 | {} | queue prio=10 tgd=119 known=65 linked=0 rec=0
+[7 req, 3 resolves] group @TokenPocket_TP (master:manual_check_of_@credit): ACTIVE
+== 1 min | audited 0 | {} | queue prio=9 tgd=119 known=65 linked=0 rec=0
+[9 req, 4 resolves] group @JupiterExchange (master:manual_check_of_@credit): ACTIVE
+== 1 min | audited 0 | {} | queue prio=8 tgd=119 known=65 linked=0 rec=0
+[10 req, 4 resolves] group @tokenai_global (master:manual_check_of_@bsc_da): ACTIVE
+== 1 min | audited 0 | {} | queue prio=7 tgd=119 known=65 linked=0 rec=0
+[12 req, 5 resolves] group @MktsInsider (master:manual_check_of_@Meta_E): ACTIVE
+== 1 min | audited 0 | {} | queue prio=6 tgd=119 known=65 linked=0 rec=0
+[14 req, 6 resolves] group @AiDiscussion (master:manual_check_of_@Crypto): ACTIVE
+== 2 min | audited 0 | {} | queue prio=5 tgd=119 known=65 linked=0 rec=0
+[16 req, 7 resolves] group @StockMarkets (master:manual_check_of_@Crypto): ACTIVE
+== 2 min | audited 0 | {} | queue prio=4 tgd=119 known=65 linked=0 rec=0
+[18 req, 8 resolves] group @ClimateChange (master:manual_check_of_@Crypto): ACTIVE
+== 2 min | audited 0 | {} | queue prio=3 tgd=119 known=65 linked=0 rec=0
+[18 req, 8 resolves] @FitnessHealth (master:manual_check_of_@C): not_a_channel
+[20 req, 9 resolves] group @GrailMemes (master:manual_check_of_@Crypto): ACTIVE
+[22 req, 10 resolves] group @InTheNews (master:manual_check_of_@Crypto): ACTIVE
+[50 req, 18 resolves] @CryptoAlerts (tgdataset): public_group_inactive
+[55 req, 19 resolves] @CardanoAnnouncements (tgdataset): no_group
+[60 req, 20 resolves] @BitcoinInventors (tgdataset): inactive
+[65 req, 20 resolves] @Bitmex_Coach (tgdataset): no_group
+[70 req, 21 resolves] @BestTokenNews (tgdataset): inactive
+[74 req, 22 resolves] @DAOautonomous (tgdataset): inactive
+[78 req, 23 resolves] @VvanV (tgdataset): inactive
+[98 req, 26 resolves] @changelly (tgdataset): public_group_active -> safepaltg hovronqiblockchain
+[103 req, 27 resolves] @GoldTradeNews (tgdataset): inactive
+== 13 min | audited 10 | {'not_a_channel': 1, 'public_group_inactive': 1, 'no_group': 2, 'inactive': 5, 'public_group_active': 1} | queue prio=0 tgd=110 known=65 linked=26 rec=15
+[107 req, 28 resolves] @Tricky_crypto (tgdataset): inactive
+[111 req, 29 resolves] @MetaverseAccount (tgdataset): inactive
+[117 req, 30 resolves] @wazirx (tgdataset): public_group_active -> wazirx_discuss
+
+DONE (daily resolve budget (100) used up): 118 requests, 30 resolves, 64 web checks, 0 short FloodWaits, 15 min
+verdicts: {'not_a_channel': 1, 'public_group_inactive': 1, 'no_group': 2, 'inactive': 7, 'public_group_active': 2}

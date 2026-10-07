@@ -1476,3 +1476,150 @@ CryptoAlerts,ClimateChange,post_mention,group,Climate Change,inactive
 CryptoAlerts,FitnessHealth,post_mention,group,Fitness Health,inactive
 CryptoAlerts,GrailMemes,post_mention,group,Grail Memes - GM,inactive
 CryptoAlerts,InTheNews,post_mention,group,In The News,inactive
+MEXC_ENchannel,MEXC_ENofficial,linked_chat,group,MEXC Listing,community (free chat)
+MEXC_ENchannel,MEXC_ENofficial,description,group,MEXC Listing,active
+MEXC_ENchannel,gameterminalchat,post_hidden,group,Game Terminal,active
+MEXC_ENchannel,daokraft_community,post_hidden,channel,DAOKraft Official Community,
+MEXC_ENchannel,tinacommunity,post_hidden,group,TINA Official Community,active
+MEXC_ENchannel,CrocpadRBH,post_mention,not_found,,
+MEXC_ENchannel,EventraMarket,post_mention,channel,Eventra,
+MEXC_ENchannel,DustswapOnBase,post_mention,group,Dustswap Official Support,active
+MEXC_ENchannel,mexcenglish,post_hidden,group,MEXC English (Official),active
+MEXC_ENchannel,wangchaionbnb,post_mention,user_or_bot,,
+MEXC_ENchannel,wefi_official,post_mention,group,WeFi Official Global,inactive
+MEXC_ENchannel,Cortex_Network_,post_mention,not_found,,
+MEXC_ENchannel,Hoookedpad,post_mention,group,Hooked,inactive
+MEXC_ENchannel,saplingdotcash,post_mention,not_found,,
+MEXC_ENchannel,priors_trade,post_mention,not_found,,
+MEXC_ENchannel,gameterminal_,post_mention,not_found,,
+MEXC_ENchannel,dphnAI,post_mention,channel,Dolphin - $POD Gateway,
+MEXC_ENchannel,Monad_Moe,post_mention,not_found,,
+MEXC_ENchannel,theinterfold,post_mention,user_or_bot,,
+MEXC_ENchannel,doppler_fi,post_mention,user_or_bot,,
+MEXC_ENchannel,Autheo_Network,post_mention,channel,Autheo,
+MEXC_ENchannel,ConcreteXYZ,post_mention,channel,concretexyz,
+MEXC_ENchannel,Paimon_Finance,post_mention,not_found,,
+MEXC_ENchannel,Stockereum,post_mention,channel,Stockereum,
+MEXC_ENchannel,zipcoincash,post_mention,group,zipcoin,inactive
+MEXC_ENchannel,c8ntinuum,post_mention,user_or_bot,,
+MEXC_ENchannel,NullMaskio,post_mention,group,nullmaskio,inactive
+MEXC_ENchannel,GPonchain,post_mention,not_found,,
+MEXC_ENchannel,daokraft_ai,post_mention,channel,DAOKraft,
+MEXC_ENchannel,schiffygld,post_mention,not_found,,
+MEXC_ENchannel,Mintellect_AI,post_mention,channel,mintellect_ai,
+MEXC_ENchannel,inuapple,post_mention,group,iNu,inactive
+MEXC_ENchannel,MarsCat_Global,post_mention,channel,marscat_global,
+MEXC_ENchannel,tread_fi,post_mention,channel,Y,
+MEXC_ENchannel,Magne_Ai,post_mention,channel,Ob,
+MEXC_ENchannel,TINA_GeoDePIN,post_mention,not_found,,
+MEXC_ENchannel,usdciscool,post_mention,group,$COOL,not resolved (per-channel cap)
+MEXC_ENchannel,UsePaid,post_mention,group,PAID | CHAT,not resolved (per-channel cap)
+MEXC_ENchannel,TollyLabs,post_mention,user_or_bot,,
+MEXC_ENchannel,Arguspad,post_mention,channel,ArgusPad Deploys,
+MEXC_ENchannel,mexc0808stockseason,post_hidden,group,MEXC Stocks,active
+MEXC_ENchannel,crocspadrbh,post_hidden,channel,CrocpadRBH,
+MEXC_ENchannel,wefi_announcements,post_hidden,channel,WeFi Announcements,
+MEXC_ENchannel,cortexnetwork_global,post_hidden,group,Cortex Network,not resolved (per-channel cap)
+MEXC_ENchannel,mexcproduct,post_hidden,group,MEXC Product Fan Club,active
+MEXC_ENchannel,saplingcash,post_hidden,channel,Sapling,
+MEXC_ENchannel,enclave_e3,post_hidden,group,Interfold General,not resolved (per-channel cap)
+MEXC_ENchannel,addemoji,post_hidden,channel,Add Emoji,
+MEXC_ENchannel,addstickers,post_hidden,not_found,,
+MEXC_ENchannel,doppler_finance,post_hidden,channel,Doppler Finance Announcements,
+MEXC_ENchannel,autheo_official,post_hidden,group,Autheo,not resolved (per-channel cap)
+MEXC_ENchannel,c8ntinuumann,post_hidden,channel,c8ntinuum,
+MEXC_ENchannel,eventramarketofficial,post_hidden,group,EventraMarket Official,not resolved (per-channel cap)
+MEXC_ENchannel,nullmask_io,post_hidden,channel,NullMask Announcements,
+MEXC_ENchannel,mintellect_official,post_hidden,group,Mintellect,not resolved (per-channel cap)
+MEXC_ENchannel,magneai,post_hidden,group,MagneAI,not resolved (per-channel cap)
+MEXC_ENchannel,+eb6_3wclni0wmdnl,invite,private_invite,,not opened
+MEXC_ENchannel,+flncboerf7wwmzy1,invite,private_invite,,not opened
+MEXC_ENchannel,+maa187ktlf8xyje1,invite,private_invite,,not opened
+solidusaitech,solidusaichat,linked_chat,group,ACN Chat Group,community (free chat)
+EvolveProportal,EvolveTKN,linked_chat,group,Evolve Pro Community,community (free chat)
+EvolveProportal,Safeguard,post_mention,user_or_bot,,
+RetiumChain,RetiumBlockchain,linked_chat,group,Retium Blockchain,community (free chat)
+RetiumChain,ZachHumphries,post_mention,not_found,,
+RetiumChain,retiumblockchain,post,group,Retium Blockchain,active
+RetiumChain,+mkkhn-jqw58woda1,invite,private_invite,,not opened
+qiblockchainannouncement,HovRonQiblockchain,linked_chat,group,QIE Blockchain Ecosystem🔗 🌐,community (free chat)
+qiblockchainannouncement,HovRonQiblockchain,description,group,QIE Blockchain Ecosystem🔗 🌐,active
+qiblockchainannouncement,weexglobal_group,post,group,WEEX English Official,active
+qiblockchainannouncement,qieblockchain,post_mention,channel,qieblockchain,
+qiblockchainannouncement,alexiaforge,post_mention,user_or_bot,,
+qiblockchainannouncement,riad_qie,post_hidden,user_or_bot,,
+qiblockchainannouncement,miketucsonsb1p,post_mention,not_found,,
+qiblockchainannouncement,monserratemenar,post_mention,not_found,,
+qiblockchainannouncement,romekhan09,post_mention,not_found,,
+qiblockchainannouncement,haxellia17,post_mention,not_found,,
+qiblockchainannouncement,review2013,post_mention,user_or_bot,,
+qiblockchainannouncement,elli8764,post_mention,not_found,,
+qiblockchainannouncement,paterz1vb,post_mention,not_found,,
+qiblockchainannouncement,hadiabuttlelv,post_mention,not_found,,
+qiblockchainannouncement,louiseparsi,post_mention,not_found,,
+qiblockchainannouncement,alice38ti,post_mention,not_found,,
+qiblockchainannouncement,arnoldadam0,post_mention,not_found,,
+qiblockchainannouncement,Satoshi,post_mention,user_or_bot,,
+qiblockchainannouncement,YourBusiness,post_mention,not_found,,
+qiblockchainannouncement,yourname,post_mention,user_or_bot,,
+qiblockchainannouncement,cryptowolves02,post_hidden,channel,Wolf Shills,
+qiblockchainannouncement,+cxvsoobslejlyjqy,invite,private_invite,,not opened
+qiblockchainannouncement,+vgi04licyzs3zwq9,invite,private_invite,,not opened
+trust_announcements,trustwallet,linked_chat,group,Trust Wallet - English,community (free chat)
+trust_announcements,trustwallet,description,group,Trust Wallet - English,active
+CryptoAlerts,AiDiscussion,post_mention,group,Ai Discussion,inactive
+CryptoAlerts,CovidChat,post_mention,not_found,,
+CryptoAlerts,CryptoGroups,post_mention,channel,Crypto Groups,
+CryptoAlerts,CommunityRules,post_mention,channel,Community Rules,
+CryptoAlerts,BitcoinCharts,post_mention,channel,Bitcoin Charts BTC,
+CryptoAlerts,OffTopic,post_mention,channel,Off Topic,
+CryptoAlerts,Charts,post_mention,channel,@Charts,
+CryptoAlerts,StockMarkets,post_mention,group,Stock Markets,inactive
+CryptoAlerts,disclosetv,post_mention,channel,Disclose.tv,
+CryptoAlerts,WatcherGuru,post_mention,channel,Watcher Guru,
+CryptoAlerts,EverythingBubble,post_mention,group,Everything Bubble,inactive
+CryptoAlerts,News_Crypto,post_mention,channel,Crypto News,
+CryptoAlerts,ClimateChange,post_mention,group,Climate Change,inactive
+CryptoAlerts,FitnessHealth,post_mention,other,,
+CryptoAlerts,GrailMemes,post_mention,group,Grail Memes - GM,inactive
+CryptoAlerts,InTheNews,post_mention,group,In The News,inactive
+CryptoAlerts,LifestyleFlex,post_mention,group,Lifestyle Flex,inactive
+CryptoAlerts,Longevity,post_mention,group,Longevity,inactive
+CryptoAlerts,MigrantCrisis,post_mention,not_found,,
+CryptoAlerts,Trollbox,post_mention,group,Trollbox,inactive
+CryptoAlerts,WorldReligions,post_mention,group,World Religions,not resolved (per-channel cap)
+CryptoAlerts,WorldWars,post_mention,group,War Chat,not resolved (per-channel cap)
+CryptoAlerts,Democrats,post_mention,group,Democrats DNC Chat,not resolved (per-channel cap)
+CryptoAlerts,Republicans,post_mention,group,Republicans GOP Chat,not resolved (per-channel cap)
+CryptoAlerts,USElection,post_mention,group,US Politics Chat,not resolved (per-channel cap)
+CryptoAlerts,USPolitics,post_mention,group,US Politics Chat,not resolved (per-channel cap)
+CryptoAlerts,WorldPolitics,post_mention,group,World Politics,not resolved (per-channel cap)
+CryptoAlerts,Resolutions,post_mention,group,Resolutions,not resolved (per-channel cap)
+CryptoAlerts,CryptoFAQs,post_mention,channel,Crypto FAQs,
+CryptoAlerts,TradingTips,post_mention,channel,Trading Tips,
+CryptoAlerts,HardwareWallets,post_mention,channel,Hardware Wallets,
+CryptoAlerts,CryptoCharts,post_mention,channel,Crypto Charts,
+CardanoAnnouncements,CardanoSummit,post_mention,not_found,,
+Bitmex_Coach,BitmexCoachAdmin,description,user_or_bot,,
+Bitmex_Coach,Coins,post_mention,channel,Coins ( ₿ ),
+Bitmex_Coach,coach,post,channel,Coach,
+Bitmex_Coach,binance,post_mention,not_found,,
+changelly,id2441387271,linked_chat,group,Chatgelly,comments only
+changelly,safepaltg,post_hidden,group,SafePal_Official,active
+changelly,www_Bitcoin_com,post_mention,channel,Bitcoin.com News,
+changelly,scopulynews,post_hidden,channel,Scopuly - Stellar DeFi,
+changelly,scopuly,post_mention,group,Scopuly - Stellar DeFi Platform,inactive
+changelly,tether,post_hidden,channel,Tether,
+changelly,myapp,post_hidden,user_or_bot,,
+changelly,mywalleteng,post_hidden,channel,My Wallet · News,
+changelly,tonkeeper_ru,post_hidden,channel,Новости Keeper,
+changelly,mytonwalleten,post_hidden,channel,My Wallet (ex. MyTonWallet),
+changelly,secuxcoldwallet,post_hidden,channel,SecuX Announcements,
+changelly,tonkeeper_news,post_hidden,channel,Keeper News,
+changelly,rewardy_korea_announcements,post_hidden,channel,Rewardy_Korea_Announcements,
+changelly,smpl_app,post_hidden,channel,Simple Wallet,
+changelly,hovronqiblockchain,post_hidden,group,QIE Blockchain Ecosystem🔗 🌐,active
+changelly,tangem,post_hidden,channel,Tangem,
+changelly,crypticannouncements,post_hidden,channel,Cryptic - Announcements,
+changelly,+gd8jtzwmymzmnwri,invite,private_invite,,not opened
+wazirx,wazirx_discuss,linked_chat,group,WazirX Discuss,community (free chat)
