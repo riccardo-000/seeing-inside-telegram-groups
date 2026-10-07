@@ -381,6 +381,9 @@ class Auditor:
             return self.save(row | {"status": "not_found", "verdict": "dead"})
         if isinstance(inp, InputPeerUser):
             return self.save(row | {"status": "user_or_bot", "verdict": "dead"})
+        if not isinstance(inp, InputPeerChannel):  # e.g. a legacy basic group (InputPeerChat)
+            return self.save(row | {"status": "not_a_channel", "verdict": "not_a_channel",
+                                    "error": type(inp).__name__})
 
         full = await self.api.run(lambda: self.api.client(GetFullChannelRequest(inp)))
         ch = next((c for c in full.chats if c.id == full.full_chat.id), None)
