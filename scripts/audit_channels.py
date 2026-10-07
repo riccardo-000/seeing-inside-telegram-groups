@@ -228,17 +228,24 @@ class Auditor:
             self.tgd_rows_seen[f.name] = len(rows)
 
     def load_conspiracy_seeds(self) -> None:
-        """Conspiracy candidates in seeds_conspiracy.py order (best topic first), but only
-        those the web prefilter already saw alive and posting: no resolve on unknown ones."""
+        """Conspiracy candidates the web prefilter already saw alive and posting (no resolve
+        on unknown ones), most promising first: topic priority (seeds_conspiracy.py), then
+        group-like t.me links in the description, any t.me link, posts in the last 30 days."""
         if "conspiracy" in self.tgd_rows_seen:
             return
         self.tgd_rows_seen["conspiracy"] = 1
         self.web_says_skip("")  # loads the prefilter results
         with open(self.p.seeds / "seeds_conspiracy_candidates.csv", newline="", encoding="utf-8-sig") as fh:
-            for r in csv.DictReader(fh):
-                u = r["username"]
-                if u.lower() in self._prefilter and not self.web_says_skip(u):
-                    self.add(self.q_tgd, u, "tgdataset", channel_id=r["channel_id"])
+            seeds = [r for r in csv.DictReader(fh)
+                     if r["username"].lower() in self._prefilter and not self.web_says_skip(r["username"])]
+
+        def rank(r):
+            w = self._prefilter[r["username"].lower()]
+            links = (w.get("tme_links") or "").split()
+            return (int(r["priority"]), not any(GROUP_HINT.search(l) for l in links), not links,
+                    -int(w.get("posts_30d") or 0))
+        for r in sorted(seeds, key=rank):
+            self.add(self.q_tgd, r["username"], "tgdataset", channel_id=r["channel_id"])
 
     def load_master(self) -> None:
         """Priority queue from data/interim/<topic>/master.csv (scripts/build_master.py):

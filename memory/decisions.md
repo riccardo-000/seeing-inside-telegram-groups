@@ -161,3 +161,16 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   accounts; DM counts reported per account (a newer account may receive fewer/more DMs);
   supersedes the single-account part of "One shared Telegram research account on three
   machines" (2026-09-22).
+
+## 2026-10-07 — Order of the conspiracy audit queue
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** `audit_channels.py --topic conspiracy` audits only seeds the web prefilter saw
+  alive and posting, ordered by: topic priority from `seeds_conspiracy.py` (Extremists,
+  Covid, US/World news, Carding, Crypto, Religion, unlabelled); then channels whose
+  description has group-like t.me links (chat/group/community...); then any t.me link; then
+  posts in the last 30 days. First runs on the new account are capped low (≤30 resolves/run,
+  ≤4 new resolves per channel, 8 s/request).
+- **Why:** Resolves are the scarce resource (100/day/account). Channels that advertise a
+  group in their description are the most likely to give a channel–group pair; a new account
+  is more likely to be limited, so it starts slow.
+- **Impact:** `scripts/audit_channels.py`, seed selection for the conspiracy arm (Methodology).
