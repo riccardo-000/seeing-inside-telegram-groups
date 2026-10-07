@@ -63,7 +63,7 @@ AUDIT_COLS = [
 LINK_COLS = ["channel", "target", "found_in", "target_type", "target_title", "note"]
 GROUP_COLS = [
     "group", "title", "members", "is_linked_to", "msgs_7d", "users_7d", "free_msgs_7d",
-    "free_users_7d", "last_msg", "scam", "fake", "active",
+    "free_users_7d", "last_msg", "scam", "fake", "active", "bot_msgs_7d", "checked_at",
 ]
 
 
@@ -272,7 +272,12 @@ class Auditor:
     async def activity(self, entity) -> dict:
         msgs = await self.api.run(lambda: self.api.client.get_messages(entity, limit=100))
         since = datetime.now(timezone.utc) - timedelta(days=7)
-        recent = [m for m in msgs if m.date >= since and m.action is None]
+        # bots (welcome/captcha/announcement bots) are not community activity:
+        # the sender objects come with the history response, no extra request
+        bots = {m.from_id.user_id for m in msgs
+                if isinstance(m.from_id, PeerUser) and getattr(m.sender, "bot", False)}
+        recent = [m for m in msgs if m.date >= since and m.action is None
+                  and not (isinstance(m.from_id, PeerUser) and m.from_id.user_id in bots)]
         users = {m.from_id.user_id for m in recent if isinstance(m.from_id, PeerUser)}
         free = [m for m in recent if m.reply_to is None and isinstance(m.from_id, PeerUser)]
         links = set()
@@ -283,6 +288,8 @@ class Auditor:
             "_links": sorted(links),
             "msgs_7d": len(recent), "users_7d": len(users), "free_msgs_7d": len(free),
             "free_users_7d": len({m.from_id.user_id for m in free}),
+            "bot_msgs_7d": sum(1 for m in msgs if m.date >= since and isinstance(m.from_id, PeerUser)
+                               and m.from_id.user_id in bots),
             "last_msg": msgs[0].date.date().isoformat() if msgs else "",
         }
 
@@ -295,7 +302,8 @@ class Auditor:
         if full.full_chat.linked_chat_id:
             p = next((c for c in full.chats if c.id == full.full_chat.linked_chat_id), None)
             parent = getattr(p, "username", None) or str(full.full_chat.linked_chat_id)
-        row = {"group": ent.username or f"id{ent.id}", "title": ent.title,
+        row = {"checked_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+               "group": ent.username or f"id{ent.id}", "title": ent.title,
                "members": full.full_chat.participants_count, "is_linked_to": linked_to or parent,
                "scam": ent.scam, "fake": ent.fake}
         try:
