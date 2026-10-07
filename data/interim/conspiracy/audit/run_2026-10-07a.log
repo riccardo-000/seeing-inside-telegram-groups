@@ -1,0 +1,39 @@
+topic: conspiracy | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/conspiracy/audit
+account: conspiracy | session: research_conspiracy.session
+priority queue from master.csv: 0
+[16 req, 2 resolves] @ELPjq (tgdataset): public_group_inactive
+[21 req, 3 resolves] @holohoax_memes1 (tgdataset): inactive
+[25 req, 4 resolves] @shill_tactics1 (tgdataset): inactive
+[28 req, 5 resolves] @TheAnglosphere (tgdataset): inactive
+[39 req, 5 resolves] @TheBureauOfMemeticWarfareOG (tgdataset): private_links_only
+[61 req, 6 resolves] @hapaperspective (tgdataset): public_group_active -> hapaperspectivechat
+[71 req, 8 resolves] @r_communism (tgdataset): public_group_inactive
+[76 req, 9 resolves] @r_latestagecapitalism (tgdataset): public_group_inactive
+[82 req, 10 resolves] @randomreposts (tgdataset): no_group
+[92 req, 11 resolves] @saintharrison (tgdataset): comments_only
+== 14 min | audited 10 | {'public_group_inactive': 3, 'inactive': 3, 'private_links_only': 1, 'public_group_active': 1, 'no_group': 1, 'comments_only': 1} | queue prio=0 tgd=1485 known=0 linked=50 rec=18
+[98 req, 11 resolves] @thuletide (tgdataset): no_group
+[107 req, 12 resolves] @irishpatriots (tgdataset): public_group_active -> IrishPatriotsChat
+[115 req, 13 resolves] @ZestyCommies (tgdataset): comments_only
+[124 req, 14 resolves] @EAHAWhite (tgdataset): comments_only
+[129 req, 15 resolves] @mpvids (tgdataset): no_group
+[133 req, 16 resolves] @WarmasterHorus (tgdataset): no_group
+[138 req, 17 resolves] @AryanRising (tgdataset): inactive
+[142 req, 18 resolves] @BLMglobal (tgdataset): inactive
+[146 req, 19 resolves] @chileanshitposts (tgdataset): inactive
+[150 req, 20 resolves] @gay_trans_agenda (tgdataset): inactive
+== 23 min | audited 20 | {'public_group_inactive': 3, 'inactive': 7, 'private_links_only': 1, 'public_group_active': 2, 'no_group': 4, 'comments_only': 3} | queue prio=0 tgd=1475 known=0 linked=61 rec=36
+[158 req, 21 resolves] @GDL4LIFE (tgdataset): public_group_active -> odubslilcorner
+[163 req, 22 resolves] @holocaustliesexposed (tgdataset): inactive
+[167 req, 23 resolves] @KatoMemesmith (tgdataset): inactive
+[170 req, 24 resolves] @NordicSunBudapest (tgdataset): inactive
+[174 req, 25 resolves] @OKGroomerMunitionsFactory (tgdataset): inactive
+[178 req, 26 resolves] @PlagueDoctorRitz (tgdataset): inactive
+[183 req, 27 resolves] @ResolutionRDO (tgdataset): no_group
+[188 req, 28 resolves] @scholarofthefirstsin (tgdataset): inactive
+[192 req, 29 resolves] @TheWarRoom1 (tgdataset): inactive
+[196 req, 30 resolves] @WhiteAgendaRadio (tgdataset): inactive
+== 30 min | audited 30 | {'public_group_inactive': 3, 'inactive': 15, 'private_links_only': 1, 'public_group_active': 3, 'no_group': 5, 'comments_only': 3} | queue prio=0 tgd=1465 known=0 linked=63 rec=36
+
+DONE (username resolve cap reached): 196 requests, 30 resolves, 77 web checks, 0 short FloodWaits, 30 min
+verdicts: {'public_group_inactive': 3, 'inactive': 15, 'private_links_only': 1, 'public_group_active': 3, 'no_group': 5, 'comments_only': 3}
