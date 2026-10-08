@@ -1,0 +1,105 @@
+topic: conspiracy | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/conspiracy/audit
+account: conspiracy | session: research_conspiracy.session
+priority queue from master.csv: 1
+[1 req, 0 resolves] group @reddit2telegram (master:manual_check_of_@r_comm): ACTIVE
+== 0 min | audited 0 | {} | queue prio=0 tgd=1465 known=0 linked=0 rec=0
+[9 req, 1 resolves] @danerikssonSE (tgdataset): comments_only
+[20 req, 1 resolves] @markacollett (tgdataset): comments_only
+[27 req, 1 resolves] @PatrioticChris (tgdataset): public_group_active -> ChrisPT
+[31 req, 1 resolves] @vinniesullivan (tgdataset): no_group
+[41 req, 1 resolves] @NickGriffin (tgdataset): private_links_only
+[49 req, 2 resolves] @true_anarchy (tgdataset): no_group
+[65 req, 2 resolves] @lauratowler (tgdataset): comments_only
+[71 req, 2 resolves] @HistoryClearinghouse (tgdataset): no_group
+[76 req, 3 resolves] @FlorianHomm (tgdataset): no_group
+[95 req, 6 resolves] @SHTF_Prepping (tgdataset): public_group_inactive
+== 14 min | audited 10 | {'comments_only': 3, 'public_group_active': 1, 'no_group': 4, 'private_links_only': 1, 'public_group_inactive': 1} | queue prio=0 tgd=1455 known=0 linked=31 rec=46
+[105 req, 6 resolves] @guidetokulchur (tgdataset): comments_only
+[113 req, 6 resolves] @PaxTube (tgdataset): no_group
+[120 req, 6 resolves] @keith_woods (tgdataset): no_group
+[130 req, 8 resolves] @etnostra (tgdataset): public_group_active -> dieheimatgespraeche
+[140 req, 8 resolves] @fashwave3 (tgdataset): no_group
+[149 req, 9 resolves] @DestoryTheSoy (tgdataset): no_group
+[155 req, 9 resolves] @NoChanceYT (tgdataset): no_group
+[156 req, 9 resolves] @PatAltSW (tgdataset): inactive
+[160 req, 10 resolves] @SiolnahEireann (tgdataset): no_group
+[174 req, 11 resolves] @VPotpourri (tgdataset): no_group
+== 26 min | audited 20 | {'comments_only': 4, 'public_group_active': 2, 'no_group': 11, 'private_links_only': 1, 'public_group_inactive': 1, 'inactive': 1} | queue prio=0 tgd=1445 known=0 linked=57 rec=61
+[179 req, 12 resolves] @BlkUbiquity (tgdataset): no_group
+[187 req, 13 resolves] @RealWorldNewsChannel (tgdataset): public_group_active -> RealWorldNewsChat RealWorldNewsChat
+[201 req, 14 resolves] @robinmg (tgdataset): public_group_active -> robinmggroup robinmggroup
+[209 req, 15 resolves] @The_UK_Channel (tgdataset): public_group_active -> UK_Channel_Chat UK_Channel_Chat
+[217 req, 16 resolves] @albertacanadacampaign (tgdataset): public_group_active -> freedomfightersAB
+[226 req, 17 resolves] @chaosnavigator (tgdataset): private_links_only
+[238 req, 19 resolves] @EverythingScience (tgdataset): public_group_inactive
+[243 req, 20 resolves] @CorbettReport (tgdataset): private_links_only
+[279 req, 23 resolves] @NoGoolag (tgdataset): public_group_active -> AuroraSupport
+[292 req, 25 resolves] @Millions_United (tgdataset): public_group_inactive
+== 45 min | audited 30 | {'comments_only': 4, 'public_group_active': 7, 'no_group': 12, 'private_links_only': 3, 'public_group_inactive': 3, 'inactive': 1} | queue prio=0 tgd=1435 known=0 linked=128 rec=91
+[311 req, 27 resolves] @thecrowhouseoffical (tgdataset): public_group_active -> TheCrowhousechat TheCrowhousechat fullenglishchat
+[324 req, 28 resolves] @Agenda2O22 (tgdataset): public_group_inactive
+[341 req, 30 resolves] @freeleft_freielinke (tgdataset): public_group_inactive
+[352 req, 32 resolves] @COVID19Up (tgdataset): public_group_inactive
+[380 req, 35 resolves] @EMF_EHS_English (tgdataset): public_group_active -> herbalismhealing
+[389 req, 36 resolves] @AOECOINCHANNEL (tgdataset): public_group_inactive
+[397 req, 37 resolves] @BloodyPiratepresents (tgdataset): no_group
+[410 req, 38 resolves] @freeinformation000 (tgdataset): private_links_only
+[418 req, 39 resolves] @houseofwagner (tgdataset): comments_only
+[427 req, 40 resolves] @KeepingOneStepAhead (tgdataset): error
+== 65 min | audited 40 | {'comments_only': 5, 'public_group_active': 9, 'no_group': 13, 'private_links_only': 4, 'public_group_inactive': 7, 'inactive': 1, 'error': 1} | queue prio=0 tgd=1425 known=0 linked=193 rec=96
+[437 req, 40 resolves] @realblaircottrell (tgdataset): private_links_only
+[451 req, 40 resolves] @RWMaloneMD (tgdataset): no_group
+[464 req, 41 resolves] @sideeffectsofcovid (tgdataset): public_group_inactive
+[494 req, 45 resolves] @agentsoftruth (tgdataset): public_group_inactive
+[514 req, 49 resolves] @iceagefarmer (tgdataset): public_group_active -> iaf_birds
+[522 req, 49 resolves] @JustDudeChannel (tgdataset): public_group_active -> JustDudeChatRebornAgain
+[530 req, 49 resolves] @DrDavidMartin (tgdataset): no_group
+[535 req, 49 resolves] @off_Guardian (tgdataset): no_group
+[551 req, 50 resolves] @partijvoordeliefde (tgdataset): private_links_only
+[559 req, 51 resolves] @TheConspiracyHole (tgdataset): public_group_active -> WeaponizeConspiracy
+== 85 min | audited 50 | {'comments_only': 5, 'public_group_active': 12, 'no_group': 16, 'private_links_only': 6, 'public_group_inactive': 9, 'inactive': 1, 'error': 1} | queue prio=0 tgd=1415 known=0 linked=257 rec=126
+[564 req, 52 resolves] @theEvent777 (tgdataset): no_group
+[575 req, 53 resolves] @Digital_ID_Au (tgdataset): private_links_only
+[587 req, 55 resolves] @liberty_stream_network_ireland (tgdataset): public_group_inactive
+[602 req, 55 resolves] @TruthGraphs (tgdataset): no_group
+[617 req, 57 resolves] @TheLightTruthPaper (tgdataset): public_group_active -> TheLightPaperDistribution TheLightPaperDistribution astandinthepark
+[625 req, 58 resolves] @voicesforfreedom (tgdataset): no_group
+[631 req, 59 resolves] @CanadaHealthAlliance (tgdataset): no_group
+[637 req, 60 resolves] @drue86 (tgdataset): no_group
+[644 req, 61 resolves] @meme_me_up (tgdataset): comments_only
+[655 req, 62 resolves] @TruckersForFreedomGlobal (tgdataset): public_group_active -> DiedSuddenlyNewsOriginal herbalismhealing
+== 100 min | audited 60 | {'comments_only': 6, 'public_group_active': 14, 'no_group': 21, 'private_links_only': 7, 'public_group_inactive': 10, 'inactive': 1, 'error': 1} | queue prio=0 tgd=1405 known=0 linked=296 rec=161
+[660 req, 63 resolves] @AustraliaAwakens (tgdataset): no_group
+[668 req, 64 resolves] @DrLynnFynn (tgdataset): comments_only
+[676 req, 65 resolves] @SolarPunk (tgdataset): comments_only
+[683 req, 66 resolves] @EarthJusticeLeague_DataLibrary (tgdataset): comments_only
+[692 req, 67 resolves] @BoxCleverArmy (tgdataset): comments_only
+[703 req, 69 resolves] @brainlaboratory (tgdataset): public_group_inactive
+[712 req, 70 resolves] @DanaAshlieOfficial (tgdataset): public_group_active -> DanaAshliePublicChat DanaAshliePublicChat
+[738 req, 73 resolves] @Covid_my (tgdataset): public_group_active -> HkGreatAwakeningGp awakenfromvax
+[759 req, 75 resolves] @cvnvacs (tgdataset): public_group_active -> robinmggroup HkGreatAwakeningGp
+[768 req, 76 resolves] @LecademyNews (tgdataset): public_group_inactive
+== 117 min | audited 70 | {'comments_only': 10, 'public_group_active': 17, 'no_group': 22, 'private_links_only': 7, 'public_group_inactive': 12, 'inactive': 1, 'error': 1} | queue prio=0 tgd=1395 known=0 linked=330 rec=213
+[777 req, 77 resolves] @adapt2030 (tgdataset): private_links_only
+[810 req, 82 resolves] @AdelaideFreedomFighters (tgdataset): public_group_active -> AdelaideFreedomFightersChat australiafreedomfighterschat australiaanti_freemasonparty
+[839 req, 84 resolves] @ariseaustralia (tgdataset): public_group_active -> svc347chat maga_academy_chat
+[843 req, 84 resolves] @australiaforfreedom (tgdataset): no_group
+[849 req, 85 resolves] @AviYeminiOfficial (tgdataset): no_group
+[857 req, 86 resolves] @awakenindiamovement (tgdataset): comments_only
+[864 req, 87 resolves] @Awakening_Red_Pill (tgdataset): public_group_active -> RealWorldNewsChat
+[874 req, 88 resolves] @BC_FreedomFighters (tgdataset): comments_only
+[888 req, 89 resolves] @BillofRights1689 (tgdataset): public_group_active -> CONNECTEDWORLDCHAT
+[893 req, 90 resolves] @BrianGerardSchaeferChannel (tgdataset): private_links_only
+== 138 min | audited 80 | {'comments_only': 12, 'public_group_active': 21, 'no_group': 24, 'private_links_only': 9, 'public_group_inactive': 12, 'inactive': 1, 'error': 1} | queue prio=0 tgd=1385 known=0 linked=405 rec=249
+[898 req, 90 resolves] @BritishNursingAllianceSpeak (tgdataset): no_group
+[905 req, 90 resolves] @canadian_fact_checked_news (tgdataset): no_group
+[917 req, 92 resolves] @CENSOREDMEDIA (tgdataset): public_group_inactive
+[923 req, 93 resolves] @communityhealthproject (tgdataset): no_group
+[935 req, 94 resolves] @copsforcovidtruth (tgdataset): private_links_only
+[951 req, 95 resolves] @counterspin (tgdataset): public_group_active -> counterspinchat2 RealWorldNewsChat counterspinchat2
+[966 req, 96 resolves] @covidvaccinedeath (tgdataset): public_group_active -> RealWorldNewsChat
+[987 req, 100 resolves] @dagan1234 (tgdataset): public_group_active -> hamal_israel1
+[995 req, 100 resolves] @dailyexpose (tgdataset): public_group_active -> dailyexposenews dailyexposenews
+
+DONE (username resolve cap reached): 996 requests, 100 resolves, 473 web checks, 0 short FloodWaits, 155 min
+verdicts: {'comments_only': 12, 'public_group_active': 25, 'no_group': 27, 'private_links_only': 10, 'public_group_inactive': 13, 'inactive': 1, 'error': 1}
