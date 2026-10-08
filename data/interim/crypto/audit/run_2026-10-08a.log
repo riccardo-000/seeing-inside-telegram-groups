@@ -1,0 +1,127 @@
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/crypto/audit
+account: crypto | session: research.session
+priority queue from master.csv: 31
+[5 req, 0 resolves] @WEEXNews (master:project_channel): public_group_active -> WeexGlobal_Group weexglobal_group WEEX_Official
+[11 req, 0 resolves] @scopulynews (master:project_channel): public_group_active -> scopuly
+[14 req, 1 resolves] group @giverep (master:manual_check_of_@Airdro): ACTIVE
+[15 req, 1 resolves] group @CertiK (master:manual_check_of_@GTProt): ACTIVE
+[17 req, 2 resolves] group @BitgetWallet (master:manual_check_of_@iotrad): ACTIVE
+[19 req, 3 resolves] group @TokenPocket_TP (master:manual_check_of_@credit): ACTIVE
+[21 req, 4 resolves] group @JupiterExchange (master:manual_check_of_@credit): ACTIVE
+[25 req, 5 resolves] group @usdciscool (master:manual_check_of_@MEXC_E): ACTIVE
+[29 req, 6 resolves] group @UsePaid (master:manual_check_of_@MEXC_E): ACTIVE
+[33 req, 7 resolves] group @cortexnetwork_global (master:manual_check_of_@MEXC_E): ACTIVE
+[37 req, 8 resolves] group @enclave_e3 (master:manual_check_of_@MEXC_E): ACTIVE
+[41 req, 9 resolves] group @autheo_official (master:manual_check_of_@MEXC_E): ACTIVE
+[45 req, 10 resolves] group @eventramarketofficial (master:manual_check_of_@MEXC_E): inactive
+[49 req, 11 resolves] group @mintellect_official (master:manual_check_of_@MEXC_E): ACTIVE
+[53 req, 12 resolves] group @magneai (master:manual_check_of_@MEXC_E): inactive
+[55 req, 13 resolves] group @AiDiscussion (master:manual_check_of_@Crypto): ACTIVE
+[57 req, 14 resolves] group @StockMarkets (master:manual_check_of_@Crypto): ACTIVE
+[59 req, 15 resolves] group @ClimateChange (master:manual_check_of_@Crypto): ACTIVE
+[61 req, 16 resolves] group @GrailMemes (master:manual_check_of_@Crypto): ACTIVE
+[63 req, 17 resolves] group @InTheNews (master:manual_check_of_@Crypto): ACTIVE
+[65 req, 18 resolves] group @LifestyleFlex (master:manual_check_of_@Crypto): ACTIVE
+[66 req, 18 resolves] group @Longevity (master:manual_check_of_@Crypto): ACTIVE
+[70 req, 19 resolves] group @WorldReligions (master:manual_check_of_@Crypto): inactive
+[74 req, 20 resolves] group @WorldWars (master:manual_check_of_@Crypto): inactive
+[78 req, 21 resolves] group @Democrats (master:manual_check_of_@Crypto): ACTIVE
+[82 req, 22 resolves] group @Republicans (master:manual_check_of_@Crypto): inactive
+[86 req, 23 resolves] group @USElection (master:manual_check_of_@Crypto): ACTIVE
+[88 req, 24 resolves] group @USPolitics (master:manual_check_of_@Crypto): ACTIVE
+[92 req, 25 resolves] group @WorldPolitics (master:manual_check_of_@Crypto): inactive
+[96 req, 26 resolves] group @Resolutions (master:manual_check_of_@Crypto): inactive
+[98 req, 27 resolves] group @MktsInsider (master:manual_check_of_@Meta_E): ACTIVE
+[106 req, 29 resolves] @rickysfundamentals (tgdataset): public_group_inactive
+[112 req, 30 resolves] @ProAnalysisTrader (tgdataset): no_group
+[122 req, 31 resolves] @BinanceLiquidations (tgdataset): public_group_inactive
+[138 req, 34 resolves] @elisascharts (tgdataset): public_group_inactive
+[147 req, 35 resolves] @WanchainANN (tgdataset): public_group_active -> WanchainCHAT WanchainCHAT
+== 17 min | audited 7 | {'public_group_active': 3, 'public_group_inactive': 3, 'no_group': 1} | queue prio=0 tgd=102 known=65 linked=13 rec=35
+[153 req, 36 resolves] @WhaleSniper (tgdataset): public_group_inactive
+[164 req, 38 resolves] @MultiVACMTV (tgdataset): public_group_inactive
+[176 req, 40 resolves] @TMGChannel (tgdataset): public_group_active -> officialcharthouse
+[181 req, 41 resolves] @hashbon_com (tgdataset): inactive
+[191 req, 43 resolves] @cryptorealy (tgdataset): public_group_active -> whitelistchat
+[195 req, 44 resolves] @PolitischeKryptokunst (tgdataset): inactive
+[195 req, 44 resolves] @ProjectSeraphim (tgdataset): inactive
+[203 req, 45 resolves] @guardawallet (tgdataset): public_group_inactive
+[209 req, 46 resolves] @CryptoTrades (tgdataset): no_group
+[215 req, 47 resolves] @ThriveNews (tgdataset): no_group
+== 25 min | audited 17 | {'public_group_active': 5, 'public_group_inactive': 6, 'no_group': 3, 'inactive': 3} | queue prio=0 tgd=92 known=65 linked=23 rec=62
+[221 req, 48 resolves] @VinDAXExchangeNews (tgdataset): no_group
+[229 req, 49 resolves] @Rihannad (tgdataset): private_links_only
+[254 req, 51 resolves] @walletw (tgdataset): public_group_inactive
+[263 req, 52 resolves] @cryptorobotics_en (tgdataset): public_group_active -> holders_cryptorobotics_eng holders_cryptorobotics_eng
+[275 req, 53 resolves] @binance_announcements (tgdataset): public_group_active -> binanceexchange binanceexchange BinanceChinese
+[282 req, 54 resolves] @avestagroupuz (tgdataset): comments_only
+[287 req, 55 resolves] @Binance_Telegram (tgdataset): no_group
+[298 req, 57 resolves] @venture_tg (tgdataset): public_group_active -> solicoinchat
+[303 req, 58 resolves] @cryptocrosstrade (tgdataset): no_group
+[308 req, 58 resolves] @Forex_Tradings (tgdataset): no_group
+== 37 min | audited 27 | {'public_group_active': 8, 'public_group_inactive': 7, 'no_group': 7, 'inactive': 3, 'private_links_only': 1, 'comments_only': 1} | queue prio=0 tgd=82 known=65 linked=51 rec=108
+[313 req, 58 resolves] @cryptobullet (tgdataset): no_group
+[318 req, 59 resolves] @StreetTraderFx (tgdataset): private_links_only
+[322 req, 59 resolves] @TechCryptoAnalyst (tgdataset): no_group
+[332 req, 60 resolves] @cointelegraph (tgdataset): public_group_active -> okxofficial_english
+[338 req, 60 resolves] @cryptoquant_alert (tgdataset): no_group
+[344 req, 60 resolves] @bitcoin (tgdataset): comments_only
+[353 req, 61 resolves] @cointrendz (tgdataset): public_group_inactive
+[359 req, 62 resolves] @CryptoEmpire_Signal (tgdataset): no_group
+[364 req, 62 resolves] @www_Bitcoin_com (tgdataset): no_group
+[371 req, 62 resolves] @cryptoquant_official (tgdataset): comments_only
+== 43 min | audited 37 | {'public_group_active': 9, 'public_group_inactive': 8, 'no_group': 12, 'inactive': 3, 'private_links_only': 2, 'comments_only': 3} | queue prio=0 tgd=72 known=65 linked=59 rec=140
+[376 req, 63 resolves] @xrpnewsuk (tgdataset): no_group
+[385 req, 64 resolves] @WhaleTracker (tgdataset): public_group_active -> Whale_Tracker
+[390 req, 65 resolves] @bctof (tgdataset): inactive
+[395 req, 66 resolves] @CryptoScanner100eyes (tgdataset): no_group
+[399 req, 66 resolves] @glassnode (tgdataset): no_group
+[404 req, 67 resolves] @investkaki (tgdataset): no_group
+[408 req, 68 resolves] @joescrypt (tgdataset): no_group
+[413 req, 68 resolves] @cryptoslatenews (tgdataset): no_group
+[419 req, 69 resolves] @wealthcreator7 (tgdataset): no_group
+[426 req, 69 resolves] @altcoin (tgdataset): no_group
+== 50 min | audited 47 | {'public_group_active': 10, 'public_group_inactive': 8, 'no_group': 20, 'inactive': 4, 'private_links_only': 2, 'comments_only': 3} | queue prio=0 tgd=62 known=65 linked=65 rec=181
+[433 req, 70 resolves] @WallStreetBetsReddit (tgdataset): comments_only
+[439 req, 71 resolves] @WhalePump (tgdataset): no_group
+[444 req, 72 resolves] @dailyycryptonews (tgdataset): inactive
+[449 req, 72 resolves] @cryptocurrency (tgdataset): no_group
+[454 req, 73 resolves] @BinanceResearch (tgdataset): no_group
+[459 req, 74 resolves] @thedailyhodl (tgdataset): no_group
+[464 req, 74 resolves] @BitcoinSniper (tgdataset): no_group
+[465 req, 74 resolves] @insideton (tgdataset): inactive
+[469 req, 74 resolves] @bitcoinchannel (tgdataset): no_group
+[475 req, 75 resolves] @fortuneinsight (tgdataset): no_group
+== 56 min | audited 57 | {'public_group_active': 10, 'public_group_inactive': 8, 'no_group': 27, 'inactive': 6, 'private_links_only': 2, 'comments_only': 4} | queue prio=0 tgd=52 known=65 linked=65 rec=214
+[479 req, 75 resolves] @utoday_en (tgdataset): no_group
+[484 req, 76 resolves] @iconinjasnews (tgdataset): inactive
+[494 req, 77 resolves] @PoloniexAnnouncements (tgdataset): public_group_active -> PoloniexEnglish PoloniexEnglish myidbyzeroborder
+[498 req, 78 resolves] @Paradigm_Fund (tgdataset): inactive
+[518 req, 82 resolves] @themdtchannel (tgdataset): public_group_active -> BinanceExchange SandboxGame
+[523 req, 83 resolves] @deribit_notifications (tgdataset): no_group
+[528 req, 84 resolves] @Tamil_Movies_hd (tgdataset): inactive
+[531 req, 85 resolves] @bfxannouncements (tgdataset): no_group
+[535 req, 86 resolves] @catchain (tgdataset): no_group
+[542 req, 86 resolves] @canalexrp (tgdataset): public_group_active -> Ripple
+== 64 min | audited 67 | {'public_group_active': 13, 'public_group_inactive': 8, 'no_group': 31, 'inactive': 9, 'private_links_only': 2, 'comments_only': 4} | queue prio=0 tgd=42 known=65 linked=81 rec=231
+[550 req, 87 resolves] @GoldTradingPK (tgdataset): comments_only
+[554 req, 87 resolves] @cryptonomist_english (tgdataset): no_group
+[564 req, 87 resolves] @bitcoinmemes (tgdataset): public_group_inactive
+[569 req, 88 resolves] @cbondsglobal (tgdataset): no_group
+[574 req, 89 resolves] @cryptoatlas_io (tgdataset): inactive
+[579 req, 90 resolves] @cryptochan_pricevolumepulse (tgdataset): no_group
+[584 req, 91 resolves] @historyyoutube (tgdataset): no_group
+[590 req, 92 resolves] @techcrunchcom (tgdataset): no_group
+[594 req, 92 resolves] @r_Bitcoin (tgdataset): no_group
+[599 req, 93 resolves] @ethereumdapps (tgdataset): no_group
+== 71 min | audited 77 | {'public_group_active': 13, 'public_group_inactive': 9, 'no_group': 38, 'inactive': 10, 'private_links_only': 2, 'comments_only': 5} | queue prio=0 tgd=32 known=65 linked=92 rec=281
+[604 req, 94 resolves] @Gumboleaks (tgdataset): inactive
+[611 req, 95 resolves] @actiontokenslive (tgdataset): comments_only
+[620 req, 95 resolves] @BinanceWaves (tgdataset): private_links_only
+[631 req, 97 resolves] @rodaskarov (tgdataset): public_group_active -> MexcEnglish Coinstore_Eng
+[636 req, 98 resolves] @rko120 (tgdataset): inactive
+[641 req, 99 resolves] @CryptoDecentralized (tgdataset): no_group
+[646 req, 100 resolves] @botje11 (tgdataset): no_group
+
+DONE (username resolve cap reached): 647 requests, 100 resolves, 235 web checks, 0 short FloodWaits, 76 min
+verdicts: {'public_group_active': 14, 'public_group_inactive': 9, 'no_group': 40, 'inactive': 12, 'private_links_only': 3, 'comments_only': 6}
