@@ -229,8 +229,10 @@ class Auditor:
 
     def load_conspiracy_seeds(self) -> None:
         """Conspiracy candidates the web prefilter already saw alive and posting (no resolve
-        on unknown ones), most promising first: topic priority (seeds_conspiracy.py), then
-        group-like t.me links in the description, any t.me link, posts in the last 30 days."""
+        on unknown ones), most promising first: channels whose web preview shows recent posts
+        before those without a preview (15 of 19 of these were inactive on 2026-10-07); then
+        topic priority (seeds_conspiracy.py), group-like t.me links in the description, any
+        t.me link, posts in the last 30 days."""
         if "conspiracy" in self.tgd_rows_seen:
             return
         self.tgd_rows_seen["conspiracy"] = 1
@@ -242,7 +244,7 @@ class Auditor:
         def rank(r):
             w = self._prefilter[r["username"].lower()]
             links = (w.get("tme_links") or "").split()
-            return (int(r["priority"]), not any(GROUP_HINT.search(l) for l in links), not links,
+            return (w.get("kind") != "channel", int(r["priority"]), not any(GROUP_HINT.search(l) for l in links), not links,
                     -int(w.get("posts_30d") or 0))
         for r in sorted(seeds, key=rank):
             self.add(self.q_tgd, r["username"], "tgdataset", channel_id=r["channel_id"])

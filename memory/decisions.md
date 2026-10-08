@@ -174,3 +174,13 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   group in their description are the most likely to give a channel–group pair; a new account
   is more likely to be limited, so it starts slow.
 - **Impact:** `scripts/audit_channels.py`, seed selection for the conspiracy arm (Methodology).
+
+## 2026-10-08 — Conspiracy queue: channels with a visible preview first
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** In the conspiracy audit queue, channels whose t.me web preview shows recent
+  posts come before every channel without a preview (`channel_no_preview`), across topics;
+  the order from "Order of the conspiracy audit queue" (2026-10-07) applies inside each block.
+  Second day of the conspiracy account: full 100-resolve daily budget.
+- **Why:** On 2026-10-07, 15 of the 19 no-preview channels audited were inactive and used half
+  of the resolves; the prefilter cannot tell their activity, so they are the least promising.
+- **Impact:** `scripts/audit_channels.py` (conspiracy seed order), Methodology (seed selection).
