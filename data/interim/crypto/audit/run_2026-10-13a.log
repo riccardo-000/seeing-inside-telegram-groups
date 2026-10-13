@@ -1,0 +1,89 @@
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/crypto/audit
+account: crypto | session: research.session
+priority queue from master.csv: 33
+[11 req, 2 resolves] @interfoldhq_updates (master:project_channel): public_group_active -> enclave_e3 interfoldhq_technical enclave_e3
+[14 req, 2 resolves] @autheo_news_official (master:project_channel): inactive
+[17 req, 2 resolves] @Chart_House_Research (master:project_channel): public_group_active -> OfficialChartHouse
+== 2 min | audited 3 | {'public_group_active': 2, 'inactive': 1} | queue prio=30 tgd=25 known=65 linked=0 rec=0
+[36 req, 5 resolves] @whitelist1 (master:project_channel): public_group_active -> whitelistchat whitelistchat vibevibefun twitterwl
+[45 req, 6 resolves] @x7rL7ony7EJkZjI1 (master:project_channel): public_group_active -> BinanceChinese BinanceChinese
+[73 req, 11 resolves] @OKXAnnouncements (master:project_channel): public_group_active -> OKXOfficial_English OKXOfficial_English hackenclub okxgroup_cn Ripple
+[76 req, 11 resolves] @whaletrackerofficial (master:project_channel): inactive
+[85 req, 12 resolves] @EventraMarket (master:project_channel): public_group_active -> EventraMarketOfficial
+[89 req, 12 resolves] @XypherIO (master:project_channel): inactive
+[91 req, 12 resolves] @rewardmechannel (master:project_channel): inactive
+[93 req, 13 resolves] group @giverep (master:manual_check_of_@Airdro): ACTIVE
+[94 req, 13 resolves] group @CertiK (master:manual_check_of_@GTProt): ACTIVE
+[96 req, 14 resolves] group @BitgetWallet (master:manual_check_of_@iotrad): ACTIVE
+[98 req, 15 resolves] group @TokenPocket_TP (master:manual_check_of_@credit): ACTIVE
+[100 req, 16 resolves] group @JupiterExchange (master:manual_check_of_@credit): ACTIVE
+[102 req, 17 resolves] group @AiDiscussion (master:manual_check_of_@Crypto): ACTIVE
+[104 req, 18 resolves] group @StockMarkets (master:manual_check_of_@Crypto): ACTIVE
+[106 req, 19 resolves] group @ClimateChange (master:manual_check_of_@Crypto): ACTIVE
+[108 req, 20 resolves] group @GrailMemes (master:manual_check_of_@Crypto): ACTIVE
+[110 req, 21 resolves] group @InTheNews (master:manual_check_of_@Crypto): ACTIVE
+[112 req, 22 resolves] group @LifestyleFlex (master:manual_check_of_@Crypto): ACTIVE
+[113 req, 22 resolves] group @Longevity (master:manual_check_of_@Crypto): ACTIVE
+[115 req, 23 resolves] group @WorldReligions (master:manual_check_of_@Crypto): ACTIVE
+[117 req, 24 resolves] group @WorldWars (master:manual_check_of_@Crypto): ACTIVE
+[119 req, 25 resolves] group @Democrats (master:manual_check_of_@Crypto): ACTIVE
+[121 req, 26 resolves] group @Republicans (master:manual_check_of_@Crypto): ACTIVE
+[123 req, 27 resolves] group @USElection (master:manual_check_of_@Crypto): ACTIVE
+[125 req, 28 resolves] group @USPolitics (master:manual_check_of_@Crypto): ACTIVE
+[127 req, 29 resolves] group @WorldPolitics (master:manual_check_of_@Crypto): ACTIVE
+[128 req, 29 resolves] group @Resolutions (master:manual_check_of_@Crypto): ACTIVE
+[130 req, 30 resolves] group @MktsInsider (master:manual_check_of_@Meta_E): ACTIVE
+[132 req, 31 resolves] group @TheRewardMe (master:manual_check_of_@themdt): ACTIVE
+[133 req, 31 resolves] group @RewardMe (master:manual_check_of_@themdt): ACTIVE
+[141 req, 32 resolves] @cryptoland_en (tgdataset): public_group_inactive
+[146 req, 33 resolves] @fullycrypto_official (tgdataset): inactive
+[149 req, 33 resolves] @CoinomiWallet (tgdataset): inactive
+== 21 min | audited 13 | {'public_group_active': 6, 'inactive': 6, 'public_group_inactive': 1} | queue prio=0 tgd=22 known=65 linked=31 rec=22
+[188 req, 41 resolves] @curvefiann (tgdataset): public_group_active -> curvefi StakeDAOHQ frankencoinzchf fraxfinance maplefinance
+[201 req, 44 resolves] @Goldaktien (tgdataset): public_group_inactive
+[205 req, 45 resolves] @TRONannouncements (tgdataset): inactive
+[212 req, 46 resolves] @traderanalysis (tgdataset): comments_only
+[217 req, 47 resolves] @basedbiztelegram (tgdataset): inactive
+[221 req, 48 resolves] @GRANDMASTERSIFUJI (tgdataset): inactive
+[225 req, 49 resolves] @dfinity_announcements (tgdataset): inactive
+[229 req, 50 resolves] @MacroCRG1 (tgdataset): no_group
+[234 req, 51 resolves] @BitcoinKarl (tgdataset): inactive
+[238 req, 52 resolves] @videocoinannouncements (tgdataset): inactive
+== 34 min | audited 23 | {'public_group_active': 7, 'inactive': 12, 'public_group_inactive': 2, 'comments_only': 1, 'no_group': 1} | queue prio=0 tgd=12 known=65 linked=58 rec=31
+[238 req, 52 resolves] @wallstreetbetsannouncements (tgdataset): inactive
+[242 req, 53 resolves] @OhHeyMattyAnnouncement (tgdataset): inactive
+[245 req, 53 resolves] @CoinAgg (tgdataset): no_group
+[254 req, 53 resolves] @whalebotalerts (tgdataset): public_group_inactive
+[259 req, 53 resolves] @whale_alert_io (tgdataset): no_group
+[264 req, 54 resolves] @crypto_eli5 (tgdataset): inactive
+[267 req, 55 resolves] @CryptoCoinsGuides (tgdataset): inactive
+[271 req, 56 resolves] @LovelyFork (tgdataset): no_group
+[276 req, 57 resolves] @corporate_finance (tgdataset): inactive
+[280 req, 58 resolves] @CurrenciesknightFX (tgdataset): inactive
+== 38 min | audited 33 | {'public_group_active': 7, 'inactive': 18, 'public_group_inactive': 3, 'comments_only': 1, 'no_group': 4} | queue prio=0 tgd=2 known=65 linked=60 rec=35
+[284 req, 59 resolves] @InvestorKaki (tgdataset): inactive
+[288 req, 60 resolves] @cryptotafree (tgdataset): inactive
+[349 req, 63 resolves] @Airdrop (search): public_group_active -> AirdropGroup AirdropGroup dark_life_community coinlotto_chat adspowerenchat bitcoinbase_community sweepglobal_chat lithochat slidefunchat iopndiscussion crypgptcommunity sixrcommunity biznanachannelchat tokenforgeofficialcommunity lamineyamal_official_group huntfichat dac_chain play2launch_g recycletokens
+[391 req, 70 resolves] @GiveawaysCryptobot (search): public_group_active -> dmgifts_chat atom_one_chat game_time_chat artishchevchat bontradeschat
+[433 req, 78 resolves] @cryptogwss (search): public_group_active -> Gambchat Tele24hrchat marketschat clubsmarket mrsomethingchat
+[437 req, 78 resolves] @giveaway_cryptobo (search): inactive
+[475 req, 84 resolves] @memecoinx (search): public_group_active -> dagama_chat PancakeSwap BlazPay joininjective
+[479 req, 84 resolves] @Trading_Group (search): inactive
+[500 req, 88 resolves] @PapaWoody_100xGems (search): public_group_inactive
+[525 req, 92 resolves] @RoymanCrypto (search): public_group_active -> chatbitochekvko euphoria_fi
+== 71 min | audited 43 | {'public_group_active': 12, 'inactive': 22, 'public_group_inactive': 4, 'comments_only': 1, 'no_group': 4} | queue prio=0 tgd=0 known=57 linked=228 rec=57
+[536 req, 92 resolves] @incrypted_airdrops (search): error
+[577 req, 100 resolves] @NEXT100XGEMS (search): public_group_active -> Next100XGEMSchat next100xgemschat
+[582 req, 100 resolves] @Gold_Forex_Xauusd_Btcusd_Signals (search): no_group
+[588 req, 100 resolves] @forex_signalsc (search): no_group
+[597 req, 100 resolves] @cryptobricegiveaways (search): public_group_inactive_unverified_rest
+[605 req, 100 resolves] @itsgawsita (search): comments_only_unverified_rest
+[610 req, 100 resolves] @Trading_Signals_Bitcoin_Forex (search): private_links_only
+[615 req, 100 resolves] @forex_signalsg (search): no_group
+[620 req, 100 resolves] @GemsofSensei (search): private_links_only
+[626 req, 100 resolves] @jinmucall (search): public_group_active -> UsePaid
+== 84 min | audited 53 | {'public_group_active': 14, 'inactive': 22, 'public_group_inactive': 4, 'comments_only': 1, 'no_group': 7, 'error': 1, 'public_group_inactive_unverified_rest': 1, 'comments_only_unverified_rest': 1, 'private_links_only': 2} | queue prio=0 tgd=0 known=47 linked=258 rec=87
+[631 req, 100 resolves] @bitcoino_trading (search): private_links_only
+
+DONE (username resolve cap reached): 636 requests, 100 resolves, 507 web checks, 0 short FloodWaits, 85 min
+verdicts: {'public_group_active': 14, 'inactive': 22, 'public_group_inactive': 4, 'comments_only': 1, 'no_group': 7, 'error': 1, 'public_group_inactive_unverified_rest': 1, 'comments_only_unverified_rest': 1, 'private_links_only': 3}
