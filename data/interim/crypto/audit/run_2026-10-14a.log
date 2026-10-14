@@ -1,0 +1,152 @@
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/crypto/audit
+account: crypto | session: research.session
+priority queue from master.csv: 66
+[8 req, 1 resolves] @da_ga_ma (master:project_channel): public_group_active -> dagama_chat rhunaio
+[14 req, 1 resolves] @Atom_casi (master:project_channel): public_group_active -> Atom_one_chat Atom_one_chat
+[27 req, 3 resolves] @hackenai (master:project_channel): public_group_active -> hackenclub hackenclub
+[34 req, 3 resolves] @OKXAnnouncements_CN (master:project_channel): public_group_active -> OKXGroup_CN OKXGroup_CN okxofficial_english
+[38 req, 3 resolves] @frankencoinzchf_updates (master:project_channel): public_group_active -> frankencoinzchf frankencoinzchf
+[43 req, 3 resolves] @dmgifts_channel (master:project_channel): public_group_active -> dmgifts_chat dmgifts_chat
+[48 req, 3 resolves] @Game_Time_one (master:project_channel): public_group_active -> Game_time_chat Game_time_chat
+[52 req, 3 resolves] @ArtishchevLL (master:project_channel): inactive
+[56 req, 3 resolves] @BON_Trades (master:project_channel): public_group_active -> bontradeschat
+== 10 min | audited 9 | {'public_group_active': 8, 'inactive': 1} | queue prio=57 tgd=0 known=46 linked=19 rec=36
+[69 req, 6 resolves] @BrokeActivities (master:project_channel): public_group_inactive
+[74 req, 6 resolves] @injectiveann (master:project_channel): public_group_active -> joininjective joininjective
+[85 req, 7 resolves] @bitochekvko (master:project_channel): public_group_active -> chatbitochekvko chatbitochekvko tronnetwork_ru
+[97 req, 8 resolves] @MEMEcrypted (master:project_channel): public_group_active -> memecrypted_chat memecrypted_chat
+[100 req, 8 resolves] @Novaex_Ai1 (master:project_channel): inactive
+[117 req, 11 resolves] @tiltedxyzz (master:project_channel): public_group_active -> tiltedxyz sportixofficial
+[121 req, 11 resolves] @InverseFinanceAnn (master:project_channel): inactive
+[124 req, 11 resolves] @Polyprimenews (master:project_channel): public_group_active -> Polyprimenet
+[149 req, 15 resolves] @Referralsssss (master:project_channel): public_group_active -> Referrals2O24 podarkov_chat dmgifts_chat artishchevchat
+[152 req, 15 resolves] @stokesnews (master:project_channel): inactive
+== 24 min | audited 19 | {'public_group_active': 14, 'inactive': 4, 'public_group_inactive': 1} | queue prio=47 tgd=0 known=46 linked=80 rec=59
+[155 req, 15 resolves] @fanjuchuchai (master:project_channel): public_group_active -> dorkladyerc
+[158 req, 15 resolves] @GameChangerAnnounce (master:project_channel): inactive
+[190 req, 22 resolves] @DTCGroupchannel (master:project_channel): public_group_active -> DTCGroupchat kub_chain_th
+[193 req, 23 resolves] group @giverep (master:manual_check_of_@Airdro): ACTIVE
+[194 req, 23 resolves] group @CertiK (master:manual_check_of_@GTProt): ACTIVE
+[196 req, 24 resolves] group @BitgetWallet (master:manual_check_of_@iotrad): ACTIVE
+[200 req, 25 resolves] group @NoLimitCoin (master:manual_check_of_@NEXT10): inactive
+[204 req, 26 resolves] group @RapidRush (master:manual_check_of_@NEXT10): inactive
+[208 req, 27 resolves] group @OpenZeppelin (master:manual_check_of_@NEXT10): inactive
+[212 req, 28 resolves] group @fuseio (master:manual_check_of_@NEXT10): ACTIVE
+[214 req, 29 resolves] group @TokenPocket_TP (master:manual_check_of_@credit): ACTIVE
+[216 req, 30 resolves] group @JupiterExchange (master:manual_check_of_@credit): ACTIVE
+[218 req, 31 resolves] group @AiDiscussion (master:manual_check_of_@Crypto): ACTIVE
+[220 req, 32 resolves] group @StockMarkets (master:manual_check_of_@Crypto): ACTIVE
+[222 req, 33 resolves] group @ClimateChange (master:manual_check_of_@Crypto): ACTIVE
+[224 req, 34 resolves] group @GrailMemes (master:manual_check_of_@Crypto): ACTIVE
+[226 req, 35 resolves] group @InTheNews (master:manual_check_of_@Crypto): ACTIVE
+[228 req, 36 resolves] group @LifestyleFlex (master:manual_check_of_@Crypto): ACTIVE
+[229 req, 36 resolves] group @Longevity (master:manual_check_of_@Crypto): ACTIVE
+[231 req, 37 resolves] group @WorldReligions (master:manual_check_of_@Crypto): ACTIVE
+[233 req, 38 resolves] group @WorldWars (master:manual_check_of_@Crypto): ACTIVE
+[235 req, 39 resolves] group @Democrats (master:manual_check_of_@Crypto): ACTIVE
+[237 req, 40 resolves] group @Republicans (master:manual_check_of_@Crypto): ACTIVE
+[239 req, 41 resolves] group @USElection (master:manual_check_of_@Crypto): ACTIVE
+[241 req, 42 resolves] group @USPolitics (master:manual_check_of_@Crypto): ACTIVE
+[243 req, 43 resolves] group @WorldPolitics (master:manual_check_of_@Crypto): ACTIVE
+[244 req, 43 resolves] group @Resolutions (master:manual_check_of_@Crypto): ACTIVE
+[246 req, 44 resolves] group @MktsInsider (master:manual_check_of_@Meta_E): ACTIVE
+[250 req, 45 resolves] group @wrappedBTC (master:manual_check_of_@curvef): inactive
+[254 req, 46 resolves] group @OriginProtocol (master:manual_check_of_@curvef): inactive
+[258 req, 47 resolves] group @MIM_SPELL (master:manual_check_of_@curvef): inactive
+[262 req, 48 resolves] group @gnosischain (master:manual_check_of_@curvef): inactive
+[266 req, 49 resolves] group @ipor_io (master:manual_check_of_@curvef): inactive
+[268 req, 50 resolves] group @tontakeotc (master:manual_check_of_@Giveaw): ACTIVE
+[270 req, 51 resolves] group @TheRewardMe (master:manual_check_of_@themdt): ACTIVE
+[271 req, 51 resolves] group @RewardMe (master:manual_check_of_@themdt): ACTIVE
+[273 req, 52 resolves] group @paranomiachat (master:manual_check_of_@crypto): ACTIVE
+[277 req, 53 resolves] group @DailyHQChat (master:manual_check_of_@crypto): inactive
+[281 req, 54 resolves] group @comchat (master:manual_check_of_@crypto): ACTIVE
+[285 req, 55 resolves] group @Replied (master:manual_check_of_@crypto): inactive
+[289 req, 56 resolves] group @mazes (master:manual_check_of_@crypto): ACTIVE
+[293 req, 57 resolves] group @exploit (master:manual_check_of_@crypto): ACTIVE
+[297 req, 58 resolves] group @wtdxdxd (master:manual_check_of_@crypto): ACTIVE
+[301 req, 59 resolves] group @Texting (master:manual_check_of_@crypto): ACTIVE
+[305 req, 60 resolves] group @Blackthon (master:manual_check_of_@crypto): inactive
+[309 req, 61 resolves] group @demonscha (master:manual_check_of_@crypto): ACTIVE
+[313 req, 62 resolves] group @star2list (master:manual_check_of_@crypto): ACTIVE
+[321 req, 63 resolves] @HumbleApes (search): public_group_active -> usepaygram
+[325 req, 63 resolves] @trading_Bitcoino (search): inactive
+[331 req, 63 resolves] @Trading_Crypto_Signals_Bitcoin (search): private_links_only
+[336 req, 63 resolves] @next10xgem1 (search): no_group
+[340 req, 63 resolves] @Binance_Futures_Trades (search): no_group
+[344 req, 63 resolves] @Signals_Trader_Trading (search): no_group
+[348 req, 63 resolves] @Trading_Trader_Free (search): no_group
+== 48 min | audited 29 | {'public_group_active': 17, 'inactive': 6, 'public_group_inactive': 1, 'private_links_only': 1, 'no_group': 4} | queue prio=0 tgd=0 known=39 linked=105 rec=77
+[365 req, 66 resolves] @cryptoflash_news (search): public_group_active -> MyStandardTG chainlink
+[369 req, 66 resolves] @gems_airdrops_co (search): no_group
+[374 req, 66 resolves] @F_crypto_pumps_l (search): no_group
+[378 req, 66 resolves] @binance_futures6 (search): no_group
+[382 req, 66 resolves] @crypto_signalsf (search): no_group
+[387 req, 66 resolves] @FinCryptoDaily_en (search): no_group
+[391 req, 66 resolves] @Trading_Signals_Futures_Binance (search): no_group
+[395 req, 66 resolves] @Zero_To_Hero_premium_trading (search): no_group
+[399 req, 66 resolves] @binance_futuresr (search): no_group
+[405 req, 66 resolves] @investments_in_crypto (search): comments_only
+== 55 min | audited 39 | {'public_group_active': 18, 'inactive': 6, 'public_group_inactive': 1, 'private_links_only': 1, 'no_group': 12, 'comments_only': 1} | queue prio=0 tgd=0 known=29 linked=111 rec=97
+[410 req, 66 resolves] @early100xgems (search): no_group
+[415 req, 66 resolves] @CRYPTO0_community (search): comments_only
+[427 req, 66 resolves] @Forex_Signals_Trading_Crypto (parent_of_comment_chat:@t): private_links_only
+[435 req, 66 resolves] @Trading_Crypto_Forex_Signals (parent_of_comment_chat:@q): private_links_only
+[447 req, 67 resolves] @CryptoDenisNFT (parent_of_comment_chat:@C): public_group_active -> CryptoDenisNFT_chat CryptoDenisNFT_chat
+[453 req, 67 resolves] @crypto_xpress (parent_of_comment_chat:@c): inactive
+[458 req, 67 resolves] @SolGems_Alphabot (parent_of_comment_chat:@s): inactive
+[462 req, 67 resolves] @cryptoxvietnam (parent_of_comment_chat:@c): inactive
+[466 req, 67 resolves] @CryptoChaosClub (parent_of_comment_chat:@C): inactive
+[472 req, 67 resolves] @public_cryptomedved (parent_of_comment_chat:@C): private_links_only
+== 62 min | audited 49 | {'public_group_active': 19, 'inactive': 10, 'public_group_inactive': 1, 'private_links_only': 4, 'no_group': 13, 'comments_only': 2} | queue prio=0 tgd=0 known=13 linked=121 rec=116
+== 62 min | audited 49 | {'public_group_active': 19, 'inactive': 10, 'public_group_inactive': 1, 'private_links_only': 4, 'no_group': 13, 'comments_only': 2} | queue prio=0 tgd=0 known=12 linked=121 rec=116
+[477 req, 67 resolves] @MADDMeme (parent_of_comment_chat:@M): inactive
+[493 req, 67 resolves] @note_yaddasht (parent_of_comment_chat:@n): public_group_inactive
+[498 req, 67 resolves] @capparisTrade (parent_of_comment_chat:@C): inactive
+[506 req, 68 resolves] @arkada_gg (linked_from:@da_ga_ma): public_group_inactive
+[512 req, 69 resolves] @arbitrum (linked_from:@da_ga_ma): no_group
+[513 req, 69 resolves] @DeCharge (linked_from:@da_ga_ma): inactive
+[533 req, 73 resolves] @ZNSConnect (linked_from:@da_ga_ma): public_group_active -> LitecoinVM COTInetwork
+[542 req, 75 resolves] @Galxe (linked_from:@da_ga_ma): public_group_inactive
+[543 req, 75 resolves] @PinGoAI (linked_from:@da_ga_ma): inactive
+[555 req, 76 resolves] @cryptobotru (linked_from:@Atom_casi): public_group_active -> CryptoBotRussian CryptoBotRussian
+== 73 min | audited 59 | {'public_group_active': 21, 'inactive': 14, 'public_group_inactive': 4, 'private_links_only': 4, 'no_group': 14, 'comments_only': 2} | queue prio=0 tgd=0 known=0 linked=144 rec=139
+[562 req, 77 resolves] @tastyco_io (linked_from:@hackenai): public_group_active -> tastycochat
+[563 req, 77 resolves] @SuperVerse (linked_from:@hackenai): inactive
+[563 req, 77 resolves] @hacken_dyor (linked_from:@hackenai): inactive
+[563 req, 77 resolves] @okx_ai (linked_from:@OKXAnnouncem): inactive
+[566 req, 77 resolves] @okxcourse (linked_from:@OKXAnnouncem): public_group_active -> OKXGroup_CN
+[573 req, 78 resolves] @crypto_narium (linked_from:@dmgifts_chan): comments_only
+[577 req, 79 resolves] @JujBaz (linked_from:@dmgifts_chan): no_group
+[578 req, 79 resolves] @iamaprick (linked_from:@BON_Trades): inactive
+[584 req, 80 resolves] @nq_anon12 (linked_from:@BON_Trades): public_group_active -> nq_anon12_Chat nq_anon12_chat
+[590 req, 81 resolves] @nqefah (linked_from:@BON_Trades): comments_only
+== 77 min | audited 69 | {'public_group_active': 24, 'inactive': 18, 'public_group_inactive': 4, 'private_links_only': 4, 'no_group': 15, 'comments_only': 4} | queue prio=0 tgd=0 known=0 linked=135 rec=144
+[599 req, 82 resolves] @fixtradez (linked_from:@BON_Trades): public_group_inactive
+[611 req, 83 resolves] @juniour19 (linked_from:@BON_Trades): public_group_active -> juniour_19 adforexhub
+[615 req, 84 resolves] @gamblerspathchat (linked_from:@BrokeActivit): private_links_only
+[616 req, 84 resolves] @tonytheyoungster (linked_from:@BrokeActivit): inactive
+[619 req, 85 resolves] @anadromeexchange (linked_from:@BrokeActivit): private_links_only
+[629 req, 87 resolves] @avoid (linked_from:@BrokeActivit): public_group_inactive_unverified_rest
+[632 req, 87 resolves] @anamnisis (linked_from:@BrokeActivit): inactive
+[635 req, 88 resolves] @Manav_Gupta_1502 (linked_from:@BrokeActivit): no_group
+[636 req, 88 resolves] @apragmatism (linked_from:@BrokeActivit): inactive
+[645 req, 90 resolves] @retailer (linked_from:@BrokeActivit): public_group_inactive_unverified_rest
+== 87 min | audited 79 | {'public_group_active': 25, 'inactive': 21, 'public_group_inactive': 5, 'private_links_only': 6, 'no_group': 16, 'comments_only': 4, 'public_group_inactive_unverified_rest': 2} | queue prio=0 tgd=0 known=0 linked=170 rec=144
+[652 req, 91 resolves] @respawn (linked_from:@BrokeActivit): private_links_only_unverified_rest
+[653 req, 91 resolves] @boost (linked_from:@BrokeActivit): inactive
+[656 req, 92 resolves] @labbots (linked_from:@BrokeActivit): no_group
+[657 req, 92 resolves] @InjectiveLabs (linked_from:@injectiveann): inactive
+[660 req, 93 resolves] @club67 (linked_from:@bitochekvko): no_group
+[664 req, 93 resolves] @cultofnot (linked_from:@bitochekvko): no_group
+[673 req, 94 resolves] @ludikkeshaaa (linked_from:@bitochekvko): public_group_active -> chatbitochekvko
+[685 req, 96 resolves] @tradeid1 (linked_from:@bitochekvko): public_group_active -> velescommunityru
+[689 req, 97 resolves] @sendgrams (linked_from:@bitochekvko): no_group
+[698 req, 98 resolves] @telelakel (linked_from:@bitochekvko): public_group_active -> telelakel_chat
+== 98 min | audited 89 | {'public_group_active': 28, 'inactive': 23, 'public_group_inactive': 5, 'private_links_only': 6, 'no_group': 20, 'comments_only': 4, 'public_group_inactive_unverified_rest': 2, 'private_links_only_unverified_rest': 1} | queue prio=0 tgd=0 known=0 linked=226 rec=144
+[707 req, 99 resolves] @keeper_cis (linked_from:@bitochekvko): private_links_only
+[717 req, 100 resolves] @forum_coincraft (linked_from:@bitochekvko): private_links_only
+[721 req, 100 resolves] @trondao_ru_news (linked_from:@bitochekvko): public_group_active -> tronnetwork_RU
+
+DONE (username resolve cap reached): 727 requests, 100 resolves, 676 web checks, 0 short FloodWaits, 103 min
+verdicts: {'public_group_active': 29, 'inactive': 23, 'public_group_inactive': 5, 'private_links_only': 8, 'no_group': 20, 'comments_only': 4, 'public_group_inactive_unverified_rest': 2, 'private_links_only_unverified_rest': 1}
