@@ -1,6 +1,6 @@
 # Coppie canale → gruppo da controllare a mano
 
-`pairs_to_review_<data>.csv`: coppie con gruppo attivo trovate dagli audit
+`pairs_to_review_<data>.csv` (creati da `scripts/make_review.py`): coppie con gruppo attivo trovate dagli audit
 (`master.csv`) che non sono ancora in `data/processed/pairs_reviewed.csv`.
 Stesse prime 10 colonne di `pairs_reviewed.csv`, così le righe controllate si
 possono copiare lì.

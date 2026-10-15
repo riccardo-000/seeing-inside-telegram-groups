@@ -1,0 +1,126 @@
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/crypto/audit
+account: crypto | session: research.session
+priority queue from master.csv: 49
+[2 req, 0 resolves] @rhunaannouncements (master:project_channel): inactive
+[5 req, 0 resolves] @tg_gifts (master:project_channel): inactive
+[14 req, 1 resolves] @BitkubChain (master:project_channel): public_group_active -> KUB_Chain_TH kub_chain_th
+[20 req, 1 resolves] @gambledemons (master:project_channel): public_group_active -> demonscha demonscha
+[24 req, 1 resolves] @chainlinkbreadcrumbs (master:project_channel): public_group_active -> chainlink
+[28 req, 1 resolves] @adfxhub (master:project_channel): public_group_active -> adforexhub
+[41 req, 3 resolves] @cryptime_channel (master:project_channel): public_group_active -> CrypTime_official cryptime_anatolilos1 mintstakeshare cryptime_official
+== 6 min | audited 7 | {'inactive': 2, 'public_group_active': 5} | queue prio=42 tgd=0 known=27 linked=6 rec=27
+[44 req, 3 resolves] @dgbrules (master:project_channel): inactive
+[48 req, 3 resolves] @BingXUkraineAnnouncements (master:project_channel): public_group_active -> BingX_Ukraine
+[58 req, 4 resolves] @Kult_games (master:project_channel): public_group_active -> KultGamesOfficial
+[61 req, 4 resolves] @shamrock_case (master:project_channel): inactive
+[64 req, 4 resolves] @CoinMarketCapAnnouncements (master:project_channel): public_group_active -> CoinMarketCap
+[67 req, 5 resolves] group @giverep (master:manual_check_of_@Airdro): ACTIVE
+[68 req, 5 resolves] group @CertiK (master:manual_check_of_@GTProt): ACTIVE
+[70 req, 6 resolves] group @Zcash (master:manual_check_of_@crypto): ACTIVE
+[72 req, 7 resolves] group @BitgetWallet (master:manual_check_of_@iotrad): ACTIVE
+[74 req, 8 resolves] group @OpenZeppelin (master:manual_check_of_@NEXT10): ACTIVE
+[76 req, 9 resolves] group @durov2_chat (master:manual_check_of_@Crypto): ACTIVE
+[78 req, 10 resolves] group @TokenPocket_TP (master:manual_check_of_@credit): ACTIVE
+[80 req, 11 resolves] group @JupiterExchange (master:manual_check_of_@credit): ACTIVE
+[82 req, 12 resolves] group @AiDiscussion (master:manual_check_of_@Crypto): ACTIVE
+[84 req, 13 resolves] group @StockMarkets (master:manual_check_of_@Crypto): ACTIVE
+[86 req, 14 resolves] group @ClimateChange (master:manual_check_of_@Crypto): ACTIVE
+[88 req, 15 resolves] group @GrailMemes (master:manual_check_of_@Crypto): ACTIVE
+[90 req, 16 resolves] group @InTheNews (master:manual_check_of_@Crypto): ACTIVE
+[92 req, 17 resolves] group @LifestyleFlex (master:manual_check_of_@Crypto): ACTIVE
+[93 req, 17 resolves] group @Longevity (master:manual_check_of_@Crypto): ACTIVE
+[95 req, 18 resolves] group @WorldReligions (master:manual_check_of_@Crypto): ACTIVE
+[97 req, 19 resolves] group @WorldWars (master:manual_check_of_@Crypto): ACTIVE
+[99 req, 20 resolves] group @Democrats (master:manual_check_of_@Crypto): ACTIVE
+[101 req, 21 resolves] group @Republicans (master:manual_check_of_@Crypto): ACTIVE
+[103 req, 22 resolves] group @USElection (master:manual_check_of_@Crypto): ACTIVE
+[105 req, 23 resolves] group @USPolitics (master:manual_check_of_@Crypto): ACTIVE
+[107 req, 24 resolves] group @WorldPolitics (master:manual_check_of_@Crypto): ACTIVE
+[108 req, 24 resolves] group @Resolutions (master:manual_check_of_@Crypto): ACTIVE
+[110 req, 25 resolves] group @robberies (master:manual_check_of_@retail): ACTIVE
+[112 req, 26 resolves] group @MktsInsider (master:manual_check_of_@Meta_E): ACTIVE
+[114 req, 27 resolves] group @tontakeotc (master:manual_check_of_@Giveaw): ACTIVE
+[115 req, 27 resolves] group @minetnya (master:manual_check_of_@Referr): ACTIVE
+[117 req, 28 resolves] group @paranomiachat (master:manual_check_of_@BrokeA): ACTIVE
+[119 req, 29 resolves] group @astynomia (master:manual_check_of_@BrokeA): ACTIVE
+[121 req, 30 resolves] group @TheRewardMe (master:manual_check_of_@themdt): ACTIVE
+[122 req, 30 resolves] group @RewardMe (master:manual_check_of_@themdt): ACTIVE
+[124 req, 31 resolves] group @comchat (master:manual_check_of_@crypto): ACTIVE
+[125 req, 31 resolves] group @Replied (master:manual_check_of_@crypto): ACTIVE
+[127 req, 32 resolves] group @mazes (master:manual_check_of_@crypto): ACTIVE
+[129 req, 33 resolves] group @exploit (master:manual_check_of_@crypto): ACTIVE
+[131 req, 34 resolves] group @wtdxdxd (master:manual_check_of_@crypto): ACTIVE
+[132 req, 34 resolves] group @Texting (master:manual_check_of_@crypto): ACTIVE
+[163 req, 35 resolves] @demons (linked_from:@gambledemons): public_group_active -> demonscha demonscha
+[167 req, 36 resolves] @aswadasds (linked_from:@gambledemons): no_group
+[176 req, 37 resolves] @Bisrat_Sport_433eth2 (linked_from:@adfxhub): private_links_only
+[185 req, 38 resolves] @binibit_top (linked_from:@cryptime_cha): public_group_active -> BinibitOfficial
+[190 req, 38 resolves] @binibitnews (linked_from:@cryptime_cha): public_group_active -> BinibitOfficial
+== 24 min | audited 17 | {'inactive': 4, 'public_group_active': 11, 'no_group': 1, 'private_links_only': 1} | queue prio=0 tgd=0 known=0 linked=13 rec=39
+[194 req, 39 resolves] @oldeneraru (linked_from:@cryptime_cha): private_links_only
+[198 req, 40 resolves] @BingXTradFi (linked_from:@BingXUkraine): no_group
+[230 req, 47 resolves] @chimpxAI (linked_from:@Kult_games): public_group_active -> chimpxofficial pancakeswap_india
+[231 req, 47 resolves] @ChainersGame (linked_from:@Kult_games): inactive
+[239 req, 49 resolves] @OzakAGI (linked_from:@Kult_games): public_group_inactive
+[240 req, 49 resolves] @AroNetwork (linked_from:@Kult_games): inactive
+[240 req, 49 resolves] @SomniaEco (linked_from:@Kult_games): inactive
+[244 req, 49 resolves] @betongameethiopia (posted_in_group:@id360715): comments_only
+[247 req, 49 resolves] @semaygames (posted_in_group:@id360715): no_group
+[252 req, 50 resolves] @SpeeedGame (linked_from:@Bisrat_Sport): no_group
+== 32 min | audited 27 | {'inactive': 7, 'public_group_active': 12, 'no_group': 4, 'private_links_only': 2, 'public_group_inactive': 1, 'comments_only': 1} | queue prio=0 tgd=0 known=0 linked=12 rec=49
+[261 req, 50 resolves] @radar_rashiddarsigov (linked_from:@binibit_top): public_group_active -> GonkaProtocol gonkaprotocol
+[268 req, 50 resolves] @decenter (linked_from:@binibit_top): private_links_only
+[272 req, 51 resolves] @cmobinibit (linked_from:@binibit_top): no_group
+[278 req, 52 resolves] @hackofone (linked_from:@oldeneraru): comments_only
+[316 req, 59 resolves] @BNBCHAIN (linked_from:@chimpxAI): public_group_active -> BNBchaincommunity bnbchaincommunity ASI_Alliance NetMindAI PancakeSwap mindnetwork_xyz
+[317 req, 59 resolves] @GiggleFundBSC (linked_from:@chimpxAI): inactive
+[317 req, 59 resolves] @MoneyGram (linked_from:@chimpxAI): inactive
+[317 req, 59 resolves] @Mubadala (linked_from:@chimpxAI): inactive
+[353 req, 67 resolves] @metamoonshots (linked_from:@chimpxAI): public_group_active -> scamcoinspl bcgame alphaomegacoinofficial
+[361 req, 69 resolves] @EdgeAI_xyz (linked_from:@chimpxAI): public_group_inactive
+== 48 min | audited 37 | {'inactive': 10, 'public_group_active': 15, 'no_group': 5, 'private_links_only': 3, 'public_group_inactive': 2, 'comments_only': 2} | queue prio=0 tgd=0 known=0 linked=45 rec=71
+[362 req, 69 resolves] @Spores_Network (linked_from:@chimpxAI): inactive
+[388 req, 75 resolves] @flipper_trade (linked_from:@OzakAGI): public_group_active -> flipper_trade_chat gmtrade_xyz ChainGPT
+[389 req, 75 resolves] @gonkaprotocol_channel (posted_in_group:@GonkaPro): dead
+[395 req, 75 resolves] @owaiclub (linked_from:@radar_rashid): public_group_inactive
+[400 req, 75 resolves] @radar_ai_studio (linked_from:@radar_rashid): comments_only
+[401 req, 75 resolves] @oneworldai_channel (linked_from:@radar_rashid): inactive
+[407 req, 76 resolves] @tlive (linked_from:@decenter): no_group
+[411 req, 77 resolves] @bananex_news (linked_from:@decenter): no_group
+[421 req, 78 resolves] @icc_russia (linked_from:@decenter): comments_only
+[430 req, 79 resolves] @lexagencylawstream (linked_from:@decenter): private_links_only
+== 57 min | audited 47 | {'inactive': 12, 'public_group_active': 16, 'no_group': 7, 'private_links_only': 4, 'public_group_inactive': 3, 'comments_only': 4, 'dead': 1} | queue prio=0 tgd=0 known=0 linked=65 rec=82
+[439 req, 81 resolves] @investigations (linked_from:@decenter): public_group_inactive
+[440 req, 81 resolves] @AITECHio (linked_from:@BNBCHAIN): inactive
+[440 req, 81 resolves] @Chain_GPT (linked_from:@BNBCHAIN): inactive
+[443 req, 81 resolves] @allo_xyz (linked_from:@BNBCHAIN): inactive
+[443 req, 81 resolves] @SKYAIpro (linked_from:@BNBCHAIN): inactive
+[443 req, 81 resolves] @BUILDonBsc_AI (linked_from:@BNBCHAIN): inactive
+[447 req, 82 resolves] @worldofdypians (linked_from:@BNBCHAIN): no_group
+[448 req, 82 resolves] @okzoo_app (linked_from:@BNBCHAIN): inactive
+[448 req, 82 resolves] @trachaoss (linked_from:@BNBCHAIN): inactive
+[448 req, 82 resolves] @TaggerAI (linked_from:@BNBCHAIN): inactive
+== 60 min | audited 57 | {'inactive': 20, 'public_group_active': 16, 'no_group': 8, 'private_links_only': 4, 'public_group_inactive': 4, 'comments_only': 4, 'dead': 1} | queue prio=0 tgd=0 known=0 linked=59 rec=97
+[448 req, 82 resolves] @cryptowizardslounge (linked_from:@metamoonshot): inactive
+[452 req, 83 resolves] @bit_chess_community (linked_from:@metamoonshot): inactive
+[491 req, 92 resolves] @meta_moonshots (linked_from:@metamoonshot): public_group_active -> SessionBuySaIe crepechat nianniancommunity c0mputeai hachikos0l
+[498 req, 93 resolves] @bcgamewinbig (posted_in_group:@bcgame): public_group_active -> bcgame_show_it_off
+[501 req, 93 resolves] @hobomoon (linked_from:@metamoonshot): inactive
+[501 req, 93 resolves] @googlestartups (linked_from:@metamoonshot): inactive
+[517 req, 97 resolves] @tovestglobal (linked_from:@metamoonshot): public_group_active -> tovestglobalchat1 tovestindonesiaofficial
+[521 req, 97 resolves] @alphaomegacoinaoc (posted_in_group:@alphaome): public_group_active -> alphaomegacoinofficial
+[523 req, 97 resolves] group @alphaomegacoinofficial (posted_in_group:@alphaomegacoi): ACTIVE
+[523 req, 97 resolves] @aurafarming1000 (linked_from:@metamoonshot): inactive
+[523 req, 97 resolves] @messi10token (linked_from:@metamoonshot): inactive
+== 72 min | audited 67 | {'inactive': 26, 'public_group_active': 20, 'no_group': 8, 'private_links_only': 4, 'public_group_inactive': 4, 'comments_only': 4, 'dead': 1} | queue prio=0 tgd=0 known=0 linked=87 rec=104
+[523 req, 97 resolves] @simpsonssms (linked_from:@metamoonshot): inactive
+[523 req, 97 resolves] @cryptowizardscalls (linked_from:@metamoonshot): inactive
+[523 req, 97 resolves] @grandtheftape (linked_from:@metamoonshot): inactive
+[523 req, 97 resolves] @didi_bambam (linked_from:@metamoonshot): inactive
+[526 req, 98 resolves] @tattyduck (linked_from:@metamoonshot): inactive
+[526 req, 98 resolves] @poloventuresannouncement (linked_from:@metamoonshot): inactive
+[526 req, 98 resolves] @bigpicturecoin (linked_from:@metamoonshot): inactive
+[533 req, 100 resolves] @bit_chess (linked_from:@metamoonshot): public_group_inactive
+
+DONE (username resolve cap reached): 534 requests, 100 resolves, 474 web checks, 0 short FloodWaits, 74 min
+verdicts: {'inactive': 33, 'public_group_active': 20, 'no_group': 8, 'private_links_only': 4, 'public_group_inactive': 5, 'comments_only': 4, 'dead': 1}
