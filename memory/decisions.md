@@ -184,3 +184,25 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Why:** On 2026-10-07, 15 of the 19 no-preview channels audited were inactive and used half
   of the resolves; the prefilter cannot tell their activity, so they are the least promising.
 - **Impact:** `scripts/audit_channels.py` (conspiracy seed order), Methodology (seed selection).
+
+## 2026-10-17 — Final list of 100 crypto channel–group pairs
+- **Author:** Riccardo + Marco (+ Claude Code)
+- **Decision:** The crypto arm studies the 100 pairs in `data/interim/crypto/pairs/final_pairs.csv`
+  (100 channels, 100 distinct public groups, one group per channel). Built from Marco's manual
+  list (`shared/Marco/definitive_100_pairs.csv`, itself based on
+  `review/coppie_valide_2026-10-17.csv`): removed `@airdropo→@airdropninjagroup` (bot-run group,
+  excluded in review), `@gambledemons` and `@binibitnews` (same group as `@demons` /
+  `@binibit_top`), `@weexnews→@weex_official` (other app's group); for 4 channels with two groups
+  kept the main one (`altri_gruppi`). Added 8 channels: 5 own linked chats from `master.csv` that
+  pass the rules (ChainGPT, ASI Alliance, Lithosphere, BC.GAME, CoinTrendz) and 3 found via the
+  public t.me pages, group page citing the channel (Watcher Guru, The VSЁ, Zcash). Working
+  criteria: group is the channel's own (linked chat, Telegram community, or matching name / link
+  back), shared by ≤ 2 channels, ≥ 10 msgs from ≥ 5 users in 7 days, < 50% bot messages,
+  channel ≥ 1000 subscribers and posting in the last weeks, public username.
+- **Open:** activity of `@watcherguruchat` and `@thevsechat` not measured via API (web only);
+  `@crypgptcommunity` was "dubbia" (low activity); 3 crypto-casino pairs (ATOM, 2× BC.GAME):
+  team to confirm they are in scope; 32 pairs passed the rules but were never checked by hand.
+- **Why:** Marco's manual list kept groups that exist but have no messages and some ad links
+  to other projects; the stricter rules, checked against the 73 hand-reviewed pairs, agree with
+  the review ~85% of the time and reject all 16 "other project" pairs.
+- **Impact:** seed selection (Methodology), message dumps (input list), paper table of pairs.

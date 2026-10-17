@@ -1,0 +1,16 @@
+azione,priorita,channel,group,channel_subs_web,last_post_web,group_members_web,group_users_7d,group_free_msgs_7d,motivo,link_channel,link_group
+togli,,@airdropo,@airdropninjagroup,,,,19,74,"esclusa in pairs_reviewed.csv (Marco: gestito da bot); il canale non ha altri gruppi validi",https://t.me/s/airdropo,https://t.me/airdropninjagroup
+togli,,@gambledemons,@demonscha,9439,,,36,43,"stesso gruppo e stesso titolo/iscritti di @demons: doppione, si tiene @demons (il gruppo cita @demons)",https://t.me/s/gambledemons,https://t.me/demonscha
+togli,,@binibitnews,@binibitofficial,3511,,,30,56,"stesso gruppo di @binibit_top (che ne e' il linked_chat): doppione, si tiene @binibit_top",https://t.me/s/binibitnews,https://t.me/binibitofficial
+togli,,@weexnews,@weex_official,3650,,375,11,82,"secondo gruppo di @weexnews, titolo 'ToPocket用户交流④群' (altra app); @weexnews resta con @weexglobal_group",https://t.me/s/weexnews,https://t.me/weex_official
+aggiungi,A,@chaingptnews,@chaingpt,387K,2026-10-15,120185,18,18,"linked_chat; il gruppo cita il canale",https://t.me/s/chaingptnews,https://t.me/chaingpt
+aggiungi,A,@asi_announcements,@asi_alliance,4.41K,2026-10-16,8465,23,43,"linked_chat (ASI Alliance / Fetch.ai)",https://t.me/s/asi_announcements,https://t.me/asi_alliance
+aggiungi,A,@superlitho,@lithochat,7.87K,2026-10-17,36476,30,63,"linked_chat (Lithosphere); in master l'ultimo post era vecchio, sul web posta oggi",https://t.me/s/superlitho,https://t.me/lithochat
+aggiungi,A,@bcgamewin,@bcgame,759K,2026-10-17,144660,44,59,"linked_chat; casino crypto, stesso brand di @bcgamewinbig gia' in lista: decidere se il tema va bene",https://t.me/s/bcgamewin,https://t.me/bcgame
+aggiungi,A,@cointrendz,@cointrendzcommunity,21K,2026-10-17,1662,5,10,"gruppo linkato nella descrizione del canale e il gruppo cita il canale (Main Channel: @CoinTrendz); attivita' al minimo della soglia",https://t.me/s/cointrendz,https://t.me/cointrendzcommunity
+aggiungi,B,@nq_anon12,@nq_anon12_chat,867,2026-10-17,170,21,24,"linked_chat; il gruppo cita il canale; canale < 1000 iscritti",https://t.me/s/nq_anon12,https://t.me/nq_anon12_chat
+aggiungi,B,@mexcuk_announcement,@mexcuk_community,787,2026-10-17,3681,5,23,"linked_chat (fan club MEXC UK); canale < 1000 iscritti",https://t.me/s/mexcuk_announcement,https://t.me/mexcuk_community
+aggiungi,B,@chainlinkbreadcrumbs,@chainlink,541,2026-10-17,3885,24,38,"linked_chat; community non ufficiale Chainlink; canale < 1000 iscritti",https://t.me/s/chainlinkbreadcrumbs,https://t.me/chainlink
+aggiungi,B,@chart_house_research,@officialcharthouse,503,2026-10-17,686,18,44,"linked_chat; canale < 1000 iscritti",https://t.me/s/chart_house_research,https://t.me/officialcharthouse
+aggiungi,C,@keeper_cis,id1524291072,446K,,6341,18,34,"linked_chat ma gruppo senza username pubblico: solo se approviamo la regola sui gruppi ID-only",https://t.me/s/keeper_cis,
+aggiungi,C,@frankencoinzchf_updates,@frankencoinzchf,59,2026-10-15,2459,29,42,"linked_chat; canale minuscolo (59 iscritti)",https://t.me/s/frankencoinzchf_updates,https://t.me/frankencoinzchf

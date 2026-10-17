@@ -27,3 +27,6 @@ fissare in `decisions.md`): gruppo collegato al canale o con nome simile, condiv
 ≥ 10 msg da ≥ 5 utenti /7g, < 50% msg da bot, canale ≥ 1000 iscritti e post dal 15/09, gruppo
 non privato. `flags` = motivi di dubbio; `gruppo_cita_canale` = la pagina t.me del gruppo
 nomina il canale (link reciproco). `decisione` / `note`: da compilare.
+
+**Lista finale (2026-10-17): `../pairs/final_pairs.csv`.** I file di questa cartella sono lo storico
+di come ci si è arrivati.
