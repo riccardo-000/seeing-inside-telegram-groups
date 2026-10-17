@@ -117,17 +117,7 @@ Pending:                     6.7%
 
 ---
 
-## Prossime azioni
 
-1. Eseguire una nuova discovery per:
-   - `@kucoin_news`
-   - `@radar_rashiddarsigov`
-
-2. Decidere formalmente come trattare i **7 gruppi ID-only**.
-
-3. Solo dopo questa decisione aggiornare il conteggio finale del corpus validato.
-
-4. Conservare questo audit come traccia delle decisioni manuali prese sul dataset.
 """
 
 path = Path("/mnt/data/channel_group_pair_audit.md")
