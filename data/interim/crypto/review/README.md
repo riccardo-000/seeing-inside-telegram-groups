@@ -16,3 +16,14 @@ possono copiare lì.
   **non loggato** a Telegram, così non si consumano resolve degli account.
 
 Prima le `own_community`, poi le altre, ordinate per canale: ci si può dividere a blocchi.
+
+## `coppie_valide_2026-10-17.csv` — punto di partenza per arrivare a 100 coppie crypto
+
+Tutte le coppie che oggi riteniamo valide, una riga per coppia (un canale può avere 2 gruppi).
+`stato`: `1_validata_review` = `final=valida` in `pairs_reviewed.csv`; `2_lista_marco_e_regole` =
+nella lista di Marco (`shared/Marco/100_CRYPTO.txt`) e passa le regole, mai in review;
+`3_da_controllare` = passa le regole, non l'ha mai visto nessuno. Regole (provvisorie, da
+fissare in `decisions.md`): gruppo collegato al canale o con nome simile, condiviso da ≤ 2 canali,
+≥ 10 msg da ≥ 5 utenti /7g, < 50% msg da bot, canale ≥ 1000 iscritti e post dal 15/09, gruppo
+non privato. `flags` = motivi di dubbio; `gruppo_cita_canale` = la pagina t.me del gruppo
+nomina il canale (link reciproco). `decisione` / `note`: da compilare.
