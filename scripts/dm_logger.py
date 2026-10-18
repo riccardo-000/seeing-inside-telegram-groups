@@ -3,7 +3,10 @@
 ONE instance per account for the whole team (DMs arrive per account): log
 it in memory/collection-log.md before starting. First logs DMs already in the
 inbox (--backfill), then keeps running and logs new ones until Ctrl+C.
-Messages are not marked as read; nothing is ever sent.
+With --once it only logs the DMs in the inbox and exits: run it about once a
+day when nobody can keep the logger on (decision 2026-10-18). DMs deleted by
+the sender before the check are lost. Messages are not marked as read;
+nothing is ever sent.
 
 Output: data/raw/dms/<topic>/dms.jsonl (pseudonymized if PSEUDONYM_SALT is set).
 Sender <-> admin matching uses the dumps of both topics in data/raw/*/messages/
@@ -11,6 +14,7 @@ Sender <-> admin matching uses the dumps of both topics in data/raw/*/messages/
 
 Usage:
     python scripts/dm_logger.py --topic crypto --backfill
+    python scripts/dm_logger.py --topic crypto --once
 """
 
 from __future__ import annotations
@@ -44,9 +48,11 @@ async def main_async(args) -> None:
     if not await client.is_user_authorized():
         raise SystemExit("Not logged in: run scripts/login.py first.")
     try:
-        if args.backfill:
+        if args.backfill or args.once:
             n = await backfill_dms(client, out, pseudo, admin_index, member_index)
             print(f"backfill: {n} DMs already in the inbox logged")
+        if args.once:
+            return
         register_dm_logger(client, out, pseudo, admin_index, member_index)
         print("Listening for DMs (Ctrl+C to stop)...", flush=True)
         await client.run_until_disconnected()
@@ -58,6 +64,7 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     add_topic_arg(ap)
     ap.add_argument("--backfill", action="store_true", help="first log DMs already in the inbox")
+    ap.add_argument("--once", action="store_true", help="only log DMs already in the inbox, then exit")
     try:
         asyncio.run(main_async(ap.parse_args()))
     except KeyboardInterrupt:

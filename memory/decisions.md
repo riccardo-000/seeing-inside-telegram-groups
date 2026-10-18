@@ -236,3 +236,30 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   (`--seeds-only`, `--min-subs`, `--daily-limit`, `group_about.csv`). The same script on crypto
   (≥ 1000 subs) finds 80 of the 100 final crypto pairs as `valida` (the other 20 came from manual
   and web search); the crypto list is unchanged.
+
+## 2026-10-18 — Join the groups first; captcha groups are not verified; DMs checked daily
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** (1) Each account joins the **100 groups** of its final pairs first
+  (`scripts/join_chats.py --kind groups`); channels are not joined for now (their history and
+  comments are read without joining) and may be joined later (`--kind channels`) if joins are
+  left over. (2) Joins are slow: ≤ 20 per run, 90–120 s apart, stop at the first FloodWait of
+  any length; one person per account at a time. (3) The account never presses buttons or answers
+  captchas: groups where a bot gates, restricts or removes new members are only detected (read-only,
+  60 s after the join) and logged as `needs_verification` / `removed`; groups needing admin
+  approval are skipped without sending a join request. Whether a human may press a plain
+  "I'm not a robot" button by hand is **open**: decide as a team (and ask the supervisor) once we
+  know how many groups are affected. (4) Nobody can keep `dm_logger.py` running, so DMs are
+  collected by `dm_logger.py --once` about once a day (one instance per account at a time); the
+  DM observation window of an account starts on the day its groups are joined.
+- **Why:** For DM exposure groups matter most: their member list is visible to members, while a
+  channel's subscribers are visible only to its admins (limited list). Joining only groups halves
+  the joins (Telegram does not publish join limits; on our accounts we have no data yet, so 20/run
+  is a cautious guess). Automating a captcha means bypassing an anti-bot check and breaks the
+  passive-only rule (CLAUDE.md rule 3). Daily checks: DMs stay in the inbox with their arrival
+  date, so counts and timing are kept.
+- **Impact:** `scripts/join_chats.py` (log in `data/interim/<topic>/joins/joins.csv`),
+  `scripts/dm_logger.py --once`. Paper: Methodology 4.2–4.3 (joins, DM window); Limitations:
+  DMs from admins who pick targets from the channel subscriber list are not observed; DMs deleted
+  by the sender before the daily check are lost and ex-scam accounts deleted in the meantime lose
+  sender role → DM counts are lower bounds; groups behind a captcha are missing. Deviation from the
+  scope "join the channels and their groups": tell the supervisor.
