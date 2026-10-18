@@ -23,6 +23,14 @@ data/interim/<topic>/audit/{channels_audit,channel_links,groups}.csv.
 
 Usage:
     python scripts/audit_channels.py --topic crypto --delay 6 --max-resolves 250
+    # targeted: only the listed channels, groups only from linked chat + description
+    python scripts/audit_channels.py --topic crypto --only LIST.csv --links description \
+        --max-resolves 100 --max-resolves-per-channel 1
+    # conspiracy, pair search (2026-10-18): TGDataset seeds only, >= 2000 subscribers,
+    # groups only from linked chat + description, 150 resolves/day; picks up new
+    # prefilter_tme.py output while it runs
+    python scripts/audit_channels.py --topic conspiracy --seeds-only --min-subs 2000 \
+        --links description --max-resolves-per-channel 2 --daily-limit 150 --max-resolves 150 --delay 8
 """
 
 from __future__ import annotations
@@ -46,7 +54,7 @@ from telethon.tl.types import Channel, InputPeerChannel, InputPeerUser, PeerUser
 from find_pairs import GROUP_HINT, link_usernames, mentions
 from peek_channel import TME_RE, extract_links
 import prefilter_tme
-from src.utils.budget import BudgetExceeded, ResolveBudget
+from src.utils.budget import DAILY_LIMIT, BudgetExceeded, ResolveBudget
 from src.utils.config import Paths, add_topic_arg, load_config, make_client, paths
 
 csv.field_size_limit(sys.maxsize)  # t.me link lists of aggregator channels are huge
@@ -63,6 +71,7 @@ AUDIT_COLS = [
     "n_candidates", "n_checked", "n_private_invites", "description", "checked_at", "error",
 ]
 LINK_COLS = ["channel", "target", "found_in", "target_type", "target_title", "note"]
+ABOUT_COLS = ["group", "about", "checked_at"]  # group descriptions: does the group cite the channel?
 GROUP_COLS = [
     "group", "title", "members", "is_linked_to", "msgs_7d", "users_7d", "free_msgs_7d",
     "free_users_7d", "last_msg", "scam", "fake", "active", "bot_msgs_7d", "checked_at",
@@ -76,12 +85,12 @@ class Stop(Exception):
 class Api:
     """Single throttle for every request; counts username resolves."""
 
-    def __init__(self, client, account: str, out: Path, delay, max_resolves, hours):
+    def __init__(self, client, account: str, out: Path, delay, max_resolves, hours, daily_limit=DAILY_LIMIT):
         self.client, self.out, self.delay, self.max_resolves = client, out, delay, max_resolves
         self.deadline = time.time() + hours * 3600
         self.requests = self.resolves = 0
         self.floodwaits = 0
-        self.budget = ResolveBudget("audit_channels", account)
+        self.budget = ResolveBudget("audit_channels", account, daily_limit)
         self.web_delay = 2.0
         self.web_requests = 0
         self.max_new_resolves_per_channel = 8
@@ -182,6 +191,12 @@ class Auditor:
         self.tgd_rows_seen: dict[str, int] = {}
         self.verdicts = Counter()
         self.aggregators_first = False
+        self.only = False            # --only: audit just the listed channels, follow nothing
+        self.links = "all"           # --links description: check only links in the description
+        self.seeds_only = False      # --seeds-only: TGDataset seeds only, follow no links/recommendations
+        self.min_subs = 0            # --min-subs: skip channels the web preview shows smaller than this
+        self._prefilter_mtime = 0.0
+        self._prefilter_read_at = 0.0
 
     # ---------- queue ----------
     def add(self, queue: list, username: str, source: str, **extra) -> None:
@@ -192,16 +207,30 @@ class Auditor:
     def web_says_skip(self, username: str) -> bool:
         """True if scripts/prefilter_tme.py already saw this channel dead or inactive (no API needed)."""
         if not hasattr(self, "_prefilter"):
-            self._prefilter = {}
-            for f in self.p.prefilter.glob("tme_prefilter*.csv"):
-                with open(f, newline="", encoding="utf-8") as fh:
-                    for r in csv.DictReader(fh):
-                        self._prefilter[r["username"].lower()] = r
+            self.read_prefilter()
         r = self._prefilter.get(username.lower())
         if r is None:
             return False
+        if self.min_subs and (r.get("subscribers") or "").isdigit() and int(r["subscribers"]) < self.min_subs:
+            return True
         return not (r["status"] == "alive" and r["kind"] in ("channel", "channel_no_preview")
                     and (r["kind"] == "channel_no_preview" or int(r.get("posts_30d") or 0) > 0))
+
+    def read_prefilter(self) -> bool:
+        """(Re)load the web prefilter results; True if the files changed since the last read.
+        prefilter_tme.py may be appending to them while the audit runs."""
+        files = list(self.p.prefilter.glob("tme_prefilter*.csv"))
+        mtime = max((f.stat().st_mtime for f in files), default=0.0)
+        self._prefilter_read_at = time.time()
+        if hasattr(self, "_prefilter") and mtime == self._prefilter_mtime:
+            return False
+        self._prefilter, self._prefilter_mtime = {}, mtime
+        for f in files:
+            text = f.read_text(encoding="utf-8")
+            text = text[: text.rfind("\n") + 1]  # skip a partial last line
+            for r in csv.DictReader(text.splitlines()):
+                self._prefilter[r["username"].lower()] = r
+        return True
 
     def refresh_tgdataset(self) -> None:
         if self.p.topic == "conspiracy":
@@ -234,7 +263,9 @@ class Auditor:
         topic priority (seeds_conspiracy.py), group-like t.me links in the description, any
         t.me link, posts in the last 30 days."""
         if "conspiracy" in self.tgd_rows_seen:
-            return
+            # new prefilter rows (prefilter_tme.py still running): re-read at most every 2 min
+            if time.time() - self._prefilter_read_at < 120 or not self.read_prefilter():
+                return
         self.tgd_rows_seen["conspiracy"] = 1
         self.web_says_skip("")  # loads the prefilter results
         with open(self.p.seeds / "seeds_conspiracy_candidates.csv", newline="", encoding="utf-8-sig") as fh:
@@ -248,6 +279,8 @@ class Auditor:
                     -int(w.get("posts_30d") or 0))
         for r in sorted(seeds, key=rank):
             self.add(self.q_tgd, r["username"], "tgdataset", channel_id=r["channel_id"])
+        ranks = {r["username"].lower(): rank(r) for r in seeds}  # new seeds go to their place, not the end
+        self.q_tgd.sort(key=lambda it: ranks.get(it["username"].lower(), (True, 99)))
 
     def load_master(self) -> None:
         """Priority queue from data/interim/<topic>/master.csv (scripts/build_master.py):
@@ -286,7 +319,17 @@ class Auditor:
             if r["kind"] == "group" and "discussion" in r.get("note", ""):
                 self.q_known.append({"username": r["username"], "source": "parent_of_comment_chat", "is_group": True})
 
+    def load_only(self, path: Path) -> None:
+        """--only: a CSV with a username column, audited in file order; nothing else is queued."""
+        self.only = True
+        with open(path, newline="", encoding="utf-8-sig") as fh:
+            for r in csv.DictReader(fh):
+                if not self.web_says_skip(r["username"]):
+                    self.add(self.q_priority, r["username"].lstrip("@"), f"only:{path.name}")
+
     def next_item(self):
+        if self.only:
+            return self.q_priority.pop(0) if self.q_priority else None
         self.refresh_tgdataset()
         for q in ((self.q_priority, self.q_known, self.q_linked, self.q_tgd, self.q_rec) if self.aggregators_first
                   else (self.q_priority, self.q_tgd, self.q_known, self.q_linked, self.q_rec)):
@@ -344,7 +387,10 @@ class Auditor:
                              and row.get("users_7d", 0) >= GROUP_MIN_USERS)
         self.groups[key] = row
         append(self.out / "groups.csv", GROUP_COLS, row)
-        if row.get("active"):
+        append(self.out / "group_about.csv", ABOUT_COLS, {
+            "group": row["group"], "about": (full.full_chat.about or "").replace("\n", " ")[:1000],
+            "checked_at": row["checked_at"]})
+        if row.get("active") and not self.seeds_only:
             for u in row.get("_links", []):
                 self.add(self.q_linked, u, f"posted_in_group:@{row['group']}")
         return row
@@ -374,6 +420,9 @@ class Auditor:
                 return self.save(row | {"status": "not_found_web", "verdict": "dead"})
             if w.get("kind") == "user_or_bot":
                 return self.save(row | {"status": "user_or_bot_web", "verdict": "dead"})
+            if self.min_subs and (w.get("subscribers") or "").isdigit() and int(w["subscribers"]) < self.min_subs:
+                return self.save(row | {"status": "alive_web", "verdict": "too_small", "title": w.get("title"),
+                                        "subscribers": w.get("subscribers"), "description": w.get("description")})
             if w.get("kind") == "channel" and w.get("last_post") and not int(w.get("posts_30d") or 0):
                 return self.save(row | {"status": "alive_web", "verdict": "inactive", "title": w.get("title"),
                                         "subscribers": w.get("subscribers"), "last_post": w["last_post"][:10],
@@ -394,7 +443,7 @@ class Auditor:
             print(f"[{self.api.requests} req, {self.api.resolves} resolves] group @{name} ({row['source'][:30]}): "
                   f"{'ACTIVE' if g.get('active') else 'inactive'}", flush=True)
             parent = next((c for c in full.chats if c.id == full.full_chat.linked_chat_id), None)
-            if parent is not None and getattr(parent, "username", None):
+            if parent is not None and getattr(parent, "username", None) and not self.seeds_only:
                 self.add(self.q_linked, parent.username, f"parent_of_group:@{name}")
             return
         if ch is None or not ch.broadcast:
@@ -458,6 +507,8 @@ class Auditor:
         for u, w in found.items():
             dedup.setdefault(u.lower(), (u, w))
         found = {u: w for k, (u, w) in dedup.items() if k != name.lower()}
+        if self.links == "description":
+            found = {u: w for u, w in found.items() if w == "description"}
         freq = Counter()
         for m in posts:
             freq.update(u.lower() for u in mentions(m.message or ""))
@@ -508,7 +559,7 @@ class Auditor:
             append(self.out / "channel_links.csv", LINK_COLS, {
                 "channel": name, "target": u, "found_in": where, "target_type": ttype,
                 "target_title": title, "note": note})
-            if ttype == "channel":
+            if ttype == "channel" and not self.seeds_only:
                 self.add(self.q_linked, u, f"linked_from:@{name}")
         for l in sorted(invites):
             append(self.out / "channel_links.csv", LINK_COLS, {
@@ -534,6 +585,8 @@ class Auditor:
         self.save(row | {"verdict": verdict})
 
         # similar channels suggested by Telegram
+        if self.only or self.seeds_only:
+            return
         try:
             rec = await self.api.run(lambda: self.api.client(GetChannelRecommendationsRequest(channel=ch)))
             for c in rec.chats:
@@ -561,12 +614,17 @@ async def main_async(args) -> None:
     await client.connect()
     if not await client.is_user_authorized():
         raise SystemExit("Not logged in: run scripts/login.py first.")
-    api = Api(client, config.account, p.audit, args.delay, args.max_resolves, args.hours)
+    api = Api(client, config.account, p.audit, args.delay, args.max_resolves, args.hours, args.daily_limit)
     aud = Auditor(api, p)
     aud.aggregators_first = args.aggregators_first
     api.max_new_resolves_per_channel = args.max_resolves_per_channel
-    aud.load_master()
-    aud.load_known()
+    aud.links = args.links
+    aud.seeds_only, aud.min_subs = args.seeds_only, args.min_subs
+    if args.only:
+        aud.load_only(args.only)
+    elif not args.seeds_only:
+        aud.load_master()
+        aud.load_known()
     print(f"priority queue from master.csv: {len(aud.q_priority)}", flush=True)
     t0 = time.time()
     reason = ""
@@ -617,6 +675,16 @@ def main() -> None:
     ap.add_argument("--aggregators-first", action="store_true",
                     help="known channels and their links before TGDataset candidates")
     ap.add_argument("--hours", type=float, default=8.0, help="hard time cap")
+    ap.add_argument("--only", type=Path, default=None,
+                    help="CSV with a username column: audit only these channels, in order")
+    ap.add_argument("--links", choices=("all", "description"), default="all",
+                    help="'description': look for groups only in the channel description (linked chat always)")
+    ap.add_argument("--seeds-only", action="store_true",
+                    help="audit only TGDataset seeds: no master/known channels, no linked or recommended channels")
+    ap.add_argument("--min-subs", type=int, default=0,
+                    help="skip (no resolve) channels whose web preview shows fewer subscribers")
+    ap.add_argument("--daily-limit", type=int, default=DAILY_LIMIT,
+                    help="resolve budget per UTC day for the account (ledger)")
     asyncio.run(main_async(ap.parse_args()))
 
 

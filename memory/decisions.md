@@ -206,3 +206,33 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   to other projects; the stricter rules, checked against the 73 hand-reviewed pairs, agree with
   the review ~85% of the time and reject all 16 "other project" pairs.
 - **Impact:** seed selection (Methodology), message dumps (input list), paper table of pairs.
+
+## 2026-10-18 — Selection rules for the conspiracy pairs; faster pair search
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** A conspiracy channel–group pair is chosen by `scripts/select_pairs.py`
+  (output `data/interim/conspiracy/pairs/candidate_pairs.csv`, outcome `valida` /
+  `da_controllare` / `esclusa` with the reason). Rules: the group is the channel's own (its
+  linked discussion chat, or a group in the channel description that cites the channel back or
+  has a matching name; description-only otherwise → check by hand; groups seen only in posts
+  are not candidates); **the group has a public username** (a linked chat without one cannot
+  be opened or checked from outside → excluded); ≥ 10 messages from ≥ 5 users in 7 days, bots
+  excluded, < 50% bot messages; channel **≥ 2000 subscribers** and posts in the last 30 days;
+  one group per channel and one channel per group; topic US/World news or channel not a
+  TGDataset seed → check by hand. Final list = `valida` (sample-checked by hand) + the
+  `da_controllare` rows accepted by hand.
+  Pair search: `audit_channels.py --topic conspiracy --seeds-only --min-subs 2000 --links
+  description --daily-limit 150`: only TGDataset seeds (no linked/recommended channels), small
+  channels skipped from the web preview without a resolve, groups only from linked chat +
+  description; the queue picks up new web-prefilter rows while it runs (prefilter of the
+  ~7,300 unlabelled seeds restarted 2026-10-18). Daily resolve budget of the conspiracy
+  account raised **from 100 to 150**.
+- **Why:** The 105 hand-review rows mixed shared hub groups and ads found in posts; stricter
+  rules applied by a script give a list that only needs a sample check. 2000 subscribers keeps
+  the larger, more visible channels; groups without a public username cannot be verified.
+  Covid/Extremists seeds were exhausted, so the unlabelled seeds are profiled for free on the
+  web first. 150 resolves/day: 0 FloodWait in 9 runs at 100/day; the 19 h FloodWait of
+  2026-09-29 came at ~250/day. Stop at the first long FloodWait.
+- **Impact:** seed selection (Methodology), `scripts/select_pairs.py`, `scripts/audit_channels.py`
+  (`--seeds-only`, `--min-subs`, `--daily-limit`, `group_about.csv`). The same script on crypto
+  (≥ 1000 subs) finds 80 of the 100 final crypto pairs as `valida` (the other 20 came from manual
+  and web search); the crypto list is unchanged.
