@@ -203,7 +203,8 @@ async def main_async(args) -> None:
     except BudgetExceeded as e:
         print(f"STOPPED: {e}")
     except errors.FloodWaitError as e:
-        print(f"FLOODWAIT {e.seconds}s — stopped. Log it in memory/collection-log.md and tell the others.")
+        req = type(e.request).__name__ if getattr(e, "request", None) else "?"
+        print(f"FLOODWAIT {e.seconds}s on {req} — stopped. Log it in memory/collection-log.md and tell the others.")
     except errors.RPCError as e:
         print(f"STOPPED on Telegram error {type(e).__name__}: {e}")
     finally:
