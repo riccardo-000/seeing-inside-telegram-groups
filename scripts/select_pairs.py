@@ -17,6 +17,8 @@ Rules (memory/decisions.md, 2026-10-17 crypto list, 2026-10-18 conspiracy):
     posts are not candidates (ads, shared hubs).
   - group active: >= MIN_MSGS messages from >= MIN_USERS users in the last 7 days,
     bots excluded, and bot messages < MAX_BOT_SHARE of all messages;
+  - group used as a chat, not only for comments under the channel posts: >= MIN_MSGS
+    messages that are not replies, from >= MIN_USERS users, in the last 7 days;
   - channel: >= --min-subs subscribers, posts in the last 30 days;
   - one group per channel and one channel per group: a group claimed by several
     channels goes to the channel it is linked to; otherwise `da_controllare`;
@@ -52,7 +54,7 @@ CHECK_TOPICS = {"US news", "World news"}
 NOISE = re.compile(r"(official|channel|chat|group|community|talk|discussion|public|english|news|the)")
 COLS = ["esito", "motivo", "final", "channel", "group", "topic", "riccardo", "marco", "simone", "note",
         "how_found", "channel_title", "group_title", "channel_subs", "channel_last_post", "group_members",
-        "group_msgs_7d", "group_users_7d", "bot_share", "group_checked_at", "altri_gruppi",
+        "group_msgs_7d", "group_users_7d", "group_free_msgs_7d", "group_free_users_7d", "bot_share", "group_checked_at", "altri_gruppi",
         "link_channel", "link_group"]
 ORDER = {"valida": 0, "da_controllare": 1, "esclusa": 2}
 
@@ -116,6 +118,7 @@ def main() -> None:
         ch, gr = channels.get(c, {}), groups.get(g, {})
         name_c, name_g = ch.get("channel") or c, gr.get("group") or g
         msgs, users, bots = num(gr.get("msgs_7d")), num(gr.get("users_7d")), num(gr.get("bot_msgs_7d"))
+        free_msgs, free_users = num(gr.get("free_msgs_7d")), num(gr.get("free_users_7d"))
         bot_share = bots / (msgs + bots) if msgs + bots else 0.0
         topic = topics.get(c)
         no_username = name_g.startswith("id") and name_g[2:].isdigit()
@@ -127,6 +130,8 @@ def main() -> None:
             out_reasons.append("canale senza post negli ultimi 30 giorni")
         if msgs < MIN_MSGS or users < MIN_USERS:
             out_reasons.append(f"gruppo poco attivo ({msgs:.0f} msg, {users:.0f} utenti in 7 g)")
+        elif free_msgs < MIN_MSGS or free_users < MIN_USERS:
+            out_reasons.append(f"solo commenti ai post ({free_msgs:.0f} msg liberi, {free_users:.0f} utenti in 7 g)")
         if no_username:
             out_reasons.append("gruppo senza username pubblico (non verificabile da fuori)")
         if bot_share >= MAX_BOT_SHARE:
@@ -162,6 +167,7 @@ def main() -> None:
             "group_title": gr.get("title", ""), "channel_subs": ch.get("subscribers", ""),
             "channel_last_post": ch.get("last_post", ""), "group_members": gr.get("members", ""),
             "group_msgs_7d": gr.get("msgs_7d", ""), "group_users_7d": gr.get("users_7d", ""),
+            "group_free_msgs_7d": gr.get("free_msgs_7d", ""), "group_free_users_7d": gr.get("free_users_7d", ""),
             "bot_share": f"{bot_share:.2f}", "group_checked_at": (gr.get("checked_at") or "")[:10],
             "link_channel": f"https://t.me/s/{name_c}",
             "link_group": "" if no_username else f"https://t.me/{name_g}",

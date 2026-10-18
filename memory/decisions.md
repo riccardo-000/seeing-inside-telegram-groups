@@ -263,3 +263,16 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   by the sender before the daily check are lost and ex-scam accounts deleted in the meantime lose
   sender role → DM counts are lower bounds; groups behind a captcha are missing. Deviation from the
   scope "join the channels and their groups": tell the supervisor.
+
+## 2026-10-18 — A group must be used as a chat, not only for post comments
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** On top of the 2026-10-18 rules, `select_pairs.py` requires the group to be
+  used as a chat: ≥ 10 messages that are **not replies** (free messages) from ≥ 5 users in
+  the last 7 days. A linked discussion group whose activity is only comments under the
+  channel posts is excluded ("solo commenti ai post").
+- **Why:** A comment section is part of the channel, not a separate community; the study
+  compares channels with groups where users talk to each other. The first 150/day audit
+  found mostly US-news channels whose linked chats are comment sections.
+- **Impact:** conspiracy `candidate_pairs.csv`: 22 valida + 33 da_controllare (was 35 + 62).
+  **Crypto:** the same rule would exclude 12 of the 80 final crypto pairs that the script
+  can evaluate (crypto list not changed yet: team to decide, for consistency between arms).
