@@ -276,3 +276,20 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Impact:** conspiracy `candidate_pairs.csv`: 22 valida + 33 da_controllare (was 35 + 62).
   **Crypto:** the same rule would exclude 12 of the 80 final crypto pairs that the script
   can evaluate (crypto list not changed yet: team to decide, for consistency between arms).
+
+## 2026-10-20 — Conspiracy topic: only Covid/Extremists auto-valid; keyword-ranked queue
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** In `select_pairs.py`, TGDataset topics Crypto and Religion join US/World news
+  as `da_controllare`: only Covid and Extremists seeds can be `valida` without a manual
+  topic check. A new keyword list (`src/utils/conspiracy_terms.py`: QAnon, awakening, deep
+  state/NWO, "truth"/disclosure, Covid/vaccines/5G, UFO/esoteric, sovereign/freedom, plus
+  DE/IT/ES/FR/RU terms) is applied to channel/group titles and descriptions: column
+  `parole_chiave` in `candidate_pairs.csv` (rows with hits listed first), and the conspiracy
+  audit queue now puts channels with hits first (before topic priority).
+- **Why:** The 2026-10-19 audit turned up "valid" pairs under Crypto/Religion that are not
+  conspiracy (crypto trading, Christian apologetics, meme channels). TGDataset's conspiracy
+  file mixes topics, so the label alone is not enough. Keywords are a ranking aid and a
+  hint for the reviewer, not a label: many clear Covid channels have no keyword (empty
+  descriptions), and words like "truth" or "patriot" also hit ordinary channels.
+- **Impact:** seed selection and topic check (Methodology); `candidate_pairs.csv` now 20 valida
+  + 52 da_controllare.

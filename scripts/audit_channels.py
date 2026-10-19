@@ -56,6 +56,7 @@ from peek_channel import TME_RE, extract_links
 import prefilter_tme
 from src.utils.budget import DAILY_LIMIT, BudgetExceeded, ResolveBudget
 from src.utils.config import Paths, add_topic_arg, load_config, make_client, paths
+from src.utils.conspiracy_terms import conspiracy_hits
 
 csv.field_size_limit(sys.maxsize)  # t.me link lists of aggregator channels are huge
 
@@ -260,6 +261,7 @@ class Auditor:
         """Conspiracy candidates the web prefilter already saw alive and posting (no resolve
         on unknown ones), most promising first: channels whose web preview shows recent posts
         before those without a preview (15 of 19 of these were inactive on 2026-10-07); then
+        conspiracy keywords in title/description (src/utils/conspiracy_terms.py), then
         topic priority (seeds_conspiracy.py), group-like t.me links in the description, any
         t.me link, posts in the last 30 days."""
         if "conspiracy" in self.tgd_rows_seen:
@@ -275,8 +277,10 @@ class Auditor:
         def rank(r):
             w = self._prefilter[r["username"].lower()]
             links = (w.get("tme_links") or "").split()
-            return (w.get("kind") != "channel", int(r["priority"]), not any(GROUP_HINT.search(l) for l in links), not links,
-                    -int(w.get("posts_30d") or 0))
+            # 2026-10-20: channels whose title/description look conspiracy-themed first
+            hits = len(conspiracy_hits(w.get("title", ""), w.get("description", ""), r["username"]))
+            return (w.get("kind") != "channel", -min(hits, 2), int(r["priority"]),
+                    not any(GROUP_HINT.search(l) for l in links), not links, -int(w.get("posts_30d") or 0))
         for r in sorted(seeds, key=rank):
             self.add(self.q_tgd, r["username"], "tgdataset", channel_id=r["channel_id"])
         ranks = {r["username"].lower(): rank(r) for r in seeds}  # new seeds go to their place, not the end

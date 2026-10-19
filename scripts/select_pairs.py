@@ -22,7 +22,10 @@ Rules (memory/decisions.md, 2026-10-17 crypto list, 2026-10-18 conspiracy):
   - channel: >= --min-subs subscribers, posts in the last 30 days;
   - one group per channel and one channel per group: a group claimed by several
     channels goes to the channel it is linked to; otherwise `da_controllare`;
-  - topic (conspiracy): US/World news or not a TGDataset seed -> `da_controllare`.
+  - topic (conspiracy): only Covid and Extremists are `valida`; US/World news, Crypto,
+    Religion, unlabelled or not a TGDataset seed -> `da_controllare`. Column
+    `parole_chiave` lists conspiracy keyword families found in titles/description
+    (src/utils/conspiracy_terms.py), to speed up the manual check.
 
 Output: data/interim/<topic>/pairs/candidate_pairs.csv, best first (valida, then
 da_controllare, then esclusa). Columns final/riccardo/marco/simone/note are for the
@@ -44,15 +47,16 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src.utils.config import add_topic_arg, paths
+from src.utils.conspiracy_terms import conspiracy_hits
 
 csv.field_size_limit(sys.maxsize)
 
 MIN_MSGS, MIN_USERS = 10, 5
 MAX_BOT_SHARE = 0.5
 OWN_LINKS = ("linked_chat", "description")
-CHECK_TOPICS = {"US news", "World news"}
+CHECK_TOPICS = {"US news", "World news", "Crypto", "Religion"}  # 2026-10-20: Crypto/Religion mostly off-topic
 NOISE = re.compile(r"(official|channel|chat|group|community|talk|discussion|public|english|news|the)")
-COLS = ["esito", "motivo", "final", "channel", "group", "topic", "riccardo", "marco", "simone", "note",
+COLS = ["esito", "motivo", "final", "channel", "group", "topic", "parole_chiave", "riccardo", "marco", "simone", "note",
         "how_found", "channel_title", "group_title", "channel_subs", "channel_last_post", "group_members",
         "group_msgs_7d", "group_users_7d", "group_free_msgs_7d", "group_free_users_7d", "bot_share", "group_checked_at", "altri_gruppi",
         "link_channel", "link_group"]
@@ -163,6 +167,8 @@ def main() -> None:
         rows.append({
             "esito": esito, "motivo": "; ".join(out_reasons or check_reasons),
             "channel": "@" + name_c, "group": "@" + name_g, "topic": topic or "",
+            "parole_chiave": " ".join(conspiracy_hits(ch.get("title", ""), ch.get("description", ""),
+                                                      gr.get("title", ""), name_c, name_g)),
             "how_found": " ".join(sorted(how)), "channel_title": ch.get("title", ""),
             "group_title": gr.get("title", ""), "channel_subs": ch.get("subscribers", ""),
             "channel_last_post": ch.get("last_post", ""), "group_members": gr.get("members", ""),
@@ -192,7 +198,8 @@ def main() -> None:
             r["esito"], r["motivo"] = "esclusa", f"gruppo già assegnato a {taken[g]}"
         elif r["esito"] != "esclusa":
             taken[g] = r["channel"]
-    final = sorted(best.values(), key=lambda r: (ORDER[r["esito"]], r["motivo"], -num(r["channel_subs"])))
+    final = sorted(best.values(), key=lambda r: (ORDER[r["esito"]], not r["parole_chiave"], r["motivo"],
+                                                 -num(r["channel_subs"])))
     for r in final:
         r["altri_gruppi"] = " ".join(others.get(r["channel"].lower(), []))
 
