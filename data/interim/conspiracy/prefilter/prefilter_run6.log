@@ -1,0 +1,35 @@
+topic: conspiracy | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/conspiracy/prefilter/tme_prefilter.csv
+10901 already checked, 669 to check now
+  25/669 ukrainianIdentitarianism: alive/channel subs=2060 last=2026-10-18T14:06:49+00:00
+  50/669 ungeteilt: alive/channel subs=266 last=2026-02-05T12:56:53+00:00
+  75/669 UnspeakableSecret: alive/channel subs=3680 last=2023-12-17T07:09:38+00:00
+  100/669 UsyLukashenko: alive/channel subs=19 last=2024-04-26T16:12:33+00:00
+  125/669 vakense: alive/channel subs=702 last=2026-10-20T12:04:05+00:00
+  150/669 vdprecherche: empty_page/- subs= last=
+  175/669 verfassungsfreunde: alive/channel subs=11 last=2022-05-04T10:22:33+00:00
+  200/669 victoriaenlaluz: alive/channel subs=14600 last=2026-10-20T10:15:16+00:00
+  225/669 virus_chino: alive/channel subs=14500 last=2026-09-08T07:59:17+00:00
+  250/669 vMzMBocksaga: alive/channel subs=1670 last=2026-08-20T06:36:03+00:00
+  275/669 volz_byhar: alive/channel_no_preview subs=311 last=
+  300/669 vyborka: alive/channel subs=39800 last=2026-10-20T11:21:12+00:00
+  325/669 wahrheitgerechtigkeit: alive/channel subs=653 last=2024-03-06T18:35:40+00:00
+  350/669 WarDonbass: alive/channel subs=51000 last=2026-10-20T12:35:48+00:00
+  375/669 WedenLeben: alive/channel subs=29 last=2023-05-29T16:55:32+00:00
+  400/669 WendezeitHannover: alive/channel subs=7890 last=2026-10-19T21:14:55+00:00
+  425/669 whitefilin: alive/channel subs=22700 last=2026-10-19T14:34:22+00:00
+  450/669 wildnisschulewaldkauz: alive/channel subs=142 last=2026-10-01T08:33:27+00:00
+  475/669 wirinlandsberg: alive/channel subs=582 last=2026-10-20T08:00:37+00:00
+  500/669 WissenSchafftFreiheit: alive/channel subs=46200 last=2026-10-18T07:42:16+00:00
+  525/669 WorldTruth17: alive/channel subs=16 last=2023-04-13T16:20:43+00:00
+  550/669 XAVIERLIBRES: alive/channel subs=424 last=2026-10-20T12:54:44+00:00
+  575/669 Yoicenet2: alive/channel subs=4310 last=2026-10-19T20:12:25+00:00
+  600/669 zamerch: alive/channel subs=216 last=2023-08-11T04:33:55+00:00
+  625/669 zeitgeistprintonline: alive/channel subs=200 last=2023-05-08T12:54:54+00:00
+  650/669 Zohour_I12: alive/channel subs=30400 last=2026-10-20T13:22:39+00:00
+
+DONE -> /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/conspiracy/prefilter/tme_prefilter.csv
+    460  alive/channel
+    151  empty_page/-
+     47  alive/channel_no_preview
+      9  alive/user_or_bot
+      2  alive/group

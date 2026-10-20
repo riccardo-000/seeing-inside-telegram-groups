@@ -1,0 +1,97 @@
+topic: conspiracy | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/conspiracy/audit
+account: conspiracy | session: research_conspiracy.session
+priority queue from master.csv: 0
+[4 req, 0 resolves] @endzeitreportmcm (tgdataset): no_group
+[8 req, 1 resolves] @FdWOeff (tgdataset): private_links_only
+[12 req, 1 resolves] @GeheimeswissenderEliten (tgdataset): private_links_only
+[17 req, 2 resolves] @generacionconciencia (tgdataset): no_group
+[23 req, 3 resolves] @UFOCHANNEL_1 (tgdataset): public_group_active -> Chat_Ufochannel_1
+[27 req, 3 resolves] @GuardiansofGaia (tgdataset): no_group
+[32 req, 4 resolves] @HolografischeWelt (tgdataset): private_links_only
+[36 req, 4 resolves] @impfen_nein_danke (tgdataset): private_links_only
+[41 req, 5 resolves] @JesusistWarheit (tgdataset): no_group
+[47 req, 5 resolves] @laureanobeni (tgdataset): comments_only
+== 5 min | audited 10 | {'no_group': 4, 'private_links_only': 4, 'public_group_active': 1, 'comments_only': 1} | queue prio=0 tgd=1410 known=0 linked=0 rec=0
+[52 req, 5 resolves] @laverdadlibre (tgdataset): public_group_active -> chatlaverdadlibre
+[56 req, 6 resolves] @laveritelibere (tgdataset): private_links_only
+[62 req, 7 resolves] @LeGrandReveil (tgdataset): private_links_only
+[68 req, 8 resolves] @medicinareal (tgdataset): comments_only
+[71 req, 8 resolves] @medicosporlaverdadar (tgdataset): no_group
+[77 req, 8 resolves] @No_Plandemia (tgdataset): public_group_active -> NOMASSECRETOSCHAT
+[82 req, 9 resolves] @nouvelordre (tgdataset): no_group
+[89 req, 10 resolves] @prezidentgordon (tgdataset): private_links_only
+[96 req, 11 resolves] @promirru (tgdataset): private_links_only
+[103 req, 12 resolves] @QITALIA (tgdataset): private_links_only
+== 12 min | audited 20 | {'no_group': 6, 'private_links_only': 9, 'public_group_active': 3, 'comments_only': 2} | queue prio=0 tgd=1437 known=0 linked=0 rec=0
+[107 req, 13 resolves] @querdenken_351 (tgdataset): private_links_only
+[113 req, 13 resolves] @rosenbusch (tgdataset): comments_only
+[118 req, 14 resolves] @rpnnews (tgdataset): private_links_only
+[124 req, 14 resolves] @tartariabrazil (tgdataset): private_links_only
+[128 req, 15 resolves] @TLV1_Ok (tgdataset): no_group
+[133 req, 15 resolves] @topnews_at (tgdataset): comments_only
+[137 req, 16 resolves] @UNIDOS_X_LA_VERDAD (tgdataset): private_links_only
+[142 req, 16 resolves] @Unregierbar (tgdataset): comments_only
+[147 req, 17 resolves] @VerborgeneWahrheit (tgdataset): no_group
+[153 req, 17 resolves] @Verdadesofenden (tgdataset): comments_only
+== 17 min | audited 30 | {'no_group': 8, 'private_links_only': 13, 'public_group_active': 3, 'comments_only': 6} | queue prio=0 tgd=1448 known=0 linked=0 rec=0
+[160 req, 18 resolves] @VEROCDSWELLNESS (tgdataset): comments_only
+[167 req, 19 resolves] @WhatDontYouLoveUsAnymore (tgdataset): public_group_active -> WhatDontYouLoveUsAnymoreChat
+[170 req, 19 resolves] @antonellawerner (tgdataset): private_links_only
+[176 req, 20 resolves] @conocimientoprohibido1 (tgdataset): private_links_only
+[183 req, 21 resolves] @coronawahrheit (tgdataset): comments_only
+[188 req, 21 resolves] @infoNeueZeit (tgdataset): private_links_only
+[191 req, 21 resolves] @kaiorak (tgdataset): private_links_only
+[196 req, 21 resolves] @MartinRutter (tgdataset): private_links_only
+[201 req, 22 resolves] @mh171702Q2Q (tgdataset): private_links_only
+[207 req, 23 resolves] @paolosensinisaggista (tgdataset): comments_only
+== 23 min | audited 40 | {'no_group': 8, 'private_links_only': 19, 'public_group_active': 4, 'comments_only': 9} | queue prio=0 tgd=1459 known=0 linked=0 rec=0
+[212 req, 24 resolves] @WTF1_3 (tgdataset): no_group
+[221 req, 26 resolves] @WolfgangWodarg (tgdataset): public_group_inactive
+[227 req, 26 resolves] @WWG1WGAWORLDWIDE (tgdataset): comments_only
+[233 req, 26 resolves] @QFSQwantum (tgdataset): comments_only
+[239 req, 27 resolves] @QuetgLars (tgdataset): private_links_only
+[244 req, 27 resolves] @rincondeldespertar (tgdataset): comments_only
+[248 req, 28 resolves] @ungeimpft (tgdataset): private_links_only
+[256 req, 29 resolves] @zombaktales (tgdataset): comments_only
+[262 req, 30 resolves] @unidosporlaverdad (tgdataset): private_links_only
+[266 req, 31 resolves] @VeganicTareCk (tgdataset): no_group
+== 30 min | audited 50 | {'no_group': 10, 'private_links_only': 22, 'public_group_active': 4, 'comments_only': 13, 'public_group_inactive': 1} | queue prio=0 tgd=1491 known=0 linked=0 rec=0
+[272 req, 31 resolves] @Wahrheit2 (tgdataset): public_group_active -> Wahrheit2_chat
+[276 req, 32 resolves] @cherniy_kvartal (tgdataset): private_links_only
+[282 req, 33 resolves] @der17stammtisch (tgdataset): private_links_only
+[286 req, 33 resolves] @noticiaspatriotas (tgdataset): private_links_only
+[292 req, 33 resolves] @silberjungethorstenschulte (tgdataset): comments_only
+[295 req, 33 resolves] @truth_free (tgdataset): no_group
+[302 req, 34 resolves] @UfosundLichtschiffe (tgdataset): comments_only
+[308 req, 34 resolves] @Dr_Angel_Ruiz_Valdepe_as (tgdataset): comments_only
+[313 req, 35 resolves] @grabatuhospital (tgdataset): no_group
+[316 req, 35 resolves] @ILLUMINATI_NEWS_TV (tgdataset): no_group
+== 35 min | audited 60 | {'no_group': 13, 'private_links_only': 25, 'public_group_active': 5, 'comments_only': 16, 'public_group_inactive': 1} | queue prio=0 tgd=1482 known=0 linked=0 rec=0
+[321 req, 36 resolves] @LoucosPelasVerdades (tgdataset): no_group
+[328 req, 37 resolves] @complotix (tgdataset): comments_only
+[333 req, 37 resolves] @cristinamartinjimenezescritora (tgdataset): public_group_active -> crismartinj
+[338 req, 37 resolves] @despertareinevitavel (tgdataset): comments_only
+[344 req, 38 resolves] @stopbrd (tgdataset): private_links_only
+[349 req, 39 resolves] @colinrivas (tgdataset): no_group
+[356 req, 40 resolves] @neolginskie (tgdataset): private_links_only
+[360 req, 41 resolves] @nessunnesso (tgdataset): private_links_only
+[366 req, 41 resolves] @bernie006 (tgdataset): comments_only
+[371 req, 42 resolves] @conscienciatierraplana (tgdataset): no_group
+== 41 min | audited 70 | {'no_group': 16, 'private_links_only': 28, 'public_group_active': 6, 'comments_only': 19, 'public_group_inactive': 1} | queue prio=0 tgd=1472 known=0 linked=0 rec=0
+[377 req, 42 resolves] @KanalChemtrailsHaarp (tgdataset): private_links_only
+[383 req, 43 resolves] @Lima_True_Story (tgdataset): comments_only
+[389 req, 44 resolves] @mariashukshina (tgdataset): private_links_only
+[394 req, 45 resolves] @Qparadise (tgdataset): no_group
+[399 req, 46 resolves] @despertandoleoes (tgdataset): no_group
+[404 req, 46 resolves] @PRAVDASILNEE (tgdataset): private_links_only
+[409 req, 46 resolves] @Anonymous_070 (tgdataset): comments_only
+[414 req, 47 resolves] @AS_SeLesDijo (tgdataset): no_group
+[420 req, 48 resolves] @Diegodibonito (tgdataset): comments_only
+[424 req, 49 resolves] @Fliegenpil (tgdataset): private_links_only
+== 47 min | audited 80 | {'no_group': 19, 'private_links_only': 32, 'public_group_active': 6, 'comments_only': 22, 'public_group_inactive': 1} | queue prio=0 tgd=1462 known=0 linked=0 rec=0
+[430 req, 50 resolves] @ruskline_ru (tgdataset): comments_only
+[437 req, 51 resolves] @GeoInfos (tgdataset): private_links_only
+[443 req, 51 resolves] @RA_Ludwig (tgdataset): public_group_active -> diskussionsgruppera_ludwig
+
+DONE (FLOODWAIT 26799s (#1)): 444 requests, 52 resolves, 54 web checks, 1 short FloodWaits, 50 min
+verdicts: {'no_group': 19, 'private_links_only': 33, 'public_group_active': 7, 'comments_only': 23, 'public_group_inactive': 1}
