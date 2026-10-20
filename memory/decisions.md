@@ -293,3 +293,20 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   descriptions), and words like "truth" or "patriot" also hit ordinary channels.
 - **Impact:** seed selection and topic check (Methodology); `candidate_pairs.csv` now 20 valida
   + 52 da_controllare.
+
+## 2026-10-20 — Join outcomes: muted members count as observed groups (to confirm)
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** `join_chats.py` now records why a group is flagged (reason column) and has a
+  read-only `--recheck STATUS`. Outcomes: `joined`; `restricted` (only media/links/stickers taken,
+  e.g. for newcomers); `needs_verification` (we cannot write, or a bot prompt with buttons mentions
+  us); `removed`. **Proposal, team to confirm:** a muted (`needs_verification`) or `restricted`
+  group still counts as observed: we stay a member, read everything, appear in the member list and
+  can receive DMs; we only cannot write, which we never do. Lost groups are only `removed` and
+  `join_request`; their pairs are replaced from the reserve list.
+- **Why:** Recheck of the 19 flagged crypto groups (2026-10-20): 6 had kicked us (captcha
+  timeout), 10 kept us muted, 1 had media-only limits, 1 had lifted them. No button needs pressing
+  for the muted ones, so the "press it by hand" question (2026-10-18) only concerns groups that
+  kick unverified members (8 of 57 so far).
+- **Impact:** `scripts/join_chats.py`; Methodology 4.2 (join outcomes table); Limitations: groups
+  that kick unverified members and groups needing admin approval are missing (15 of 57 crypto
+  groups so far) → replacement pairs, possible bias against stricter-moderated groups.

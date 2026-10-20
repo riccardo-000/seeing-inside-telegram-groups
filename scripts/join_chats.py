@@ -2,9 +2,13 @@
 
 Joining is the only action: the account never sends, reacts, presses buttons
 or answers captchas. Groups whose bot asks new members to verify (button,
-captcha) or that restrict/remove us are only *detected* by reading, logged as
-``needs_verification`` / ``removed`` and left as they are. Groups that need an
-admin's approval (join request) are skipped without sending a request.
+captcha) or that restrict/remove us are only *detected* by reading and left as
+they are: ``needs_verification`` (we cannot write, or a bot prompt with buttons
+mentions us), ``restricted`` (only some rights taken, e.g. no media/links for
+newcomers: a normal member otherwise), ``removed``; the reason column says which.
+``--recheck STATUS`` re-runs that check later on the chats already joined, without
+joining anything. Groups that need an admin's approval (join request) are
+skipped without sending a request.
 
 Input: data/interim/<topic>/pairs/final_pairs.csv (columns ``channel``, ``group``).
 Output: data/interim/<topic>/joins/joins.csv, one row per attempt. Resumable:
@@ -18,6 +22,7 @@ Create data/interim/<topic>/joins/STOP to stop gracefully between joins.
 Usage:
     python scripts/join_chats.py --topic crypto --dry-run
     python scripts/join_chats.py --topic crypto --kind groups --max-joins 20
+    python scripts/join_chats.py --topic crypto --recheck needs_verification
 """
 
 from __future__ import annotations
@@ -42,8 +47,13 @@ from src.utils.config import add_topic_arg, load_config, make_client, paths
 
 FIELDS = ["date_utc", "time_utc", "chat", "kind", "status", "reason"]
 # outcomes that are not retried
-FINAL = {"joined", "already_member", "needs_verification", "removed",
+FINAL = {"joined", "already_member", "restricted", "needs_verification", "removed",
          "join_request", "not_found", "not_a_channel", "private"}
+MEMBER = {"joined", "already_member", "restricted", "needs_verification"}
+# ChatBannedRights flags that matter to a member who only reads
+RIGHTS = ("send_messages", "send_plain", "send_media", "send_photos", "send_videos", "send_docs",
+          "send_audios", "send_voices", "send_roundvideos", "send_stickers", "send_gifs",
+          "send_inline", "embed_links", "send_polls")
 MAX_CHATS = 480  # Telegram caps an account at 500 channels + supergroups
 
 
@@ -79,31 +89,86 @@ def write_row(path: Path, chat: str, kind: str, status: str, reason: str = "") -
     print(f"  @{chat}: {status}{' (' + reason + ')' if reason else ''}", flush=True)
 
 
-async def verification_state(client, ent: Channel, me_id: int, joined_at: datetime) -> str | None:
-    """Read-only check, some time after joining: did a bot gate or remove us?"""
+def _restrictions(part: ChannelParticipantBanned) -> tuple[bool, str]:
+    """(muted, short description) of the rights a group took from us."""
+    r = part.banned_rights
+    taken = [f for f in RIGHTS if getattr(r, f, False)]
+    until = r.until_date
+    # until_date 0 (or far in the future) means for ever
+    forever = until is None or until.year < 2000 or until.year > datetime.now(timezone.utc).year + 1
+    desc = ", ".join(taken) or "none"
+    if not forever:
+        desc += f" until {until:%Y-%m-%d %H:%M}Z"
+    return bool(r.send_messages or getattr(r, "send_plain", False)), desc
+
+
+async def verification_state(client, ent: Channel, me_id: int, joined_at: datetime) -> tuple[str, str]:
+    """Read-only check, some time after joining: did a bot gate, restrict or remove us?
+
+    Returns (status, reason). status is ``removed``; ``needs_verification`` (we
+    cannot write, or a bot posted a prompt with buttons that mentions us);
+    ``restricted`` (only some rights taken, e.g. media/links for newcomers: still
+    a normal member); or ``joined``.
+    """
     peer = InputPeerChannel(ent.id, ent.access_hash)
     try:
         now = await client.get_entity(peer)
     except errors.ChannelPrivateError:
-        return "removed"
+        return "removed", "group not accessible any more"
     if isinstance(now, ChannelForbidden) or getattr(now, "left", False):
-        return "removed"
+        return "removed", "not a member any more"
+    muted, rights = False, ""
     try:
         part = (await client(GetParticipantRequest(peer, InputPeerSelf()))).participant
         if isinstance(part, ChannelParticipantBanned):
-            return "needs_verification"  # restricted right after joining: captcha bots do this
+            if part.left or part.banned_rights.view_messages:
+                return "removed", "banned"
+            muted, rights = _restrictions(part)
     except errors.UserNotParticipantError:
-        return "removed"
+        return "removed", "not a participant"
     except errors.RPCError:
         pass
-    # a message after our join, with buttons, that mentions us (typical captcha prompt)
-    async for m in client.iter_messages(peer, limit=20):
-        if m.date < joined_at:
+    # first messages after our join: a prompt with buttons addressed to us = captcha
+    prompt = False
+    async for m in client.iter_messages(peer, offset_date=joined_at, reverse=True, limit=30):
+        if m.reply_markup is not None and (m.mentioned or any(
+                isinstance(e, MessageEntityMentionName) and e.user_id == me_id for e in (m.entities or []))):
+            prompt = True
             break
-        if m.reply_markup is not None and any(
-                isinstance(e, MessageEntityMentionName) and e.user_id == me_id for e in (m.entities or [])):
-            return "needs_verification"
-    return None
+    reasons = ([f"cannot write ({rights})"] if muted else
+               [f"restricted: {rights}"] if rights else []) + (["bot prompt with buttons"] if prompt else [])
+    if muted or prompt:
+        return "needs_verification", "; ".join(reasons)
+    if rights:
+        return "restricted", "; ".join(reasons)
+    return "joined", "no restriction"
+
+
+async def recheck(client, log_path: Path, latest: dict[str, dict], first: dict[str, dict],
+                  statuses: set[str], me_id: int, pause: float) -> None:
+    """Re-run the read-only check on chats whose latest status is in ``statuses``."""
+    for key, row in latest.items():
+        if row["status"] not in statuses:
+            continue
+        try:
+            inp = client.session.get_input_entity(row["chat"])
+        except (ValueError, KeyError, TypeError):
+            print(f"  @{row['chat']}: not in the session cache, skipped (no resolve spent)")
+            continue
+        await asyncio.sleep(pause)
+        try:
+            ent = await client.get_entity(inp)
+        except errors.ChannelPrivateError:
+            write_row(log_path, row["chat"], row["kind"], "removed", "recheck: group not accessible any more")
+            continue
+        if isinstance(ent, ChannelForbidden):
+            write_row(log_path, row["chat"], row["kind"], "removed", "recheck: banned")
+            continue
+        f = first[key]
+        joined_at = datetime.fromisoformat(f"{f['date_utc']}T{f['time_utc']}+00:00")
+        await asyncio.sleep(pause)
+        state, reason = await verification_state(client, ent, me_id, joined_at)
+        write_row(log_path, row["chat"], row["kind"], state, f"recheck: {reason}")
 
 
 async def main_async(args) -> None:
@@ -113,16 +178,23 @@ async def main_async(args) -> None:
     stop = log_path.parent / "STOP"
     queue = queue_from_pairs(pairs, args.kind)
     log = read_log(log_path)
-    done = {r["chat"].lower() for r in log if r["status"] in FINAL}
-    member = {r["chat"].lower() for r in log if r["status"] in ("joined", "already_member", "needs_verification")}
+    latest, first = {}, {}
+    for r in log:  # rows are in time order: a recheck row supersedes the join row
+        latest[r["chat"].lower()] = r
+        first.setdefault(r["chat"].lower(), r)
+    done = {k for k, r in latest.items() if r["status"] in FINAL}
+    member = {k for k, r in latest.items() if r["status"] in MEMBER}
     todo = [n for n in queue if n.lower() not in done]
     print(f"topic: {args.topic} | {args.kind}: {len(queue)} in {pairs.name}, {len(todo)} to do | "
           f"member of {len(member)} chats so far (log: {log_path})")
+    to_recheck = sum(r["status"] in set(args.recheck or ()) for r in latest.values())
     if args.dry_run:
-        for n in todo[: args.max_joins]:
+        if args.recheck:
+            print(f"  would recheck {to_recheck} chats")
+        for n in ([] if args.recheck else todo[: args.max_joins]):
             print(f"  would join @{n}")
         return
-    if not todo:
+    if not (todo or args.recheck):
         return
     config = load_config(args.topic)
     budget = ResolveBudget("join_chats", config.account, daily_limit=args.daily_limit)
@@ -134,6 +206,9 @@ async def main_async(args) -> None:
     joins = 0
     try:
         me_id = (await client.get_me(input_peer=True)).user_id
+        if args.recheck:
+            await recheck(client, log_path, latest, first, set(args.recheck), me_id, args.pause)
+            todo = []  # a recheck run never joins
         for n in todo:
             if joins >= args.max_joins:
                 print(f"max joins for this run reached ({args.max_joins})")
@@ -195,8 +270,8 @@ async def main_async(args) -> None:
             # wait, then look (read-only) for a captcha bot, and space out the joins
             gap = args.delay + random.uniform(0, args.jitter)
             await asyncio.sleep(min(args.check_after, gap))
-            state = await verification_state(client, ent, me_id, joined_at)
-            write_row(log_path, n, args.kind, state or "joined", f"checked after {args.check_after:.0f} s")
+            state, reason = await verification_state(client, ent, me_id, joined_at)
+            write_row(log_path, n, args.kind, state, f"after {args.check_after:.0f} s: {reason}")
             if state == "removed":
                 member.discard(n.lower())
             await asyncio.sleep(max(0.0, gap - args.check_after))
@@ -226,6 +301,9 @@ def main() -> None:
                     help="seconds after a join before looking for a captcha bot")
     ap.add_argument("--pause", type=float, default=6.0, help="seconds between other requests")
     ap.add_argument("--daily-limit", type=int, default=DAILY_LIMIT, help="account's daily resolve budget")
+    ap.add_argument("--recheck", nargs="+", metavar="STATUS",
+                    help="no joins: re-run the read-only check on chats whose latest status is STATUS "
+                         "(e.g. needs_verification joined)")
     ap.add_argument("--dry-run", action="store_true", help="only print the queue, no Telegram")
     args = ap.parse_args()
     if args.check_after > args.delay:

@@ -36,3 +36,41 @@ date_utc,time_utc,chat,kind,status,reason
 2026-10-19,23:06:09,detrade_global,groups,joined,checked after 60 s
 2026-10-19,23:11:36,tapzi_official,groups,needs_verification,checked after 60 s
 2026-10-19,23:17:09,mexcenglish,groups,joined,checked after 60 s
+2026-10-20,13:09:27,airdropdetectivesupport,groups,joined,checked after 60 s
+2026-10-20,13:14:44,cryptolibrarysrefferal,groups,joined,checked after 60 s
+2026-10-20,13:18:55,community_3commas,groups,join_request,"admin approval needed, not requested"
+2026-10-20,13:20:08,rektplebssubmission,groups,needs_verification,checked after 60 s
+2026-10-20,13:25:45,kucoin_exchange,groups,joined,checked after 60 s
+2026-10-20,13:31:10,bnbchaincommunity,groups,needs_verification,checked after 60 s
+2026-10-20,13:36:32,dagama_chat,groups,needs_verification,checked after 60 s
+2026-10-20,13:41:07,atom_one_chat,groups,join_request,"admin approval needed, not requested"
+2026-10-20,13:42:20,hackenclub,groups,needs_verification,checked after 60 s
+2026-10-20,13:47:56,telelakel_chat,groups,removed,checked after 60 s
+2026-10-20,13:52:11,joininjective,groups,join_request,"admin approval needed, not requested"
+2026-10-20,13:53:24,tastycochat,groups,joined,checked after 60 s
+2026-10-20,13:58:53,poloniexenglish,groups,needs_verification,checked after 60 s
+2026-10-20,14:03:15,cryptime_official,groups,join_request,"admin approval needed, not requested"
+2026-10-20,14:03:21,wanchainchat,groups,join_request,"admin approval needed, not requested"
+2026-10-20,14:04:33,kub_chain_th,groups,needs_verification,checked after 60 s
+2026-10-20,14:10:16,gatecom_en,groups,needs_verification,checked after 60 s
+2026-10-20,14:15:54,znsconnect_chat,groups,joined,checked after 60 s
+2026-10-20,14:21:10,wesladcommunity,groups,joined,checked after 60 s
+2026-10-20,14:26:32,ankrnetwork,groups,needs_verification,checked after 60 s
+2026-10-20,14:57:55,whalescryptos,groups,restricted,"recheck: restricted: send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls until 2026-11-18 20:22Z"
+2026-10-20,14:58:08,bsc_daily,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-20,14:58:20,binancearabic,groups,removed,recheck: not a member any more
+2026-10-20,14:58:33,massanetwork,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-20,14:58:46,zilliqachat,groups,removed,recheck: not a member any more
+2026-10-20,14:58:58,cotinetwork,groups,removed,recheck: not a member any more
+2026-10-20,14:59:10,biconomycom,groups,removed,recheck: not a member any more
+2026-10-20,14:59:22,slashbiz,groups,removed,recheck: not a member any more
+2026-10-20,14:59:35,ape_bond,groups,removed,recheck: not a member any more
+2026-10-20,14:59:47,powerxone,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-20,15:00:00,tapzi_official,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-20,15:00:14,bnbchaincommunity,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-20,15:00:27,dagama_chat,groups,joined,recheck: no restriction
+2026-10-20,15:00:40,hackenclub,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls until 2026-10-21 13:41Z)"
+2026-10-20,15:00:53,poloniexenglish,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-20,15:01:06,kub_chain_th,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-20,15:01:19,gatecom_en,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-20,15:01:31,ankrnetwork,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
