@@ -1,0 +1,34 @@
+topic: crypto | groups: 100 in final_pairs.csv, 42 to do | member of 43 chats so far (log: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/interim/crypto/joins/joins.csv)
+account: crypto | session: research.session
+Server closed the connection: [Errno 49] Can't assign requested address
+Attempt 1 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 2 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 3 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 4 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 5 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 6 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 1 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 2 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 3 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 4 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 5 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 6 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 1 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 2 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 3 at connecting failed: OSError: [Errno 51] Network is unreachable
+  @flipper_trade_chat: joined (after 60 s: no restriction)
+  @binanceexchange: join_request (admin approval needed, not requested)
+  @cryptobotrussian: join_request (admin approval needed, not requested)
+  @trustwallet: join_request (admin approval needed, not requested)
+  @wazirx_discuss: restricted (after 60 s: restricted: embed_links, send_polls until 2026-10-26 12:33Z)
+  @chatbitochekvko: join_request (admin approval needed, not requested)
+  @next100xgemschat: joined (after 60 s: no restriction)
+  @cryptodenisnft_chat: needs_verification (after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls); bot prompt with buttons)
+  @starphonecc: needs_verification (after 60 s: bot prompt with buttons)
+  @bontradeschat: joined (after 60 s: no restriction)
+  @game_time_chat: join_request (admin approval needed, not requested)
+  @holders_cryptorobotics_eng: needs_verification (after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls); bot prompt with buttons)
+  @retiumblockchain: needs_verification (after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls))
+  @hovronqiblockchain: needs_verification (after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls))
+max joins for this run reached (9)
+joins this run: 9 | member of 52 chats (update 'Joined so far' in memory/collection-log.md) | resolve budget left today: 100

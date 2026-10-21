@@ -75,3 +75,17 @@ date_utc,time_utc,chat,kind,status,reason
 2026-10-20,15:01:19,gatecom_en,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
 2026-10-20,15:01:31,ankrnetwork,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
 2026-10-21,12:25:39,tovestindonesiaofficial,groups,joined,after 60 s: no restriction
+2026-10-21,12:29:10,flipper_trade_chat,groups,joined,after 60 s: no restriction
+2026-10-21,12:32:39,binanceexchange,groups,join_request,"admin approval needed, not requested"
+2026-10-21,12:32:45,cryptobotrussian,groups,join_request,"admin approval needed, not requested"
+2026-10-21,12:32:52,trustwallet,groups,join_request,"admin approval needed, not requested"
+2026-10-21,12:34:04,wazirx_discuss,groups,restricted,"after 60 s: restricted: embed_links, send_polls until 2026-10-26 12:33Z"
+2026-10-21,12:37:11,chatbitochekvko,groups,join_request,"admin approval needed, not requested"
+2026-10-21,12:38:23,next100xgemschat,groups,joined,after 60 s: no restriction
+2026-10-21,12:42:39,cryptodenisnft_chat,groups,needs_verification,"after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls); bot prompt with buttons"
+2026-10-21,12:47:15,starphonecc,groups,needs_verification,after 60 s: bot prompt with buttons
+2026-10-21,12:51:49,bontradeschat,groups,joined,after 60 s: no restriction
+2026-10-21,12:55:12,game_time_chat,groups,join_request,"admin approval needed, not requested"
+2026-10-21,12:56:24,holders_cryptorobotics_eng,groups,needs_verification,"after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls); bot prompt with buttons"
+2026-10-21,13:00:50,retiumblockchain,groups,needs_verification,"after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-21,13:05:25,hovronqiblockchain,groups,needs_verification,"after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
