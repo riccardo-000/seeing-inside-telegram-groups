@@ -74,3 +74,4 @@ date_utc,time_utc,chat,kind,status,reason
 2026-10-20,15:01:06,kub_chain_th,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
 2026-10-20,15:01:19,gatecom_en,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
 2026-10-20,15:01:31,ankrnetwork,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-21,12:25:39,tovestindonesiaofficial,groups,joined,after 60 s: no restriction
