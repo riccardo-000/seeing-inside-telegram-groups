@@ -89,3 +89,53 @@ date_utc,time_utc,chat,kind,status,reason
 2026-10-21,12:56:24,holders_cryptorobotics_eng,groups,needs_verification,"after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls); bot prompt with buttons"
 2026-10-21,13:00:50,retiumblockchain,groups,needs_verification,"after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
 2026-10-21,13:05:25,hovronqiblockchain,groups,needs_verification,"after 60 s: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:08:15,airdropgroup,groups,joined,recheck: no restriction
+2026-10-26,17:08:21,wavescommunity,groups,removed,recheck: group not accessible any more
+2026-10-26,17:08:34,airdropsupportgroup,groups,joined,recheck: no restriction
+2026-10-26,17:08:46,gtprotocol,groups,joined,recheck: no restriction
+2026-10-26,17:08:58,whalescryptos,groups,restricted,"recheck: restricted: send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls until 2026-11-18 20:22Z"
+2026-10-26,17:09:11,cancore_chat,groups,joined,recheck: no restriction
+2026-10-26,17:09:23,scandiccoin_group,groups,joined,recheck: no restriction
+2026-10-26,17:09:36,cryptosolutionchat,groups,joined,recheck: no restriction
+2026-10-26,17:09:48,slidefunchat,groups,joined,recheck: no restriction
+2026-10-26,17:10:01,bitcoinbase_community,groups,joined,recheck: no restriction
+2026-10-26,17:10:13,dgrid_ai,groups,joined,recheck: no restriction
+2026-10-26,17:10:26,bsc_daily,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:10:38,mgbx_english,groups,joined,recheck: no restriction
+2026-10-26,17:10:50,iopndiscussion,groups,joined,recheck: no restriction
+2026-10-26,17:11:03,sweepglobal_chat,groups,joined,recheck: no restriction
+2026-10-26,17:11:15,agentaicash,groups,joined,recheck: no restriction
+2026-10-26,17:11:28,mstblockchainchat,groups,joined,recheck: no restriction
+2026-10-26,17:11:40,massanetwork,groups,removed,recheck: not a member any more
+2026-10-26,17:11:52,meta_earth_community,groups,joined,recheck: no restriction
+2026-10-26,17:12:05,ontologynetwork,groups,joined,recheck: no restriction
+2026-10-26,17:12:17,kybernetwork,groups,joined,recheck: no restriction
+2026-10-26,17:12:30,powerxone,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:12:42,adspowerenchat,groups,joined,recheck: no restriction
+2026-10-26,17:12:55,coinlotto_chat,groups,joined,recheck: no restriction
+2026-10-26,17:13:01,detrade_global,groups,removed,recheck: group not accessible any more
+2026-10-26,17:13:13,tapzi_official,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:13:26,mexcenglish,groups,joined,recheck: no restriction
+2026-10-26,17:13:38,airdropdetectivesupport,groups,joined,recheck: no restriction
+2026-10-26,17:13:51,cryptolibrarysrefferal,groups,joined,recheck: no restriction
+2026-10-26,17:14:05,kucoin_exchange,groups,joined,recheck: no restriction
+2026-10-26,17:14:17,bnbchaincommunity,groups,removed,recheck: not a member any more
+2026-10-26,17:14:30,dagama_chat,groups,joined,recheck: no restriction
+2026-10-26,17:15:13,hackenclub,groups,joined,recheck: no restriction
+2026-10-26,17:15:25,tastycochat,groups,joined,recheck: no restriction
+2026-10-26,17:15:38,poloniexenglish,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:15:51,kub_chain_th,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:16:04,gatecom_en,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:16:17,znsconnect_chat,groups,joined,recheck: no restriction
+2026-10-26,17:16:29,wesladcommunity,groups,joined,recheck: no restriction
+2026-10-26,17:16:42,ankrnetwork,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:16:54,tovestindonesiaofficial,groups,joined,recheck: no restriction
+2026-10-26,17:17:07,flipper_trade_chat,groups,joined,recheck: no restriction
+2026-10-26,17:17:20,wazirx_discuss,groups,joined,recheck: no restriction
+2026-10-26,17:17:32,next100xgemschat,groups,joined,recheck: no restriction
+2026-10-26,17:17:45,cryptodenisnft_chat,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:17:57,starphonecc,groups,joined,recheck: no restriction
+2026-10-26,17:18:10,bontradeschat,groups,joined,recheck: no restriction
+2026-10-26,17:18:22,holders_cryptorobotics_eng,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:18:34,retiumblockchain,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-26,17:18:47,hovronqiblockchain,groups,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
