@@ -1,0 +1,80 @@
+[
+ {
+  "user": 1483515327,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 651850082,
+  "is_bot": false,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 1176208498,
+  "is_bot": false,
+  "title": "BD",
+  "is_creator": false
+ },
+ {
+  "user": 243278220,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ },
+ {
+  "user": 695647765,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5664807420,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1033300415,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1751628271,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 539763982,
+  "is_bot": true,
+  "title": "Kyber Admin Bot",
+  "is_creator": false
+ },
+ {
+  "user": 836811725,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1900029044,
+  "is_bot": false,
+  "title": "BD Team",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ }
+]

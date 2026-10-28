@@ -1,0 +1,15 @@
+2026-10-28 21:45:11
+8 chats | pseudonymization: OFF (no PSEUDONYM_SALT)
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/crypto/messages
+account: crypto | session: research.session
+resolve budget left today: 100
+  @MEXCofficialNews: +135 messages
+  @MEXCEnglish: +5000 messages
+  @AirdropDetective: +11 messages
+  @AirdropDetectiveSupport: +153 messages
+  @officialkybernetwork: +15 messages
+  @kybernetwork: +243 messages
+  @biconomy_Ann: +64 messages
+  @Biconomycom: +546 messages
+python -u scripts/dump_messages.py --topic crypto --days 30 --max-messages     2.01s user 0.50s system 0% cpu 8:57.86 total
+21:54:09

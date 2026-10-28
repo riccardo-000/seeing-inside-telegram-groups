@@ -123,21 +123,24 @@ async def fetch_admins(client, chat, pseudonymizer: Pseudonymizer | None = None)
 
 
 async def dump_all(client, chats: list, out_dir: Path, days: int = 90,
-                   pseudonymizer: Pseudonymizer | None = None, pause: float = 6.0) -> dict:
+                   pseudonymizer: Pseudonymizer | None = None, pause: float = 6.0,
+                   limit: int | None = None, since: datetime | None = None) -> dict:
     """Run :func:`dump_chat` and :func:`fetch_admins` for every chat, resumably.
 
+    The window starts at ``since`` if given, else ``days`` before now.
+    ``limit`` caps the new messages per chat in this run (oldest first).
     Stops at the first FloodWait longer than 60 s (caller must log it).
 
     Returns:
         ``{chat_name: new_messages}``.
     """
-    since = datetime.now(timezone.utc) - timedelta(days=days)
+    since = since or datetime.now(timezone.utc) - timedelta(days=days)
     known = {c.username.lower() for c in chats if getattr(c, "username", None)}
     done = {}
     for chat in chats:
         name = getattr(chat, "username", None) or str(chat.id)
         try:
-            path, n = await dump_chat(client, chat, out_dir, since=since,
+            path, n = await dump_chat(client, chat, out_dir, since=since, limit=limit,
                                       pseudonymizer=pseudonymizer, known_chats=known, wait_time=pause)
             await asyncio.sleep(pause)
             admins_path = out_dir / f"{name}.admins.json"
@@ -149,6 +152,9 @@ async def dump_all(client, chats: list, out_dir: Path, days: int = 90,
             if e.seconds > 60:
                 raise
             await asyncio.sleep(e.seconds + 5)
+            continue
+        except errors.ChannelPrivateError:
+            print(f"  @{name}: private or banned, skipped", flush=True)
             continue
         done[name] = n
         print(f"  @{name}: +{n} messages", flush=True)

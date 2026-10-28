@@ -1,0 +1,92 @@
+[
+ {
+  "user": 6426777264,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1685642676,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6024395144,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8305708773,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6021728040,
+  "is_bot": false,
+  "title": "Ambassador",
+  "is_creator": false
+ },
+ {
+  "user": 341939782,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8835087502,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1037979243,
+  "is_bot": false,
+  "title": "Ambassador",
+  "is_creator": false
+ },
+ {
+  "user": 6473219114,
+  "is_bot": false,
+  "title": "Ambassador",
+  "is_creator": false
+ },
+ {
+  "user": 7875351861,
+  "is_bot": false,
+  "title": "Ambassador",
+  "is_creator": false
+ },
+ {
+  "user": 8661006209,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ },
+ {
+  "user": 663984049,
+  "is_bot": false,
+  "title": "Ambassador",
+  "is_creator": false
+ },
+ {
+  "user": 6816247789,
+  "is_bot": false,
+  "title": "Ambassador",
+  "is_creator": false
+ },
+ {
+  "user": 8177750160,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ }
+]

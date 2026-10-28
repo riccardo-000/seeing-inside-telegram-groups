@@ -1,0 +1,96 @@
+2026-10-28 22:05:38
+200 chats | pseudonymization: OFF (no PSEUDONYM_SALT)
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/crypto/messages | window from 2026-07-30 | max messages per chat: 50000
+account: crypto | session: research.session
+Traceback (most recent call last):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 148, in <module>
+    main()
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 144, in main
+    asyncio.run(main_async(ap.parse_args()))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 114, in main_async
+    entities.append(await client.get_entity(inp))
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/client/users.py", line 325, in get_entity
+    channels = (await self(
+                ^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/client/users.py", line 30, in __call__
+    return await self._call(self._sender, request, ordered=ordered)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/client/users.py", line 92, in _call
+    result = await future
+             ^^^^^^^^^^^^
+telethon.errors.rpcerrorlist.ChannelPrivateError: The channel specified is private and you lack permission to access it. Another reason may be that you were banned from it (caused by GetChannelsRequest)
+2026-10-28 22:06:03
+2026-10-28 22:06:23
+200 chats | pseudonymization: OFF (no PSEUDONYM_SALT)
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/crypto/messages | window from 2026-07-30 | max messages per chat: 50000
+account: crypto | session: research.session
+  @wavescommunity: private or banned, skipped
+  @detrade_global: private or banned, skipped
+  @rektplebssubmission: private or banned, skipped
+resolve budget left today: 95
+  @Airdrop: +35 messages
+  @AirdropGroup: +6421 messages
+  @wavesnews: +50 messages
+  @airdropinspector: +87 messages
+  @AirdropSupportGroup: +5456 messages
+  @GTProtocolNews: +14 messages
+  @gtprotocol: +944 messages
+  @Whalesguide: +141 messages
+  @Whalescryptos: +1862 messages
+  @cancore_io: +27 messages
+  @cancore_chat: +20338 messages
+  @ScandicCoin: +223 messages
+  @ScandicCoin_Group: +1363 messages
+  @staynexcomannouncement: +39 messages
+  @officialstaynex: +266 messages
+  @CryptoSolutionAnn: +38 messages
+  @CryptoSolutionChat: +22921 messages
+  @Slidefunchannel: +201 messages
+  @slidefunchat: +5874 messages
+  @bitcoinbase_news: +18 messages
+  @bitcoinbase_community: +13929 messages
+  @QuantumStellarInitiative: +1798 messages
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 128, in main_async
+    await dump_all(client, [ent], out, days=args.days, since=since, pseudonymizer=pseudo,
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/src/collect/messages.py", line 143, in dump_all
+    path, n = await dump_chat(client, chat, out_dir, since=since, limit=limit,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/src/collect/messages.py", line 87, in dump_chat
+    async for m in client.iter_messages(chat, **kwargs):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/requestiter.py", line 67, in __anext__
+    await asyncio.sleep(
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 156, in <module>
+    main()
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 152, in main
+    asyncio.run(main_async(ap.parse_args()))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt

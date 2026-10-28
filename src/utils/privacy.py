@@ -116,6 +116,8 @@ def sanitize_message(message, pseudonymizer: Pseudonymizer | None,
         "date": message.date.isoformat(),
         "sender_kind": kind,           # user / channel (channel itself or anonymous admin) / none
         "sender": sender,
+        # bot flag from the users Telegram sends with the history (no extra request)
+        "sender_is_bot": bool(getattr(message.sender, "bot", False)) if kind == "user" else None,
         "post_author": message.post_author,  # admin signature on channel posts, if enabled
         "text": redact_text(text, known_chat_usernames) if pseudonymizer else text,
         "reply_to": getattr(reply, "reply_to_msg_id", None),

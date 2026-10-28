@@ -1,0 +1,32 @@
+[
+ {
+  "user": 8907070372,
+  "is_bot": false,
+  "title": "CF",
+  "is_creator": true
+ },
+ {
+  "user": 8803560603,
+  "is_bot": false,
+  "title": "CM",
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8966595540,
+  "is_bot": true,
+  "title": "bot",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": "queen",
+  "is_creator": false
+ }
+]

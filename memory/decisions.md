@@ -310,3 +310,40 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Impact:** `scripts/join_chats.py`; Methodology 4.2 (join outcomes table); Limitations: groups
   that kick unverified members and groups needing admin approval are missing (15 of 57 crypto
   groups so far) → replacement pairs, possible bias against stricter-moderated groups.
+
+## 2026-10-28 — Message dumps: 90-day window from 2026-07-30, all pairs, 50k per chat per run
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** Message dumps (`scripts/dump_messages.py --from-pairs --since 2026-07-30
+  --max-messages 50000`) cover **both channel and group of every final pair**, joined or not,
+  from a **fixed start date, 2026-07-30 (UTC)**, the same for both arms (conspiracy too); the
+  common end date is set at analysis time (all chats cut to the same day). `--max-messages`
+  only splits a long dump into runs (oldest first, resumed by message id), it does not cap
+  the data: runs are repeated until every chat reaches the present. 6 s between requests.
+- **Why:** Test dump of 2026-10-28 (8 chats, 30 days, 9 min, 0 FloodWait): public groups are
+  readable without membership (the group that removed us was fully read), so dumps do not
+  depend on joins; joins only matter for DMs. Volumes: most groups 5–20 msg/day, large exchange
+  groups ~670 msg/day → 90 days ≈ 0.5–1 M messages, 10–15 h in 3–4 runs, files < 5 MB. 90 days
+  gives enough messages per small group for per-group rates and catches rare scam waves; a
+  fixed date keeps chats and arms comparable although runs happen on different days.
+- **Impact:** `scripts/dump_messages.py` (`--since`, `--from-pairs`, `--max-messages`,
+  `--dry-run`), records now carry `sender_is_bot`; Methodology 4.2 (observation window);
+  Limitations: messages deleted before the dump (e.g. scams removed by admins) are missing.
+  Test files kept apart in `data/raw/crypto/messages/test_2026-10-28/`. Open: member lists of
+  the groups (the 4 DM senders never wrote in the dumped groups) → decide separately.
+
+## 2026-10-28 — Final list of 100 conspiracy channel–group pairs; manual joins in the app
+- **Author:** Riccardo + Marco (+ Claude Code)
+- **Decision:** The conspiracy arm studies the 100 pairs in
+  `data/interim/conspiracy/pairs/final_pairs.csv`: all 100 rows of
+  `review/coppie_da_rivedere_2026-10-23.csv` (21 `valida` by the rules + 79 `da_controllare`),
+  checked by hand by Riccardo and Marco on 2026-10-28 and all accepted (`final = valida`).
+  Conspiracy groups are joined **by hand in the Telegram app** (group only, from the `t.me/<group>`
+  link, never via search; no captcha or button pressed; no join requests), as the review goes;
+  joins and their outcomes are imported read-only with `join_chats.py --import-manual` (join date
+  as Telegram records it), so they end up in `conspiracy/joins/joins.csv` like the script joins.
+- **Why:** Joining right after each check saves days; the join date kept by Telegram gives the
+  same DM timing as script joins.
+- **Impact:** seed selection (Methodology, conspiracy arm), joins (Methodology 4.2: manual vs
+  script joins). Open: some accepted pairs are borderline on topic (e.g. US/World news,
+  Religion, Crypto seeds, a Ukrainian war-analysis channel) or on channel activity → topic
+  labels per pair in the analysis, sensitivity check without them.

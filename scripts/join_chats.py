@@ -7,7 +7,8 @@ they are: ``needs_verification`` (we cannot write, or a bot prompt with buttons
 mentions us), ``restricted`` (only some rights taken, e.g. no media/links for
 newcomers: a normal member otherwise), ``removed``; the reason column says which.
 ``--recheck STATUS`` re-runs that check later on the chats already joined, without
-joining anything. Groups that need an admin's approval (join request) are
+joining anything. ``--import-manual`` logs the chats joined by hand in the app
+(join date as Telegram records it), with the same check, without joining. Groups that need an admin's approval (join request) are
 skipped without sending a request.
 
 Input: data/interim/<topic>/pairs/final_pairs.csv (columns ``channel``, ``group``).
@@ -23,6 +24,7 @@ Usage:
     python scripts/join_chats.py --topic crypto --dry-run
     python scripts/join_chats.py --topic crypto --kind groups --max-joins 20
     python scripts/join_chats.py --topic crypto --recheck needs_verification
+    python scripts/join_chats.py --topic conspiracy --import-manual
 """
 
 from __future__ import annotations
@@ -76,10 +78,11 @@ def read_log(path: Path) -> list[dict]:
         return list(csv.DictReader(fh))
 
 
-def write_row(path: Path, chat: str, kind: str, status: str, reason: str = "") -> None:
+def write_row(path: Path, chat: str, kind: str, status: str, reason: str = "",
+              when: datetime | None = None) -> None:
     new = not path.exists()
     path.parent.mkdir(parents=True, exist_ok=True)
-    now = datetime.now(timezone.utc)
+    now = when or datetime.now(timezone.utc)
     with open(path, "a", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=FIELDS)
         if new:
@@ -171,12 +174,29 @@ async def recheck(client, log_path: Path, latest: dict[str, dict], first: dict[s
         write_row(log_path, row["chat"], row["kind"], state, f"recheck: {reason}")
 
 
+async def import_manual(client, log_path: Path, latest: dict[str, dict], me_id: int, pause: float) -> None:
+    """Log the public channels/groups joined by hand in the app and not yet in the log.
+
+    Reads the account's dialogs (no username resolves). The row's date is the join
+    date Telegram keeps for a member (``Channel.date``), so DMs can be matched to
+    the join; the status comes from the same read-only check as after a script join.
+    """
+    async for d in client.iter_dialogs():
+        ent = d.entity
+        if not isinstance(ent, Channel) or not ent.username or ent.username.lower() in latest:
+            continue
+        kind = "groups" if ent.megagroup else "channels"
+        await asyncio.sleep(pause)
+        state, reason = await verification_state(client, ent, me_id, ent.date)
+        write_row(log_path, ent.username, kind, state, f"manual join (app): {reason}", when=ent.date)
+
+
 async def main_async(args) -> None:
     p = paths(args.topic)
     pairs = Path(args.pairs) if args.pairs else p.pairs / "final_pairs.csv"
     log_path = p.interim / "joins" / "joins.csv"
     stop = log_path.parent / "STOP"
-    queue = queue_from_pairs(pairs, args.kind)
+    queue = queue_from_pairs(pairs, args.kind) if pairs.exists() else []
     log = read_log(log_path)
     latest, first = {}, {}
     for r in log:  # rows are in time order: a recheck row supersedes the join row
@@ -194,7 +214,7 @@ async def main_async(args) -> None:
         for n in ([] if args.recheck else todo[: args.max_joins]):
             print(f"  would join @{n}")
         return
-    if not (todo or args.recheck):
+    if not (todo or args.recheck or args.import_manual):
         return
     config = load_config(args.topic)
     budget = ResolveBudget("join_chats", config.account, daily_limit=args.daily_limit)
@@ -206,6 +226,9 @@ async def main_async(args) -> None:
     joins = 0
     try:
         me_id = (await client.get_me(input_peer=True)).user_id
+        if args.import_manual:
+            await import_manual(client, log_path, latest, me_id, args.pause)
+            todo = []  # an import run never joins
         if args.recheck:
             await recheck(client, log_path, latest, first, set(args.recheck), me_id, args.pause)
             todo = []  # a recheck run never joins
@@ -304,6 +327,9 @@ def main() -> None:
     ap.add_argument("--recheck", nargs="+", metavar="STATUS",
                     help="no joins: re-run the read-only check on chats whose latest status is STATUS "
                          "(e.g. needs_verification joined)")
+    ap.add_argument("--import-manual", action="store_true",
+                    help="no joins: log the public chats joined by hand in the app (join date from "
+                         "Telegram) with the read-only check, then exit")
     ap.add_argument("--dry-run", action="store_true", help="only print the queue, no Telegram")
     args = ap.parse_args()
     if args.check_after > args.delay:
