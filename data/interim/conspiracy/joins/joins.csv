@@ -8,3 +8,5 @@ date_utc,time_utc,chat,kind,status,reason
 2026-10-28,20:55:17,TartarianEnglishGroup,groups,joined,manual join (app): no restriction
 2026-10-28,20:54:00,DeepStateUA,channels,joined,manual join (app): no restriction
 2026-10-28,21:06:31,health_healing_detoxing,groups,joined,manual join (app): no restriction
+2026-10-29,02:11:58,tartariaitaliacommunity,groups,needs_verification,"manual join (app): cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-10-29,02:01:08,QDisclosure,groups,joined,manual join (app): no restriction

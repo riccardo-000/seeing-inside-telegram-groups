@@ -1,0 +1,90 @@
+2026-10-29 18:43:54
+200 chats | pseudonymization: OFF (no PSEUDONYM_SALT)
+topic: conspiracy | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/conspiracy/messages | window from 2026-07-30 | max messages per chat: 50000
+account: conspiracy | session: research_conspiracy.session
+resolve budget left today: 100
+  @VigilantFox: +2 messages
+  @VigilantFoxChat: +60 messages
+  @TheConspiracyHole: +0 messages
+  @WeaponizeConspiracy: +39 messages
+  @dailyexpose: +1 messages
+  @dailyexposenews: +6 messages
+  @TruckersForFreedomGlobal: +0 messages
+  @DiedSuddenlyNewsOriginal: +89 messages
+  @greatreject: +0 messages
+  @greatreject_social: +2 messages
+  @TheTruthSeekersChannel: +0 messages
+  @truthseekersAus: +27 messages
+  @DanaAshlieOfficial: +0 messages
+  @DanaAshliePublicChat: +4 messages
+  @FionaRoseDiamond: +0 messages
+  @FionaRoseDiamondChatOfficial: +5 messages
+  @irishpatriots: +0 messages
+  @IrishPatriotsChat: +7 messages
+  @robinmg: +2 messages
+  @robinmggroup: +33 messages
+  @JustDudeChannel: +0 messages
+  @JustDudeChatRebornAgain: +12 messages
+  @AltSkull48: +2 messages
+  @themeatwagon: +80 messages
+  @thecrowhouseoffical: +0 messages
+  @TheCrowhousechat: +2 messages
+  @JoinTheWhiteRose: +0 messages
+  @thewhiterosechat: +4 messages
+  @TheLightTruthPaper: +1 messages
+  @TheLightPaperDistribution: +4 messages
+  @OffgridiIreland: +0 messages
+  @OffgridIreland: +30 messages
+  @ECETI_OFFICIAL_CHANNEL: +1 messages
+  @ECETI_OFFICIAL: +6 messages
+  @counterspin: +0 messages
+  @counterspinchat2: +2 messages
+  @AussieTruckiesUnited: +0 messages
+  @aussietruckers1: +5 messages
+  @hapaperspective: +0 messages
+  @hapaperspectivechat: +3 messages
+  @The_UK_Channel: +15 messages
+  @UK_Channel_Chat: +20 messages
+  @DeepStateUA: +1 messages
+  @chatDeepState: +50000 messages
+  @TartariaHistoryChannel: +0 messages
+  @TartarianEnglishGroup: +8 messages
+  @AllesAusserMainstream: +27 messages
+  @AAM_Links: +6420 messages
+  @QNewsOfficialTV: +6754 messages
+  @QNewsOfficialTVGodWinsChat: +34302 messages
+  @disclosurehub: +141 messages
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 128, in main_async
+    await dump_all(client, [ent], out, days=args.days, since=since, pseudonymizer=pseudo,
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/src/collect/messages.py", line 143, in dump_all
+    path, n = await dump_chat(client, chat, out_dir, since=since, limit=limit,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/src/collect/messages.py", line 87, in dump_chat
+    async for m in client.iter_messages(chat, **kwargs):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/requestiter.py", line 67, in __anext__
+    await asyncio.sleep(
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 156, in <module>
+    main()
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 152, in main
+    asyncio.run(main_async(ap.parse_args()))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt

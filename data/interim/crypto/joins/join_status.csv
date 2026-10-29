@@ -1,0 +1,101 @@
+riga,channel,group,link_group,stato_join,motivo,join_utc,canale_joinato,da_fare
+2,@airdrop,@airdropgroup,https://t.me/airdropgroup,joined,recheck: no restriction,2026-10-26 17:08:15,,fatto
+3,@wavesnews,@wavescommunity,https://t.me/wavescommunity,removed,recheck: group not accessible any more,2026-10-26 17:08:21,,sostituire la coppia (gruppo privato o sparito)
+4,@airdropinspector,@airdropsupportgroup,https://t.me/airdropsupportgroup,joined,recheck: no restriction,2026-10-26 17:08:34,,fatto
+5,@gtprotocolnews,@gtprotocol,https://t.me/gtprotocol,joined,recheck: no restriction,2026-10-26 17:08:46,,fatto
+6,@whalesguide,@whalescryptos,https://t.me/whalescryptos,restricted,"recheck: restricted: send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls until 2026-11-18 20:22Z",2026-10-26 17:08:58,,fatto (limitato: ok)
+7,@cancore_io,@cancore_chat,https://t.me/cancore_chat,joined,recheck: no restriction,2026-10-26 17:09:11,,fatto
+8,@scandiccoin,@scandiccoin_group,https://t.me/scandiccoin_group,joined,recheck: no restriction,2026-10-26 17:09:23,,fatto
+9,@staynexcomannouncement,@officialstaynex,https://t.me/officialstaynex,join_request,"admin approval needed, not requested",2026-10-18 20:28:53,,non fare: serve approvazione admin
+10,@cryptosolutionann,@cryptosolutionchat,https://t.me/cryptosolutionchat,joined,recheck: no restriction,2026-10-26 17:09:36,,fatto
+11,@slidefunchannel,@slidefunchat,https://t.me/slidefunchat,joined,recheck: no restriction,2026-10-26 17:09:48,,fatto
+12,@bitcoinbase_news,@bitcoinbase_community,https://t.me/bitcoinbase_community,joined,recheck: no restriction,2026-10-26 17:10:01,,fatto
+13,@quantumstellarinitiative,@quantumstellarinitiativechat,https://t.me/quantumstellarinitiativechat,join_request,"admin approval needed, not requested",2026-10-18 20:38:42,,non fare: serve approvazione admin
+14,@dgrid_ai_ann,@dgrid_ai,https://t.me/dgrid_ai,joined,recheck: no restriction,2026-10-26 17:10:13,,fatto
+15,@bsc_dailyann,@bsc_daily,https://t.me/bsc_daily,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:10:26,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+16,@mgbxancement_en,@mgbx_english,https://t.me/mgbx_english,joined,recheck: no restriction,2026-10-26 17:10:38,,fatto
+17,@iopn_io,@iopndiscussion,https://t.me/iopndiscussion,joined,recheck: no restriction,2026-10-26 17:10:50,,fatto
+18,@sweepglobal,@sweepglobal_chat,https://t.me/sweepglobal_chat,joined,recheck: no restriction,2026-10-26 17:11:03,,fatto
+19,@binance_mena_annoucements,@binancearabic,https://t.me/binancearabic,removed,recheck: not a member any more,2026-10-20 14:58:20,,da rifare a mano: join + bottone anti-bot se c'è
+20,@cryptoizoffice,@cryptoizindonesia,https://t.me/cryptoizindonesia,joined,checked after 60 s,2026-10-19 21:47:08,,fatto
+21,@agentaicashann,@agentaicash,https://t.me/agentaicash,joined,recheck: no restriction,2026-10-26 17:11:15,,fatto
+22,@mstblockchain,@mstblockchainchat,https://t.me/mstblockchainchat,joined,recheck: no restriction,2026-10-26 17:11:28,,fatto
+23,@massa_latest_news,@massanetwork,https://t.me/massanetwork,removed,recheck: not a member any more,2026-10-26 17:11:40,,da rifare a mano: join + bottone anti-bot se c'è
+24,@meta_earth_announcement,@meta_earth_community,https://t.me/meta_earth_community,joined,recheck: no restriction,2026-10-26 17:11:52,,fatto
+25,@zilliqa,@zilliqachat,https://t.me/zilliqachat,removed,recheck: not a member any more,2026-10-20 14:58:46,,da rifare a mano: join + bottone anti-bot se c'è
+26,@cotichannel,@cotinetwork,https://t.me/cotinetwork,removed,recheck: not a member any more,2026-10-20 14:58:58,,da rifare a mano: join + bottone anti-bot se c'è
+27,@biconomy_ann,@biconomycom,https://t.me/biconomycom,removed,recheck: not a member any more,2026-10-20 14:59:10,,da rifare a mano: join + bottone anti-bot se c'è
+28,@slashbizchannel,@slashbiz,https://t.me/slashbiz,removed,recheck: not a member any more,2026-10-20 14:59:22,,da rifare a mano: join + bottone anti-bot se c'è
+29,@ontologyannouncements,@ontologynetwork,https://t.me/ontologynetwork,joined,recheck: no restriction,2026-10-26 17:12:05,,fatto
+30,@apebond_news,@ape_bond,https://t.me/ape_bond,removed,recheck: not a member any more,2026-10-20 14:59:35,,da rifare a mano: join + bottone anti-bot se c'è
+31,@chromia_announcements,@hellochromia,https://t.me/hellochromia,removed,checked after 60 s,2026-10-19 22:27:24,,da rifare a mano: join + bottone anti-bot se c'è
+32,@officialkybernetwork,@kybernetwork,https://t.me/kybernetwork,joined,recheck: no restriction,2026-10-26 17:12:17,,fatto
+33,@powerxoneannouncement,@powerxone,https://t.me/powerxone,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:12:30,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+34,@adspoweren,@adspowerenchat,https://t.me/adspowerenchat,joined,recheck: no restriction,2026-10-26 17:12:42,,fatto
+35,@coinlotto_xyz,@coinlotto_chat,https://t.me/coinlotto_chat,joined,recheck: no restriction,2026-10-26 17:12:55,,fatto
+36,@detrade_exchange,@detrade_global,https://t.me/detrade_global,removed,recheck: group not accessible any more,2026-10-26 17:13:01,,sostituire la coppia (gruppo privato o sparito)
+37,@official_tapzi,@tapzi_official,https://t.me/tapzi_official,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:13:13,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+38,@mexcofficialnews,@mexcenglish,https://t.me/mexcenglish,joined,recheck: no restriction,2026-10-26 17:13:26,,fatto
+39,@airdropdetective,@airdropdetectivesupport,https://t.me/airdropdetectivesupport,joined,recheck: no restriction,2026-10-26 17:13:38,,fatto
+40,@cryptolibrarysairdrop,@cryptolibrarysrefferal,https://t.me/cryptolibrarysrefferal,joined,recheck: no restriction,2026-10-26 17:13:51,,fatto
+41,@commas,@community_3commas,https://t.me/community_3commas,join_request,"admin approval needed, not requested",2026-10-20 13:18:55,,non fare: serve approvazione admin
+42,@rektplebs,@rektplebssubmission,https://t.me/rektplebssubmission,needs_verification,checked after 60 s,2026-10-20 13:20:08,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+43,@kucoin_news,@kucoin_exchange,https://t.me/kucoin_exchange,joined,recheck: no restriction,2026-10-26 17:14:05,,fatto
+44,@bnbchain,@bnbchaincommunity,https://t.me/bnbchaincommunity,removed,recheck: not a member any more,2026-10-26 17:14:17,,da rifare a mano: join + bottone anti-bot se c'è
+45,@da_ga_ma,@dagama_chat,https://t.me/dagama_chat,joined,recheck: no restriction,2026-10-26 17:14:30,,fatto
+46,@atom_casi,@atom_one_chat,https://t.me/atom_one_chat,join_request,"admin approval needed, not requested",2026-10-20 13:41:07,,non fare: serve approvazione admin
+47,@hackenai,@hackenclub,https://t.me/hackenclub,joined,recheck: no restriction,2026-10-26 17:15:13,,fatto
+48,@telelakel,@telelakel_chat,https://t.me/telelakel_chat,removed,checked after 60 s,2026-10-20 13:47:56,,da rifare a mano: join + bottone anti-bot se c'è
+49,@injectiveann,@joininjective,https://t.me/joininjective,join_request,"admin approval needed, not requested",2026-10-20 13:52:11,,non fare: serve approvazione admin
+50,@tastyco_io,@tastycochat,https://t.me/tastycochat,joined,recheck: no restriction,2026-10-26 17:15:25,,fatto
+51,@poloniexannouncements,@poloniexenglish,https://t.me/poloniexenglish,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:15:38,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+52,@cryptime_channel,@cryptime_official,https://t.me/cryptime_official,join_request,"admin approval needed, not requested",2026-10-20 14:03:15,,non fare: serve approvazione admin
+53,@wanchainann,@wanchainchat,https://t.me/wanchainchat,join_request,"admin approval needed, not requested",2026-10-20 14:03:21,,non fare: serve approvazione admin
+54,@bitkubchain,@kub_chain_th,https://t.me/kub_chain_th,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:15:51,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+55,@gateofficialnews,@gatecom_en,https://t.me/gatecom_en,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:16:04,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+56,@znsconnect,@znsconnect_chat,https://t.me/znsconnect_chat,joined,recheck: no restriction,2026-10-26 17:16:17,,fatto
+57,@wcsechannel,@wesladcommunity,https://t.me/wesladcommunity,joined,recheck: no restriction,2026-10-26 17:16:29,,fatto
+58,@anrknetworkann,@ankrnetwork,https://t.me/ankrnetwork,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:16:42,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+59,@tovestglobal,@tovestindonesiaofficial,https://t.me/tovestindonesiaofficial,joined,recheck: no restriction,2026-10-26 17:16:54,,fatto
+60,@flipper_trade,@flipper_trade_chat,https://t.me/flipper_trade_chat,joined,recheck: no restriction,2026-10-26 17:17:07,,fatto
+61,@binance_announcements,@binanceexchange,https://t.me/binanceexchange,join_request,"admin approval needed, not requested",2026-10-21 12:32:39,,non fare: serve approvazione admin
+62,@cryptobotru,@cryptobotrussian,https://t.me/cryptobotrussian,join_request,"admin approval needed, not requested",2026-10-21 12:32:45,,non fare: serve approvazione admin
+63,@trust_announcements,@trustwallet,https://t.me/trustwallet,join_request,"admin approval needed, not requested",2026-10-21 12:32:52,,non fare: serve approvazione admin
+64,@wazirx,@wazirx_discuss,https://t.me/wazirx_discuss,joined,recheck: no restriction,2026-10-26 17:17:20,,fatto
+65,@bitochekvko,@chatbitochekvko,https://t.me/chatbitochekvko,join_request,"admin approval needed, not requested",2026-10-21 12:37:11,,non fare: serve approvazione admin
+66,@next100xgems,@next100xgemschat,https://t.me/next100xgemschat,joined,recheck: no restriction,2026-10-26 17:17:32,,fatto
+67,@cryptodenisnft,@cryptodenisnft_chat,https://t.me/cryptodenisnft_chat,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:17:45,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+68,@starphone_cc,@starphonecc,https://t.me/starphonecc,joined,recheck: no restriction,2026-10-26 17:17:57,,fatto
+69,@bon_trades,@bontradeschat,https://t.me/bontradeschat,joined,recheck: no restriction,2026-10-26 17:18:10,,fatto
+70,@game_time_one,@game_time_chat,https://t.me/game_time_chat,join_request,"admin approval needed, not requested",2026-10-21 12:55:12,,non fare: serve approvazione admin
+71,@cryptorobotics_en,@holders_cryptorobotics_eng,https://t.me/holders_cryptorobotics_eng,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:18:22,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+72,@retiumchain,@retiumblockchain,https://t.me/retiumblockchain,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:18:34,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+73,@qiblockchainannouncement,@hovronqiblockchain,https://t.me/hovronqiblockchain,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:18:47,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+74,@decenter,@dechat,https://t.me/dechat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+75,@cointelegraph,@chatcointelegraph,https://t.me/chatcointelegraph,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+76,@bitcoin,@bitcoincomments,https://t.me/bitcoincomments,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+77,@scopulynews,@scopuly,https://t.me/scopuly,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+78,@guardawallet,@guarda_community,https://t.me/guarda_community,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+79,@okxannouncements,@okxgroup_cn,https://t.me/okxgroup_cn,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+80,@alphaomegacoinaoc,@alphaomegacoinofficial,https://t.me/alphaomegacoinofficial,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+81,@chimpxai,@chimpxofficial,https://t.me/chimpxofficial,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+82,@solidusaitech,@solidusaichat,https://t.me/solidusaichat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+83,@whitelist1,@whitelistchat,https://t.me/whitelistchat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+84,@bcgamewinbig,@bcgame_show_it_off,https://t.me/bcgame_show_it_off,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+85,@weexnews,@weexglobal_group,https://t.me/weexglobal_group,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+86,@curvefiann,@curvefi,https://t.me/curvefi,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+87,@demons,@demonscha,https://t.me/demonscha,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+88,@binibit_top,@binibitofficial,https://t.me/binibitofficial,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+89,@cheese_pad,@cheesepad_group,https://t.me/cheesepad_group,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+90,@multivacmtv,@multivac2020,https://t.me/multivac2020,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+91,@crypgpttoken,@crypgptcommunity,https://t.me/crypgptcommunity,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+92,@memecrypted,@memecrypted_chat,https://t.me/memecrypted_chat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+93,@mexc_enchannel,@mexc_enofficial,https://t.me/MEXC_ENofficial,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+94,@chaingptnews,@chaingpt,https://t.me/chaingpt,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+95,@asi_announcements,@asi_alliance,https://t.me/asi_alliance,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+96,@superlitho,@lithochat,https://t.me/lithochat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+97,@bcgamewin,@bcgame,https://t.me/bcgame,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+98,@cointrendz,@cointrendzcommunity,https://t.me/cointrendzcommunity,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+99,@watcherguru,@watcherguruchat,https://t.me/watcherguruchat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+100,@thevse,@thevsechat,https://t.me/thevsechat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+101,@zeczcash,@zcash_community_chat,https://t.me/zcash_community_chat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
