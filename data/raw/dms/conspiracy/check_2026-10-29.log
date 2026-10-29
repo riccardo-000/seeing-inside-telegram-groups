@@ -2,3 +2,7 @@ output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/
 pseudonymization: OFF (no PSEUDONYM_SALT) | admin lists: 22 chats | member lists: 23 chats
 account: conspiracy | session: research_conspiracy.session
 backfill: 3 DMs already in the inbox logged
+output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/dms/conspiracy/dms.jsonl
+pseudonymization: OFF (no PSEUDONYM_SALT) | admin lists: 98 chats | member lists: 100 chats
+account: conspiracy | session: research_conspiracy.session
+backfill: 0 DMs already in the inbox logged
