@@ -1,0 +1,62 @@
+[
+ {
+  "user": 6756621819,
+  "is_bot": false,
+  "title": ".",
+  "is_creator": false
+ },
+ {
+  "user": 1343026232,
+  "is_bot": false,
+  "title": ".",
+  "is_creator": false
+ },
+ {
+  "user": 1541249842,
+  "is_bot": false,
+  "title": ".",
+  "is_creator": false
+ },
+ {
+  "user": 6675346585,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 955775900,
+  "is_bot": false,
+  "title": ".",
+  "is_creator": false
+ },
+ {
+  "user": 2023467953,
+  "is_bot": false,
+  "title": ".",
+  "is_creator": false
+ },
+ {
+  "user": 1457898212,
+  "is_bot": false,
+  "title": ".",
+  "is_creator": false
+ },
+ {
+  "user": 1970687014,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 39186710,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

@@ -1,0 +1,86 @@
+[
+ {
+  "user": 8823270653,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ },
+ {
+  "user": 5792034933,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 466261386,
+  "is_bot": false,
+  "title": "Operations",
+  "is_creator": false
+ },
+ {
+  "user": 7424163539,
+  "is_bot": false,
+  "title": "BD",
+  "is_creator": false
+ },
+ {
+  "user": 947264486,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8499175643,
+  "is_bot": false,
+  "title": "Marketing",
+  "is_creator": false
+ },
+ {
+  "user": 7406019915,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7001626577,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6821066050,
+  "is_bot": false,
+  "title": "Technology",
+  "is_creator": false
+ },
+ {
+  "user": 7520082276,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7416469039,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 380207703,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 539763982,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ }
+]

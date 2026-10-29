@@ -1,0 +1,68 @@
+[
+ {
+  "user": 2006273127,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1659376556,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5886466697,
+  "is_bot": false,
+  "title": "Mod",
+  "is_creator": false
+ },
+ {
+  "user": 1844896702,
+  "is_bot": false,
+  "title": "Community Mod",
+  "is_creator": false
+ },
+ {
+  "user": 5434266369,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1819361483,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1986670034,
+  "is_bot": false,
+  "title": "Community Mod",
+  "is_creator": false
+ },
+ {
+  "user": 691629633,
+  "is_bot": false,
+  "title": "Community Mod",
+  "is_creator": false
+ },
+ {
+  "user": 2028290131,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8125583202,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": "Admin",
+  "is_creator": false
+ }
+]

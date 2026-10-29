@@ -1,0 +1,62 @@
+[
+ {
+  "user": 885745757,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 404013617,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1182868433,
+  "is_bot": false,
+  "title": "Amb. of Christ",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1597195163,
+  "is_bot": false,
+  "title": "Moderator",
+  "is_creator": false
+ },
+ {
+  "user": 841291303,
+  "is_bot": false,
+  "title": "Moderator",
+  "is_creator": false
+ },
+ {
+  "user": 763988703,
+  "is_bot": false,
+  "title": "Technician",
+  "is_creator": false
+ },
+ {
+  "user": 1216477694,
+  "is_bot": false,
+  "title": "Peacemaker",
+  "is_creator": false
+ },
+ {
+  "user": 894353286,
+  "is_bot": false,
+  "title": "Owner",
+  "is_creator": true
+ }
+]

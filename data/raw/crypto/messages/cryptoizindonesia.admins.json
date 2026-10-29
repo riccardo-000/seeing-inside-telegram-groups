@@ -1,0 +1,26 @@
+[
+ {
+  "user": 8436907499,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 771096498,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6118844530,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 713738555,
+  "is_bot": false,
+  "title": "Community ctz",
+  "is_creator": false
+ }
+]

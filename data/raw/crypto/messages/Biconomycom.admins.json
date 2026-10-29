@@ -1,0 +1,236 @@
+[
+ {
+  "user": 7284361752,
+  "is_bot": false,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 1460293459,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 8582275595,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 8481186772,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 8582095239,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 545218745,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 7219691317,
+  "is_bot": false,
+  "title": "Regional Head",
+  "is_creator": false
+ },
+ {
+  "user": 6269118251,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 7892409214,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 655930928,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 2003141669,
+  "is_bot": false,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 8098212243,
+  "is_bot": false,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 5651757519,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 7835653051,
+  "is_bot": false,
+  "title": "BusinessDirector",
+  "is_creator": false
+ },
+ {
+  "user": 5542524638,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5931386076,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 1633555734,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 7352678255,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7236277586,
+  "is_bot": false,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 7624572747,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 5777395121,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 5079939480,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 1137618567,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 7140910420,
+  "is_bot": false,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 5318856331,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 7442822642,
+  "is_bot": false,
+  "title": "Listing manager",
+  "is_creator": false
+ },
+ {
+  "user": 6770099231,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 1689068362,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5502892901,
+  "is_bot": true,
+  "title": "Price Bot",
+  "is_creator": false
+ },
+ {
+  "user": 5635930463,
+  "is_bot": false,
+  "title": "Listing Head",
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1742014510,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 2116644741,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 620322544,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 208056682,
+  "is_bot": true,
+  "title": "Security",
+  "is_creator": false
+ },
+ {
+  "user": 1660716842,
+  "is_bot": false,
+  "title": "Listing Manager",
+  "is_creator": false
+ },
+ {
+  "user": 546292062,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 993537558,
+  "is_bot": false,
+  "title": "Owner",
+  "is_creator": false
+ },
+ {
+  "user": 615892526,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

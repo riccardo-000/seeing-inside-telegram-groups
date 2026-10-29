@@ -1,0 +1,110 @@
+[
+ {
+  "user": 8128499203,
+  "is_bot": true,
+  "title": "BOT",
+  "is_creator": false
+ },
+ {
+  "user": 8674182750,
+  "is_bot": false,
+  "title": "KOL Manager",
+  "is_creator": false
+ },
+ {
+  "user": 8499232567,
+  "is_bot": false,
+  "title": "BD Manager",
+  "is_creator": false
+ },
+ {
+  "user": 8898050818,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5776024977,
+  "is_bot": false,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 7600318927,
+  "is_bot": true,
+  "title": "Market bot",
+  "is_creator": false
+ },
+ {
+  "user": 8576723382,
+  "is_bot": false,
+  "title": "MGBX BD",
+  "is_creator": false
+ },
+ {
+  "user": 7976112346,
+  "is_bot": true,
+  "title": "BIG MARKET",
+  "is_creator": false
+ },
+ {
+  "user": 7691911050,
+  "is_bot": false,
+  "title": "Head of Listings",
+  "is_creator": false
+ },
+ {
+  "user": 488238321,
+  "is_bot": false,
+  "title": "CM",
+  "is_creator": false
+ },
+ {
+  "user": 7767995722,
+  "is_bot": false,
+  "title": "CM",
+  "is_creator": false
+ },
+ {
+  "user": 7582927118,
+  "is_bot": true,
+  "title": "HELPER",
+  "is_creator": false
+ },
+ {
+  "user": 8181157530,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1998715273,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6108202915,
+  "is_bot": false,
+  "title": "BOT",
+  "is_creator": false
+ },
+ {
+  "user": 5402710307,
+  "is_bot": false,
+  "title": "CM",
+  "is_creator": false
+ },
+ {
+  "user": 7526615545,
+  "is_bot": false,
+  "title": "CM",
+  "is_creator": false
+ },
+ {
+  "user": 7737380372,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

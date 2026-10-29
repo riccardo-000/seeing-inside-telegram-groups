@@ -1,0 +1,20 @@
+[
+ {
+  "user": 5187576451,
+  "is_bot": true,
+  "title": "Hal Bot",
+  "is_creator": false
+ },
+ {
+  "user": 5337485575,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ }
+]
