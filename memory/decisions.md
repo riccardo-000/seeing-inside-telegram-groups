@@ -347,3 +347,24 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   script joins). Open: some accepted pairs are borderline on topic (e.g. US/World news,
   Religion, Crypto seeds, a Ukrainian war-analysis channel) or on channel activity → topic
   labels per pair in the analysis, sensitivity check without them.
+
+## 2026-10-29 — Plain anti-bot buttons may be pressed by hand on joining (to confirm)
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** When joining a group **by hand in the app**, a team member may press a plain
+  verification button sent by the group's anti-bot ("I'm not a robot", "Verifica", 👁) so the
+  account is not removed. Limits: only a single verification button; **never** type an answer
+  to a quiz/question, never send a join request, never accept rules that require writing in the
+  group, never press anything in a DM from a user; the scripts still never press anything. Each
+  verification is noted in `joins.csv` (group, time, "verified by hand"). Already done on the
+  conspiracy account on 2026-10-28 by Riccardo (at least TartarianEnglishGroup — the bot's DM
+  confirms the CAPTCHA was passed and we were unmuted — and one Italian group). **To confirm
+  with the team and the supervisor**; this settles the question left open on 2026-10-18.
+- **Why:** On the crypto account, groups whose bot kicks unverified members were lost (12 of
+  100 removed); pressing a verification button sends no content and contacts nobody, so the
+  account stays a passive reader. Supersedes point (3) of "Join the groups first; captcha groups
+  are not verified" (2026-10-18) for manual joins only.
+- **Impact:** Ethics section (state it explicitly: verification buttons pressed by hand, nothing
+  else); Methodology 4.2 (join outcomes); **arms differ**: crypto groups were joined without
+  verification (removed ones lost) → either say so in Limitations or re-join the removed crypto
+  groups by hand with the same rule (team to decide). CLAUDE.md rule 3 ("passive only") to be
+  updated once confirmed.

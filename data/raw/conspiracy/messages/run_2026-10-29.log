@@ -1,0 +1,118 @@
+2026-10-29 13:10:20
+200 chats | pseudonymization: OFF (no PSEUDONYM_SALT)
+topic: conspiracy | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/conspiracy/messages | window from 2026-07-30 | max messages per chat: 50000
+account: conspiracy | session: research_conspiracy.session
+resolve budget left today: 100
+  @VigilantFox: +239 messages
+Server closed the connection: [Errno 60] Operation timed out
+Graceful disconnection timed out, forcibly ignoring cleanup
+Attempt 1 at connecting failed: TimeoutError: 
+  @VigilantFoxChat: +37523 messages
+  @TheConspiracyHole: +381 messages
+  @WeaponizeConspiracy: +8308 messages
+  @dailyexpose: +210 messages
+  @dailyexposenews: +1614 messages
+  @TruckersForFreedomGlobal: +78 messages
+  @DiedSuddenlyNewsOriginal: +7244 messages
+  @greatreject: +294 messages
+  @greatreject_social: +819 messages
+  @TheTruthSeekersChannel: +405 messages
+Server closed the connection: [Errno 60] Operation timed out
+Graceful disconnection timed out, forcibly ignoring cleanup
+Attempt 1 at connecting failed: TimeoutError: 
+Attempt 2 at connecting failed: TimeoutError: 
+Attempt 3 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 4 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 5 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 6 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 1 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 2 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 3 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 4 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 5 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 6 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 1 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 2 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 3 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 4 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 5 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 6 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 1 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 2 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 3 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 4 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 5 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 6 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 1 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 2 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 3 at connecting failed: OSError: [Errno 51] Network is unreachable
+Attempt 4 at connecting failed: OSError: [Errno 51] Network is unreachable
+  @truthseekersAus: +7344 messages
+  @DanaAshlieOfficial: +5 messages
+  @DanaAshliePublicChat: +2474 messages
+  @FionaRoseDiamond: +16 messages
+  @FionaRoseDiamondChatOfficial: +880 messages
+  @irishpatriots: +37 messages
+  @IrishPatriotsChat: +1933 messages
+  @robinmg: +407 messages
+  @robinmggroup: +7389 messages
+  @JustDudeChannel: +564 messages
+  @JustDudeChatRebornAgain: +17095 messages
+  @AltSkull48: +595 messages
+  @themeatwagon: +19883 messages
+  @thecrowhouseoffical: +26 messages
+  @TheCrowhousechat: +5600 messages
+  @JoinTheWhiteRose: +37 messages
+  @thewhiterosechat: +1443 messages
+  @TheLightTruthPaper: +73 messages
+  @TheLightPaperDistribution: +1623 messages
+  @OffgridiIreland: +548 messages
+  @OffgridIreland: +3751 messages
+  @ECETI_OFFICIAL_CHANNEL: +125 messages
+  @ECETI_OFFICIAL: +1251 messages
+  @counterspin: +192 messages
+  @counterspinchat2: +4517 messages
+  @AussieTruckiesUnited: +1022 messages
+  @aussietruckers1: +3001 messages
+  @hapaperspective: +395 messages
+  @hapaperspectivechat: +2824 messages
+  @The_UK_Channel: +15178 messages
+  @UK_Channel_Chat: +17611 messages
+  @DeepStateUA: +251 messages
+  @chatDeepState: +50000 messages
+  @TartariaHistoryChannel: +356 messages
+  @TartarianEnglishGroup: +4389 messages
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 128, in main_async
+    await dump_all(client, [ent], out, days=args.days, since=since, pseudonymizer=pseudo,
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/src/collect/messages.py", line 143, in dump_all
+    path, n = await dump_chat(client, chat, out_dir, since=since, limit=limit,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/src/collect/messages.py", line 87, in dump_chat
+    async for m in client.iter_messages(chat, **kwargs):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/requestiter.py", line 67, in __anext__
+    await asyncio.sleep(
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 156, in <module>
+    main()
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 152, in main
+    asyncio.run(main_async(ap.parse_args()))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
