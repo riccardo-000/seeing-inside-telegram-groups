@@ -71,31 +71,31 @@ riga,channel,group,link_group,stato_join,motivo,join_utc,canale_joinato,da_fare
 71,@cryptorobotics_en,@holders_cryptorobotics_eng,https://t.me/holders_cryptorobotics_eng,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:18:22,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
 72,@retiumchain,@retiumblockchain,https://t.me/retiumblockchain,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:18:34,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
 73,@qiblockchainannouncement,@hovronqiblockchain,https://t.me/hovronqiblockchain,needs_verification,"recheck: cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)",2026-10-26 17:18:47,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
-74,@decenter,@dechat,https://t.me/dechat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+74,@decenter,@dechat,https://t.me/dechat,joined,manual join (app): no restriction,2026-10-29 20:53:10,,fatto
 75,@cointelegraph,@chatcointelegraph,https://t.me/chatcointelegraph,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 76,@bitcoin,@bitcoincomments,https://t.me/bitcoincomments,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 77,@scopulynews,@scopuly,https://t.me/scopuly,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-78,@guardawallet,@guarda_community,https://t.me/guarda_community,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+78,@guardawallet,@guarda_community,https://t.me/guarda_community,joined,manual join (app): no restriction,2026-10-29 21:16:53,,fatto
 79,@okxannouncements,@okxgroup_cn,https://t.me/okxgroup_cn,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-80,@alphaomegacoinaoc,@alphaomegacoinofficial,https://t.me/alphaomegacoinofficial,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-81,@chimpxai,@chimpxofficial,https://t.me/chimpxofficial,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-82,@solidusaitech,@solidusaichat,https://t.me/solidusaichat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+80,@alphaomegacoinaoc,@alphaomegacoinofficial,https://t.me/alphaomegacoinofficial,joined,manual join (app): no restriction,2026-10-29 21:26:25,,fatto
+81,@chimpxai,@chimpxofficial,https://t.me/chimpxofficial,joined,manual join (app): no restriction,2026-10-29 21:32:02,,fatto
+82,@solidusaitech,@solidusaichat,https://t.me/solidusaichat,joined,manual join (app): no restriction,2026-10-29 21:37:39,,fatto
 83,@whitelist1,@whitelistchat,https://t.me/whitelistchat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-84,@bcgamewinbig,@bcgame_show_it_off,https://t.me/bcgame_show_it_off,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+84,@bcgamewinbig,@bcgame_show_it_off,https://t.me/bcgame_show_it_off,joined,manual join (app): no restriction,2026-10-29 21:49:00,,fatto
 85,@weexnews,@weexglobal_group,https://t.me/weexglobal_group,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-86,@curvefiann,@curvefi,https://t.me/curvefi,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-87,@demons,@demonscha,https://t.me/demonscha,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+86,@curvefiann,@curvefi,https://t.me/curvefi,restricted,manual join (app): restricted: none,2026-10-29 21:57:01,,fatto (limitato: ok)
+87,@demons,@demonscha,https://t.me/demonscha,joined,manual join (app): no restriction,2026-10-29 22:07:46,,fatto
 88,@binibit_top,@binibitofficial,https://t.me/binibitofficial,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-89,@cheese_pad,@cheesepad_group,https://t.me/cheesepad_group,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-90,@multivacmtv,@multivac2020,https://t.me/multivac2020,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-91,@crypgpttoken,@crypgptcommunity,https://t.me/crypgptcommunity,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-92,@memecrypted,@memecrypted_chat,https://t.me/memecrypted_chat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-93,@mexc_enchannel,@mexc_enofficial,https://t.me/MEXC_ENofficial,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-94,@chaingptnews,@chaingpt,https://t.me/chaingpt,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-95,@asi_announcements,@asi_alliance,https://t.me/asi_alliance,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-96,@superlitho,@lithochat,https://t.me/lithochat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+89,@cheese_pad,@cheesepad_group,https://t.me/cheesepad_group,joined,manual join (app): no restriction,2026-10-29 22:15:44,,fatto
+90,@multivacmtv,@multivac2020,https://t.me/multivac2020,needs_verification,"manual join (app): cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls); bot prompt with buttons",2026-10-29 22:22:51,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+91,@crypgpttoken,@crypgptcommunity,https://t.me/crypgptcommunity,joined,manual join (app): no restriction,2026-10-29 22:23:27,,fatto
+92,@memecrypted,@memecrypted_chat,https://t.me/memecrypted_chat,joined,manual join (app): no restriction,2026-10-29 22:31:54,,fatto
+93,@mexc_enchannel,@mexc_enofficial,https://t.me/MEXC_ENofficial,joined,manual join (app): no restriction,2026-10-29 22:37:13,,fatto
+94,@chaingptnews,@chaingpt,https://t.me/chaingpt,joined,manual join (app): no restriction,2026-10-29 22:50:28,,fatto
+95,@asi_announcements,@asi_alliance,https://t.me/asi_alliance,joined,manual join (app): no restriction,2026-10-29 22:56:05,,fatto
+96,@superlitho,@lithochat,https://t.me/lithochat,joined,manual join (app): no restriction,2026-10-29 23:01:15,,fatto
 97,@bcgamewin,@bcgame,https://t.me/bcgame,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 98,@cointrendz,@cointrendzcommunity,https://t.me/cointrendzcommunity,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-99,@watcherguru,@watcherguruchat,https://t.me/watcherguruchat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-100,@thevse,@thevsechat,https://t.me/thevsechat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-101,@zeczcash,@zcash_community_chat,https://t.me/zcash_community_chat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+99,@watcherguru,@watcherguruchat,https://t.me/watcherguruchat,joined,manual join (app): no restriction,2026-10-29 23:21:22,,fatto
+100,@thevse,@thevsechat,https://t.me/thevsechat,joined,manual join (app): no restriction,2026-10-29 23:21:42,,fatto
+101,@zeczcash,@zcash_community_chat,https://t.me/zcash_community_chat,joined,manual join (app): no restriction,2026-10-29 23:22:00,,fatto
