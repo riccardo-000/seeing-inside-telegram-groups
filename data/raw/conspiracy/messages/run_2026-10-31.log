@@ -1,0 +1,100 @@
+2026-10-31 13:42:37
+200 chats | pseudonymization: OFF (no PSEUDONYM_SALT)
+topic: conspiracy | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/conspiracy/messages | window from 2026-07-30 | max messages per chat: 50000
+account: conspiracy | session: research_conspiracy.session
+  @VigilantFoxChat: private or banned, skipped
+  @FionaRoseDiamondChatOfficial: private or banned, skipped
+  @TheLightPaperDistribution: private or banned, skipped
+resolve budget left today: 100
+  @VigilantFox: +8 messages
+  @TheConspiracyHole: +12 messages
+  @WeaponizeConspiracy: +322 messages
+  @dailyexpose: +4 messages
+  @dailyexposenews: +23 messages
+  @TruckersForFreedomGlobal: +1 messages
+  @DiedSuddenlyNewsOriginal: +1180 messages
+  @greatreject: +7 messages
+  @greatreject_social: +17 messages
+  @TheTruthSeekersChannel: +11 messages
+  @truthseekersAus: +201 messages
+  @DanaAshlieOfficial: +0 messages
+  @DanaAshliePublicChat: +37 messages
+  @FionaRoseDiamond: +0 messages
+  @irishpatriots: +0 messages
+  @IrishPatriotsChat: +104 messages
+  @robinmg: +7 messages
+  @robinmggroup: +148 messages
+  @JustDudeChannel: +0 messages
+  @JustDudeChatRebornAgain: +77 messages
+  @AltSkull48: +18 messages
+  @themeatwagon: +489 messages
+  @thecrowhouseoffical: +1 messages
+  @TheCrowhousechat: +118 messages
+  @JoinTheWhiteRose: +0 messages
+  @thewhiterosechat: +29 messages
+  @TheLightTruthPaper: +1 messages
+  @OffgridiIreland: +40 messages
+  @OffgridIreland: +781 messages
+  @ECETI_OFFICIAL_CHANNEL: +6 messages
+  @ECETI_OFFICIAL: +41 messages
+  @counterspin: +1 messages
+  @counterspinchat2: +134 messages
+  @AussieTruckiesUnited: +9 messages
+  @aussietruckers1: +68 messages
+  @hapaperspective: +9 messages
+  @hapaperspectivechat: +299 messages
+  @The_UK_Channel: +513 messages
+  @UK_Channel_Chat: +600 messages
+  @DeepStateUA: +2 messages
+  @chatDeepState: +50000 messages
+  @TartariaHistoryChannel: +9 messages
+  @TartarianEnglishGroup: +74 messages
+  @AllesAusserMainstream: +27 messages
+  @AAM_Links: +104 messages
+  @QNewsOfficialTV: +239 messages
+  @QNewsOfficialTVGodWinsChat: +799 messages
+  @disclosurehub: +2 messages
+  @Disclosurehubchat: +1407 messages
+  @peach_blossombazi: +436 messages
+  @peachblossomchat: +6857 messages
+  @RA_Ludwig: +39 messages
+  @diskussionsgruppera_ludwig: +3397 messages
+  @SpaceForceGalacticFederation: +147 messages
+  @health_healing_detoxing: +831 messages
+  @cristinamartinjimenezescritora: +738 messages
+  @crismartinj: +5510 messages
+  @No_plandemia: +466 messages
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 128, in main_async
+    await dump_all(client, [ent], out, days=args.days, since=since, pseudonymizer=pseudo,
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/src/collect/messages.py", line 143, in dump_all
+    path, n = await dump_chat(client, chat, out_dir, since=since, limit=limit,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/src/collect/messages.py", line 87, in dump_chat
+    async for m in client.iter_messages(chat, **kwargs):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/requestiter.py", line 67, in __anext__
+    await asyncio.sleep(
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 156, in <module>
+    main()
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 152, in main
+    asyncio.run(main_async(ap.parse_args()))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
