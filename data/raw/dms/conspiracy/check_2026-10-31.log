@@ -1,0 +1,4 @@
+output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/dms/conspiracy/dms.jsonl
+pseudonymization: OFF (no PSEUDONYM_SALT) | admin lists: 105 chats | member lists: 107 chats
+account: conspiracy | session: research_conspiracy.session
+backfill: 9 DMs already in the inbox logged

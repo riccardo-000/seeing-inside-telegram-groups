@@ -1,0 +1,4 @@
+output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/dms/crypto/dms.jsonl
+pseudonymization: OFF (no PSEUDONYM_SALT) | admin lists: 105 chats | member lists: 107 chats
+account: crypto | session: research.session
+backfill: 7 DMs already in the inbox logged
