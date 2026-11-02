@@ -13,7 +13,7 @@ data/raw/<topic>/messages/STOP to stop gracefully between chats.
 
 Usage:
     python scripts/dump_messages.py --topic crypto --from-pairs --since 2026-07-30 --dry-run
-    python scripts/dump_messages.py --topic crypto --from-pairs --since 2026-07-30 --max-messages 50000
+    python scripts/dump_messages.py --topic crypto --from-pairs --since 2026-07-30 --max-messages 50000 --max-total 200000
     python scripts/dump_messages.py --topic crypto --chats cancore_io cancore_chat --days 30
 """
 
@@ -126,7 +126,7 @@ async def main_async(args) -> None:
                 print("STOP file found")
                 break
             await dump_all(client, [ent], out, days=args.days, since=since, pseudonymizer=pseudo,
-                           pause=args.pause, limit=args.max_messages)
+                           pause=args.pause, limit=args.max_messages, total_cap=args.max_total)
     except BudgetExceeded as e:
         print(f"STOPPED: {e}")
     except errors.FloodWaitError as e:
@@ -149,6 +149,9 @@ def main() -> None:
     ap.add_argument("--pause", type=float, default=6.0, help="seconds between requests")
     ap.add_argument("--max-messages", type=int, default=None,
                     help="max new messages per chat in this run, oldest first (default: no cap)")
+    ap.add_argument("--max-total", type=int, default=None,
+                    help="max messages kept per chat over all runs; chats at the cap are skipped "
+                         "(decision 2026-11-01: 200000)")
     asyncio.run(main_async(ap.parse_args()))
 
 

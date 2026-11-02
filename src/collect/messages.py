@@ -47,6 +47,17 @@ def last_id_on_disk(path: Path) -> int:
     return last
 
 
+def count_on_disk(path: Path) -> int:
+    """Number of messages already saved for a chat (0 if none)."""
+    if not path.exists():
+        return 0
+    try:
+        with gzip.open(path, "rt", encoding="utf-8") as fh:
+            return sum(1 for _ in fh)
+    except (EOFError, OSError):
+        return 0  # truncated tail: last_id_on_disk repairs it on the next dump
+
+
 async def dump_chat(
     client,
     chat,
@@ -124,11 +135,14 @@ async def fetch_admins(client, chat, pseudonymizer: Pseudonymizer | None = None)
 
 async def dump_all(client, chats: list, out_dir: Path, days: int = 90,
                    pseudonymizer: Pseudonymizer | None = None, pause: float = 6.0,
-                   limit: int | None = None, since: datetime | None = None) -> dict:
+                   limit: int | None = None, since: datetime | None = None,
+                   total_cap: int | None = None) -> dict:
     """Run :func:`dump_chat` and :func:`fetch_admins` for every chat, resumably.
 
     The window starts at ``since`` if given, else ``days`` before now.
-    ``limit`` caps the new messages per chat in this run (oldest first).
+    ``limit`` caps the new messages per chat in this run (oldest first);
+    ``total_cap`` caps the messages kept on disk per chat over all runs (a chat
+    at the cap is skipped, so its window ends where the cap was reached).
     Stops at the first FloodWait longer than 60 s (caller must log it).
 
     Returns:
@@ -139,8 +153,15 @@ async def dump_all(client, chats: list, out_dir: Path, days: int = 90,
     done = {}
     for chat in chats:
         name = getattr(chat, "username", None) or str(chat.id)
+        run_limit = limit
+        if total_cap:
+            on_disk = count_on_disk(out_dir / f"{name}.jsonl.gz")
+            if on_disk >= total_cap:
+                print(f"  @{name}: {on_disk} messages on disk, total cap reached, skipped", flush=True)
+                continue
+            run_limit = min(limit or total_cap, total_cap - on_disk)
         try:
-            path, n = await dump_chat(client, chat, out_dir, since=since, limit=limit,
+            path, n = await dump_chat(client, chat, out_dir, since=since, limit=run_limit,
                                       pseudonymizer=pseudonymizer, known_chats=known, wait_time=pause)
             await asyncio.sleep(pause)
             admins_path = out_dir / f"{name}.admins.json"

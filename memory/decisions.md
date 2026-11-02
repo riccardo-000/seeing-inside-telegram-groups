@@ -368,3 +368,19 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   verification (removed ones lost) → either say so in Limitations or re-join the removed crypto
   groups by hand with the same rule (team to decide). CLAUDE.md rule 3 ("passive only") to be
   updated once confirmed.
+
+## 2026-11-01 — Total cap of 200,000 messages per chat in the dumps
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** Each chat keeps at most **200,000 messages** on disk
+  (`dump_messages.py --max-total 200000`); a chat at the cap is skipped in later runs. Dumps go
+  oldest first from 2026-07-30, so for a capped chat the observation window is **2026-07-30 →
+  the date of its 200,000th message**, not the full 90 days. Capped so far: MGBX_English (crypto,
+  ~8,500 msg/day → about 24 days) and chatDeepState (conspiracy); BinanceArabic (crypto, 150k)
+  will reach it in the next run. May be revisited later if time allows.
+- **Why:** In 4 days of dumps the three huge groups took ~1 h each per run and blocked the other
+  pairs (one 2 h run added 100k messages to two groups and no new pair). 200k messages per chat is
+  already far more than any per-group rate needs; without the cap these groups alone would need
+  ~700k messages each.
+- **Impact:** Methodology 4.2 (window per chat: report the effective end date of capped chats);
+  analysis: per-chat rates use each chat's own window, comparisons over a common period use the
+  part every chat covers; Limitations (largest groups observed for ~3–4 weeks only).
