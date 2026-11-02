@@ -1,0 +1,68 @@
+[
+ {
+  "user": 7254175933,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1604470165,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 414303323,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 429221544,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1913299569,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1833994469,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1542548956,
+  "is_bot": false,
+  "title": "Archeia",
+  "is_creator": false
+ },
+ {
+  "user": 1540533666,
+  "is_bot": false,
+  "title": "Rainbow",
+  "is_creator": false
+ },
+ {
+  "user": 1553654404,
+  "is_bot": false,
+  "title": "Nugget",
+  "is_creator": false
+ },
+ {
+  "user": 1111815065,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1526291829,
+  "is_bot": false,
+  "title": "5D",
+  "is_creator": true
+ }
+]

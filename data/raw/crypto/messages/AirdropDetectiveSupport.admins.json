@@ -1,0 +1,26 @@
+[
+ {
+  "user": 6239214428,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 2080868623,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1394530085,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 530117254,
+  "is_bot": false,
+  "title": "Chief BM",
+  "is_creator": false
+ }
+]

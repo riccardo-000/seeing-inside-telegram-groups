@@ -1,0 +1,32 @@
+[
+ {
+  "user": 804779942,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8980010330,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1540878689,
+  "is_bot": false,
+  "title": "ADMIN & FREN",
+  "is_creator": false
+ },
+ {
+  "user": 1529692620,
+  "is_bot": false,
+  "title": "ADMIN & FREN",
+  "is_creator": false
+ },
+ {
+  "user": 1490063405,
+  "is_bot": false,
+  "title": "ADMIN & FREN",
+  "is_creator": false
+ }
+]

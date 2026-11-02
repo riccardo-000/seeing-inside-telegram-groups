@@ -1,0 +1,104 @@
+[
+ {
+  "user": 7738618169,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5016006189,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5207934356,
+  "is_bot": true,
+  "title": "Delete Bot",
+  "is_creator": false
+ },
+ {
+  "user": 300039521,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 660783114,
+  "is_bot": true,
+  "title": "Human Verify Bot",
+  "is_creator": false
+ },
+ {
+  "user": 1569983498,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1335417168,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1614985174,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1269817437,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1803149924,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1779231175,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 696267355,
+  "is_bot": true,
+  "title": "Anti-Spam Bot",
+  "is_creator": false
+ },
+ {
+  "user": 903542050,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1213885998,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1556718751,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1682760079,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1493848507,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ }
+]

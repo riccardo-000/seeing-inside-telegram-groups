@@ -1,0 +1,26 @@
+[
+ {
+  "user": 824020304,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8177750160,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 463083850,
+  "is_bot": false,
+  "title": "COINLOTTO",
+  "is_creator": false
+ }
+]

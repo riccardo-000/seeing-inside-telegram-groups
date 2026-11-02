@@ -1,0 +1,152 @@
+[
+ {
+  "user": 8177750160,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": "Rose",
+  "is_creator": false
+ },
+ {
+  "user": 6490188052,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7417061661,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 140424802,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 240146904,
+  "is_bot": false,
+  "title": "CM",
+  "is_creator": false
+ },
+ {
+  "user": 2053614329,
+  "is_bot": false,
+  "title": "CM",
+  "is_creator": false
+ },
+ {
+  "user": 1895499034,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6190046558,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 537349985,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 204960596,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5073129066,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 771096498,
+  "is_bot": true,
+  "title": "Anti-spam Bot",
+  "is_creator": false
+ },
+ {
+  "user": 504682531,
+  "is_bot": false,
+  "title": "Seranium-CM",
+  "is_creator": false
+ },
+ {
+  "user": 1762659030,
+  "is_bot": false,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 1689724545,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 546292062,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": "INJECTIVE Mod",
+  "is_creator": false
+ },
+ {
+  "user": 1142237012,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 472663360,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 734284134,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 539763982,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 400753764,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 404843659,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 513697854,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

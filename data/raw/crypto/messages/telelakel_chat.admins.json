@@ -1,0 +1,32 @@
+[
+ {
+  "user": 7877300974,
+  "is_bot": true,
+  "title": "bot",
+  "is_creator": false
+ },
+ {
+  "user": 1294201,
+  "is_bot": false,
+  "title": "Astra",
+  "is_creator": false
+ },
+ {
+  "user": 1251977868,
+  "is_bot": false,
+  "title": "Owner",
+  "is_creator": true
+ },
+ {
+  "user": 8523665546,
+  "is_bot": true,
+  "title": "Delete",
+  "is_creator": false
+ },
+ {
+  "user": 752450353,
+  "is_bot": false,
+  "title": "X",
+  "is_creator": false
+ }
+]

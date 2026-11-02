@@ -1,0 +1,92 @@
+[
+ {
+  "user": 687973468,
+  "is_bot": false,
+  "title": "Anonym",
+  "is_creator": false
+ },
+ {
+  "user": 208056682,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 162726413,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1253610135,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 192342208,
+  "is_bot": false,
+  "title": "Moderator",
+  "is_creator": false
+ },
+ {
+  "user": 1132694953,
+  "is_bot": false,
+  "title": "Mediator",
+  "is_creator": false
+ },
+ {
+  "user": 301684447,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 888136387,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 737494754,
+  "is_bot": false,
+  "title": "Mediator",
+  "is_creator": false
+ },
+ {
+  "user": 930028252,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 883382147,
+  "is_bot": false,
+  "title": "Mediatorin",
+  "is_creator": false
+ },
+ {
+  "user": 207942469,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 310846338,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 47825102,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 46160362,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

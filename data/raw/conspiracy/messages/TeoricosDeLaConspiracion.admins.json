@@ -1,0 +1,134 @@
+[
+ {
+  "user": 5367866773,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7761488755,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8373445754,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8990555808,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1538622,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1800631783,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8104697093,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6290303436,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 2104736944,
+  "is_bot": false,
+  "title": "Se\u00f1or lobo",
+  "is_creator": true
+ },
+ {
+  "user": 254042011,
+  "is_bot": false,
+  "title": "Jefe admin.",
+  "is_creator": false
+ },
+ {
+  "user": 5445062618,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 62520411,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5687126301,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5007139733,
+  "is_bot": false,
+  "title": "administradora.",
+  "is_creator": false
+ },
+ {
+  "user": 1593860907,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 870028187,
+  "is_bot": false,
+  "title": "Enlace admin.",
+  "is_creator": false
+ },
+ {
+  "user": 735472274,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 563431619,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 282203467,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 380207703,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 276012562,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ }
+]

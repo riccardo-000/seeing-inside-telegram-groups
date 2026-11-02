@@ -1,0 +1,80 @@
+[
+ {
+  "user": 8694583455,
+  "is_bot": false,
+  "title": ".",
+  "is_creator": false
+ },
+ {
+  "user": 829068066,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7154009768,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 289047375,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5091678251,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 208056682,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 707665634,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1182477602,
+  "is_bot": false,
+  "title": ".",
+  "is_creator": false
+ },
+ {
+  "user": 162726413,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 612842775,
+  "is_bot": false,
+  "title": ".",
+  "is_creator": false
+ },
+ {
+  "user": 665092591,
+  "is_bot": false,
+  "title": ".",
+  "is_creator": false
+ },
+ {
+  "user": 552884123,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 57589315,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

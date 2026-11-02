@@ -1,0 +1,272 @@
+[
+ {
+  "user": 8684899929,
+  "is_bot": true,
+  "title": "bot",
+  "is_creator": false
+ },
+ {
+  "user": 8484101525,
+  "is_bot": false,
+  "title": "admin",
+  "is_creator": false
+ },
+ {
+  "user": 6173829528,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7094283935,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6674839665,
+  "is_bot": false,
+  "title": "Harbinger",
+  "is_creator": false
+ },
+ {
+  "user": 858370058,
+  "is_bot": false,
+  "title": "Harbinger",
+  "is_creator": false
+ },
+ {
+  "user": 1495558116,
+  "is_bot": false,
+  "title": "Harbinger",
+  "is_creator": false
+ },
+ {
+  "user": 7397115454,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6108202915,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6490188052,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 586610342,
+  "is_bot": false,
+  "title": "Harbinger Turkey",
+  "is_creator": false
+ },
+ {
+  "user": 6396701051,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6190046558,
+  "is_bot": true,
+  "title": "bot",
+  "is_creator": false
+ },
+ {
+  "user": 5312333723,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1700910646,
+  "is_bot": false,
+  "title": "Harbinger",
+  "is_creator": false
+ },
+ {
+  "user": 649611690,
+  "is_bot": true,
+  "title": "Raffle bot",
+  "is_creator": false
+ },
+ {
+  "user": 5916040408,
+  "is_bot": false,
+  "title": "Head of MKT",
+  "is_creator": false
+ },
+ {
+  "user": 103370498,
+  "is_bot": false,
+  "title": "Victory-joo_node",
+  "is_creator": false
+ },
+ {
+  "user": 5093782354,
+  "is_bot": false,
+  "title": "WELCOME",
+  "is_creator": false
+ },
+ {
+  "user": 945586527,
+  "is_bot": false,
+  "title": "Gemstar_ONT",
+  "is_creator": false
+ },
+ {
+  "user": 544856844,
+  "is_bot": false,
+  "title": "Swiss_Node",
+  "is_creator": false
+ },
+ {
+  "user": 1359981943,
+  "is_bot": false,
+  "title": "Europe Lead",
+  "is_creator": false
+ },
+ {
+  "user": 1945678498,
+  "is_bot": false,
+  "title": "Ontology Norway",
+  "is_creator": false
+ },
+ {
+  "user": 437132339,
+  "is_bot": false,
+  "title": "FishPool\ud80c\udd9d\ud80c\udd9f",
+  "is_creator": false
+ },
+ {
+  "user": 2083442060,
+  "is_bot": false,
+  "title": "QuickOne Node",
+  "is_creator": false
+ },
+ {
+  "user": 1476407131,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 830819680,
+  "is_bot": false,
+  "title": "Harbinger",
+  "is_creator": false
+ },
+ {
+  "user": 468464237,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ },
+ {
+  "user": 47798614,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 557429091,
+  "is_bot": false,
+  "title": "Harbinger",
+  "is_creator": false
+ },
+ {
+  "user": 615942994,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 539545977,
+  "is_bot": false,
+  "title": "HeadOfCommunity",
+  "is_creator": false
+ },
+ {
+  "user": 646858276,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 539763982,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 524958633,
+  "is_bot": false,
+  "title": "Harbinger",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 397821164,
+  "is_bot": false,
+  "title": "Prog node",
+  "is_creator": false
+ },
+ {
+  "user": 242589437,
+  "is_bot": false,
+  "title": "Community Admin",
+  "is_creator": false
+ },
+ {
+  "user": 616499024,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 400753764,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 404013617,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 597203070,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 498224021,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 337533210,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ }
+]

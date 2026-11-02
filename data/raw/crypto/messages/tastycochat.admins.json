@@ -1,0 +1,26 @@
+[
+ {
+  "user": 780492175,
+  "is_bot": false,
+  "title": "TastyCo Team",
+  "is_creator": false
+ },
+ {
+  "user": 6396701051,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1992156417,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 2122262993,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ }
+]

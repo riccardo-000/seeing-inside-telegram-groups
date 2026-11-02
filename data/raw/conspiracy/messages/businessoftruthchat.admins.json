@@ -1,0 +1,44 @@
+[
+ {
+  "user": 781369489,
+  "is_bot": false,
+  "title": "Bruno",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1587942171,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1738037385,
+  "is_bot": false,
+  "title": "Humper Nickle",
+  "is_creator": false
+ },
+ {
+  "user": 1658376949,
+  "is_bot": false,
+  "title": "Marty",
+  "is_creator": false
+ },
+ {
+  "user": 302639451,
+  "is_bot": false,
+  "title": "Iron Man",
+  "is_creator": false
+ },
+ {
+  "user": 1432761356,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

@@ -1,0 +1,62 @@
+[
+ {
+  "user": 1366164555,
+  "is_bot": false,
+  "title": "Support",
+  "is_creator": false
+ },
+ {
+  "user": 8250445413,
+  "is_bot": false,
+  "title": "Support",
+  "is_creator": false
+ },
+ {
+  "user": 486008076,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1868236727,
+  "is_bot": false,
+  "title": "Support",
+  "is_creator": false
+ },
+ {
+  "user": 934528730,
+  "is_bot": false,
+  "title": "Support",
+  "is_creator": false
+ },
+ {
+  "user": 11670646,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 817550803,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 172237542,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 400753764,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ },
+ {
+  "user": 30834148,
+  "is_bot": false,
+  "title": "Founder",
+  "is_creator": true
+ }
+]

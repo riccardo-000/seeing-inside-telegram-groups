@@ -1,0 +1,20 @@
+[
+ {
+  "user": 7591302242,
+  "is_bot": true,
+  "title": "Team",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6945039172,
+  "is_bot": false,
+  "title": "TEAM TAPZI",
+  "is_creator": true
+ }
+]

@@ -1,0 +1,62 @@
+[
+ {
+  "user": 8435197033,
+  "is_bot": true,
+  "title": "Botijo",
+  "is_creator": false
+ },
+ {
+  "user": 5422359176,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 917505825,
+  "is_bot": false,
+  "title": "Baba mi refugio",
+  "is_creator": false
+ },
+ {
+  "user": 1921288219,
+  "is_bot": false,
+  "title": "Vuestro Servidor",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": "La Guapi",
+  "is_creator": false
+ },
+ {
+  "user": 599868918,
+  "is_bot": false,
+  "title": "nadie",
+  "is_creator": false
+ },
+ {
+  "user": 1726397272,
+  "is_bot": false,
+  "title": "Steagnus",
+  "is_creator": true
+ },
+ {
+  "user": 1049711895,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1798693119,
+  "is_bot": false,
+  "title": "10",
+  "is_creator": false
+ },
+ {
+  "user": 1704111279,
+  "is_bot": false,
+  "title": "No soy nada",
+  "is_creator": false
+ }
+]
