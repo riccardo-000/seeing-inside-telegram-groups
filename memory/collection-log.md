@@ -25,7 +25,7 @@ _To be filled once the seed list exists (split into three disjoint sets)._
 |---|---|
 | | |
 
-Joined so far: **crypto account 66 / 500** groups (script joins 2026-10-18/21 + 19 by hand 2026-10-29; status per pair: `crypto/joins/join_status.csv`) · **conspiracy account 19 / 500** groups member (22 joined by hand, 3 banned us; + 1 channel by mistake; status per pair: `conspiracy/joins/join_status.csv`)
+Joined so far: **crypto account 66 / 500** groups (script joins 2026-10-18/21 + 19 by hand 2026-10-29; status per pair: `crypto/joins/join_status.csv`) · **conspiracy account 31 / 500** groups member (34 joined by hand, 3 banned us; + 1 channel by mistake; status per pair: `conspiracy/joins/join_status.csv`)
 
 ## Log
 
@@ -111,3 +111,4 @@ Newest at the bottom.
 | 2026-11-02 23:05 | 2026-11-03 14:16 | Riccardo | **Full message dump, crypto run 7** (`--from-pairs --since 2026-07-30 --max-messages 50000 --max-total 200000`), resumes after run 6 (GateCom_EN partial) | crypto account | Stopped by hand, 0 FloodWait. **66/100 pairs complete**, 135 files, 1,374,000 msgs (79 MB). |
 | 2026-11-02 23:05 | 2026-11-03 14:16 | Riccardo | **Full message dump, conspiracy run 6** (same options), resumes after run 5 (hamal_israel1 partial) | conspiracy account | Stopped by hand, 0 FloodWait. **95/100 pairs complete**, 190 files, 1,248,761 msgs (123 MB). **greatreject_social** (the group where a join request was sent by hand on 2026-10-29) now returns ChannelPrivateError: request declined and/or banned; 855 messages up to 2026-11-01 19:02Z already on disk. |
 | 2026-11-03 14:20 | 2026-11-03 14:25 | Riccardo | Read-only import of manual joins (both accounts) + `join_status.py` refreshed | both accounts | 0 FloodWait. Conspiracy: +1 (peachblossomchat). Logged as `removed`: the 3 conspiracy groups that banned us and crypto rektplebssubmission (gone). **3 pairs are in both arms** (quantumstellarinitiative, rektplebs, cotichannel/COTInetwork): flagged in the conspiracy list as "non fare" until decided. Lists for manual joins: `data/interim/<topic>/joins/join_status.csv` (column `da_fare`). |
+| 2026-11-03 14:41Z | 2026-11-03 16:05Z | Simone | **Manual joins in the app**, conspiracy rows ~12–44, one every ~5 min | conspiracy account | Imported read-only 2026-11-03 18:00 (0 FloodWait, 0 resolves): **+12 groups** (10 joined; ECETI_OFFICIAL muted until 2026-11-10, hapaperspectivechat muted). Not joined in that range: TheCrowhousechat, UK_Channel_Chat, chatDeepState, crismartinj, SilenceDoGoodMBAChat, businessoftruthchat (to ask Simone: approval needed, captcha or skipped?); JustDudeChatRebornAgain logged as join request (sent 2026-10-29). Conspiracy now member of 31 groups. |
