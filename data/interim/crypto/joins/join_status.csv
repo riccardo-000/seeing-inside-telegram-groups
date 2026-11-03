@@ -39,7 +39,7 @@ riga,channel,group,link_group,stato_join,motivo,join_utc,canale_joinato,da_fare
 39,@airdropdetective,@airdropdetectivesupport,https://t.me/airdropdetectivesupport,joined,recheck: no restriction,2026-10-26 17:13:38,,fatto
 40,@cryptolibrarysairdrop,@cryptolibrarysrefferal,https://t.me/cryptolibrarysrefferal,joined,recheck: no restriction,2026-10-26 17:13:51,,fatto
 41,@commas,@community_3commas,https://t.me/community_3commas,join_request,"admin approval needed, not requested",2026-10-20 13:18:55,,non fare: serve approvazione admin
-42,@rektplebs,@rektplebssubmission,https://t.me/rektplebssubmission,needs_verification,checked after 60 s,2026-10-20 13:20:08,,"fatto (mutato: ok, leggiamo e riceviamo DM)"
+42,@rektplebs,@rektplebssubmission,https://t.me/rektplebssubmission,removed,recheck: group not accessible any more (ChannelPrivateError in every dump since 2026-10-28),2026-11-03 13:17:28,,sostituire la coppia (gruppo privato o sparito)
 43,@kucoin_news,@kucoin_exchange,https://t.me/kucoin_exchange,joined,recheck: no restriction,2026-10-26 17:14:05,,fatto
 44,@bnbchain,@bnbchaincommunity,https://t.me/bnbchaincommunity,removed,recheck: not a member any more,2026-10-26 17:14:17,,da rifare a mano: join + bottone anti-bot se c'è
 45,@da_ga_ma,@dagama_chat,https://t.me/dagama_chat,joined,recheck: no restriction,2026-10-26 17:14:30,,fatto

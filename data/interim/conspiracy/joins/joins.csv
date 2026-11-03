@@ -23,3 +23,7 @@ date_utc,time_utc,chat,kind,status,reason
 2026-10-29,22:50:47,DanaAshliePublicChat,groups,joined,manual join (app): no restriction
 2026-10-30,00:39:39,greatreject_social,groups,join_request,"join request SENT by hand in the app (2026-10-29), waiting for admin approval; not a member"
 2026-10-30,00:39:39,robinmggroup,groups,join_request,"join request SENT by hand in the app (2026-10-29), waiting for admin approval; not a member"
+2026-10-31,15:29:20,peachblossomchat,groups,joined,manual join (app): no restriction
+2026-11-03,13:17:28,VigilantFoxChat,groups,removed,banned: ChannelPrivateError in the dump of 2026-11-01 (messages up to 2026-10-29 on disk)
+2026-11-03,13:17:28,FionaRoseDiamondChatOfficial,groups,removed,banned: ChannelPrivateError in the dump of 2026-11-01 (messages up to 2026-10-29 on disk)
+2026-11-03,13:17:28,TheLightPaperDistribution,groups,removed,banned: ChannelPrivateError in the dump of 2026-11-01 (messages up to 2026-10-29 on disk)

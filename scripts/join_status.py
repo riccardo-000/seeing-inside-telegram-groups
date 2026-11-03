@@ -48,6 +48,13 @@ def main() -> None:
     p = paths(args.topic)
     with open(p.pairs / "final_pairs.csv", newline="", encoding="utf-8-sig") as fh:
         pairs = list(csv.DictReader(fh))
+    # a group also listed in the other arm's pairs would be counted twice
+    other = "conspiracy" if args.topic == "crypto" else "crypto"
+    other_pairs = paths(other).pairs / "final_pairs.csv"
+    other_groups = set()
+    if other_pairs.exists():
+        with open(other_pairs, newline="", encoding="utf-8-sig") as fh:
+            other_groups = {r["group"].strip().lstrip("@").lower() for r in csv.DictReader(fh)}
     latest = {}
     log = p.interim / "joins" / "joins.csv"
     if log.exists():
@@ -70,6 +77,10 @@ def main() -> None:
             todo = TODO.get(status, f"controllare ({status})")
             if status == "removed" and "not accessible" in g.get("reason", ""):
                 todo = TODO["private"]  # the group itself is gone, not only our membership
+            elif status == "removed" and g.get("reason", "").startswith("banned"):
+                todo = "perso: ci hanno bannato (non rifare)"
+            if args.topic == "conspiracy" and group.lower() in other_groups:  # crypto pairs belong to crypto
+                todo = f"non fare: coppia presente anche in {other} (da decidere)"
             counts[todo] += 1
             w.writerow({
                 "riga": i, "channel": pr["channel"], "group": pr["group"],

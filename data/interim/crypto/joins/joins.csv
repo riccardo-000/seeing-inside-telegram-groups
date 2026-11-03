@@ -158,3 +158,4 @@ date_utc,time_utc,chat,kind,status,reason
 2026-10-29,21:37:39,solidusaichat,groups,joined,manual join (app): no restriction
 2026-10-29,21:16:53,Guarda_community,groups,joined,manual join (app): no restriction
 2026-10-29,22:15:44,CheesePad_Group,groups,joined,manual join (app): no restriction
+2026-11-03,13:17:28,rektplebssubmission,groups,removed,recheck: group not accessible any more (ChannelPrivateError in every dump since 2026-10-28)

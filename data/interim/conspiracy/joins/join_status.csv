@@ -1,19 +1,19 @@
 riga,channel,group,link_group,stato_join,motivo,join_utc,canale_joinato,da_fare
-2,@VigilantFox,@VigilantFoxChat,https://t.me/VigilantFoxChat,joined,manual join (app): no restriction,2026-10-29 22:16:20,,fatto
+2,@VigilantFox,@VigilantFoxChat,https://t.me/VigilantFoxChat,removed,banned: ChannelPrivateError in the dump of 2026-11-01 (messages up to 2026-10-29 on disk),2026-11-03 13:17:28,,perso: ci hanno bannato (non rifare)
 3,@TheConspiracyHole,@WeaponizeConspiracy,https://t.me/WeaponizeConspiracy,joined,manual join (app): no restriction,2026-10-29 22:16:58,,fatto
 4,@dailyexpose,@dailyexposenews,https://t.me/dailyexposenews,joined,manual join (app): no restriction,2026-10-29 22:24:00,,fatto
 5,@TruckersForFreedomGlobal,@DiedSuddenlyNewsOriginal,https://t.me/DiedSuddenlyNewsOriginal,joined,manual join (app): no restriction,2026-10-29 22:32:29,,fatto
 6,@greatreject,@greatreject_social,https://t.me/greatreject_social,join_request,"join request SENT by hand in the app (2026-10-29), waiting for admin approval; not a member",2026-10-30 00:39:39,,non fare: serve approvazione admin
 7,@TheTruthSeekersChannel,@truthseekersAus,https://t.me/truthseekersAus,joined,manual join (app): no restriction,2026-10-29 22:39:10,,fatto
 8,@DanaAshlieOfficial,@DanaAshliePublicChat,https://t.me/DanaAshliePublicChat,joined,manual join (app): no restriction,2026-10-29 22:50:47,,fatto
-9,@FionaRoseDiamond,@FionaRoseDiamondChatOfficial,https://t.me/FionaRoseDiamondChatOfficial,joined,manual join (app): no restriction,2026-10-29 22:57:01,,fatto
+9,@FionaRoseDiamond,@FionaRoseDiamondChatOfficial,https://t.me/FionaRoseDiamondChatOfficial,removed,banned: ChannelPrivateError in the dump of 2026-11-01 (messages up to 2026-10-29 on disk),2026-11-03 13:17:28,,perso: ci hanno bannato (non rifare)
 10,@irishpatriots,@IrishPatriotsChat,https://t.me/IrishPatriotsChat,joined,manual join (app): no restriction,2026-10-29 23:01:50,,fatto
 11,@robinmg,@robinmggroup,https://t.me/robinmggroup,join_request,"join request SENT by hand in the app (2026-10-29), waiting for admin approval; not a member",2026-10-30 00:39:39,,non fare: serve approvazione admin
 12,@JustDudeChannel,@JustDudeChatRebornAgain,https://t.me/JustDudeChatRebornAgain,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 13,@AltSkull48,@themeatwagon,https://t.me/themeatwagon,restricted,manual join (app): restricted: send_polls,2026-10-29 23:20:15,,fatto (limitato: ok)
 14,@thecrowhouseoffical,@TheCrowhousechat,https://t.me/TheCrowhousechat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 15,@JoinTheWhiteRose,@thewhiterosechat,https://t.me/thewhiterosechat,joined,manual join (app): no restriction,2026-10-29 23:24:07,,fatto
-16,@TheLightTruthPaper,@TheLightPaperDistribution,https://t.me/TheLightPaperDistribution,joined,manual join (app): no restriction,2026-10-29 23:25:14,,fatto
+16,@TheLightTruthPaper,@TheLightPaperDistribution,https://t.me/TheLightPaperDistribution,removed,banned: ChannelPrivateError in the dump of 2026-11-01 (messages up to 2026-10-29 on disk),2026-11-03 13:17:28,,perso: ci hanno bannato (non rifare)
 17,@OffgridiIreland,@OffgridIreland,https://t.me/OffgridIreland,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 18,@ECETI_OFFICIAL_CHANNEL,@ECETI_OFFICIAL,https://t.me/ECETI_OFFICIAL,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 19,@counterspin,@counterspinchat2,https://t.me/counterspinchat2,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
@@ -25,7 +25,7 @@ riga,channel,group,link_group,stato_join,motivo,join_utc,canale_joinato,da_fare
 25,@AllesAusserMainstream,@AAM_Links,https://t.me/AAM_Links,joined,manual join (app): no restriction,2026-10-28 20:56:44,,fatto
 26,@QNewsOfficialTV,@QNewsOfficialTVGodWinsChat,https://t.me/QNewsOfficialTVGodWinsChat,joined,manual join (app): no restriction,2026-10-28 20:57:23,,fatto
 27,@disclosurehub,@Disclosurehubchat,https://t.me/Disclosurehubchat,joined,manual join (app): no restriction,2026-10-28 21:01:16,,fatto
-28,@peach_blossombazi,@peachblossomchat,https://t.me/peachblossomchat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+28,@peach_blossombazi,@peachblossomchat,https://t.me/peachblossomchat,joined,manual join (app): no restriction,2026-10-31 15:29:20,,fatto
 29,@RA_Ludwig,@diskussionsgruppera_ludwig,https://t.me/diskussionsgruppera_ludwig,joined,manual join (app): no restriction,2026-10-28 21:05:28,,fatto
 30,@SpaceForceGalacticFederation,@health_healing_detoxing,https://t.me/health_healing_detoxing,joined,manual join (app): no restriction,2026-10-28 21:06:31,,fatto
 31,@cristinamartinjimenezescritora,@crismartinj,https://t.me/crismartinj,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
@@ -64,7 +64,7 @@ riga,channel,group,link_group,stato_join,motivo,join_utc,canale_joinato,da_fare
 64,@intelslava,@IntelSlava3,https://t.me/IntelSlava3,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 65,@TrumpJr,@TrumpJrChat,https://t.me/TrumpJrChat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 66,@Hatufim_israel,@hamal_israel1,https://t.me/hamal_israel1,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-67,@QuantumStellarInitiative,@QuantumStellarInitiativeChat,https://t.me/QuantumStellarInitiativeChat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+67,@QuantumStellarInitiative,@QuantumStellarInitiativeChat,https://t.me/QuantumStellarInitiativeChat,,,,,non fare: coppia presente anche in crypto (da decidere)
 68,@worldwidedemonstration,@worldwidedemochat,https://t.me/worldwidedemochat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 69,@mgshowchannel,@mgshow,https://t.me/mgshow,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 70,@MurderTheMedia,@MurderTheMediaComments,https://t.me/MurderTheMediaComments,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
@@ -73,7 +73,7 @@ riga,channel,group,link_group,stato_join,motivo,join_utc,canale_joinato,da_fare
 73,@contyteens,@notanaltankism,https://t.me/notanaltankism,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 74,@bullionbitcoinbs,@rugpullradio,https://t.me/rugpullradio,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 75,@CVINENEWS,@cvinechat,https://t.me/cvinechat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-76,@rektplebs,@rektplebssubmission,https://t.me/rektplebssubmission,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+76,@rektplebs,@rektplebssubmission,https://t.me/rektplebssubmission,,,,,non fare: coppia presente anche in crypto (da decidere)
 77,@FundamentalChristianity,@sola_fide,https://t.me/sola_fide,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 78,@ALoneRaccoon,@LoneRaccoonChat,https://t.me/LoneRaccoonChat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 79,@areyouawake1,@areyouawakeyet,https://t.me/areyouawakeyet,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
@@ -90,7 +90,7 @@ riga,channel,group,link_group,stato_join,motivo,join_utc,canale_joinato,da_fare
 90,@JustinCarpenter33,@JustinCarpenterDiscussion,https://t.me/JustinCarpenterDiscussion,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 91,@ThinMint2,@ThinMintChat,https://t.me/ThinMintChat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 92,@prowhitefam2,@FHCZone,https://t.me/FHCZone,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
-93,@cotichannel,@COTInetwork,https://t.me/COTInetwork,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
+93,@cotichannel,@COTInetwork,https://t.me/COTInetwork,,,,,non fare: coppia presente anche in crypto (da decidere)
 94,@fuckfest_rar,@fuckfest_chat,https://t.me/fuckfest_chat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 95,@TheAngryAlbertan,@AngryAlbertanChat,https://t.me/AngryAlbertanChat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
 96,@Holy_Persian_Empire,@holypersianchat,https://t.me/holypersianchat,,,,,"da fare: join del gruppo (link_group, 1 ogni 5 min)"
