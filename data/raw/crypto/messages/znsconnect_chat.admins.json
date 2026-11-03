@@ -1,0 +1,50 @@
+[
+ {
+  "user": 9210656783,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 681139509,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7363572829,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5054141698,
+  "is_bot": false,
+  "title": "ZNS Admin",
+  "is_creator": false
+ },
+ {
+  "user": 6190046558,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6396701051,
+  "is_bot": true,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 890581021,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5856189689,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ }
+]

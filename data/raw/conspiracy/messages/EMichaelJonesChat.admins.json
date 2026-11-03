@@ -1,0 +1,50 @@
+[
+ {
+  "user": 1943841921,
+  "is_bot": false,
+  "title": "Cardinal K",
+  "is_creator": false
+ },
+ {
+  "user": 115875223,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1033158660,
+  "is_bot": false,
+  "title": "End's Deacon",
+  "is_creator": false
+ },
+ {
+  "user": 1913543067,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 988868280,
+  "is_bot": false,
+  "title": "Monsignor END",
+  "is_creator": false
+ },
+ {
+  "user": 259643624,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 900514700,
+  "is_bot": false,
+  "title": "Pope Michael",
+  "is_creator": false
+ },
+ {
+  "user": 1723481593,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

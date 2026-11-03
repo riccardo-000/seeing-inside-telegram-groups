@@ -1,0 +1,32 @@
+[
+ {
+  "user": 8584260714,
+  "is_bot": false,
+  "title": "CB Angel",
+  "is_creator": false
+ },
+ {
+  "user": 8450163341,
+  "is_bot": false,
+  "title": "CB Angel",
+  "is_creator": false
+ },
+ {
+  "user": 5337485575,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": "autoreply",
+  "is_creator": false
+ },
+ {
+  "user": 1630785337,
+  "is_bot": false,
+  "title": "CEO & Founder",
+  "is_creator": true
+ }
+]

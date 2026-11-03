@@ -1,0 +1,44 @@
+[
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": "Anarcho-Robocop",
+  "is_creator": false
+ },
+ {
+  "user": 234485213,
+  "is_bot": false,
+  "title": "Anarchist Police",
+  "is_creator": true
+ },
+ {
+  "user": 1770070536,
+  "is_bot": false,
+  "title": "Authcom Rep",
+  "is_creator": false
+ },
+ {
+  "user": 5102821375,
+  "is_bot": false,
+  "title": "Anarchist Police",
+  "is_creator": false
+ },
+ {
+  "user": 266613194,
+  "is_bot": false,
+  "title": "Anarchist Police",
+  "is_creator": false
+ },
+ {
+  "user": 635112371,
+  "is_bot": false,
+  "title": "Anarchist Police",
+  "is_creator": false
+ },
+ {
+  "user": 522772402,
+  "is_bot": false,
+  "title": "Anarchist Police",
+  "is_creator": false
+ }
+]

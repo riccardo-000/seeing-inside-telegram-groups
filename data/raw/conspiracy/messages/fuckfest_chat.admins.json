@@ -1,0 +1,38 @@
+[
+ {
+  "user": 1043591489,
+  "is_bot": false,
+  "title": "\u041a\u0443\u043c\u0430",
+  "is_creator": false
+ },
+ {
+  "user": 553147242,
+  "is_bot": true,
+  "title": "\u0431\u0434\u0438\u0442\u0435\u043b\u044c",
+  "is_creator": false
+ },
+ {
+  "user": 5272110714,
+  "is_bot": false,
+  "title": "\u0421\u0438\u043c\u043f \u0421\u0435\u043b\u0435\u0441\u0442\u0438\u0438",
+  "is_creator": false
+ },
+ {
+  "user": 312813210,
+  "is_bot": false,
+  "title": "\u042f \u0417\u0414\u0415\u0421\u042c \u0417\u0410\u041a\u041e\u041d",
+  "is_creator": false
+ },
+ {
+  "user": 5604840707,
+  "is_bot": false,
+  "title": "\u041b\u043e\u043b\u0438",
+  "is_creator": false
+ },
+ {
+  "user": 539734333,
+  "is_bot": false,
+  "title": "\u041d\u0430\u0447\u0430\u043b\u044c\u043d\u0438\u043a",
+  "is_creator": true
+ }
+]

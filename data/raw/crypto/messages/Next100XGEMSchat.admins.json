@@ -1,0 +1,68 @@
+[
+ {
+  "user": 6288456029,
+  "is_bot": true,
+  "title": "NEWS",
+  "is_creator": false
+ },
+ {
+  "user": 276012562,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1144546275,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 162726413,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 962775809,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1252329271,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1642812353,
+  "is_bot": false,
+  "title": "SUPERMAN",
+  "is_creator": false
+ },
+ {
+  "user": 1062209629,
+  "is_bot": false,
+  "title": "CHA",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1717825801,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1634889791,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

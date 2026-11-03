@@ -1,0 +1,74 @@
+[
+ {
+  "user": 1514143755,
+  "is_bot": false,
+  "title": "Chief Troll",
+  "is_creator": false
+ },
+ {
+  "user": 1596166359,
+  "is_bot": false,
+  "title": "Chief Doomer",
+  "is_creator": false
+ },
+ {
+  "user": 6945070388,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5924476836,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6100949400,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 182331872,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1413850093,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 261974315,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1511760316,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 774888468,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1491126505,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1246086311,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

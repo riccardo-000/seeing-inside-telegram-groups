@@ -1,0 +1,110 @@
+[
+ {
+  "user": 8452696961,
+  "is_bot": false,
+  "title": "Support",
+  "is_creator": true
+ },
+ {
+  "user": 2142532807,
+  "is_bot": false,
+  "title": "Trader",
+  "is_creator": false
+ },
+ {
+  "user": 1280807261,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1446811855,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8568794926,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8955972807,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 892687319,
+  "is_bot": false,
+  "title": "actively member",
+  "is_creator": false
+ },
+ {
+  "user": 1237190930,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8487376170,
+  "is_bot": false,
+  "title": "Web3 Analyst",
+  "is_creator": false
+ },
+ {
+  "user": 8263266011,
+  "is_bot": false,
+  "title": "trader",
+  "is_creator": false
+ },
+ {
+  "user": 8436211242,
+  "is_bot": false,
+  "title": "trader",
+  "is_creator": false
+ },
+ {
+  "user": 539763982,
+  "is_bot": true,
+  "title": "Crypto Bot",
+  "is_creator": false
+ },
+ {
+  "user": 5502892901,
+  "is_bot": true,
+  "title": "Harga Checker",
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8338932482,
+  "is_bot": false,
+  "title": "Trader",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1182426592,
+  "is_bot": false,
+  "title": "Guru",
+  "is_creator": false
+ },
+ {
+  "user": 1852420606,
+  "is_bot": false,
+  "title": "Analis",
+  "is_creator": false
+ }
+]

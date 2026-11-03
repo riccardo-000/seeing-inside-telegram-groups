@@ -1,0 +1,68 @@
+[
+ {
+  "user": 1059019116,
+  "is_bot": false,
+  "title": "Biomancer",
+  "is_creator": true
+ },
+ {
+  "user": 208056682,
+  "is_bot": true,
+  "title": "BouncerBot",
+  "is_creator": false
+ },
+ {
+  "user": 983000232,
+  "is_bot": true,
+  "title": "Quizmaster",
+  "is_creator": false
+ },
+ {
+  "user": 1538170421,
+  "is_bot": true,
+  "title": "MemeBot",
+  "is_creator": false
+ },
+ {
+  "user": 1856119592,
+  "is_bot": false,
+  "title": "CarolM",
+  "is_creator": false
+ },
+ {
+  "user": 1482008667,
+  "is_bot": true,
+  "title": "YTdnBot",
+  "is_creator": false
+ },
+ {
+  "user": 1503506466,
+  "is_bot": false,
+  "title": "Ospreporter",
+  "is_creator": false
+ },
+ {
+  "user": 1439753247,
+  "is_bot": false,
+  "title": "GeorgiaPeach",
+  "is_creator": false
+ },
+ {
+  "user": 202914644,
+  "is_bot": true,
+  "title": "FeedBot",
+  "is_creator": false
+ },
+ {
+  "user": 301429358,
+  "is_bot": true,
+  "title": "MirrorBot",
+  "is_creator": false
+ },
+ {
+  "user": 863384752,
+  "is_bot": false,
+  "title": "#AddyAdds",
+  "is_creator": false
+ }
+]

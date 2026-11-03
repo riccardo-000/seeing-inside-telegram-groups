@@ -1,0 +1,98 @@
+[
+ {
+  "user": 5207934356,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8950158550,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 641372241,
+  "is_bot": false,
+  "title": "Placeholder",
+  "is_creator": true
+ },
+ {
+  "user": 393658640,
+  "is_bot": false,
+  "title": "bot killer",
+  "is_creator": false
+ },
+ {
+  "user": 6419392553,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6863077464,
+  "is_bot": false,
+  "title": "Leader of Life",
+  "is_creator": false
+ },
+ {
+  "user": 258844558,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 771229634,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1370914897,
+  "is_bot": false,
+  "title": "Jeet Annihilator",
+  "is_creator": false
+ },
+ {
+  "user": 1696823065,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5610098977,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 862551526,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1458298753,
+  "is_bot": false,
+  "title": "NightHawk",
+  "is_creator": false
+ },
+ {
+  "user": 807701567,
+  "is_bot": false,
+  "title": "WeatherGirl",
+  "is_creator": false
+ },
+ {
+  "user": 1411288511,
+  "is_bot": false,
+  "title": "Grief Counselor",
+  "is_creator": false
+ },
+ {
+  "user": 1347030005,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ }
+]

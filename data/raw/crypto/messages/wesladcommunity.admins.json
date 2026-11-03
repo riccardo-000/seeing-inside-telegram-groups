@@ -1,0 +1,32 @@
+[
+ {
+  "user": 5448634708,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 244125871,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ },
+ {
+  "user": 438196596,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1766611987,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 582959515,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ }
+]

@@ -1,0 +1,98 @@
+[
+ {
+  "user": 6877317589,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6729548126,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5207934356,
+  "is_bot": true,
+  "title": "Sweeper",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6137348076,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 2147074950,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5038964136,
+  "is_bot": false,
+  "title": "Vangel",
+  "is_creator": false
+ },
+ {
+  "user": 1959510347,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 667821994,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 2016950001,
+  "is_bot": false,
+  "title": "Cromwell 2",
+  "is_creator": false
+ },
+ {
+  "user": 645427102,
+  "is_bot": false,
+  "title": "Memelord",
+  "is_creator": true
+ },
+ {
+  "user": 607459043,
+  "is_bot": false,
+  "title": "Luther's Taliban",
+  "is_creator": false
+ },
+ {
+  "user": 1349940563,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 562021621,
+  "is_bot": false,
+  "title": "The Old One",
+  "is_creator": false
+ },
+ {
+  "user": 788537663,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 237974815,
+  "is_bot": false,
+  "title": "Who dis?",
+  "is_creator": false
+ }
+]

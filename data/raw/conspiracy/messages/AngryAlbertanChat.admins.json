@@ -1,0 +1,38 @@
+[
+ {
+  "user": 1509338591,
+  "is_bot": false,
+  "title": "I can ban you.",
+  "is_creator": false
+ },
+ {
+  "user": 1767854059,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1414830764,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 761087901,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1206347260,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1317459101,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

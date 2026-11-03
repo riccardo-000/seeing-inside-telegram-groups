@@ -1,0 +1,44 @@
+[
+ {
+  "user": 8739860450,
+  "is_bot": true,
+  "title": "John Calvin",
+  "is_creator": false
+ },
+ {
+  "user": 1234985305,
+  "is_bot": false,
+  "title": "The Blind",
+  "is_creator": false
+ },
+ {
+  "user": 1916908278,
+  "is_bot": false,
+  "title": "Resident Chad",
+  "is_creator": false
+ },
+ {
+  "user": 696267355,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 500105613,
+  "is_bot": false,
+  "title": "Clavin's Bass",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 193881720,
+  "is_bot": false,
+  "title": "Mr Nobody",
+  "is_creator": true
+ }
+]

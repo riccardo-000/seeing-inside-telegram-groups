@@ -1,0 +1,62 @@
+[
+ {
+  "user": 8988327804,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8670204212,
+  "is_bot": true,
+  "title": "GAME",
+  "is_creator": false
+ },
+ {
+  "user": 8793653743,
+  "is_bot": true,
+  "title": "Helper",
+  "is_creator": false
+ },
+ {
+  "user": 7635075754,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7233660601,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5560301217,
+  "is_bot": true,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 279442266,
+  "is_bot": false,
+  "title": "Moderator",
+  "is_creator": false
+ },
+ {
+  "user": 1315873915,
+  "is_bot": false,
+  "title": "Moderator",
+  "is_creator": false
+ },
+ {
+  "user": 5611381455,
+  "is_bot": false,
+  "title": "Moderator",
+  "is_creator": false
+ },
+ {
+  "user": 6294688721,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

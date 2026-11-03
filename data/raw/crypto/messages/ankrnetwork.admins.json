@@ -1,0 +1,68 @@
+[
+ {
+  "user": 8963714251,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ },
+ {
+  "user": 7143713189,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ },
+ {
+  "user": 6490188052,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ },
+ {
+  "user": 5132409299,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6896780666,
+  "is_bot": false,
+  "title": "Team Member",
+  "is_creator": false
+ },
+ {
+  "user": 463832340,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1885597398,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1257989515,
+  "is_bot": false,
+  "title": "Biz Development",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": "Group Bot",
+  "is_creator": false
+ },
+ {
+  "user": 565737445,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ }
+]
