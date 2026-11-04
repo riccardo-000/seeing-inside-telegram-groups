@@ -6,7 +6,8 @@ imported with ``join_chats.py --import-manual``). Writes
 data/interim/<topic>/joins/join_status.csv: one row per pair, in file order,
 with the group's latest status and a ``da_fare`` column for whoever joins by
 hand. Refresh the join log first (``--recheck`` / ``--import-manual``), then
-rerun this.
+rerun this. Every column is regenerated except ``note``, which is for people
+(e.g. "serve approvazione", "bottone premuto") and is kept across refreshes.
 
 Usage:
     python scripts/join_status.py --topic crypto
@@ -63,8 +64,13 @@ def main() -> None:
                 latest[r["chat"].lower()] = r
     out = p.interim / "joins" / "join_status.csv"
     out.parent.mkdir(parents=True, exist_ok=True)
+    # the "note" column is written by hand (who joined, what happened): kept across refreshes
+    notes = {}
+    if out.exists():
+        with open(out, newline="", encoding="utf-8-sig") as fh:
+            notes = {r["group"].lower(): r.get("note", "") for r in csv.DictReader(fh)}
     fields = ["riga", "channel", "group", "link_group", "stato_join", "motivo", "join_utc",
-              "canale_joinato", "da_fare"]
+              "canale_joinato", "da_fare", "note"]
     counts = Counter()
     with open(out, "w", newline="", encoding="utf-8") as fh:
         w = csv.DictWriter(fh, fieldnames=fields)
@@ -90,6 +96,7 @@ def main() -> None:
                 # a channel joined by mistake: to leave by hand (we join groups only)
                 "canale_joinato": "sì (da lasciare)" if channel.lower() in latest else "",
                 "da_fare": todo,
+                "note": notes.get(pr["group"].lower(), ""),
             })
     print(f"{args.topic}: {len(pairs)} pairs -> {out}")
     for todo, n in counts.most_common():

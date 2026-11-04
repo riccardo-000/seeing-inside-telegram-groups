@@ -40,3 +40,9 @@ date_utc,time_utc,chat,kind,status,reason
 2026-11-03,15:39:10,totaldisclosure1,groups,joined,manual join (app): no restriction
 2026-11-03,14:58:16,aussietruckers1,groups,joined,manual join (app): no restriction
 2026-11-03,17:02:17,JustDudeChatRebornAgain,groups,join_request,"join request SENT by hand on 2026-10-29 (bot DM: ""will be reviewed by an admin""); not a member"
+2026-11-04,00:44:54,chatDeepState,groups,join_request,"admin approval needed, not requested (Simone 2026-11-03; checked read-only 2026-11-04)"
+2026-11-04,00:44:54,crismartinj,groups,join_request,"admin approval needed, not requested (Simone 2026-11-03; checked read-only 2026-11-04)"
+2026-11-04,00:44:54,SilenceDoGoodMBAChat,groups,join_request,"admin approval needed, not requested (Simone 2026-11-03; checked read-only 2026-11-04)"
+2026-11-04,00:44:54,TheCrowhousechat,groups,removed,joined by hand by Simone 2026-11-03 but not a member at import/check (2026-11-03/04): removed by a bot or join did not go through
+2026-11-04,00:44:54,UK_Channel_Chat,groups,removed,joined by hand by Simone 2026-11-03 but not a member at import/check (2026-11-03/04): removed by a bot or join did not go through
+2026-11-04,00:44:54,businessoftruthchat,groups,removed,joined by hand by Simone 2026-11-03 but not a member at import/check (2026-11-03/04): removed by a bot or join did not go through
