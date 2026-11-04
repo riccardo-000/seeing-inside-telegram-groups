@@ -1,0 +1,80 @@
+[
+ {
+  "user": 8734646914,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1627688183,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8175408025,
+  "is_bot": false,
+  "title": "AITECH Support",
+  "is_creator": false
+ },
+ {
+  "user": 7159348630,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8104119488,
+  "is_bot": true,
+  "title": "BOT",
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8126790412,
+  "is_bot": true,
+  "title": "AITECH App",
+  "is_creator": false
+ },
+ {
+  "user": 6101007413,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ },
+ {
+  "user": 2108769446,
+  "is_bot": false,
+  "title": "CMO",
+  "is_creator": false
+ },
+ {
+  "user": 1624500812,
+  "is_bot": false,
+  "title": "CEO",
+  "is_creator": true
+ },
+ {
+  "user": 479928726,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 208056682,
+  "is_bot": true,
+  "title": "Community Bot",
+  "is_creator": false
+ }
+]

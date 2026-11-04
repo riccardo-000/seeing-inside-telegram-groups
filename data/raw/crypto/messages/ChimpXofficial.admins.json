@@ -1,0 +1,68 @@
+[
+ {
+  "user": 6868734170,
+  "is_bot": true,
+  "title": "Bor",
+  "is_creator": false
+ },
+ {
+  "user": 6638214500,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8726110694,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7356021987,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7993758472,
+  "is_bot": false,
+  "title": "Nas Mod",
+  "is_creator": false
+ },
+ {
+  "user": 5560301217,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ },
+ {
+  "user": 5976409823,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ },
+ {
+  "user": 7083914258,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 839403024,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ },
+ {
+  "user": 1614753880,
+  "is_bot": false,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ }
+]

@@ -1,0 +1,50 @@
+[
+ {
+  "user": 923055378,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7254175933,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7495103595,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 602731459,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 414303323,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 298878695,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 429221544,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ },
+ {
+  "user": 947264486,
+  "is_bot": true,
+  "title": "Bot",
+  "is_creator": false
+ }
+]

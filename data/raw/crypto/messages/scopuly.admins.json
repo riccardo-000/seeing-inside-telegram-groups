@@ -1,0 +1,26 @@
+[
+ {
+  "user": 5568032913,
+  "is_bot": false,
+  "title": "Assistant",
+  "is_creator": false
+ },
+ {
+  "user": 7949740550,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 857127770,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ }
+]

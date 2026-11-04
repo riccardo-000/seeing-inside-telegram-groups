@@ -1,0 +1,134 @@
+[
+ {
+  "user": 5367866773,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8878456252,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 769931522,
+  "is_bot": false,
+  "title": "\u043d\u0435 \u0448\u043a\u043e\u043b\u044c\u043d\u0438\u043a",
+  "is_creator": false
+ },
+ {
+  "user": 1250631098,
+  "is_bot": false,
+  "title": "\u0442\u0435\u0433\u0435\u0440",
+  "is_creator": false
+ },
+ {
+  "user": 547519509,
+  "is_bot": false,
+  "title": "\u0430\u043c\u0431\u0430\u0434\u0440\u043e\u0447\u0435\u0440",
+  "is_creator": false
+ },
+ {
+  "user": 723906857,
+  "is_bot": false,
+  "title": "bot",
+  "is_creator": false
+ },
+ {
+  "user": 774307991,
+  "is_bot": false,
+  "title": "\u0434\u043e\u0445\u0443\u044f\u0437\u043d\u0430\u0439\u043a\u0430",
+  "is_creator": false
+ },
+ {
+  "user": 639423516,
+  "is_bot": false,
+  "title": "\u043f\u043e\u0434 \u043f\u0440\u0438\u043a\u0440\u044b\u0442\u0438\u0435\u043c",
+  "is_creator": false
+ },
+ {
+  "user": 5252960702,
+  "is_bot": false,
+  "title": "not eligible",
+  "is_creator": false
+ },
+ {
+  "user": 169333949,
+  "is_bot": false,
+  "title": "\u0430\u0431\u0443\u0437\u0435\u0440",
+  "is_creator": false
+ },
+ {
+  "user": 771096498,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 1298668706,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 664861744,
+  "is_bot": false,
+  "title": "\u0441\u0442\u0430\u0440\u043e\u0436\u0438\u043b\u0430",
+  "is_creator": false
+ },
+ {
+  "user": 493243326,
+  "is_bot": false,
+  "title": "\u0411\u044b\u0441\u0442\u0440\u044b\u0435 \u0440\u0443\u043a\u0438",
+  "is_creator": false
+ },
+ {
+  "user": 678854478,
+  "is_bot": false,
+  "title": "\u0441\u043a\u0430\u043c",
+  "is_creator": false
+ },
+ {
+  "user": 441578678,
+  "is_bot": false,
+  "title": "\u0441\u0442\u0430\u0440\u043e\u0436\u0438\u043b\u0430",
+  "is_creator": false
+ },
+ {
+  "user": 1003126900,
+  "is_bot": false,
+  "title": "\u043f\u043e\u0434 \u043f\u0440\u0438\u043a\u0440\u044b\u0442\u0438\u0435\u043c",
+  "is_creator": false
+ },
+ {
+  "user": 1328523362,
+  "is_bot": false,
+  "title": "\u0441\u0442\u0430\u0440\u043e\u0436\u0438\u043b\u0430",
+  "is_creator": false
+ },
+ {
+  "user": 349754472,
+  "is_bot": false,
+  "title": "\u043f\u043e\u0434 \u043f\u0440\u0438\u043a\u0440\u044b\u0442\u0438\u0435\u043c",
+  "is_creator": false
+ },
+ {
+  "user": 382667468,
+  "is_bot": false,
+  "title": "\u0434\u043e\u0445\u0443\u044f\u043d\u0430\u0441\u044b\u043f\u0435\u043d\u043a\u043e",
+  "is_creator": false
+ },
+ {
+  "user": 312815322,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

@@ -1,0 +1,56 @@
+[
+ {
+  "user": 2033966739,
+  "is_bot": false,
+  "title": "AOCSocialManager",
+  "is_creator": false
+ },
+ {
+  "user": 6759163389,
+  "is_bot": false,
+  "title": "AOCSocialManager",
+  "is_creator": false
+ },
+ {
+  "user": 6725167285,
+  "is_bot": true,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 6054859970,
+  "is_bot": true,
+  "title": "AOCSMManager",
+  "is_creator": false
+ },
+ {
+  "user": 6219028099,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5494954121,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5294808493,
+  "is_bot": true,
+  "title": "AOCBot",
+  "is_creator": false
+ },
+ {
+  "user": 1314787032,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]
