@@ -1,0 +1,64 @@
+2026-11-05 13:05:02
+25 chats | pseudonymization: OFF (no PSEUDONYM_SALT)
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/crypto/messages | window from 2026-07-30 | max messages per chat: 50000
+account: crypto | session: research.session
+resolve budget left today: 97
+  @curvefiann: +86 messages
+  @gambledemons: +150 messages
+  @binibit_top: +316 messages
+  @Cheese_Pad: +12 messages
+  @MultiVACMTV: +8 messages
+  @crypgpttoken: +68 messages
+  @MEMEcrypted: +147 messages
+Telegram is having internal issues RpcCallFailError: Telegram is having internal issues, please try again later. (caused by GetHistoryRequest)
+  @MEXC_ENchannel: +924 messages
+  @ChainGPTNews: +29 messages
+  @ASI_announcements: +29 messages
+  @superlitho: +6 messages
+  @bcgamewin: +273 messages
+  @cointrendz: +1387 messages
+  @WatcherGuru: +1335 messages
+  @thevse: +339 messages
+  @3984096229: +280 messages
+  @ChainGPT: +50000 messages
+  @ASI_Alliance: +11057 messages
+  @lithochat: +1379 messages
+  @bcgame: +19411 messages
+  @CoinTrendzCommunity: +886 messages
+  @WatcherGuruChat: +50000 messages
+  @thevsechat: +3511 messages
+  @zcash_community_chat: +4109 messages
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 128, in main_async
+    await dump_all(client, [ent], out, days=args.days, since=since, pseudonymizer=pseudo,
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/src/collect/messages.py", line 164, in dump_all
+    path, n = await dump_chat(client, chat, out_dir, since=since, limit=run_limit,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/src/collect/messages.py", line 98, in dump_chat
+    async for m in client.iter_messages(chat, **kwargs):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/.venv/lib/python3.12/site-packages/telethon/requestiter.py", line 67, in __anext__
+    await asyncio.sleep(
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 159, in <module>
+    main()
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 155, in main
+    asyncio.run(main_async(ap.parse_args()))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt

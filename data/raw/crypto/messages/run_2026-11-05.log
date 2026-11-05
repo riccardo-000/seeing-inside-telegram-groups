@@ -1,0 +1,37 @@
+2026-11-05 01:11:04
+200 chats | pseudonymization: OFF (no PSEUDONYM_SALT)
+topic: crypto | output: /Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/data/raw/crypto/messages | window from 2026-07-30 | max messages per chat: 50000
+account: crypto | session: research.session
+  @wavescommunity: private or banned, skipped
+Server closed the connection: [Errno 54] Connection reset by peer
+Server closed the connection: [Errno 54] Connection reset by peer
+Server closed the connection: [Errno 54] Connection reset by peer
+  @detrade_global: private or banned, skipped
+Server closed the connection: [Errno 54] Connection reset by peer
+Traceback (most recent call last):
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 113, in main_async
+    await asyncio.sleep(args.pause)
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/tasks.py", line 665, in sleep
+    return await future
+           ^^^^^^^^^^^^
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 159, in <module>
+    main()
+  File "/Users/riccardo/Desktop/UNI PD/erasmus/CORSI/research/Progetto/scripts/dump_messages.py", line 155, in main
+    asyncio.run(main_async(ap.parse_args()))
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+  File "/opt/homebrew/Cellar/python@3.12/3.12.13_2/Frameworks/Python.framework/Versions/3.12/lib/python3.12/asyncio/runners.py", line 123, in run
+    raise KeyboardInterrupt()
+KeyboardInterrupt
