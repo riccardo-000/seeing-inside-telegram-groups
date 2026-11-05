@@ -1,0 +1,80 @@
+[
+ {
+  "user": 8554249931,
+  "is_bot": false,
+  "title": "Community & MM",
+  "is_creator": false
+ },
+ {
+  "user": 7984663105,
+  "is_bot": false,
+  "title": "Mod",
+  "is_creator": false
+ },
+ {
+  "user": 8727036692,
+  "is_bot": false,
+  "title": "Mod",
+  "is_creator": false
+ },
+ {
+  "user": 7455173596,
+  "is_bot": false,
+  "title": "Mod",
+  "is_creator": false
+ },
+ {
+  "user": 6485230798,
+  "is_bot": false,
+  "title": "Mod",
+  "is_creator": false
+ },
+ {
+  "user": 6349661578,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5976028208,
+  "is_bot": false,
+  "title": "Admin",
+  "is_creator": false
+ },
+ {
+  "user": 1145977042,
+  "is_bot": false,
+  "title": "Core Developer",
+  "is_creator": false
+ },
+ {
+  "user": 208056682,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 162726413,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 210944655,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 696267355,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ }
+]

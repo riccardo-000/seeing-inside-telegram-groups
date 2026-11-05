@@ -1,0 +1,68 @@
+[
+ {
+  "user": 1780542,
+  "is_bot": false,
+  "title": "Goat",
+  "is_creator": false
+ },
+ {
+  "user": 8738635370,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8122949038,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5676324759,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 609517172,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 8292618331,
+  "is_bot": true,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 7470515277,
+  "is_bot": false,
+  "title": "OG",
+  "is_creator": false
+ },
+ {
+  "user": 8903469882,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6182167473,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 5605913232,
+  "is_bot": false,
+  "title": null,
+  "is_creator": false
+ },
+ {
+  "user": 6963914260,
+  "is_bot": false,
+  "title": null,
+  "is_creator": true
+ }
+]

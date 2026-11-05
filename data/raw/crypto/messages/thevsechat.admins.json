@@ -1,0 +1,56 @@
+[
+ {
+  "user": 8350381184,
+  "is_bot": true,
+  "title": "\u0410\u043d\u0442\u0438\u0441\u043f\u0430\u043c",
+  "is_creator": false
+ },
+ {
+  "user": 405092315,
+  "is_bot": false,
+  "title": "\u0416\u0435\u043d\u0430",
+  "is_creator": false
+ },
+ {
+  "user": 910141237,
+  "is_bot": false,
+  "title": "\u0411\u0435\u043b\u043a\u0430",
+  "is_creator": false
+ },
+ {
+  "user": 6002836832,
+  "is_bot": false,
+  "title": "\u041f\u0440\u0438\u0432\u0430\u0442\u043d\u0438\u043a",
+  "is_creator": false
+ },
+ {
+  "user": 500173842,
+  "is_bot": false,
+  "title": "\u041d\u0435\u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u044b\u0439",
+  "is_creator": false
+ },
+ {
+  "user": 5039371445,
+  "is_bot": false,
+  "title": "\u0424\u0430\u043d\u0442\u043e\u043c\u0430\u0441",
+  "is_creator": false
+ },
+ {
+  "user": 347432920,
+  "is_bot": false,
+  "title": "\u0422\u0440\u0435\u0439\u0434\u0435\u0440",
+  "is_creator": false
+ },
+ {
+  "user": 870096001,
+  "is_bot": false,
+  "title": "\u0414\u0430\u043c\u0430",
+  "is_creator": false
+ },
+ {
+  "user": 269612236,
+  "is_bot": false,
+  "title": "\u041a\u0430\u0439\u0444\u0430\u0440\u0438\u043a",
+  "is_creator": true
+ }
+]
