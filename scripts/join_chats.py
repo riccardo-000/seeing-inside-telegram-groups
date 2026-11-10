@@ -62,7 +62,9 @@ MAX_CHATS = 480  # Telegram caps an account at 500 channels + supergroups
 def queue_from_pairs(path: Path, kind: str) -> list[str]:
     col = "group" if kind == "groups" else "channel"
     with open(path, newline="", encoding="utf-8-sig") as fh:
-        names = [r[col].strip().lstrip("@") for r in csv.DictReader(fh) if r.get(col, "").strip()]
+        names = [r[col].strip().lstrip("@") for r in csv.DictReader(fh) if r.get(col, "").strip()
+                 # "final" other than valida (e.g. "crypto"): pair moved to the other arm
+                 and r.get("final", "valida").strip() in ("", "valida")]
     seen, out = set(), []
     for n in names:
         if n.lower() not in seen:

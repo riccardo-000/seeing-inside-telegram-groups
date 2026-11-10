@@ -85,7 +85,9 @@ def main() -> None:
                 todo = TODO["private"]  # the group itself is gone, not only our membership
             elif status == "removed" and g.get("reason", "").startswith("banned"):
                 todo = "perso: ci hanno bannato (non rifare)"
-            if args.topic == "conspiracy" and group.lower() in other_groups:  # crypto pairs belong to crypto
+            if pr.get("final", "").strip() == "crypto":  # row kept for its number, pair moved to crypto
+                todo = "non fare: coppia del braccio crypto (decisione 2026-11-10)"
+            elif args.topic == "conspiracy" and group.lower() in other_groups:  # crypto pairs belong to crypto
                 todo = f"non fare: coppia presente anche in {other} (da decidere)"
             counts[todo] += 1
             w.writerow({

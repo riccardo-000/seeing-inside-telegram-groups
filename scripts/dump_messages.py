@@ -57,6 +57,8 @@ def chats_from_pairs(path: Path) -> list[str]:
         rows = list(csv.DictReader(fh))
     names, seen = [], set()
     for r in rows:
+        if r.get("final", "valida").strip() not in ("", "valida"):
+            continue  # e.g. "crypto": pair moved to the other arm (decision 2026-11-10)
         for n in (r.get("channel", ""), r.get("group", "")):
             n = n.strip().lstrip("@")
             if n and n.lower() not in seen:

@@ -399,3 +399,33 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Impact:** Analysis works per chat (rates, shares) on each chat's own window; for comparisons
   over a common period, use the part all chats cover or exclude these five (sensitivity check).
   Methodology 4.2 (table of effective windows), Limitations.
+
+## 2026-11-10 — The three pairs listed in both arms belong to crypto
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** COTI (@cotichannel / @cotinetwork), Rekt Plebs (@rektplebs /
+  @rektplebssubmission) and Quantum Stellar Initiative (@quantumstellarinitiative /
+  @quantumstellarinitiativechat) are counted **only in the crypto arm**. In
+  `data/interim/conspiracy/pairs/final_pairs.csv` their rows stay (so the row numbers used in
+  the logs do not change) with `final = crypto` instead of `valida`; `dump_messages.py`,
+  `join_chats.py` and `join_status.py` skip rows whose `final` is not `valida`.
+- **Why:** A pair counted in both arms would be compared with itself in crypto vs conspiracy.
+  All three have the TGDataset topic *Crypto* and were already in the crypto list; in the
+  conspiracy list they were `da_controllare` with no conspiracy keyword. One rule for the three,
+  no content judgement.
+- **Impact:** **Conspiracy: 97 pairs** (was 100; about 48,800 messages fewer). **Crypto: 98
+  pairs with data** (100 listed, the groups of @wavesnews and @detrade_exchange are gone).
+  **195 distinct pairs in total.** The copies of these chats in `data/raw/conspiracy/messages/`
+  stay on disk and are not used, with one exception: the crypto account cannot read
+  @rektplebssubmission (ChannelPrivateError), so its only dump is the conspiracy account's
+  (334 messages, 2026-10-27 → 2026-11-04). The analysis reads that file for the crypto arm;
+  the window is short (9 days), to flag in the per-chat window table and in the sensitivity
+  check. Methodology 4.1, 4.2; dataset table.
+
+## 2026-11-10 — Bot messages are kept and reported as a result
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** Messages from bots (`sender_is_bot`) are not dropped. They are counted per chat
+  and reported on their own (share of bot messages, channel vs group, crypto vs conspiracy).
+  They are left out only of the tone and content measures, which describe human authors.
+- **Why:** Bots are part of what a group shows and a channel does not (welcome and captcha bots,
+  but also automated promotion); dropping them silently would hide a result.
+- **Impact:** Analysis scripts (per-chat table, channel vs group measures); Results 5.1, 5.2.
