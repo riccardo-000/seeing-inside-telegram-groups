@@ -384,3 +384,18 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Impact:** Methodology 4.2 (window per chat: report the effective end date of capped chats);
   analysis: per-chat rates use each chat's own window, comparisons over a common period use the
   part every chat covers; Limitations (largest groups observed for ~3–4 weeks only).
+
+## 2026-11-10 — Message collection closed; effective window of the largest groups
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** Message dumps are closed as of 2026-11-10. Conspiracy: 100/100 pairs; crypto:
+  97/100 pairs (3 groups gone). Five very large groups were not dumped up to the present; their
+  observation window is **2026-07-30 → date of the last message on disk**: MGBX_English
+  (200k, → 2026-08-21), WeexGlobal_Group (180,200, → 2026-09-16), BinanceArabic (200k,
+  → 2026-10-31), WatcherGuruChat (150k, → 2026-11-04), chatDeepState (conspiracy, 200k,
+  → 2026-11-01). Every other chat reaches at least 2026-11-04.
+- **Why:** Each of these already holds 150k–200k messages, far more than any per-group rate or
+  admin/user comparison needs; finishing them would take several more daytime-slow runs
+  (~150 msg/min) for little analytical gain.
+- **Impact:** Analysis works per chat (rates, shares) on each chat's own window; for comparisons
+  over a common period, use the part all chats cover or exclude these five (sensitivity check).
+  Methodology 4.2 (table of effective windows), Limitations.
