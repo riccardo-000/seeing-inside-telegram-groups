@@ -6,7 +6,7 @@ in `data/raw/` (no Telegram) through **`load.py`**, so all points work on the sa
 | File | Plan point | Status |
 |---|---|---|
 | `load.py` | 1 — data preparation (this README) | done |
-| `structure.py` | 2 — structural measures | to write |
+| `structure.py` | 2 — structural measures (section below) | done |
 | `tone.py` | 3 — tone | stub |
 | `content.py` | 4 — group-only content | to write |
 | `invites.py` | 5a — crypto invitations to register | to write |
@@ -110,3 +110,33 @@ one `n_<role>` column per role, and for groups `admins_listed, is_discussion_gro
 n_comment`. All counts are inside the window. `is_discussion_group` = the group contains
 copies of the paired channel's posts (it is its linked discussion group): 87 of 98 crypto
 groups, 92 of 97 conspiracy groups; the others were paired by name or description.
+
+## Structural measures (point 2, `structure.py`)
+
+```bash
+python scripts/structure_measures.py   # → data/processed/structure_chats.csv, structure_pairs.csv (~50 s)
+```
+
+All messages in each chat's window (no sample). **Human** messages = rows with a `voice`
+(channel posts; admins and users in the group).
+
+| Column | Definition |
+|---|---|
+| `msgs_per_day` | human messages / `window_days` (both sides); `ratio_msgs_per_day` = group / channel |
+| `share_link`, `share_forward`, `share_media`, `share_no_text` | share of human messages with a URL / forwarded / with media / without text (both sides); `diff_*` = group − channel |
+| `authors_human` | distinct human senders in the group (anonymous admins have no id: not counted) |
+| `top10_authors_share` | share of human messages written by the most active 10% of authors (rounded up) |
+| `admin_share` | share of human group messages with voice admin |
+| `bot_share`, `other_channel_share` | share of all group messages (except service and channel copies) sent by bots / as another channel |
+| `comment_share` | share of human group messages that are comments on a channel post (discussion groups only, else empty) |
+| `posts_commented_share` | share of channel copies in the group with ≥ 1 human comment (discussion groups only) |
+| `reply_to_other_share` | share of human group messages replying to a message of another human (admin or user) |
+| `n_link_msgs` | human group messages with at least one link target |
+| `group_only_link_msg_share` | share of those pointing to ≥ 1 target never linked by the channel |
+| `group_only_target_share` | share of distinct group link targets never linked by the channel |
+
+Link targets: web links → registered domain (last two labels, three for `co.uk`-like
+suffixes; `www.` dropped; truncated fragments without a domain discarded, IP addresses
+discarded); Telegram links → `t.me/<chat>` (first path segment, from the `tme` field). The
+pair's own channel and group count as known to the channel. 16 groups are not discussion
+groups (no channel copies): their comment measures are empty.

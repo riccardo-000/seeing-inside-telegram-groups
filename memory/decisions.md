@@ -483,3 +483,18 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   and the late starts without a hand-kept list.
 - **Impact:** Rates per day use each chat's `window_days` (`chats.csv`); sensitivity check
   without the 21 shortened chats (plan point 8). Methodology 4.2 (window table), Limitations.
+
+## 2026-11-10 — Structural measures: definitions (plan point 2)
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** `src/analyze/structure.py` computes the 9 structural measures on **all**
+  messages in each chat's window; definitions in `src/analyze/README.md`. Main choices: rates
+  and shares use human messages only (voice channel / admin / user); bot share is over all group
+  messages except service and channel copies; author concentration = share of messages by the
+  top 10% authors; comment measures only for discussion groups (16 pairs have none); link
+  targets = registered domain (heuristic: last two labels, three for `co.uk`-like) or
+  `t.me/<chat>`, truncated URL fragments without a domain dropped, the pair's own chats count
+  as known to the channel.
+- **Why:** Plan point 2 approved 2026-11-10; one definition per measure, the same on both arms.
+  No public-suffix library installed, hence the domain heuristic (to state in Methodology).
+- **Impact:** `data/processed/structure_chats.csv`, `structure_pairs.csv`; Results 5.1–5.2;
+  tests come later (plan point 8).
