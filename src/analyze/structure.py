@@ -48,6 +48,32 @@ def base_domain(url: str) -> str | None:
     return ".".join(labels[-2:])
 
 
+def fragment_map(domains) -> dict[str, str]:
+    """Map truncated domains to the full domain they are cut from.
+
+    The dump cuts the first characters of some links (UTF-16 offsets after emoji), so
+    'vigilantfox.com' can also appear as 'igilantfox.com'. A domain is taken as a fragment of
+    a longer one seen in the same pair when the longer one ends with it and its first label is
+    1–3 characters longer; first labels shorter than 4 characters are never treated as
+    fragments (so x.com stays x.com next to fixupx.com).
+    """
+    ds = sorted({d for d in domains if not d.startswith("t.me/") and not d.startswith("[")},
+                key=len, reverse=True)
+    out: dict[str, str] = {}
+    for d in ds:
+        first = d.split(".")[0]
+        if len(first) < 4:
+            continue
+        for e in ds:
+            if len(e) <= len(d):
+                break
+            extra = len(e.split(".")[0]) - len(first)
+            if e.endswith(d) and e.count(".") == d.count(".") and 1 <= extra <= 3:
+                out[d] = out.get(e, e)
+                break
+    return out
+
+
 def link_targets(urls, tme) -> set[str]:
     """Where a message points: web domains, and Telegram chats as ``t.me/<name>``."""
     out = set()
@@ -117,10 +143,12 @@ def pair_measures(pair: pd.Series, df: pd.DataFrame) -> tuple[list[dict], dict]:
 
     # links (9): group targets never seen in the channel
     _, _, hc = sides["channel"]
-    known = {"t.me/" + pair["channel"], "t.me/" + pair["group"]}
-    for urls, tme in zip(hc["urls"], hc["tme"]):
-        known |= link_targets(urls, tme)
+    channel_targets = [link_targets(u, t) for u, t in zip(hc["urls"], hc["tme"])]
     group_targets = [link_targets(u, t) for u, t in zip(h["urls"], h["tme"])]
+    fix = fragment_map(set().union(*channel_targets, *group_targets))
+    channel_targets = [{fix.get(d, d) for d in s} for s in channel_targets]
+    group_targets = [{fix.get(d, d) for d in s} for s in group_targets]
+    known = {"t.me/" + pair["channel"], "t.me/" + pair["group"]}.union(*channel_targets)
     with_links = [t for t in group_targets if t]
     all_targets = set().union(*with_links) if with_links else set()
     g["n_link_msgs"] = len(with_links)

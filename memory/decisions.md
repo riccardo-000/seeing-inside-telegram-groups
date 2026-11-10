@@ -498,3 +498,28 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   No public-suffix library installed, hence the domain heuristic (to state in Methodology).
 - **Impact:** `data/processed/structure_chats.csv`, `structure_pairs.csv`; Results 5.1–5.2;
   tests come later (plan point 8).
+
+## 2026-11-10 — Invitations to register: detector and hand work (plan point 5a)
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** `src/analyze/invites.py` finds invitations on **both arms** (crypto is the deep
+  dive; conspiracy is computed for comparison at no extra cost). Invitation = registration /
+  referral link on a platform domain or a Telegram bot `?start=` link, or registration wording
+  plus a link to a platform domain; social / video / news / explorer sites are never platforms.
+  Target domains get an automatic class with its source (Telegram bot, official = also linked by
+  the pair's channel, exchange, trading tool, shortener, unknown); exchange and trading-tool
+  lists are hand-written in the code and **to be reviewed by the team**. Fraud hallmarks are
+  wording rules (fixed / guaranteed returns, "minimum deposit", …). Suspicious = hallmark, or
+  an `unknown` domain labelled suspicious by hand (external scam lists may be added later).
+  Hand work: two annotators label the 100 most frequent crypto unknown domains (85% of unknown
+  invitations) without opening the sites, and the same 150 crypto messages (60 detected, 60 with
+  a link not detected, 30 random; fixed seed) for precision / recall.
+  Same day: truncated domains (`igilantfox.com`) are mapped back to the full domain of the pair
+  (`fragment_map`); point 2 regenerated, only the two link columns changed (crypto median of
+  `group_only_link_msg_share` 0.298 → 0.286).
+- **Why:** Plan point 5a, with Riccardo's choice (2026-11-10) to take all invitations first and
+  then decide which are suspicious, with external evidence where possible. A first broad rule
+  counted x.com / YouTube as invitations ("claim" + any link), hence the platform restriction.
+- **Impact:** `data/processed/invites_*.csv`, `data/interim/invites/` (label and validation
+  files, never overwritten without `--force`). First counts: crypto 32,888 invitations (5,774 in
+  channels = 20% of channel posts; 27,114 in groups = 1.2% of group messages), concentrated in a
+  few groups (CryptoLibrarysRefferal 8,607, all by users, 1,227 with a fraud hallmark).

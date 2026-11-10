@@ -9,7 +9,7 @@ in `data/raw/` (no Telegram) through **`load.py`**, so all points work on the sa
 | `structure.py` | 2 — structural measures (section below) | done |
 | `tone.py` | 3 — tone | stub |
 | `content.py` | 4 — group-only content | to write |
-| `invites.py` | 5a — crypto invitations to register | to write |
+| `invites.py` | 5a — invitations to register (section below) | detector done; hand labels to do |
 | `authors.py` | 6 — three voices (roles already come from `load.py`) | stub |
 | `dms.py` | 7 — DMs | to write |
 | `stats.py` | 8 — tests and figures | to write |
@@ -140,3 +140,45 @@ suffixes; `www.` dropped; truncated fragments without a domain discarded, IP add
 discarded); Telegram links → `t.me/<chat>` (first path segment, from the `tme` field). The
 pair's own channel and group count as known to the channel. 16 groups are not discussion
 groups (no channel copies): their comment measures are empty.
+
+Truncated domains (the dump sometimes cuts the first letters of a link: `igilantfox.com`
+for `vigilantfox.com`) are mapped back to the full domain seen in the same pair
+(`fragment_map`): first label 1–3 characters shorter, at least 4 characters long.
+
+## Invitations to register (point 5a, `invites.py`)
+
+```bash
+python scripts/invites.py   # ~95 s, both arms
+```
+
+**Invitation** = message (any poster except service and channel copies) with
+(a) a registration / referral link — referral parameter (`ref=`, `invite_code=`, `aff=`, …) or
+sign-up path (`/register`, `/signup`, `/invite/`, `/ref/`, `/join/`, …) on a platform domain, or a
+Telegram bot link with `?start=`; or (b) registration wording ("sign up", "referral",
+"deposit", RU/ES/IT/ID/AR equivalents) **and** a link to a platform domain. Social, video,
+news, explorer and reference sites (`NOT_PLATFORM`) are never platforms.
+
+**Domain class** (automatic, with its source): `telegram_bot`; `official` (also linked by the
+pair's channel); `exchange` and `trading_tool` (hand-written lists in `invites.py`, **to be
+reviewed by the team**); `shortener` (destination unknown); `unknown` (labelled by hand).
+**Fraud hallmark** = wording with fixed / guaranteed returns, "deposit X … daily",
+"minimum deposit", "passive income", …
+
+Outputs: `data/processed/invites_chats.csv` (per chat: messages, invitations, hallmarks, who
+posted them, to which class), `data/processed/invites_pairs.csv` (per pair, channel vs group),
+`data/interim/invites/domains.csv` (every target domain with counts and class).
+
+### Hand work (two annotators, each alone, without talking about it)
+
+1. **`data/interim/invites/domains_to_label.csv`** — the 100 most frequent crypto `unknown`
+   domains (85% of unknown invitations). Fill `label_a` (first annotator) or `label_b` (second)
+   with `suspicious`, `legit` or `unclear`. **Do not open the sites** (project rule: no
+   clicking links; scam sites can be harmful): judge from the name and a web search of the
+   domain (news, scam-report sites). Then together fill `label_final` where you disagree.
+2. **`data/interim/invites/validation_a.csv`** (first annotator) and **`validation_b.csv`**
+   (second): the same 150 crypto messages, text only. Columns `is_invitation` (`yes`/`no`:
+   does it invite to register / sign up / deposit on a platform?) and `suspicious`
+   (`yes`/`no`/`unclear`). Do not open `validation_key.csv` (it says which messages the
+   detector flagged) until both files are done.
+
+Re-running `scripts/invites.py` never overwrites these files (only with `--force`).
