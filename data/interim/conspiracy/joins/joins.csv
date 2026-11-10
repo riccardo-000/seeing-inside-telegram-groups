@@ -46,3 +46,17 @@ date_utc,time_utc,chat,kind,status,reason
 2026-11-04,00:44:54,TheCrowhousechat,groups,removed,joined by hand by Simone 2026-11-03 but not a member at import/check (2026-11-03/04): removed by a bot or join did not go through
 2026-11-04,00:44:54,UK_Channel_Chat,groups,removed,joined by hand by Simone 2026-11-03 but not a member at import/check (2026-11-03/04): removed by a bot or join did not go through
 2026-11-04,00:44:54,businessoftruthchat,groups,removed,joined by hand by Simone 2026-11-03 but not a member at import/check (2026-11-03/04): removed by a bot or join did not go through
+2026-11-10,13:51:06,WhatDontYouLoveUsAnymoreChat,groups,joined,manual join (app): no restriction
+2026-11-10,13:53:36,mjj347chat,groups,joined,manual join (app): no restriction
+2026-11-10,13:52:50,contraperiodismochat,groups,joined,manual join (app): no restriction
+2026-11-10,13:45:37,antiilluminatichat,groups,restricted,manual join (app): restricted: none
+2026-11-10,14:15:42,dasrechtaufwahrheit_chatroom,groups,joined,manual join (app): no restriction
+2026-11-10,13:56:07,Timmy1776Chat,groups,joined,manual join (app): no restriction
+2026-11-10,13:53:13,impfkritisch,groups,joined,manual join (app): no restriction
+2026-11-10,14:15:50,HkGreatAwakeningGp,groups,needs_verification,"manual join (app): cannot write (send_messages, send_plain, send_media, send_photos, send_videos, send_docs, send_audios, send_voices, send_roundvideos, send_stickers, send_gifs, send_inline, embed_links, send_polls)"
+2026-11-10,13:52:09,GeneralFullyExposedChat,groups,joined,manual join (app): no restriction
+2026-11-10,13:49:01,joinchatA26Q1I0sNpnooHb9lszQ,groups,joined,manual join (app): no restriction
+2026-11-10,15:19:17,FionaRoseDiamondChatOfficial,groups,removed,recheck: group not accessible any more
+2026-11-10,15:19:29,TheCrowhousechat,groups,removed,recheck: not a member any more
+2026-11-10,15:19:42,UK_Channel_Chat,groups,removed,recheck: not a member any more
+2026-11-10,15:19:54,businessoftruthchat,groups,removed,recheck: not a member any more
