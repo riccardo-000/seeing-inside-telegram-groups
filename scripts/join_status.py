@@ -57,11 +57,14 @@ def main() -> None:
         with open(other_pairs, newline="", encoding="utf-8-sig") as fh:
             other_groups = {r["group"].strip().lstrip("@").lower() for r in csv.DictReader(fh)}
     latest = {}
+    banned = set()  # a ban logged once stays a ban, even if a later recheck only sees "not accessible"
     log = p.interim / "joins" / "joins.csv"
     if log.exists():
         with open(log, newline="", encoding="utf-8") as fh:
             for r in sorted(csv.DictReader(fh), key=lambda r: (r["date_utc"], r["time_utc"])):
                 latest[r["chat"].lower()] = r
+                if r["status"] == "removed" and r["reason"].startswith("banned"):
+                    banned.add(r["chat"].lower())
     out = p.interim / "joins" / "join_status.csv"
     out.parent.mkdir(parents=True, exist_ok=True)
     # the "note" column is written by hand (who joined, what happened): kept across refreshes
@@ -81,10 +84,10 @@ def main() -> None:
             g = latest.get(group.lower(), {})
             status = g.get("status", "")
             todo = TODO.get(status, f"controllare ({status})")
-            if status == "removed" and "not accessible" in g.get("reason", ""):
-                todo = TODO["private"]  # the group itself is gone, not only our membership
-            elif status == "removed" and g.get("reason", "").startswith("banned"):
+            if status == "removed" and group.lower() in banned:
                 todo = "perso: ci hanno bannato (non rifare)"
+            elif status == "removed" and "not accessible" in g.get("reason", ""):
+                todo = TODO["private"]  # the group itself is gone, not only our membership
             if pr.get("final", "").strip() == "crypto":  # row kept for its number, pair moved to crypto
                 todo = "non fare: coppia del braccio crypto (decisione 2026-11-10)"
             elif args.topic == "conspiracy" and group.lower() in other_groups:  # crypto pairs belong to crypto

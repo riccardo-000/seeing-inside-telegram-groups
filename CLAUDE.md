@@ -53,7 +53,7 @@ Stack: Python ≥ 3.11, Telethon, pandas, python-dotenv, tqdm.
 ├── .env.example         # template; real .env is gitignored
 ├── src/
 │   ├── collect/         # channels.py, messages.py, dms.py (Telethon, read-only)
-│   ├── analyze/         # authors.py, tone.py (pandas)
+│   ├── analyze/         # all analysis code; load.py = shared data preparation (see its README)
 │   └── utils/           # config.py (.env, accounts, data paths), budget.py, privacy.py
 ├── scripts/             # CLI entry points, all take --topic crypto|conspiracy
 ├── data/

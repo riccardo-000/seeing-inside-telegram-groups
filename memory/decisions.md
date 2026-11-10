@@ -442,3 +442,59 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Why:** Answers RQ1–4 with ~2–3 h of manual labelling per person instead of 6–8.
 - **Impact:** Not final until Marco and Simone have reviewed it; changes are logged here.
   `docs/scam-definitions.md` (full taxonomy draft) was not committed.
+
+## 2026-11-10 — Data preparation for the analysis (plan point 1)
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** All analysis reads the dumps through `src/analyze/load.py` (column contract in
+  `src/analyze/README.md`). Roles in groups, first rule that matches: service; `channel_copy`
+  (sent by the paired channel, not a reply = Telegram's copy of a channel post, excluded from
+  group measures); `channel_reply` (sent as the paired channel as a reply = admin voice);
+  `other_channel`; `anonymous_admin` (no sender on disk); `bot` (also when admin); `creator` /
+  `admin` (from `.admins.json`); `user`. Every channel post is `channel`. Voices: channel /
+  admin (creator, admin, anonymous admin, channel reply) / user. A group comment = reply to (or
+  in the thread of) a channel copy. Nothing is deleted; analyses filter on `in_window`.
+- **Why:** One shared preparation, so the points of the plan are computed on the same data.
+  Checked on all 3.8 M messages: no duplicate (chat, id); the paired channel never sends as
+  the group itself, while messages without sender carry admin titles ("Admin", "Core Team"),
+  hence anonymous admins; 87 of 98 crypto and 92 of 97 conspiracy groups contain copies of
+  their channel's posts (linked discussion groups), the others were paired by name/description.
+- **Impact:** Methodology 4.2/4.4. Five conspiracy groups have no visible admin list
+  (irishpatriotschat, crismartinj, ericsflatchat, chemtrailspartages,
+  covidrechercheverite_chat): out of the admins-vs-users comparison. `data/processed/chats.csv`
+  (`scripts/chat_table.py`) is the per-chat table.
+
+## 2026-11-10 — Observation windows from the data (corrects "every other chat reaches 2026-11-04")
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** Common window **2026-07-30 → 2026-11-04 00:00 UTC** for every chat. A chat's
+  window is shortened when the silence before its first (after its last) message is longer
+  than both 50 × its average gap between messages and 2 days (chats with ≥ 200 messages);
+  groups that banned us end at their last message. Result, 21 chats:
+  **ends early, dump stopped (9):** MGBX_English (→ 08-21), GateCom_EN (→ 08-31), OKXGroup_CN
+  (→ 09-15), WeexGlobal_Group (→ 09-16), CryptoLibrarysRefferal (→ 10-16), kucoin_exchange
+  (→ 10-25), binanceexchange (→ 10-30), BinanceArabic (→ 10-31), chatDeepState (→ 11-01);
+  **banned (4):** VigilantFoxChat, FionaRoseDiamondChatOfficial, TheLightPaperDistribution
+  (→ 10-29), greatreject_social (→ 11-01); **starts late (8):** bitcoinbase_community (08-27),
+  coinlotto_chat (09-22), demonscha (09-27), zcash_community_chat (09-09), zeczcash channel
+  (08-24), rektplebssubmission (10-27), offgridireland (08-01), hapaperspectivechat (08-05).
+- **Why:** The 2026-11-10 closing entry listed 5 truncated groups, but the data show 5 more
+  crypto groups stopped at round counts (50k–150k, the per-run cap) without reaching the
+  present: GateCom_EN, OKXGroup_CN, CryptoLibrarysRefferal, kucoin_exchange, binanceexchange.
+  WatcherGuruChat reaches 2026-11-04 and is not shortened. A rule from the data covers these
+  and the late starts without a hand-kept list.
+- **Impact:** Rates per day use each chat's `window_days` (`chats.csv`); sensitivity check
+  without the 21 shortened chats (plan point 8). Methodology 4.2 (window table), Limitations.
+
+## 2026-11-10 — Structural measures: definitions (plan point 2)
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** `src/analyze/structure.py` computes the 9 structural measures on **all**
+  messages in each chat's window; definitions in `src/analyze/README.md`. Main choices: rates
+  and shares use human messages only (voice channel / admin / user); bot share is over all group
+  messages except service and channel copies; author concentration = share of messages by the
+  top 10% authors; comment measures only for discussion groups (16 pairs have none); link
+  targets = registered domain (heuristic: last two labels, three for `co.uk`-like) or
+  `t.me/<chat>`, truncated URL fragments without a domain dropped, the pair's own chats count
+  as known to the channel.
+- **Why:** Plan point 2 approved 2026-11-10; one definition per measure, the same on both arms.
+  No public-suffix library installed, hence the domain heuristic (to state in Methodology).
+- **Impact:** `data/processed/structure_chats.csv`, `structure_pairs.csv`; Results 5.1–5.2;
+  tests come later (plan point 8).
