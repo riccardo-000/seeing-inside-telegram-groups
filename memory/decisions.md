@@ -429,3 +429,16 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Why:** Bots are part of what a group shows and a channel does not (welcome and captcha bots,
   but also automated promotion); dropping them silently would hide a result.
 - **Impact:** Analysis scripts (per-chat table, channel vs group measures); Results 5.1, 5.2.
+
+## 2026-11-10 — Analysis plan v1 (draft, under team review)
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** Analysis plan agreed point by point by Riccardo, written in
+  `docs/analysis-plan.md` (points 1–9; point 10, who does what and when, still to decide).
+  Main choices: unit = pair (group − channel); common core on both arms (structural measures,
+  tone, group-only content, three voices channel → admins in group → users) plus one deep dive
+  per arm (crypto: invitations to register on platforms; conspiracy: tone) instead of a full
+  scam taxonomy with a large labelled sample; pre-trained multilingual models run locally;
+  DM checks continue until 2026-12-01.
+- **Why:** Answers RQ1–4 with ~2–3 h of manual labelling per person instead of 6–8.
+- **Impact:** Not final until Marco and Simone have reviewed it; changes are logged here.
+  `docs/scam-definitions.md` (full taxonomy draft) was not committed.
