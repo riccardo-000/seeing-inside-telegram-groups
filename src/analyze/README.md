@@ -1,0 +1,112 @@
+# src/analyze — analysis code
+
+One folder for all the analysis of `docs/analysis-plan.md`. Everything reads the dumps already
+in `data/raw/` (no Telegram) through **`load.py`**, so all points work on the same data.
+
+| File | Plan point | Status |
+|---|---|---|
+| `load.py` | 1 — data preparation (this README) | done |
+| `structure.py` | 2 — structural measures | to write |
+| `tone.py` | 3 — tone | stub |
+| `content.py` | 4 — group-only content | to write |
+| `invites.py` | 5a — crypto invitations to register | to write |
+| `authors.py` | 6 — three voices (roles already come from `load.py`) | stub |
+| `dms.py` | 7 — DMs | to write |
+| `stats.py` | 8 — tests and figures | to write |
+
+Outputs go to `data/processed/` (< 100 MB per file). Prepared messages are **not** saved again
+in the repo (they would duplicate the dumps): `load.py` rebuilds them in about a minute.
+
+## How to use it
+
+Run from the repo root with the project venv (only pandas needed):
+
+```python
+import sys; sys.path.insert(0, ".")
+from src.analyze.load import iter_pairs, load_messages, pairs, chat_table
+
+for pair, df in iter_pairs("crypto"):          # one pair at a time (low memory)
+    group = df[(df.side == "group") & df.in_window]
+    ...
+
+df = load_messages("conspiracy", text=False)  # all messages, without text (~1.5 M rows)
+```
+
+Per-chat table (Table 1 of the paper, basis of point 2):
+
+```bash
+python scripts/chat_table.py          # → data/processed/chats.csv (~45 s)
+```
+
+## Pairs
+
+`pairs()` reads the two final lists: **crypto 98 pairs with data** (100 listed, 2 groups gone),
+**conspiracy 97** (rows with `final` ≠ `valida` are the 3 pairs moved to crypto).
+`pair_id` = `<topic>:<channel username>`, e.g. `crypto:officialkybernetwork`.
+File quirks handled: `@demons` → `gambledemons`, `@zeczcash` → `3984096229`; a file missing in
+the arm's folder is read from the other one (`@rektplebssubmission`, only in conspiracy).
+
+## Columns (one row per message)
+
+| Column | Meaning |
+|---|---|
+| `topic` | `crypto` / `conspiracy` |
+| `pair_id` | pair the message belongs to |
+| `side` | `channel` / `group` |
+| `chat` | username of the chat (lower case, as in the pair list) |
+| `chat_id`, `msg_id` | Telegram ids; (`chat_id`, `msg_id`) is unique |
+| `date` | UTC timestamp |
+| `sender_kind`, `sender` | as on disk: `user` / `channel` / `none`, and the raw id (not pseudonymized yet) |
+| `role` | see below |
+| `voice` | `channel` / `admin` / `user`, or empty (bots, copies, other channels, service) — the three voices of point 6 |
+| `is_bot` | sender is a bot (Telegram flag) |
+| `is_service` | join / leave / pin and similar service messages |
+| `has_text`, `n_chars`, `text` | text (empty string if none); `text` is dropped with `text=False` |
+| `reply_to`, `thread_top` | id of the message replied to / top of the thread |
+| `is_comment` | group message replying to (or in the thread of) a copy of a channel post |
+| `is_forward`, `fwd_kind`, `fwd_from` | forwarded message and its source |
+| `media`, `urls`, `tme` | media type, URLs, `t.me` paths found in the text |
+| `views`, `forwards`, `n_replies` | counters as on disk |
+| `post_author` | admin signature / custom title, if any |
+| `in_window` | inside the chat's observation window (see below) — **filter on this** |
+
+### Roles
+
+Channel side: every post is `channel` (also when it carries an author signature), service
+messages are `service`.
+
+Group side, first rule that matches:
+
+| Role | Rule |
+|---|---|
+| `service` | service message |
+| `channel_copy` | sent by the paired channel, not a reply: Telegram's copy of a channel post in its discussion group. **Excluded** from group measures |
+| `channel_reply` | sent as the paired channel, as a reply: an admin answering as the channel → admin voice |
+| `other_channel` | sent as another channel (promotion, or copies of another channel's posts) |
+| `anonymous_admin` | no sender on disk (`sender_kind = none`): anonymous admin, often with a title in `post_author` |
+| `bot` | bot account, **also when it is an admin** (decision on bots, 2026-11-10) |
+| `creator` / `admin` | in the group's `.admins.json` |
+| `user` | everyone else |
+
+`voice`: `channel` → channel; `creator`, `admin`, `anonymous_admin`, `channel_reply` → admin;
+`user` → user. Five conspiracy groups have **no visible admin list**
+(`irishpatriotschat`, `crismartinj`, `ericsflatchat`, `chemtrailspartages`,
+`covidrechercheverite_chat`): their admins are counted as users, so leave them out of the
+admins-vs-users comparison.
+
+### Observation windows
+
+Default window: **2026-07-30 00:00 UTC → 2026-11-04 00:00 UTC** for every chat (common end).
+It is shortened when the data show the dump did not cover it: the silence before the first
+(after the last) message is longer than both 50 × the chat's average gap between messages and
+2 days (only for chats with ≥ 200 messages); banned groups end at their last message.
+21 chats are shortened (`window_note` in `chats.csv`). Rates per day must use `window_days`.
+
+## chats.csv (one row per chat)
+
+`topic, pair_id, side, chat, file, n_on_disk, n_in_window, first_message, last_message,
+window_start, window_end, window_days, window_note, n_with_text, n_human, authors_human`,
+one `n_<role>` column per role, and for groups `admins_listed, is_discussion_group,
+n_comment`. All counts are inside the window. `is_discussion_group` = the group contains
+copies of the paired channel's posts (it is its linked discussion group): 87 of 98 crypto
+groups, 92 of 97 conspiracy groups; the others were paired by name or description.

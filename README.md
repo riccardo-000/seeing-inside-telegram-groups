@@ -33,7 +33,7 @@ discussion groups, to be written up as a paper.
 ```
 src/
   collect/   channels.py (seed + join), messages.py (dump), dms.py (DM logging)
-  analyze/   authors.py (admin vs user roles), tone.py (tone + scam labels)
+  analyze/   all analysis code: load.py (data preparation), one module per plan point (see its README)
   utils/     config.py (.env loading), privacy.py (pseudonymization at ingestion)
 data/
   raw/       collected dumps (shared via this private repo, < 100 MB per file)
