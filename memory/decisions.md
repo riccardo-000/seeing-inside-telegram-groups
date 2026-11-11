@@ -559,3 +559,18 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   sign-up word). **Open (team):** do token alerts with hidden referral buttons count as
   invitations? If the detector is changed after this, a fresh validation sample is needed
   (otherwise the error rate is measured on the data used to tune it).
+
+## 2026-11-11 — 5a domains: LLM labels reviewed by a human; validation stays independent
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** Riccardo reviewed all 100 domain labels of annotator A (Claude Code) with their
+  written reasons and approved them (one question, wamining.top, settled: kept suspicious).
+  His review is recorded as `label_b` = `label_a`, with a note in `notes`. The 150-message
+  validation (`validation_b.csv`) is **not** filled by review: Marco or Simone label it from
+  scratch, without seeing `validation_a.csv` or the key.
+- **Why:** Domain labels come with a written reason anyone can check, so a human review is
+  acceptable; the validation is the detector's error rate, and annotator A wrote the detector,
+  so it needs an independent human.
+- **Impact:** Methodology: "domain labels proposed by an LLM and reviewed by a human" (the
+  A–B agreement on domains is 100% by construction and must not be reported as inter-annotator
+  agreement); validation agreement reported as LLM vs independent human. Still open: whether
+  token alerts with hidden referral buttons count as invitations (entry above).
