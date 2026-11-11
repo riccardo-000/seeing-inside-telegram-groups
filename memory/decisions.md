@@ -538,3 +538,24 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   choice; weighting the strata is needed because the sample over-represents detected messages.
 - **Impact:** Results 5a and the "suspicious invite share" of the centerpiece figure; Methodology
   4.5 (error rates). Tested end to end on fake labels outside the repo; no real labels yet.
+
+## 2026-11-11 — Claude Code is annotator A for the 5a hand labels
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** To speed up, Claude Code filled the **first annotator** columns: `label_a` of
+  the 100 crypto domains (66 suspicious, 17 legit, 17 unclear; reason in `notes`, prefixed
+  "A (Claude)") and `validation_a.csv` (150 messages, text only, without looking at the key:
+  30 invitations, 7 suspicious, 8 unclear). Domains were judged from the name, counts, posters
+  and example messages read locally; nothing was searched online and no site was opened. The
+  team reviews it as **annotator B** (`label_b`, `validation_b.csv`), seriously and ideally
+  without looking at A's answers first; disputes are settled by a third (human) person.
+- **Why:** Riccardo's choice (2026-11-11) to have a base to check quickly. Caveat for the paper:
+  annotator A is the same AI that wrote the detector, so the human B labels are the real check;
+  report it as "one LLM annotator + one human, disputes settled by a second human", with the
+  LLM–human agreement.
+- **Impact:** First reading of A vs the detector (to confirm with B): of 60 detected messages A
+  calls 19 invitations — 27 of the other 41 are bot token alerts / TA bots whose hidden buttons
+  carry referral links, 11 are channel posts; of 60 link-not-detected messages A calls 10
+  invitations (official project campaigns, quests, airdrops with no referral parameter or
+  sign-up word). **Open (team):** do token alerts with hidden referral buttons count as
+  invitations? If the detector is changed after this, a fresh validation sample is needed
+  (otherwise the error rate is measured on the data used to tune it).
