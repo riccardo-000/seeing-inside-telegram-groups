@@ -198,3 +198,38 @@ def domain_table(invites: pd.DataFrame) -> pd.DataFrame:
     # a domain that is official in one pair is not "unknown" elsewhere: it is a project's site
     g.loc[(g["class"] == "unknown") & (g["n_pairs_official"] > 0), "class"] = "official"
     return g.sort_values(["topic", "n_invites"], ascending=[True, False])
+
+
+# --- validation sample (crypto) ---------------------------------------------------------
+SEED = 20261110
+STRATA = {"detected": 60, "link_not_detected": 60, "random": 30}
+
+
+def validation_pool() -> pd.DataFrame:
+    """Pool the validation sample is drawn from: up to 400 messages with text per crypto pair
+    (fixed seed), duplicates of the same text removed. Deterministic for the same dumps."""
+    pool = []
+    for pair, df in iter_pairs("crypto", text=True):
+        w = df[df["in_window"] & ~df["role"].isin(["service", "channel_copy"]) & df["has_text"]]
+        w = w.sample(n=min(len(w), 400), random_state=SEED)  # cap per pair: no chat dominates
+        pool.append(w[["pair_id", "side", "chat", "msg_id", "role", "voice", "urls", "text"]])
+    pool = pd.concat(pool, ignore_index=True)
+    pool["detected"] = [message_invite(u, t)[0] for u, t in zip(pool["urls"], pool["text"])]
+    pool["has_link"] = pool["urls"].map(lambda x: isinstance(x, list) and len(x) > 0)
+    return pool.drop_duplicates("text")
+
+
+def validation_sample(pool: pd.DataFrame | None = None) -> pd.DataFrame:
+    """Crypto messages for the hand check: detected / with a link but not detected / random
+    (random = drawn from the rest of the pool, whatever its kind)."""
+    pool = validation_pool() if pool is None else pool
+    parts = [
+        pool[pool["detected"]].sample(n=STRATA["detected"], random_state=SEED).assign(stratum="detected"),
+        pool[pool["has_link"] & ~pool["detected"]].sample(n=STRATA["link_not_detected"], random_state=SEED)
+        .assign(stratum="link_not_detected"),
+    ]
+    rest = pool.drop(index=pd.concat(parts).index)
+    parts.append(rest.sample(n=STRATA["random"], random_state=SEED).assign(stratum="random"))
+    s = pd.concat(parts).sample(frac=1, random_state=SEED).reset_index(drop=True)
+    s.insert(0, "item", [f"v{i:03d}" for i in range(1, len(s) + 1)])
+    return s

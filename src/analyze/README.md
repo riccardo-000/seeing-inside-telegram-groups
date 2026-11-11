@@ -182,3 +182,25 @@ posted them, to which class), `data/processed/invites_pairs.csv` (per pair, chan
    detector flagged) until both files are done.
 
 Re-running `scripts/invites.py` never overwrites these files (only with `--force`).
+
+### After the hand work: final results (`invite_labels.py`)
+
+```bash
+python scripts/invites_results.py   # ~2 min; also runs on partial labels
+```
+
+- **Domain label** = `label_final` if filled, else the common label of `label_a` and `label_b`;
+  otherwise unresolved. Agreement (Cohen's kappa) is reported.
+- **Suspicious invitation** = fraud hallmark, or a target domain labelled `suspicious`.
+  **Unresolved** = otherwise pointing to an `unknown` domain without a final label (or
+  `unclear`). Results are a range: `low` (unresolved = not suspicious) and `high`
+  (unresolved = suspicious). Conspiracy has no hand labels, so its `high` counts every unknown
+  domain.
+- **Validation**: the reference answer is the common answer of A and B; where they disagree the
+  script writes `data/interim/invites/validation_final.csv` — a third person fills
+  `is_invitation_final` / `suspicious_final` (kept across runs), then rerun. Detector precision
+  and recall are weighted by the size of each part of the sampling pool (detected / link not
+  detected / no link).
+
+Outputs: `data/processed/invites_suspicious_chats.csv`, `invites_suspicious_pairs.csv`,
+`invites_quality.json` (agreement, precision, recall).

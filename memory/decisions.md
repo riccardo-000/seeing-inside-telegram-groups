@@ -523,3 +523,18 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   files, never overwritten without `--force`). First counts: crypto 32,888 invitations (5,774 in
   channels = 20% of channel posts; 27,114 in groups = 1.2% of group messages), concentrated in a
   few groups (CryptoLibrarysRefferal 8,607, all by users, 1,227 with a fraud hallmark).
+
+## 2026-11-11 — How the 5a hand labels become results
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** `src/analyze/invite_labels.py` + `scripts/invites_results.py`. Domain label =
+  `label_final`, else the common label of the two annotators, else unresolved. Suspicious
+  invitation = fraud hallmark or a target labelled suspicious; invitations to unknown domains
+  without a final label (or `unclear`) are **unresolved** and reported as a range (low = not
+  suspicious, high = suspicious). Validation reference = common answer of A and B, else a third
+  person's answer in `validation_final.csv`; still-disputed items are left out and counted.
+  Detector precision / recall are weighted by the sampling pool parts (detected 478, link not
+  detected 2,558, no link 27,692 messages). Agreement = Cohen's kappa.
+- **Why:** The range makes the effect of unlabelled domains visible instead of hiding it in a
+  choice; weighting the strata is needed because the sample over-represents detected messages.
+- **Impact:** Results 5a and the "suspicious invite share" of the centerpiece figure; Methodology
+  4.5 (error rates). Tested end to end on fake labels outside the repo; no real labels yet.

@@ -28,36 +28,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import pandas as pd
 
-from src.analyze.invites import compute, domain_table, message_invite
-from src.analyze.load import iter_pairs
+from src.analyze.invites import compute, domain_table, validation_sample
 from src.utils.config import DATA_INTERIM, DATA_PROCESSED
 
 N_LABEL = 100           # crypto unknown domains to label by hand
-SEED = 20261110
-STRATA = {"detected": 60, "link_not_detected": 60, "random": 30}  # validation sample (crypto)
-
-
-def validation_sample(invites: pd.DataFrame) -> pd.DataFrame:
-    """Crypto messages for the hand check: detected / with a link but not detected / random."""
-    pool = []
-    for pair, df in iter_pairs("crypto", text=True):
-        w = df[df["in_window"] & ~df["role"].isin(["service", "channel_copy"]) & df["has_text"]]
-        w = w.sample(n=min(len(w), 400), random_state=SEED)  # cap per pair: no chat dominates
-        pool.append(w[["pair_id", "side", "chat", "msg_id", "role", "voice", "urls", "text"]])
-    pool = pd.concat(pool, ignore_index=True)
-    pool["detected"] = [message_invite(u, t)[0] for u, t in zip(pool["urls"], pool["text"])]
-    pool["has_link"] = pool["urls"].map(lambda x: isinstance(x, list) and len(x) > 0)
-    pool = pool.drop_duplicates("text")
-    parts = [
-        pool[pool["detected"]].sample(n=STRATA["detected"], random_state=SEED).assign(stratum="detected"),
-        pool[pool["has_link"] & ~pool["detected"]].sample(n=STRATA["link_not_detected"], random_state=SEED)
-        .assign(stratum="link_not_detected"),
-    ]
-    rest = pool.drop(index=pd.concat(parts).index)
-    parts.append(rest.sample(n=STRATA["random"], random_state=SEED).assign(stratum="random"))
-    s = pd.concat(parts).sample(frac=1, random_state=SEED).reset_index(drop=True)
-    s.insert(0, "item", [f"v{i:03d}" for i in range(1, len(s) + 1)])
-    return s
 
 
 def write_once(df: pd.DataFrame, path: Path, force: bool) -> None:
@@ -87,7 +61,7 @@ def main() -> None:
                                                                            label_final="", notes="")
     write_once(to_label, out / "domains_to_label.csv", args.force)
 
-    sample = validation_sample(invites)
+    sample = validation_sample()
     blind = sample[["item", "text"]].assign(is_invitation="", suspicious="", notes="")
     write_once(blind, out / "validation_a.csv", args.force)
     write_once(blind, out / "validation_b.csv", args.force)
