@@ -1,0 +1,6 @@
+{
+  "revision": "7c413b7a5653f3921cd6b105e797efa5a2261223",
+  "model_sha256": "d24380b6663f5336cd54c41047fb578cc763b4d5f4938cda8c1b1ef9e53cf06b",
+  "model": "abacusai/Toxicity-Lens",
+  "model_file": "onnx/model_int8_block32.onnx"
+}

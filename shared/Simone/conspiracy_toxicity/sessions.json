@@ -1,0 +1,20 @@
+[
+  {
+    "ended_utc": "2026-11-16T14:23:51+00:00",
+    "reason": "session time budget reached",
+    "wall_seconds": 57604.42200000002,
+    "new_scores": 354210,
+    "total_scored": 354210,
+    "eligible": 1104057,
+    "completed_pairs": 24
+  },
+  {
+    "ended_utc": "2026-11-16T20:45:31+00:00",
+    "reason": "interrupted by user; committed scores retained",
+    "wall_seconds": 19213.296999999962,
+    "new_scores": 118759,
+    "total_scored": 472969,
+    "eligible": 1104057,
+    "completed_pairs": 42
+  }
+]
