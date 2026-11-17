@@ -1,0 +1,217 @@
+[
+  {
+    "started_utc": "2026-11-17T15:47:31+00:00",
+    "launcher_sha256": "09c3b3e9ad6fdf692bf513841cdde27f8d83a33d36a4423a4e8f0f5208b558c4",
+    "original_script_sha256": "3055f0d4ebc5714970b0e780bf86ad65c3e7f28d1953a868003bf6740c20a6df",
+    "pair_id": "conspiracy:realq911",
+    "side": "group",
+    "benchmark_messages": 64,
+    "plan_threads": 4,
+    "test_threads": 8,
+    "batch_size": 8,
+    "first_unscored_row": 13056,
+    "model_sha256": "d24380b6663f5336cd54c41047fb578cc763b4d5f4938cda8c1b1ef9e53cf06b",
+    "outcome": "candidate accepted (local sample only)",
+    "baseline_msg_s": 3.267994414666594,
+    "baseline_vs_checkpoint": {
+      "max_abs": 0.0,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "candidate_msg_s": 3.9187042275495405,
+    "candidate_vs_checkpoint": {
+      "max_abs": 0.0,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "candidate_vs_baseline": {
+      "max_abs": 0.0,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "speedup": 1.1991159501260449,
+    "effective_threads": 8,
+    "session_ended_utc": "2026-11-17T16:04:22+00:00"
+  },
+  {
+    "started_utc": "2026-11-17T16:04:34+00:00",
+    "launcher_sha256": "09c3b3e9ad6fdf692bf513841cdde27f8d83a33d36a4423a4e8f0f5208b558c4",
+    "original_script_sha256": "3055f0d4ebc5714970b0e780bf86ad65c3e7f28d1953a868003bf6740c20a6df",
+    "pair_id": "conspiracy:realq911",
+    "side": "group",
+    "benchmark_messages": 128,
+    "plan_threads": 4,
+    "test_threads": 12,
+    "batch_size": 8,
+    "first_unscored_row": 15744,
+    "model_sha256": "d24380b6663f5336cd54c41047fb578cc763b4d5f4938cda8c1b1ef9e53cf06b",
+    "outcome": "candidate accepted (local sample only)",
+    "baseline_msg_s": 3.584629188453955,
+    "baseline_vs_checkpoint": {
+      "max_abs": 0.0,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "candidate_msg_s": 4.433431216329572,
+    "candidate_vs_checkpoint": {
+      "max_abs": 6.138816480150133e-08,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "candidate_vs_baseline": {
+      "max_abs": 6.138816480150133e-08,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "speedup": 1.2367893534454266,
+    "effective_threads": 12,
+    "session_ended_utc": "2026-11-17T16:07:51+00:00"
+  },
+  {
+    "started_utc": "2026-11-17T16:10:16+00:00",
+    "launcher_sha256": "09c3b3e9ad6fdf692bf513841cdde27f8d83a33d36a4423a4e8f0f5208b558c4",
+    "original_script_sha256": "3055f0d4ebc5714970b0e780bf86ad65c3e7f28d1953a868003bf6740c20a6df",
+    "pair_id": "conspiracy:realq911",
+    "side": "group",
+    "benchmark_messages": 128,
+    "plan_threads": 4,
+    "test_threads": 16,
+    "batch_size": 8,
+    "first_unscored_row": 16128,
+    "model_sha256": "d24380b6663f5336cd54c41047fb578cc763b4d5f4938cda8c1b1ef9e53cf06b",
+    "outcome": "original runtime retained",
+    "baseline_msg_s": 2.142763542832111,
+    "baseline_vs_checkpoint": {
+      "max_abs": 6.138816480150133e-08,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "candidate_msg_s": 1.9124097851686739,
+    "candidate_vs_checkpoint": {
+      "max_abs": 0.0,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "candidate_vs_baseline": {
+      "max_abs": 6.138816480150133e-08,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "speedup": 0.892496884019701,
+    "effective_threads": 4,
+    "session_ended_utc": "2026-11-17T16:13:42+00:00"
+  },
+  {
+    "started_utc": "2026-11-17T16:13:55+00:00",
+    "launcher_sha256": "09c3b3e9ad6fdf692bf513841cdde27f8d83a33d36a4423a4e8f0f5208b558c4",
+    "original_script_sha256": "3055f0d4ebc5714970b0e780bf86ad65c3e7f28d1953a868003bf6740c20a6df",
+    "pair_id": "conspiracy:realq911",
+    "side": "group",
+    "benchmark_messages": 128,
+    "plan_threads": 4,
+    "test_threads": 12,
+    "batch_size": 8,
+    "first_unscored_row": 16128,
+    "model_sha256": "d24380b6663f5336cd54c41047fb578cc763b4d5f4938cda8c1b1ef9e53cf06b",
+    "outcome": "candidate accepted (local sample only)",
+    "baseline_msg_s": 3.707628135826438,
+    "baseline_vs_checkpoint": {
+      "max_abs": 6.138816480150133e-08,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "candidate_msg_s": 4.603014009702132,
+    "candidate_vs_checkpoint": {
+      "max_abs": 0.0,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "candidate_vs_baseline": {
+      "max_abs": 6.138816480150133e-08,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "speedup": 1.2414982951563214,
+    "effective_threads": 12,
+    "session_ended_utc": "2026-11-17T16:22:28+00:00"
+  },
+  {
+    "started_utc": "2026-11-17T16:26:32+00:00",
+    "launcher_sha256": "09c3b3e9ad6fdf692bf513841cdde27f8d83a33d36a4423a4e8f0f5208b558c4",
+    "original_script_sha256": "3055f0d4ebc5714970b0e780bf86ad65c3e7f28d1953a868003bf6740c20a6df",
+    "pair_id": "conspiracy:realq911",
+    "side": "group",
+    "benchmark_messages": 64,
+    "plan_threads": 4,
+    "test_threads": 8,
+    "batch_size": 8,
+    "first_unscored_row": 17536,
+    "model_sha256": "d24380b6663f5336cd54c41047fb578cc763b4d5f4938cda8c1b1ef9e53cf06b",
+    "outcome": "candidate accepted (local sample only)",
+    "baseline_msg_s": 3.5120332686122637,
+    "baseline_vs_checkpoint": {
+      "max_abs": 6.138816480150133e-08,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "candidate_msg_s": 4.33744618339604,
+    "candidate_vs_checkpoint": {
+      "max_abs": 6.138816480150133e-08,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "candidate_vs_baseline": {
+      "max_abs": 0.0,
+      "disagreements": {
+        "0.3": 0,
+        "0.5": 0,
+        "0.7": 0
+      }
+    },
+    "speedup": 1.235024230026707,
+    "effective_threads": 8,
+    "session_ended_utc": "2026-11-17T17:56:15+00:00"
+  }
+]

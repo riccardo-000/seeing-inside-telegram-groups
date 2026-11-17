@@ -1,13 +1,13 @@
 # Conspiracy toxicity — full-corpus progress
 
-Updated (UTC): 2026-11-17T09:27:26+00:00
+Updated (UTC): 2026-11-17T18:01:47+00:00
 State: manual status snapshot
 Model: abacusai/Toxicity-Lens / onnx/model_int8_block32.onnx
 Model revision: 7c413b7a5653f3921cd6b105e797efa5a2261223
 Source Git commit at plan creation: d492b356a6896e00d87cef931a5291e81cb98675
 Configuration: no cap; overlap window; both long-text mode; 4 threads; batch 8.
-Completed pairs: 79/97
-Committed scores: 838531/1104057 (75.95%)
+Completed pairs: 96/97
+Committed scores: 1047167/1104057 (94.85%)
 
 Provisional: no human validation or language filtering; full-corpus sampling change requires team approval. No text or sender IDs in this log.
 
@@ -92,27 +92,27 @@ Provisional: no human validation or language filtering; full-corpus sampling cha
 | 077 | realemichaeljones | 47/47 | emichaeljoneschat | 8856/8856 | complete |
 | 078 | spygatedown | 1761/1761 | spygatedownenclave | 6904/6904 | complete |
 | 079 | millennialwoes | 158/158 | mwpublic | 318/318 | complete |
-| 080 | heimat2023 | 0/163 | dieheimatgespraeche | 0/1108 | in progress |
-| 081 | agent_a1 | 0/10840 | a1chatgroup | 0/5235 | pending |
-| 082 | witnessmeiamawaited | 0/128 | theparkinglot | 0/3412 | pending |
-| 083 | georgewebb | 0/414 | screamingospreys | 0/1584 | pending |
-| 084 | christianapologetic | 0/355 | lwchristianchat | 0/2786 | pending |
-| 085 | fallsac | 0/904 | fallsacgroup | 0/92714 | pending |
-| 086 | unitedanarchists | 0/59 | theuac | 0/2021 | pending |
-| 087 | justincarpenter33 | 0/29 | justincarpenterdiscussion | 0/486 | pending |
-| 088 | thinmint2 | 0/127 | thinmintchat | 0/3557 | pending |
-| 089 | prowhitefam2 | 0/108 | fhczone | 0/239 | pending |
-| 090 | fuckfest_rar | 0/692 | fuckfest_chat | 0/2639 | pending |
-| 091 | theangryalbertan | 0/32 | angryalbertanchat | 0/754 | pending |
-| 092 | holy_persian_empire | 0/210 | holypersianchat | 0/15708 | pending |
-| 093 | nofap_memes | 0/1 | coomnomore | 0/648 | pending |
-| 094 | hazydays5150 | 0/19290 | kekrules | 0/1911 | pending |
-| 095 | hotwisconsin | 0/1216 | hotwisconsinchat | 0/2222 | pending |
-| 096 | myselfreliance | 0/110 | myselfreliancechatgroup | 0/324 | pending |
-| 097 | realq911 | 0/2 | supremepatriots | 0/93498 | pending |
+| 080 | heimat2023 | 163/163 | dieheimatgespraeche | 1108/1108 | complete |
+| 081 | agent_a1 | 10840/10840 | a1chatgroup | 5235/5235 | complete |
+| 082 | witnessmeiamawaited | 128/128 | theparkinglot | 3412/3412 | complete |
+| 083 | georgewebb | 414/414 | screamingospreys | 1584/1584 | complete |
+| 084 | christianapologetic | 355/355 | lwchristianchat | 2786/2786 | complete |
+| 085 | fallsac | 904/904 | fallsacgroup | 92714/92714 | complete |
+| 086 | unitedanarchists | 59/59 | theuac | 2021/2021 | complete |
+| 087 | justincarpenter33 | 29/29 | justincarpenterdiscussion | 486/486 | complete |
+| 088 | thinmint2 | 127/127 | thinmintchat | 3557/3557 | complete |
+| 089 | prowhitefam2 | 108/108 | fhczone | 239/239 | complete |
+| 090 | fuckfest_rar | 692/692 | fuckfest_chat | 2639/2639 | complete |
+| 091 | theangryalbertan | 32/32 | angryalbertanchat | 754/754 | complete |
+| 092 | holy_persian_empire | 210/210 | holypersianchat | 15708/15708 | complete |
+| 093 | nofap_memes | 1/1 | coomnomore | 648/648 | complete |
+| 094 | hazydays5150 | 19290/19290 | kekrules | 1911/1911 | complete |
+| 095 | hotwisconsin | 1216/1216 | hotwisconsinchat | 2222/2222 | complete |
+| 096 | myselfreliance | 110/110 | myselfreliancechatgroup | 324/324 | complete |
+| 097 | realq911 | 2/2 | supremepatriots | 36608/93498 | in progress |
 
 ## Latest completed session
-End (UTC): 2026-11-17T09:27:03+00:00
+End (UTC): 2026-11-17T17:56:15+00:00
 Reason: interrupted by user; committed scores retained
-New scores: 365562
-Elapsed hours: 10.853
+New scores: 19072
+Elapsed hours: 1.496

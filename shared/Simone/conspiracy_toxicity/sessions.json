@@ -25,5 +25,69 @@
     "total_scored": 838531,
     "eligible": 1104057,
     "completed_pairs": 79
+  },
+  {
+    "ended_utc": "2026-11-17T15:46:17+00:00",
+    "reason": "interrupted by user; committed scores retained",
+    "wall_seconds": 20192.95299999998,
+    "new_scores": 185084,
+    "total_scored": 1023615,
+    "eligible": 1104057,
+    "completed_pairs": 96
+  },
+  {
+    "ended_utc": "2026-11-17T16:04:22+00:00",
+    "reason": "interrupted by user; committed scores retained",
+    "wall_seconds": 1015.2970000000205,
+    "new_scores": 2688,
+    "total_scored": 1026303,
+    "eligible": 1104057,
+    "completed_pairs": 96,
+    "effective_threads": 8,
+    "runtime_benchmark": "runtime_benchmarks.json"
+  },
+  {
+    "ended_utc": "2026-11-17T16:07:51+00:00",
+    "reason": "interrupted by user; committed scores retained",
+    "wall_seconds": 199.3279999999795,
+    "new_scores": 384,
+    "total_scored": 1026687,
+    "eligible": 1104057,
+    "completed_pairs": 96,
+    "effective_threads": 12,
+    "runtime_benchmark": "runtime_benchmarks.json"
+  },
+  {
+    "ended_utc": "2026-11-17T16:13:42+00:00",
+    "reason": "interrupted by user; committed scores retained",
+    "wall_seconds": 209.454000000027,
+    "new_scores": 0,
+    "total_scored": 1026687,
+    "eligible": 1104057,
+    "completed_pairs": 96,
+    "effective_threads": 4,
+    "runtime_benchmark": "runtime_benchmarks.json"
+  },
+  {
+    "ended_utc": "2026-11-17T16:22:28+00:00",
+    "reason": "interrupted by user; committed scores retained",
+    "wall_seconds": 515.484999999986,
+    "new_scores": 1408,
+    "total_scored": 1028095,
+    "eligible": 1104057,
+    "completed_pairs": 96,
+    "effective_threads": 12,
+    "runtime_benchmark": "runtime_benchmarks.json"
+  },
+  {
+    "ended_utc": "2026-11-17T17:56:15+00:00",
+    "reason": "interrupted by user; committed scores retained",
+    "wall_seconds": 5386.108999999997,
+    "new_scores": 19072,
+    "total_scored": 1047167,
+    "eligible": 1104057,
+    "completed_pairs": 96,
+    "effective_threads": 8,
+    "runtime_benchmark": "runtime_benchmarks.json"
   }
 ]
