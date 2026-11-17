@@ -16,5 +16,14 @@
     "total_scored": 472969,
     "eligible": 1104057,
     "completed_pairs": 42
+  },
+  {
+    "ended_utc": "2026-11-17T09:27:03+00:00",
+    "reason": "interrupted by user; committed scores retained",
+    "wall_seconds": 39071.110000000044,
+    "new_scores": 365562,
+    "total_scored": 838531,
+    "eligible": 1104057,
+    "completed_pairs": 79
   }
 ]

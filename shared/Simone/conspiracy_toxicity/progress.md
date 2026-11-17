@@ -1,13 +1,13 @@
 # Conspiracy toxicity — full-corpus progress
 
-Updated (UTC): 2026-11-16T20:49:52+00:00
+Updated (UTC): 2026-11-17T09:27:26+00:00
 State: manual status snapshot
 Model: abacusai/Toxicity-Lens / onnx/model_int8_block32.onnx
 Model revision: 7c413b7a5653f3921cd6b105e797efa5a2261223
 Source Git commit at plan creation: d492b356a6896e00d87cef931a5291e81cb98675
 Configuration: no cap; overlap window; both long-text mode; 4 threads; batch 8.
-Completed pairs: 42/97
-Committed scores: 472969/1104057 (42.84%)
+Completed pairs: 79/97
+Committed scores: 838531/1104057 (75.95%)
 
 Provisional: no human validation or language filtering; full-corpus sampling change requires team approval. No text or sender IDs in this log.
 
@@ -55,44 +55,44 @@ Provisional: no human validation or language filtering; full-corpus sampling cha
 | 040 | voltron4444 | 817/817 | voltron4444_cht | 4096/4096 | complete |
 | 041 | flatearthericdubay | 13/13 | ericsflatchat | 2440/2440 | complete |
 | 042 | wahrheit2 | 1083/1083 | wahrheit2_chat | 11509/11509 | complete |
-| 043 | chemtrails0 | 896/994 | chemtrailspartages | 0/3897 | in progress |
-| 044 | conspiracion | 0/352 | antiilluminatichat | 0/1906 | pending |
-| 045 | politota_plus | 0/442 | politota_gathering | 0/21519 | pending |
-| 046 | diewahrheitundnurdiewahrheit | 0/546 | joinchata26q1i0snpnoohb9lszq | 0/348 | pending |
-| 047 | whatdontyouloveusanymore | 0/668 | whatdontyouloveusanymorechat | 0/7299 | pending |
-| 048 | generalflynnexposed | 0/213 | generalfullyexposedchat | 0/533 | pending |
-| 049 | contraperiodismomatrix | 0/1108 | contraperiodismochat | 0/36608 | pending |
-| 050 | impfkritischkanal | 0/73 | impfkritisch | 0/787 | pending |
-| 051 | mjj347q | 0/243 | mjj347chat | 0/40791 | pending |
-| 052 | paranormaldisclosure | 0/217 | doomsdaydisclosure | 0/1125 | pending |
-| 053 | timmy17seventysix | 0/182 | timmy1776chat | 0/2894 | pending |
-| 054 | hkgreatawakening | 0/519 | hkgreatawakeninggp | 0/3450 | pending |
-| 055 | teoricosnivelexperto | 0/35 | teoricosdelaconspiracion | 0/2759 | pending |
-| 056 | dasrechtaufwahrheit | 0/143 | dasrechtaufwahrheit_chatroom | 0/647 | pending |
-| 057 | laverdadlibre | 0/502 | chatlaverdadlibre | 0/1799 | pending |
-| 058 | operationcue | 0/4 | operationcuechat | 0/4279 | pending |
-| 059 | covidrechercheverite | 0/3 | covidrechercheverite_chat | 0/670 | pending |
-| 060 | infiltratedbytruth | 0/996 | chatinfiltratedbytruth | 0/1246 | pending |
-| 061 | dsdarialive | 0/64 | darialivetalk | 0/449 | pending |
-| 062 | ufochannel_1 | 0/56 | chat_ufochannel_1 | 0/1022 | pending |
-| 063 | intelslava | 0/3885 | intelslava3 | 0/3653 | pending |
-| 064 | trumpjr | 0/23 | trumpjrchat | 0/20747 | pending |
-| 065 | hatufim_israel | 0/9404 | hamal_israel1 | 0/22333 | pending |
-| 066 | worldwidedemonstration | 0/4 | worldwidedemochat | 0/2571 | pending |
-| 067 | mgshowchannel | 0/99 | mgshow | 0/6378 | pending |
-| 068 | murderthemedia | 0/507 | murderthemediacomments | 0/28808 | pending |
-| 069 | eternalmuscovite | 0/250 | eternalmuscovitechatroom | 0/13415 | pending |
-| 070 | evroaz | 0/2260 | evroazp | 0/3855 | pending |
-| 071 | contyteens | 0/62 | notanaltankism | 0/66842 | pending |
-| 072 | bullionbitcoinbs | 0/2263 | rugpullradio | 0/6932 | pending |
-| 073 | cvinenews | 0/770 | cvinechat | 0/3831 | pending |
-| 074 | fundamentalchristianity | 0/27 | sola_fide | 0/6197 | pending |
-| 075 | aloneraccoon | 0/88 | loneraccoonchat | 0/695 | pending |
-| 076 | areyouawake1 | 0/135 | areyouawakeyet | 0/992 | pending |
-| 077 | realemichaeljones | 0/47 | emichaeljoneschat | 0/8856 | pending |
-| 078 | spygatedown | 0/1761 | spygatedownenclave | 0/6904 | pending |
-| 079 | millennialwoes | 0/158 | mwpublic | 0/318 | pending |
-| 080 | heimat2023 | 0/163 | dieheimatgespraeche | 0/1108 | pending |
+| 043 | chemtrails0 | 994/994 | chemtrailspartages | 3897/3897 | complete |
+| 044 | conspiracion | 352/352 | antiilluminatichat | 1906/1906 | complete |
+| 045 | politota_plus | 442/442 | politota_gathering | 21519/21519 | complete |
+| 046 | diewahrheitundnurdiewahrheit | 546/546 | joinchata26q1i0snpnoohb9lszq | 348/348 | complete |
+| 047 | whatdontyouloveusanymore | 668/668 | whatdontyouloveusanymorechat | 7299/7299 | complete |
+| 048 | generalflynnexposed | 213/213 | generalfullyexposedchat | 533/533 | complete |
+| 049 | contraperiodismomatrix | 1108/1108 | contraperiodismochat | 36608/36608 | complete |
+| 050 | impfkritischkanal | 73/73 | impfkritisch | 787/787 | complete |
+| 051 | mjj347q | 243/243 | mjj347chat | 40791/40791 | complete |
+| 052 | paranormaldisclosure | 217/217 | doomsdaydisclosure | 1125/1125 | complete |
+| 053 | timmy17seventysix | 182/182 | timmy1776chat | 2894/2894 | complete |
+| 054 | hkgreatawakening | 519/519 | hkgreatawakeninggp | 3450/3450 | complete |
+| 055 | teoricosnivelexperto | 35/35 | teoricosdelaconspiracion | 2759/2759 | complete |
+| 056 | dasrechtaufwahrheit | 143/143 | dasrechtaufwahrheit_chatroom | 647/647 | complete |
+| 057 | laverdadlibre | 502/502 | chatlaverdadlibre | 1799/1799 | complete |
+| 058 | operationcue | 4/4 | operationcuechat | 4279/4279 | complete |
+| 059 | covidrechercheverite | 3/3 | covidrechercheverite_chat | 670/670 | complete |
+| 060 | infiltratedbytruth | 996/996 | chatinfiltratedbytruth | 1246/1246 | complete |
+| 061 | dsdarialive | 64/64 | darialivetalk | 449/449 | complete |
+| 062 | ufochannel_1 | 56/56 | chat_ufochannel_1 | 1022/1022 | complete |
+| 063 | intelslava | 3885/3885 | intelslava3 | 3653/3653 | complete |
+| 064 | trumpjr | 23/23 | trumpjrchat | 20747/20747 | complete |
+| 065 | hatufim_israel | 9404/9404 | hamal_israel1 | 22333/22333 | complete |
+| 066 | worldwidedemonstration | 4/4 | worldwidedemochat | 2571/2571 | complete |
+| 067 | mgshowchannel | 99/99 | mgshow | 6378/6378 | complete |
+| 068 | murderthemedia | 507/507 | murderthemediacomments | 28808/28808 | complete |
+| 069 | eternalmuscovite | 250/250 | eternalmuscovitechatroom | 13415/13415 | complete |
+| 070 | evroaz | 2260/2260 | evroazp | 3855/3855 | complete |
+| 071 | contyteens | 62/62 | notanaltankism | 66842/66842 | complete |
+| 072 | bullionbitcoinbs | 2263/2263 | rugpullradio | 6932/6932 | complete |
+| 073 | cvinenews | 770/770 | cvinechat | 3831/3831 | complete |
+| 074 | fundamentalchristianity | 27/27 | sola_fide | 6197/6197 | complete |
+| 075 | aloneraccoon | 88/88 | loneraccoonchat | 695/695 | complete |
+| 076 | areyouawake1 | 135/135 | areyouawakeyet | 992/992 | complete |
+| 077 | realemichaeljones | 47/47 | emichaeljoneschat | 8856/8856 | complete |
+| 078 | spygatedown | 1761/1761 | spygatedownenclave | 6904/6904 | complete |
+| 079 | millennialwoes | 158/158 | mwpublic | 318/318 | complete |
+| 080 | heimat2023 | 0/163 | dieheimatgespraeche | 0/1108 | in progress |
 | 081 | agent_a1 | 0/10840 | a1chatgroup | 0/5235 | pending |
 | 082 | witnessmeiamawaited | 0/128 | theparkinglot | 0/3412 | pending |
 | 083 | georgewebb | 0/414 | screamingospreys | 0/1584 | pending |
@@ -112,7 +112,7 @@ Provisional: no human validation or language filtering; full-corpus sampling cha
 | 097 | realq911 | 0/2 | supremepatriots | 0/93498 | pending |
 
 ## Latest completed session
-End (UTC): 2026-11-16T20:45:31+00:00
+End (UTC): 2026-11-17T09:27:03+00:00
 Reason: interrupted by user; committed scores retained
-New scores: 118759
-Elapsed hours: 5.337
+New scores: 365562
+Elapsed hours: 10.853
