@@ -649,3 +649,15 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   not a human validation of the classifiers: the hand checks (toxicity ~200 msgs, topic labels,
   point 4 codes, 5a `validation_b.csv`) are still not done; until they are, the paper reports
   those outputs as unvalidated model/LLM labels.
+
+## 2026-11-19 — Sentiment and style cut; no further hand validation
+- **Author:** Riccardo
+- **Decision:** (a) Plan point 3 is reduced to **toxicity only**: sentiment and style are
+  dropped for both arms. (b) **No further hand validation** of the classifiers (toxicity
+  ~200 msgs, community topic labels, point 4 codes): the team accepts the outputs as they are.
+- **Why:** Time (paper due 2027-01-03, presentation next week).
+- **Impact:** The paper reports toxicity, topics and point 4 codes as **model / LLM outputs
+  without human validation** (limitations section); no inter-annotator agreement for them.
+  The genre caveat (long channel posts vs short group messages) is stated without a style
+  table. 5a still open: how to report the detector error rate without `validation_b.csv`
+  (annotator A only, declared as LLM, or no error rate) and the token-alert bot question.
