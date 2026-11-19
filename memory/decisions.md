@@ -574,3 +574,67 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   A–B agreement on domains is 100% by construction and must not be reported as inter-annotator
   agreement); validation agreement reported as LLM vs independent human. Still open: whether
   token alerts with hidden referral buttons count as invitations (entry above).
+
+## 2026-11-19 — Point 4 (group-only content): method as run by Marco
+- **Author:** Marco (logged after the fact by Riccardo + Claude Code from `docs/point4/`)
+- **Decision:** Embeddings `OpenVINO/Qwen3-Embedding-0.6B-int8-ov` (normalized, max 512
+  tokens, retrieval instruction on group messages); each eligible group message gets its max
+  cosine similarity to the observed linked channel posts; **non-aligned = max cosine < 0.52**,
+  threshold from a 100-example calibration, 0.50 / 0.55 as sensitivity. Main number = mean of
+  pair-level non-alignment rates; crypto vs conspiracy by Welch test + pair bootstrap.
+  Themes/functions of non-aligned messages: clustering (KMeans, UMAP/HDBSCAN) only for
+  discovery, then a single-pass rule-guided coding of 1,170 messages (6 per pair). Plan point
+  4.1 (comment ↔ its own post) was not run.
+- **Why:** Plan point 4 (threshold fixed by hand on ~100 pairs, two nearby thresholds).
+- **Impact:** 195 pairs, 445,584 eligible messages; non-aligned 74.68% crypto, 76.11%
+  conspiracy, difference +1.43 pp (95% CI −3.95 to +6.74, p = 0.606): no topic difference.
+  Coding is exploratory (49.7% low-confidence codes, no second annotator). Outputs:
+  `shared/Marco/point4/` (results/, figs/, sections/poin4_section.tex). Matching corpus may
+  include channel posts later than the group message (no temporal claim).
+
+## 2026-11-19 — Conspiracy toxicity (plan 3 / 5b): model and full corpus, by Simone
+- **Author:** Simone (logged after the fact by Riccardo + Claude Code from `shared/Simone/`)
+- **Decision:** Model `abacusai/Toxicity-Lens`, ONNX INT8 (`model_int8_block32`), 7 scores
+  (toxicity, severe toxicity, identity attack, insult, profanity, threat, sexually explicit),
+  **threshold 0.50** (0.30 / 0.70 as sensitivity); long texts in overlapping 256-token windows,
+  max score per category. INT8 vs FP32 check: 699/700 decisions equal at 0.50. **Whole corpus
+  instead of the planned 5,000-message sample per chat**; excluded: no text, bots, service
+  messages, channel copies, authors outside the studied roles. Main results on the **96
+  complete pairs**; pair 097 (supremepatriots group) stopped at 36,608 / 93,498 for compute
+  limits and is left out. Paired measure = median of group − channel differences, Wilcoxon +
+  Holm over 7 categories, bootstrap 20,000. Voices: pairs with admin list, ≥ 30 admin messages
+  and ≥ 1 user message (72 pairs).
+- **Why:** Toxicity-Lens chosen after a preliminary comparison with TextDetox (faster on CPU:
+  ~5,000 messages in 14 min vs 2.7 msg/s), which made the full corpus feasible.
+- **Impact:** Toxicity 8.56% groups vs 2.02% channels; median paired difference +2.69 pp
+  (95% CI +2.15 to +4.29), group higher in 82/96 pairs; channel 1.56%, admins 3.72%, users
+  4.87%. **Not yet done:** human validation (~200 messages, 2 annotators), language coverage
+  check, sentiment and style, and the whole crypto arm of point 3 (needs a sample: ~2.3 M
+  messages). Sampling change (full corpus vs 5,000/chat) to be approved by the team.
+
+## 2026-11-19 — Conspiracy community topics: chat-level labels, AI-assisted (Simone)
+- **Author:** Simone (logged after the fact by Riccardo + Claude Code)
+- **Decision:** Sample of 27,386 messages (seed 42, chronological, ≤ 100 per channel, ≤ 200
+  per group, texts cut at 1,200 chars, some identifiers masked); TF-IDF terms + **ChatGPT**
+  reading excerpts to give each chat (channel and group separately) a primary label from a
+  12-label taxonomy, plus secondary labels, languages, promotion flag, confidence heuristic.
+  Pair label for cross-analyses = channel label.
+- **Why:** Exploratory description of what each community is about, to break toxicity and
+  replies down by topic.
+- **Impact:** 45 pairs same topic, 28 different, 24 mixed/uncertain; no high-confidence label.
+  **Open (team):** the plan says no LLM API and no message leaves the computer; sending
+  excerpts to ChatGPT departs from it — decide whether to keep, redo locally, or declare it
+  in the paper (ethics section). Labels need human review.
+
+## 2026-11-19 — Conspiracy conversation analysis: replies to toxic messages (Simone)
+- **Author:** Simone (logged after the fact by Riccardo + Claude Code)
+- **Decision:** Reply edges from Telegram's reply reference within a group, reusing the
+  toxicity scores (no new model); known self-replies excluded; per-group comparison only for
+  groups with ≥ 20 replies to toxic and ≥ 20 to non-toxic messages (51 groups). Associational
+  only, no causal claim.
+- **Why:** Extra question beyond the plan: does toxicity propagate in replies?
+- **Impact:** 384,251 edges; toxic replies 20.52% to toxic vs 7.92% to non-toxic messages;
+  median per-group difference +7.46 pp (95% CI +6.44 to +8.86), positive in 51/51. Cross
+  tables (topic × toxicity × replies, 96 / 51 pairs) are described in
+  `shared/Simone/guida_analisi_conspiracy_v3.html` but their CSVs are not in the repo (only
+  the 42-pair `community_topics_toxicity_partial.csv`).
