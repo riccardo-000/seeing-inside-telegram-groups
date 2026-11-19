@@ -661,3 +661,21 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   The genre caveat (long channel posts vs short group messages) is stated without a style
   table. 5a still open: how to report the detector error rate without `validation_b.csv`
   (annotator A only, declared as LLM, or no error rate) and the token-alert bot question.
+
+## 2026-11-19 — Point 6 (three voices) without models, both arms
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** `src/analyze/authors.py` + `scripts/voices.py`. Per pair and voice (channel /
+  admins in the group / users; bots and other-channel senders kept apart for context), per
+  message: share with link, forwarded, with media (incl. link previews, as in point 2), and
+  the 5a detector's invitations, invitations with fraud hallmark, invitations to an `unknown`
+  domain. Paired comparison only for groups with a visible admin list, admins ≥ 30 messages
+  (10 / 50 as sensitivity) and users ≥ 1: per pair user − admin and admin − channel; median,
+  20,000-rep pair bootstrap 95% CI, exact sign test (scipy not installed, so no Wilcoxon).
+  Toxicity per voice stays Simone's (conspiracy only).
+- **Why:** Plan point 6 reuses existing measures; nothing here needs a model or hand work.
+- **Impact:** Eligible pairs at 30: crypto 84, conspiracy 73 (Simone's toxicity uses 72).
+  Crypto: channel posts carry links 78% (median), admins 9%, users 0.3%; invitations 4.2% of
+  channel posts vs ~0 for admins and users (admin − channel −3.37 pp, CI −5.58 to −1.04,
+  63/84 pairs lower) → in crypto the invitations come mostly from the channel and from bots,
+  not from group members. Conspiracy: invitations ~0 everywhere. Outputs:
+  `data/processed/voices_{chats,pairs,summary}.csv`. Admin share matches point 2 exactly.

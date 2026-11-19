@@ -10,7 +10,7 @@ in `data/raw/` (no Telegram) through **`load.py`**, so all points work on the sa
 | `tone.py` | 3 — tone | stub |
 | `content.py` | 4 — group-only content | to write |
 | `invites.py` | 5a — invitations to register (section below) | detector done; hand labels to do |
-| `authors.py` | 6 — three voices (roles already come from `load.py`) | stub |
+| `authors.py` | 6 — three voices (`scripts/voices.py`; roles from `load.py`) | done (no toxicity: that is Simone's, conspiracy only) |
 | `dms.py` | 7 — DMs | to write |
 | `stats.py` | 8 — tests and figures | to write |
 
