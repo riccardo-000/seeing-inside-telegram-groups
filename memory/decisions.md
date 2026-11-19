@@ -681,3 +681,16 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   (8,607 of them in one group, CryptoLibrarysRefferal), admins 7,223, channels 5,774: group
   invitations are concentrated in a few groups. Conspiracy: invitations ~0 everywhere. Outputs:
   `data/processed/voices_{chats,pairs,summary}.csv`. Admin share matches point 2 exactly.
+
+## 2026-11-19 — No toxicity on crypto; 5a bot invitations reported apart
+- **Author:** Riccardo
+- **Decision:** (a) Toxicity is **not** run on the crypto arm: tone stays the conspiracy deep
+  dive (5b), invitations the crypto one (5a); the paper's focus is channel vs group within
+  each topic, not crypto vs conspiracy. (b) 5a: invitations posted by **bots** (token alerts
+  with hidden referral buttons and similar) are **not counted** in the main invitation rate;
+  they are reported apart as their own number. The detector is unchanged (every invitation
+  already carries its poster).
+- **Why:** Keep the focus; avoid hours of compute for a measure outside the research
+  questions. Bot alerts are automated feeds, not someone inviting others to register.
+- **Impact:** Point 3 = conspiracy toxicity only. 5a results (`invites_results.py`) must split
+  bot invitations out (crypto: 10,534 of 32,888 invitations are by bots).
