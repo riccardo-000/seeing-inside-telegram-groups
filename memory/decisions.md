@@ -676,6 +676,8 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Impact:** Eligible pairs at 30: crypto 84, conspiracy 73 (Simone's toxicity uses 72).
   Crypto: channel posts carry links 78% (median), admins 9%, users 0.3%; invitations 4.2% of
   channel posts vs ~0 for admins and users (admin − channel −3.37 pp, CI −5.58 to −1.04,
-  63/84 pairs lower) → in crypto the invitations come mostly from the channel and from bots,
-  not from group members. Conspiracy: invitations ~0 everywhere. Outputs:
+  63/84 pairs lower) → in the typical crypto pair invitations come from the channel, not from
+  group members. In raw totals (all 98 groups) bots post 10,534 invitations, users 9,288
+  (8,607 of them in one group, CryptoLibrarysRefferal), admins 7,223, channels 5,774: group
+  invitations are concentrated in a few groups. Conspiracy: invitations ~0 everywhere. Outputs:
   `data/processed/voices_{chats,pairs,summary}.csv`. Admin share matches point 2 exactly.
