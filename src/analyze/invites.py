@@ -145,6 +145,8 @@ def pair_invites(pair: pd.Series, df: pd.DataFrame) -> pd.DataFrame:
         })
     out = pd.DataFrame(rows)
     out.attrs["n_messages"] = {s: int((w["side"] == s).sum()) for s in ("channel", "group")}
+    out.attrs["n_bot_messages"] = {s: int(((w["side"] == s) & (w["role"] == "bot")).sum())
+                                   for s in ("channel", "group")}
     out.attrs["n_with_link"] = {s: int(((w["side"] == s) & w["urls"].map(
         lambda x: isinstance(x, list) and len(x) > 0)).sum()) for s in ("channel", "group")}
     return out
@@ -161,7 +163,8 @@ def compute(topic: str | None = None) -> tuple[pd.DataFrame, pd.DataFrame, pd.Da
             s = inv[inv["side"] == side] if len(inv) else inv
             n = inv.attrs["n_messages"][side]
             row = {"topic": pair["topic"], "pair_id": pair["pair_id"], "side": side, "chat": chat,
-                   "n_messages": n, "n_with_link": inv.attrs["n_with_link"][side],
+                   "n_messages": n, "n_bot_messages": inv.attrs["n_bot_messages"][side],
+                   "n_with_link": inv.attrs["n_with_link"][side],
                    "n_invites": len(s),
                    "invite_share": len(s) / n if n else float("nan"),
                    "n_hallmark": int(s["hallmark"].sum()) if len(s) else 0}

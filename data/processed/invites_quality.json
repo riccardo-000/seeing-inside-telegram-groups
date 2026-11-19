@@ -1,0 +1,51 @@
+{
+  "domains": {
+    "domains": 100,
+    "labelled_a": 100,
+    "labelled_b": 100,
+    "agree_n": 100,
+    "agree_agreement": 1.0,
+    "agree_kappa": 1.0,
+    "disputed_unsettled": 0,
+    "final_suspicious": 66,
+    "final_legit": 17,
+    "final_unclear": 17,
+    "final_missing": 0
+  },
+  "validation_agreement": {
+    "reference": "annotator A only (LLM, Claude Code)",
+    "disputed_items": 0,
+    "items_with_reference": 150,
+    "bot_items_left_out": 35
+  },
+  "detector": {
+    "pool_sizes": {
+      "D": 333,
+      "L": 2236,
+      "N": 26336
+    },
+    "items_per_part": {
+      "D": 34,
+      "L": 57,
+      "N": 24
+    },
+    "invite_rate_per_part": {
+      "D": 0.588,
+      "L": 0.175,
+      "N": 0.0
+    },
+    "precision": 0.588,
+    "recall_link_messages": 0.333,
+    "recall_all_messages": 0.333,
+    "note": "recall_all_messages rests on the few random items without a link: wide uncertainty"
+  },
+  "suspicious_flag": {
+    "n": 23,
+    "reference_suspicious": 4,
+    "precision_low": 1.0,
+    "recall_low": 0.75,
+    "precision_high": 0.333,
+    "recall_high": 0.75
+  },
+  "note": "bot invitations excluded from all counts (reported apart); conspiracy has no hand-labelled domains: its 'high' range counts every unknown domain as suspicious"
+}

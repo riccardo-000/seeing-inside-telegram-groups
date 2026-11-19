@@ -13,7 +13,11 @@ Rules
   label is missing, ``unclear`` or disputed. Results are given as a range: ``low`` counts
   unresolved as not suspicious, ``high`` counts them as suspicious.
 - Validation reference: the common answer of the two annotators, else the third person's
-  (``validation_final.csv``); items still disputed are left out and counted.
+  (``validation_final.csv``); items still disputed are left out and counted. If annotator B
+  filled nothing (team decision 2026-11-19: no further hand validation), the reference is
+  annotator A alone (an LLM: Claude Code), and this is reported.
+- Bot invitations (team decision 2026-11-19): invitations posted by bots are left out of the
+  main counts and shares and reported apart (``n_invites_bot``, ``n_suspicious_*_bot``).
 - Detector precision / recall are estimated from the three strata of the sample, weighted by
   the size of each part of the pool (detected / link not detected / no link).
 """
@@ -87,23 +91,28 @@ def suspicious_tables(invites: pd.DataFrame, chats: pd.DataFrame, labels: dict[s
                      zip(inv["targets"], inv["target_classes"], inv["hallmark"])]
     rows = []
     for _, c in chats.iterrows():
-        s = inv[(inv["pair_id"] == c["pair_id"]) & (inv["side"] == c["side"])]
-        n = c["n_messages"]
+        allp = inv[(inv["pair_id"] == c["pair_id"]) & (inv["side"] == c["side"])]
+        bot, s = allp[allp["poster"] == "bot"], allp[allp["poster"] != "bot"]
+        n = c["n_messages"] - c.get("n_bot_messages", 0)  # messages by non-bots
         low = int((s["status"] == "suspicious").sum())
         high = low + int((s["status"] == "unresolved").sum())
         row = {"topic": c["topic"], "pair_id": c["pair_id"], "side": c["side"], "chat": c["chat"],
-               "n_messages": n, "n_invites": len(s), "n_suspicious_low": low, "n_suspicious_high": high,
+               "n_messages": n, "n_invites": len(s), "invite_share": len(s) / n if n else math.nan,
+               "n_suspicious_low": low, "n_suspicious_high": high,
                "suspicious_share_low": low / n if n else math.nan,
-               "suspicious_share_high": high / n if n else math.nan}
-        for who in ("channel", "admin", "user", "bot", "other_channel"):
+               "suspicious_share_high": high / n if n else math.nan,
+               "n_invites_bot": len(bot),
+               "n_suspicious_low_bot": int((bot["status"] == "suspicious").sum()),
+               "n_suspicious_high_bot": int(bot["status"].isin(["suspicious", "unresolved"]).sum())}
+        for who in ("channel", "admin", "user", "other_channel"):
             row[f"n_suspicious_low_by_{who}"] = int(((s["status"] == "suspicious") & (s["poster"] == who)).sum())
         rows.append(row)
     per_chat = pd.DataFrame(rows)
     per_pair = per_chat.pivot(index=["topic", "pair_id"], columns="side",
-                              values=["suspicious_share_low", "suspicious_share_high"])
+                              values=["invite_share", "suspicious_share_low", "suspicious_share_high"])
     per_pair.columns = [f"{side}_{m}" for m, side in per_pair.columns]
     per_pair = per_pair.reset_index()
-    for m in ("suspicious_share_low", "suspicious_share_high"):
+    for m in ("invite_share", "suspicious_share_low", "suspicious_share_high"):
         per_pair[f"diff_{m}"] = per_pair[f"group_{m}"] - per_pair[f"channel_{m}"]
     return per_chat, per_pair
 
@@ -119,11 +128,15 @@ def validation_reference(label_dir: Path = LABEL_DIR) -> tuple[pd.DataFrame, dic
     final_path = label_dir / "validation_final.csv"
     old = (pd.read_csv(final_path, dtype=str).set_index("item")
            if final_path.exists() else pd.DataFrame(columns=["is_invitation_final", "suspicious_final"]))
-    stats = {}
+    b_empty = (_clean(vb["is_invitation"]) == "").all()
+    if b_empty:  # no second annotator: annotator A is the reference
+        v["is_invitation_b"], v["suspicious_b"] = v["is_invitation_a"], v["suspicious_a"]
+    stats = {"reference": "annotator A only (LLM, Claude Code)" if b_empty else "A and B"}
     disputes = pd.DataFrame({"item": v["item"], "text": v["text"]})
     for q in ("is_invitation", "suspicious"):
         a, b = _clean(v[f"{q}_a"]), _clean(v[f"{q}_b"])
-        stats.update({f"{q}_{k}": val for k, val in cohen_kappa(a, b).items()})
+        if not b_empty:
+            stats.update({f"{q}_{k}": val for k, val in cohen_kappa(a, b).items()})
         third = _clean(v["item"].map(old[f"{q}_final"]) if len(old) else pd.Series("", index=v.index))
         v[f"{q}_ref"] = a.where((a == b) & (a != ""), third)
         disputes[f"{q}_a"], disputes[f"{q}_b"] = a, b

@@ -1,0 +1,71 @@
+topic,variant,measure,n_pairs,median,n_group_higher,n_group_lower
+conspiracy,all,group / channel messages per day (ratio),97,9.313169592919316,90,7
+conspiracy,all,"share with link, group − channel",97,-0.1920735972060177,19,78
+conspiracy,all,"share forwarded, group − channel",97,0.0370532637014709,55,40
+conspiracy,all,"share with media, group − channel",97,-0.4170871194390431,2,95
+conspiracy,all,"invitations (no bots), group − channel",97,0.0,41,39
+conspiracy,all,"suspicious invitations low, group − channel",97,0.0,1,2
+conspiracy,all,"suspicious invitations high, group − channel",97,0.0002464875523786,62,2
+conspiracy,no_short_window,group / channel messages per day (ratio),90,8.37402588541713,83,7
+conspiracy,no_short_window,"share with link, group − channel",90,-0.1920455456222791,19,71
+conspiracy,no_short_window,"share forwarded, group − channel",90,0.03983104283564385,51,38
+conspiracy,no_short_window,"share with media, group − channel",90,-0.4164071877247305,2,88
+conspiracy,no_short_window,"invitations (no bots), group − channel",90,0.0,39,34
+conspiracy,no_short_window,"suspicious invitations low, group − channel",90,0.0,1,2
+conspiracy,no_short_window,"suspicious invitations high, group − channel",90,0.00027423731366585,57,2
+conspiracy,discussion_only,group / channel messages per day (ratio),92,9.694445414847161,87,5
+conspiracy,discussion_only,"share with link, group − channel",92,-0.19515296021917045,17,75
+conspiracy,discussion_only,"share forwarded, group − channel",92,0.0308979793843683,52,38
+conspiracy,discussion_only,"share with media, group − channel",92,-0.41715443498399113,0,92
+conspiracy,discussion_only,"invitations (no bots), group − channel",92,0.0,39,36
+conspiracy,discussion_only,"suspicious invitations low, group − channel",92,0.0,1,1
+conspiracy,discussion_only,"suspicious invitations high, group − channel",92,0.00027423731366585,59,1
+conspiracy,no_largest_group,group / channel messages per day (ratio),96,8.890568083367736,89,7
+conspiracy,no_largest_group,"share with link, group − channel",96,-0.1920455456222791,19,77
+conspiracy,no_largest_group,"share forwarded, group − channel",96,0.03758061256296355,54,40
+conspiracy,no_largest_group,"share with media, group − channel",96,-0.4164071877247305,2,94
+conspiracy,no_largest_group,"invitations (no bots), group − channel",96,0.0,41,38
+conspiracy,no_largest_group,"suspicious invitations low, group − channel",96,0.0,1,2
+conspiracy,no_largest_group,"suspicious invitations high, group − channel",96,0.00027423731366585,61,2
+conspiracy,no_top_invites,group / channel messages per day (ratio),96,8.890568083367736,89,7
+conspiracy,no_top_invites,"share with link, group − channel",96,-0.1920455456222791,19,77
+conspiracy,no_top_invites,"share forwarded, group − channel",96,0.0308979793843683,54,40
+conspiracy,no_top_invites,"share with media, group − channel",96,-0.41715443498399113,2,94
+conspiracy,no_top_invites,"invitations (no bots), group − channel",96,0.0,41,38
+conspiracy,no_top_invites,"suspicious invitations low, group − channel",96,0.0,1,2
+conspiracy,no_top_invites,"suspicious invitations high, group − channel",96,0.00023631478478265,61,2
+crypto,all,group / channel messages per day (ratio),98,48.65023901661734,95,3
+crypto,all,"share with link, group − channel",98,-0.7418910187753505,1,97
+crypto,all,"share forwarded, group − channel",98,4.8140456318460906e-05,51,29
+crypto,all,"share with media, group − channel",98,-0.8396237569546466,0,98
+crypto,all,"invitations (no bots), group − channel",98,-0.03710783943533815,13,71
+crypto,all,"suspicious invitations low, group − channel",98,0.0,5,8
+crypto,all,"suspicious invitations high, group − channel",98,0.0,34,11
+crypto,no_short_window,group / channel messages per day (ratio),85,44.61627906976744,82,3
+crypto,no_short_window,"share with link, group − channel",85,-0.7291782952215221,1,84
+crypto,no_short_window,"share forwarded, group − channel",85,0.0,42,25
+crypto,no_short_window,"share with media, group − channel",85,-0.816138509031094,0,85
+crypto,no_short_window,"invitations (no bots), group − channel",85,-0.0222133328484584,12,60
+crypto,no_short_window,"suspicious invitations low, group − channel",85,0.0,4,4
+crypto,no_short_window,"suspicious invitations high, group − channel",85,0.0,29,7
+crypto,discussion_only,group / channel messages per day (ratio),87,48.91304347826087,85,2
+crypto,discussion_only,"share with link, group − channel",87,-0.763109330837834,1,86
+crypto,discussion_only,"share forwarded, group − channel",87,0.0,42,27
+crypto,discussion_only,"share with media, group − channel",87,-0.849659583112177,0,87
+crypto,discussion_only,"invitations (no bots), group − channel",87,-0.0283271791137923,12,61
+crypto,discussion_only,"suspicious invitations low, group − channel",87,0.0,4,7
+crypto,discussion_only,"suspicious invitations high, group − channel",87,0.0,31,9
+crypto,no_largest_group,group / channel messages per day (ratio),97,48.387434554973815,94,3
+crypto,no_largest_group,"share with link, group − channel",97,-0.7346821275597019,1,96
+crypto,no_largest_group,"share forwarded, group − channel",97,4.864523033516564e-05,51,28
+crypto,no_largest_group,"share with media, group − channel",97,-0.8361023254686686,0,97
+crypto,no_largest_group,"invitations (no bots), group − channel",97,-0.0342156788706763,13,70
+crypto,no_largest_group,"suspicious invitations low, group − channel",97,0.0,5,7
+crypto,no_largest_group,"suspicious invitations high, group − channel",97,0.0,34,10
+crypto,no_top_invites,group / channel messages per day (ratio),97,48.387434554973815,94,3
+crypto,no_top_invites,"share with link, group − channel",97,-0.7490999099909991,1,96
+crypto,no_top_invites,"share forwarded, group − channel",97,4.763568230175617e-05,50,29
+crypto,no_top_invites,"share with media, group − channel",97,-0.8361023254686686,0,97
+crypto,no_top_invites,"invitations (no bots), group − channel",97,-0.0342156788706763,13,70
+crypto,no_top_invites,"suspicious invitations low, group − channel",97,0.0,4,8
+crypto,no_top_invites,"suspicious invitations high, group − channel",97,0.0,33,11

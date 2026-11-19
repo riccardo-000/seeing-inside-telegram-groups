@@ -694,3 +694,25 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   questions. Bot alerts are automated feeds, not someone inviting others to register.
 - **Impact:** Point 3 = conspiracy toxicity only. 5a results (`invites_results.py`) must split
   bot invitations out (crypto: 10,534 of 32,888 invitations are by bots).
+
+## 2026-11-19 — 5a closed: final results without a second annotator; robustness of 2 and 5a
+- **Author:** Riccardo (+ Claude Code)
+- **Decision:** `invites_results.py` run with: bot invitations out of every count and share
+  (columns `n_invites_bot`, `n_suspicious_*_bot` apart); main invitation share now per
+  non-bot message (`invite_share` in `invites_suspicious_*`). Validation reference =
+  **annotator A only (Claude Code, LLM)**, since `validation_b.csv` stays empty (decision
+  above); bot items (35 of 150) left out of the detector check. New `scripts/robustness.py`
+  (point 8 for points 2 and 5a): median paired differences with all pairs, without
+  short-window pairs, discussion groups only, without the largest group, without the group
+  with most invitations → `data/processed/robustness.csv`.
+- **Why:** Team decisions of 2026-11-19 (no more hand validation; bot invitations apart).
+- **Impact (crypto):** non-bot invitations 5,774 in channels, 16,580 in groups (+10,534 by
+  bots); median per pair 3.7% of channel posts vs 0.04% of group messages: 71/98 pairs lower
+  in the group. Suspicious (low/high): channels 19/22, groups 7,731/8,519, but **7,438 in one
+  group** (CryptoLibrarysRefferal, all by users); 9 of 98 groups have any. Detector vs
+  annotator A: precision 0.59, recall 0.33 (misses project campaigns / quests with no
+  referral parameter); suspicious flag precision 1.0 / recall 0.75 on 23 items (low).
+  Domain A–B agreement is 1.0 by construction (review) — do not report as kappa.
+  **Conspiracy:** invitations ~0.
+  Robustness: every point 2 direction holds in all variants (groups 9× / 49× more messages
+  per day; fewer links and media than channels); 5a medians unchanged in sign.

@@ -56,19 +56,23 @@ def main() -> None:
     v, val_stats = validation_reference(args.dir)
     pool = validation_pool()
     v = v.merge(pool[["pair_id", "msg_id", "urls", "has_link"]], on=["pair_id", "msg_id"], how="left")
+    # bot invitations are reported apart (decision 2026-11-19): measure the detector on non-bots
+    n_bot_items = int((v["role"] == "bot").sum())
+    v, pool = v[v["role"] != "bot"], pool[pool["role"] != "bot"]
+    val_stats["bot_items_left_out"] = n_bot_items
     quality = {"domains": dom_stats, "validation_agreement": val_stats,
                "detector": detector_quality(v, pool),
                "suspicious_flag": suspicious_quality(v, labels, domain_class),
-               "note": "conspiracy has no hand-labelled domains: its 'high' range counts every "
+               "note": "bot invitations excluded from all counts (reported apart); conspiracy has no hand-labelled domains: its 'high' range counts every "
                        "unknown domain as suspicious"}
     (args.out / "invites_quality.json").write_text(json.dumps(quality, indent=2, default=str))
 
     print(json.dumps(quality, indent=2, default=str))
     tot = per_chat.groupby(["topic", "side"])[["n_messages", "n_invites", "n_suspicious_low",
-                                               "n_suspicious_high"]].sum()
+                                               "n_suspicious_high", "n_invites_bot"]].sum()
     print("\nsuspicious invitations by arm and side:\n", tot.to_string())
     print("\nmedian per pair:\n", per_pair.groupby("topic")[
-        ["channel_suspicious_share_low", "group_suspicious_share_low",
+        ["channel_invite_share", "group_invite_share", "channel_suspicious_share_low", "group_suspicious_share_low",
          "group_suspicious_share_high"]].median().round(5).T.to_string())
     print(f"\n-> {args.out / 'invites_suspicious_chats.csv'}\n-> {args.out / 'invites_suspicious_pairs.csv'}"
           f"\n-> {args.out / 'invites_quality.json'}\n-> {args.dir / 'validation_final.csv'}")
