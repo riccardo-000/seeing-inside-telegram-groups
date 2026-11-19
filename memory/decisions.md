@@ -610,7 +610,7 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   (95% CI +2.15 to +4.29), group higher in 82/96 pairs; channel 1.56%, admins 3.72%, users
   4.87%. **Not yet done:** human validation (~200 messages, 2 annotators), language coverage
   check, sentiment and style, and the whole crypto arm of point 3 (needs a sample: ~2.3 M
-  messages). Sampling change (full corpus vs 5,000/chat) to be approved by the team.
+  messages). Sampling change (full corpus vs 5,000/chat) approved by Riccardo 2026-11-19.
 
 ## 2026-11-19 — Conspiracy community topics: chat-level labels, AI-assisted (Simone)
 - **Author:** Simone (logged after the fact by Riccardo + Claude Code)
@@ -622,9 +622,10 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
 - **Why:** Exploratory description of what each community is about, to break toxicity and
   replies down by topic.
 - **Impact:** 45 pairs same topic, 28 different, 24 mixed/uncertain; no high-confidence label.
-  **Open (team):** the plan says no LLM API and no message leaves the computer; sending
-  excerpts to ChatGPT departs from it — decide whether to keep, redo locally, or declare it
-  in the paper (ethics section). Labels need human review.
+  The plan said no LLM API and no message leaves the computer; **Riccardo accepted the
+  ChatGPT coding as is (2026-11-19)**: kept, not redone locally. The paper must still state it
+  (methods + ethics: excerpts with some identifiers masked were sent to ChatGPT). Labels stay
+  exploratory until human review.
 
 ## 2026-11-19 — Conspiracy conversation analysis: replies to toxic messages (Simone)
 - **Author:** Simone (logged after the fact by Riccardo + Claude Code)
@@ -638,3 +639,13 @@ Append-only. Format in `memory/README.md`. Newest at the bottom.
   tables (topic × toxicity × replies, 96 / 51 pairs) are described in
   `shared/Simone/guida_analisi_conspiracy_v3.html` but their CSVs are not in the repo (only
   the 42-pair `community_topics_toxicity_partial.csv`).
+
+## 2026-11-19 — Marco's and Simone's analysis choices approved
+- **Author:** Riccardo
+- **Decision:** The four 2026-11-19 entries above (point 4; conspiracy toxicity; community
+  topics incl. ChatGPT use; conversation analysis) are approved as the team's methodology.
+- **Why:** Results are complete and consistent with the plan's intent; deviations accepted.
+- **Impact:** These choices go into the paper as they are. This is approval of the **methods**,
+  not a human validation of the classifiers: the hand checks (toxicity ~200 msgs, topic labels,
+  point 4 codes, 5a `validation_b.csv`) are still not done; until they are, the paper reports
+  those outputs as unvalidated model/LLM labels.
