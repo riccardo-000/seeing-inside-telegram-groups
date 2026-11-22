@@ -1,111 +1,62 @@
-# Speech draft — "Seeing Inside Telegram Groups" (10 min)
+# Speech draft — "Seeing Inside Telegram Groups" (10 min, 12 slides)
 
-Bozza in inglese, ~1,250 parole ≈ 10 min a ritmo normale. Gli stessi testi sono nelle note del
-relatore di ogni slide. Speaker indicati come proposta (blocchi da ~3 min): cambiateli liberamente.
-Se il tempo stringe: saltate la slide 8 (voices) e accorciate la 6.
+Revised after Marco's review against the prof's brief (1 project, 2 type of paper, 3 status, 4 plan, 5 who does what). Same text as the speaker notes. Speakers: Riccardo 1–4 and 12, Marco 5–8, Simone 9–11. If short on time, cut slide 8 first; never cut slide 12 (it covers points 4 and 5 of the brief).
 
----
+**Slide 1 — Seeing Inside Telegram Groups** · RICCARDO (0:00-0:15)
 
-## Block 1 — Setup (Riccardo, ~3 min)
+Hi everyone, we are Marco, Simone and Riccardo. Today we'll present our research project, the main findings obtained so far, and our plan for completing the final paper.
 
-**Slide 1 — Title (0:00–0:20)**
-Hi everyone, we are Marco, Simone and Riccardo. Our project looks inside Telegram groups:
-the discussion groups that are linked to public channels.
+**Slide 2 — Channels broadcast; linked groups talk back** · RICCARDO (0:15-1:05)
 
-**Slide 2 — Channels broadcast; linked groups talk back (0:20–1:10)**
-Telegram channels are one-way: only the admins post. Most measurement studies, including
-TGDataset, which we started from, look only at channels. But many channels have a linked
-discussion group, where anyone can write: admins, regular users, bots.
-So our question is simple: what happens in the group that you cannot see from the channel?
-We always compare a channel with its own group, so each channel acts as the control for its
-group. And we did it in two communities, each with its own deep dive: in crypto we look at
-invitations to register on platforms, a common scam vector; in conspiracy we look at toxicity.
+Telegram channels are mainly used for broadcasting: only the admins post. Their linked discussion groups let regular users, administrators and bots interact. Previous research has already studied Telegram channels, public groups, scams and harmful content; for example TGDataset collects the channels, and Slobozhan and Alvisi compare or link channels and groups. Our specific goal is to compare each channel systematically with its own discussion group, across several dimensions: what becomes visible when we look at the discussion layer and not only at the official channel? We do it in two communities, crypto and conspiracy. Our final deliverable will be a technical paper based on this empirical measurement study.
 
-**Slide 3 — Data (1:10–2:00)**
-We selected about one hundred crypto and one hundred conspiracy channels that have a public
-linked group: 195 pairs, 3.8 million messages, over fourteen weeks, from the end of July to
-the beginning of November. Collection was strictly passive: we joined only public chats and
-never sent a single message. Every message gets a role: the channel itself, admins writing in
-the group, regular users, and bots, which we always keep apart.
+**Slide 3 — Data: 195 channel–group pairs, observed passively** · RICCARDO (1:05-1:55)
 
-**Slide 4 — Groups carry the volume (2:00–3:00)**
-First, the structure. In the typical pair the group is far more active than its channel:
-about ten times more messages per day in conspiracy, and about fifty times in crypto.
-And it is a different kind of content: channel posts are polished, almost always with media,
-and often with a link. Group messages are mostly short plain text.
-These directions hold in every robustness check we ran: without truncated chats, without the
-largest group, and with only true discussion groups. Now Marco on what the groups talk about.
+We collected data from 195 channel-group pairs: 98 crypto and 97 conspiracy, starting from TGDataset. The dataset contains about 3.8 million messages over fourteen weeks, from late July to early November 2026. Collection was passive: we monitored public communities without posting messages or interacting with users. A key part of our approach is to distinguish the channel's official posts, administrators writing inside the group, regular users, and bots.
 
-## Block 2 — Content and crypto (Marco, ~3 min)
+**Slide 4 — Groups carry the volume: 10–50× more messages** · RICCARDO (1:55-3:00)
 
-**Slide 5 — Three in four group messages match no channel post (3:00–4:15)**
-To see whether groups just echo their channel, I embedded every group message with a
-multilingual embedding model, Qwen3, and looked for the most similar post of its channel.
-If the similarity is below a threshold that we calibrated by hand, 0.52, the message is not
-aligned with anything the channel published.
-About three in four group messages are not aligned: 75% in crypto and 76% in conspiracy, and
-the difference between the two communities is not significant.
-One caveat: this measures distance from the channel's posts, not that the topic was born in
-the group.
+The first result concerns activity. In the typical pair, groups are much more active than their channels: about fifty times more messages per day in crypto and ten times more in conspiracy. The format also differs: channel posts carry links and media much more often, while group messages are mostly conversational text. These differences hold across our robustness checks, for example without truncated observation windows or without the largest group. Now Marco will present what we found about the content of these discussions.
 
-**Slide 6 — What the unmatched messages do (4:15–5:00)**
-What are these messages then? On a sample of six messages per pair we coded what they do.
-Crypto groups are social: greetings, questions, asking for help. Conspiracy groups share news
-and argue: news sharing is 22% of these messages, against 3% in crypto. Promotion is a small
-share in both. These numbers are exploratory: a single coding pass, no second annotator.
+**Slide 5 — ~75% of group messages are semantically non-aligned** · MARCO (3:00-4:10)
 
-**Slide 7 — Crypto: channels invite, suspicious invites cluster (5:00–5:50)**
-For crypto, the deep dive is invitations to register on a platform: referral links, sign-up
-links, deposit wording. The surprise is that it is the channel that invites: about 4% of its
-posts, while group members almost never do. Suspicious invitations, to unknown platforms or
-promising fixed returns, are rare and very concentrated: of 7,700 in groups, 7,400 are in one
-single referral group. Token-alert bots post another 10,000 invitations, which we report
-separately.
+To check whether groups simply repeat what their channels publish, we used Qwen3, a multilingual embedding model. For each eligible group message we computed its maximum cosine similarity to the observed posts of its own channel. Using a threshold of 0.52, calibrated on a separate set of one hundred examples, messages below the threshold are semantically non-aligned. The result is about 75% in crypto and 76% in conspiracy, with no significant difference between the pair-level means. So a large share of group discussion is not closely represented in the channel's posts. However, this does not prove that these topics originated in the groups.
 
-**Slide 8 — Who speaks (optional, 5:50–6:10)**
-Splitting each pair into its three voices confirms it: the channel is where the links are,
-almost 80% of crypto channel posts, while admins in the group post far fewer and crypto users
-almost none. Now Simone on conspiracy.
+**Slide 6 — What the non-aligned messages do** · MARCO (4:10-4:55)
 
-## Block 3 — Conspiracy and wrap-up (Simone, ~3.5 min)
+What are these non-aligned messages doing? We coded a separate sample of 1,170 messages, six per channel-group pair. Crypto groups show more greetings and social interaction, while conspiracy groups share much more news: about 22% of the coded conspiracy messages, against 3% in crypto. These findings are exploratory: a single coding pass without independent validation, so they are not definitive prevalence estimates.
 
-**Slide 9 — Conspiracy: groups are 4× as toxic (6:10–7:30)**
-For conspiracy we classified about one million messages with Toxicity-Lens, a multilingual
-model that scores seven categories, from insults to threats. In channels 2% of messages are
-toxic; in groups 8.6%, about four times more. Pair by pair, the group is more toxic than its
-channel in 82 of 96 pairs, with a median gap of 2.7 percentage points; insults and profanity
-drive most of it. By voice: the channel is the cleanest, admins in the group are in between,
-and regular users are the most toxic. The result holds if we change the threshold or drop the
-largest group.
+**Slide 7 — Crypto: channels invite more, flagged invites cluster** · MARCO (4:55-5:40)
 
-**Slide 10 — Toxicity attracts toxic replies (7:30–8:30)**
-Groups are conversations, so we rebuilt who replies to whom from Telegram's reply links:
-about 384 thousand reply pairs. A reply to a toxic message is toxic 21% of the time, against
-8% for a reply to a non-toxic one, and the direction is the same in all 51 groups with enough
-replies. This is an association, not causation: the topic, recurring users and moderation can
-all play a role.
+For the crypto deep dive we focused on invitations to register on platforms: referral links, sign-up links and related wording. In the typical pair the channel has a much higher invitation rate: about 3.7% of posts, against 0.04% of non-bot group messages. In absolute numbers groups still contain more invitations, because they have far more messages. The most striking result is concentration: of about 7,700 group invitations flagged as suspicious under our definition, more than 7,400, that is 96%, come from a single referral group. Flagged does not mean confirmed scam. We also report over 10,500 bot invitations separately.
 
-**Slide 11 — What groups add (8:30–10:00)**
-To sum up, looking inside the groups adds three things.
-Volume and new topics: groups are ten to fifty times more active, and mostly talk about things
-the channel never posted.
-Promotion stays upstream: in crypto, invitations to register come from the channel, and
-suspicious ones cluster in a handful of groups.
-And the tone gets rougher: conspiracy groups are four times as toxic as their channels, users
-more than admins, and toxic messages attract toxic replies.
-Our limits: the classifiers are not validated by hand, and community topics were labelled with
-an LLM. Next, we analyse the unsolicited DMs our passive accounts received, and write the
-paper. Thank you — happy to take questions.
+**Slide 8 — Who posts links: channels, then admins, then users** · MARCO (5:40-6:00, cut first if short on time)
+
+Separating the three voices gives more context. In crypto almost 80% of channel posts contain a link, against about 9% of admin messages in the group and less than 1% of regular users' messages, as median rates across eligible pairs. This counts any link, not only invitations. Now Simone will discuss toxicity in conspiracy communities.
+
+**Slide 9 — Conspiracy: groups are 4 times as toxic as their channels** · SIMONE (6:00-7:10)
+
+For conspiracy communities we analysed about one million messages with Toxicity-Lens, a multilingual classifier for several forms of harmful language. At our main threshold, about 2% of channel posts and 8.6% of group messages are classified as toxic. Across the 96 completed pairs, the group is more toxic in 82 cases, with a median paired increase of about 2.7 percentage points. By voice, channels have the lowest classified toxicity, then group administrators, then regular users. These are model-based findings: independent human validation remains a limitation.
+
+**Slide 10 — Toxic messages are more likely to receive toxic replies** · SIMONE (7:10-8:10)
+
+We also looked at how toxicity relates to conversations. Using Telegram's reply references we analysed about 384,000 parent-reply pairs. A reply to a message classified as toxic was itself toxic about 21% of the time, against about 8% after a non-toxic message. This positive association appears in all 51 groups that meet our minimum sample size. It does not establish causation: recurring users, discussion topics and moderation can also contribute.
+
+**Slide 11 — What groups add** · SIMONE (8:10-8:45)
+
+Overall, our findings show three differences between channels and their groups. First, groups contain much more activity and a large share of semantically non-aligned discussion. Second, promotion differs between channels, administrators and users, and suspicious invitation signals are concentrated in a few crypto groups. Third, conspiracy groups show higher classified toxicity, and toxic replies are associated with toxic parent messages. Riccardo will close with our status and plan.
+
+**Slide 12 — Project status and roadmap to 3 January** · RICCARDO (8:45-10:00)
+
+These are our main findings so far, but the project is not finished. We have completed the data collection and the main structural, semantic, promotional and toxicity analyses. What remains: we keep monitoring unsolicited private messages until the first of December, then we analyse those contacts, write the related work, limitations and ethics, and integrate everything into our final technical paper, due on the third of January. We contributed equally: Marco focused on the pair review and the semantic content analysis, Simone on toxicity, topics and conversations, and I on data collection, structural measures, invitations and coordination. The DM analysis and the final writing and review we do together. Our goal is to show not only what Telegram channels publish, but what researchers miss when they do not look at the associated discussion groups. Thank you, we welcome your questions and feedback.
 
 ---
 
 ## Possible questions (short answers)
 
 - **Why pairs?** Each channel is the control for its own group: same community, same period.
-- **Is the toxicity model reliable?** Not validated by hand yet: we report it as a limitation;
-  results are stable across thresholds 0.3 / 0.5 / 0.7.
+- **What is new compared to prior work?** Channels and groups have been studied, also together (e.g. Slobozhan 2023, Alvisi 2026); we keep each channel and its own group as two levels of one community and compare them on several dimensions.
+- **Is the toxicity model reliable?** Not validated by hand: a limitation we state; results are stable across thresholds 0.3 / 0.5 / 0.7.
+- **Are the flagged invitations scams?** No: they match our operational definition (unknown platform or fixed-return wording); 96% sit in one referral group.
 - **Did you interact with anyone?** No. Public chats only, no messages, no clicks on links.
-- **Why is the channel the main inviter in crypto?** Channels of projects and exchanges push
-  their own referral and sign-up links; in groups, users rarely do it except in referral groups.
-- **DMs?** 23 on the crypto account and 17 on the conspiracy one so far, mostly bots plus a few
-  "hello" and coin-pitch openers; analysis after 1 December.
+- **DMs?** 23 on the crypto account and 17 on the conspiracy one so far, mostly bots plus a few openers; analysis after 1 December.

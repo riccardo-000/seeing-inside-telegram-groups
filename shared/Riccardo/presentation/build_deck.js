@@ -65,6 +65,7 @@ async function icon(Comp, color, size = 256) {
     user: await icon(fa.FaUser, "FFFFFF"), arrow: await icon(fa.FaArrowRight, GRAY),
     arrowW: await icon(fa.FaArrowRight, HEX.accent6), mail: await icon(fa.FaEnvelope, "FFFFFF"),
     flask: await icon(fa.FaFlask, "FFFFFF"), file: await icon(fa.FaFileAlt, "FFFFFF"),
+    check: await icon(fa.FaCheck, "FFFFFF"), cal: await icon(fa.FaRegCalendarAlt, "FFFFFF"),
   };
   // icon in a colored circle (the deck's motif)
   const badge = (slide, img, x, y, d, fill, name) => {
@@ -97,32 +98,38 @@ async function icon(Comp, color, size = 256) {
   badge(s, ic.channel, 0.6, 0.55, 0.7, GRAY, "channel");
   s.addImage({ data: ic.arrowW, x: 1.45, y: 0.75, w: 0.3, h: 0.3, objectName: "arrow" });
   badge(s, ic.group, 1.9, 0.55, 0.7, CORAL, "group");
+  text(s, "Research progress presentation · empirical technical paper", { x: 0.6, y: 3.45, w: 8.8, h: 0.35, fontSize: 14, color: CORAL, bold: true });
   text(s, "Marco · Simone · Riccardo", { x: 0.6, y: 4.3, w: 6, h: 0.35, fontSize: 16, color: C.background1, bold: true });
   text(s, "Research Topics in Cybersecurity · DTU · November 2026", { x: 0.6, y: 4.65, w: 7, h: 0.3, fontSize: 12, color: C.accent6 });
-  s.addNotes("RICCARDO (0:00-0:20). Hi, we are Marco, Simone and Riccardo. Our project looks inside Telegram groups: the discussion groups linked to public channels.");
+  s.addNotes("RICCARDO (0:00-0:15). Hi everyone, we are Marco, Simone and Riccardo. Today we'll present our research project, the main findings obtained so far, and our plan for completing the final paper.");
 
-  // ================= 2. Question =================
+  // ================= 2. Problem, gap, contribution =================
   s = S("Channels broadcast; linked groups talk back", "Setup");
-  card(s, 0.5, 1.35, 3.6, 2.35, "channel card");
-  badge(s, ic.channel, 0.75, 1.6, 0.6, GRAY, "channel");
-  text(s, "Channel", { x: 1.5, y: 1.7, w: 2.4, h: 0.4, fontSize: 18, bold: true });
+  card(s, 0.5, 1.2, 3.6, 1.75, "channel card");
+  badge(s, ic.channel, 0.7, 1.35, 0.5, GRAY, "channel");
+  text(s, "Channel", { x: 1.35, y: 1.43, w: 2.5, h: 0.35, fontSize: 17, bold: true });
   text(s, [
     { text: "Broadcast: only admins post", options: { bullet: true, breakLine: true } },
-    { text: "What most studies (and TGDataset) see", options: { bullet: true } },
-  ], { x: 0.75, y: 2.4, w: 3.2, h: 1.1, fontSize: 14, paraSpaceAfter: 6 });
-  s.addImage({ data: ic.arrow, x: 4.3, y: 2.35, w: 0.4, h: 0.4, objectName: "arrow" });
-  card(s, 4.9, 1.35, 4.6, 2.35, "group card");
-  badge(s, ic.group, 5.15, 1.6, 0.6, CORAL, "group");
-  text(s, "Linked discussion group", { x: 5.9, y: 1.7, w: 3.5, h: 0.4, fontSize: 18, bold: true });
+    { text: "Well covered by datasets such as TGDataset", options: { bullet: true } },
+  ], { x: 0.7, y: 2.0, w: 3.25, h: 0.9, fontSize: 13, paraSpaceAfter: 4 });
+  s.addImage({ data: ic.arrow, x: 4.3, y: 1.9, w: 0.4, h: 0.4, objectName: "arrow" });
+  card(s, 4.9, 1.2, 4.6, 1.75, "group card");
+  badge(s, ic.group, 5.1, 1.35, 0.5, CORAL, "group");
+  text(s, "Linked discussion group", { x: 5.75, y: 1.43, w: 3.6, h: 0.35, fontSize: 17, bold: true });
   text(s, [
     { text: "Anyone can write: admins, users, bots", options: { bullet: true, breakLine: true } },
     { text: "Comments on posts + free chat", options: { bullet: true } },
-  ], { x: 5.15, y: 2.4, w: 4.2, h: 1.1, fontSize: 14, paraSpaceAfter: 6 });
+  ], { x: 5.1, y: 2.0, w: 4.25, h: 0.9, fontSize: 13, paraSpaceAfter: 4 });
   text(s, [
-    { text: "Question: ", options: { bold: true, color: CORAL } },
-    { text: "what happens in the group that the channel alone does not show? We compare each channel with its own group, in two communities: crypto (scam invitations) and conspiracy (toxicity)." },
-  ], { x: 0.5, y: 4.0, w: 9.0, h: 0.9, fontSize: 15 });
-  s.addNotes("RICCARDO (0:20-1:10). Telegram channels are one-way: only admins post. Most measurement work, including TGDataset, looks only at channels. But many channels have a linked discussion group where anyone can write. Our question: what happens there that you cannot see from the channel? We always compare a channel with its own group, so each channel is the control for its group. We studied two communities with two deep dives: in crypto we look at invitations to register on platforms, a common scam vector; in conspiracy we look at toxicity.");
+    { text: "Research gap: ", options: { bold: true, color: CORAL } },
+    { text: "channels and groups have both been studied, but rarely is each channel compared with its own discussion group across several dimensions.", options: { breakLine: true } },
+    { text: "Our contribution: ", options: { bold: true, color: CORAL } },
+    { text: "a paired measurement study of 195 crypto and conspiracy pairs: content, author roles, promotion and toxicity.", options: { breakLine: true } },
+    { text: "Deliverable: ", options: { bold: true, color: CORAL } },
+    { text: "technical paper (empirical measurement study).", options: {} },
+  ], { x: 0.5, y: 3.15, w: 9.0, h: 1.45, fontSize: 13, paraSpaceAfter: 5 });
+  text(s, "La Morgia et al., TGDataset, KDD 2025 · Slobozhan et al., SNAM 2023 · Alvisi et al., J. Big Data 2026", { x: 0.5, y: 4.75, w: 8.4, h: 0.3, fontSize: 10, color: C.accent5 });
+  s.addNotes("RICCARDO (0:15-1:05). Telegram channels are mainly used for broadcasting: only the admins post. Their linked discussion groups let regular users, administrators and bots interact. Previous research has already studied Telegram channels, public groups, scams and harmful content; for example TGDataset collects the channels, and Slobozhan and Alvisi compare or link channels and groups. Our specific goal is to compare each channel systematically with its own discussion group, across several dimensions: what becomes visible when we look at the discussion layer and not only at the official channel? We do it in two communities, crypto and conspiracy. Our final deliverable will be a technical paper based on this empirical measurement study.");
 
   // ================= 3. Data =================
   s = S("Data: 195 channel–group pairs, observed passively", "Setup");
@@ -147,7 +154,7 @@ async function icon(Comp, color, size = 256) {
     badge(s, img, x, 4.35, 0.4, col, "role " + i);
     text(s, lab, { x: x + 0.5, y: 4.43, w: 1.65, h: 0.3, fontSize: 13 });
   });
-  s.addNotes("RICCARDO (1:10-2:00). Starting from TGDataset we selected about 100 crypto and 100 conspiracy channels that have a public linked group: 195 pairs, 3.8 million messages over 14 weeks. Collection was strictly passive: we joined only public chats and never sent a message. Every message gets a role: the channel itself, admins writing in the group, regular users, and bots, which we keep apart.");
+  s.addNotes("RICCARDO (1:05-1:55). We collected data from 195 channel-group pairs: 98 crypto and 97 conspiracy, starting from TGDataset. The dataset contains about 3.8 million messages over fourteen weeks, from late July to early November 2026. Collection was passive: we monitored public communities without posting messages or interacting with users. A key part of our approach is to distinguish the channel's official posts, administrators writing inside the group, regular users, and bots.");
 
   // ================= 4. Structure =================
   s = S("Groups carry the volume: 10–50× more messages", "Setup");
@@ -160,35 +167,38 @@ async function icon(Comp, color, size = 256) {
     dataLabelPosition: "outEnd", dataLabelFormatCode: "0.0", ...chartBase() });
   card(s, 6.1, 1.3, 3.4, 1.65, "links card");
   text(s, [{ text: "Links", options: { bold: true, breakLine: true } },
-    { text: "Channel posts: 79% (crypto), 50% (consp.) carry a link. Group messages: 2% and 16%.", options: {} }],
+    { text: "Channel posts: 79% (crypto), 50% (consp.) carry a link. Group messages: 2% and 16% (medians).", options: {} }],
     { x: 6.3, y: 1.45, w: 3.0, h: 1.4, fontSize: 13 });
   card(s, 6.1, 3.15, 3.4, 1.65, "media card");
   text(s, [{ text: "Media", options: { bold: true, breakLine: true } },
-    { text: "Channels are polished (≈97% media); groups are mostly plain text (8% / 47% media).", options: {} }],
+    { text: "Channel posts almost always carry media (≈97%); group messages far less often (8% / 47%).", options: {} }],
     { x: 6.3, y: 3.3, w: 3.0, h: 1.4, fontSize: 13 });
-  s.addNotes("RICCARDO (2:00-3:00). First, the structure. In the typical pair the group is far more active than the channel: about 10 times in conspiracy and 50 times in crypto. And it is a different kind of content: channel posts are polished, almost always with media and often with a link; group messages are mostly short plain text. These directions hold in every robustness check: without truncated chats, without the largest group, and with only true discussion groups. Now Marco on what the groups talk about.");
+  s.addNotes("RICCARDO (1:55-3:00). The first result concerns activity. In the typical pair, groups are much more active than their channels: about fifty times more messages per day in crypto and ten times more in conspiracy. The format also differs: channel posts carry links and media much more often, while group messages are mostly conversational text. These differences hold across our robustness checks, for example without truncated observation windows or without the largest group. Now Marco will present what we found about the content of these discussions.");
 
   // ================= 5. Point 4 =================
   pres.addSection({ title: "Content and crypto" });
-  s = S("Three in four group messages match no channel post", "Content and crypto");
+  s = S("~75% of group messages are semantically non-aligned", "Content and crypto");
   [[0.5, "74.7%", "Crypto groups"], [3.4, "76.1%", "Conspiracy groups"]].forEach(([x, big, lab], i) => {
     card(s, x, 1.35, 2.7, 2.1, "stat card " + i);
     text(s, big, { x: x + 0.25, y: 1.6, w: 2.3, h: 0.9, fontSize: 44, bold: true, color: CORAL, fontFace: "Arial" });
     text(s, lab, { x: x + 0.25, y: 2.55, w: 2.3, h: 0.35, fontSize: 15, bold: true });
-    text(s, "of eligible group messages", { x: x + 0.25, y: 2.9, w: 2.3, h: 0.35, fontSize: 12, color: C.accent5 });
+    text(s, "mean of pair-level rates", { x: x + 0.25, y: 2.9, w: 2.3, h: 0.35, fontSize: 12, color: C.accent5 });
   });
   text(s, [
-    { text: "How", options: { bold: true, breakLine: true } },
-    { text: "Each group message is embedded (Qwen3, multilingual) and compared with every post of its channel; below cosine 0.52 = not aligned.", options: { breakLine: true } },
-    { text: " ", options: { breakLine: true, fontSize: 6 } },
-    { text: "Reading", options: { bold: true, breakLine: true } },
-    { text: "Groups mostly talk about other things than the channel. Same in both communities (+1.4 pp, n.s.).", options: {} },
-  ], { x: 6.4, y: 1.35, w: 3.1, h: 3.2, fontSize: 13 });
-  text(s, "445,584 eligible messages · threshold calibrated on 100 hand-checked pairs · 0.50 / 0.55 as sensitivity", { x: 0.5, y: 3.75, w: 5.6, h: 0.6, fontSize: 11, color: C.accent5 });
-  s.addNotes("MARCO (3:00-4:30). To see whether groups just echo their channel, I embedded every group message with a multilingual model, Qwen3, and found its most similar channel post. If the similarity is below a calibrated threshold of 0.52, the message is not aligned with anything the channel published. About three in four group messages are not aligned: 75% in crypto and 76% in conspiracy. The difference between the two communities is not significant. Important caveat: this measures semantic distance from the observed channel posts, not that the topic was born in the group.");
+    { text: "Method", options: { bold: true, breakLine: true } },
+    { text: "Qwen3 multilingual embeddings; max cosine similarity to the observed posts of its channel; threshold 0.52.", options: { breakLine: true } },
+    { text: " ", options: { breakLine: true, fontSize: 5 } },
+    { text: "Finding", options: { bold: true, breakLine: true } },
+    { text: "Same level in both communities (+1.4 pp, n.s.).", options: { breakLine: true } },
+    { text: " ", options: { breakLine: true, fontSize: 5 } },
+    { text: "Caveat", options: { bold: true, breakLine: true } },
+    { text: "Non-alignment does not show where a topic originated.", options: {} },
+  ], { x: 6.4, y: 1.35, w: 3.1, h: 3.4, fontSize: 13 });
+  text(s, "445,584 eligible group messages · threshold calibrated on 100 hand-checked examples · 0.50 / 0.55 as sensitivity", { x: 0.5, y: 3.75, w: 5.6, h: 0.6, fontSize: 11, color: C.accent5 });
+  s.addNotes("MARCO (3:00-4:10). To check whether groups simply repeat what their channels publish, we used Qwen3, a multilingual embedding model. For each eligible group message we computed its maximum cosine similarity to the observed posts of its own channel. Using a threshold of 0.52, calibrated on a separate set of one hundred examples, messages below the threshold are semantically non-aligned. The result is about 75% in crypto and 76% in conspiracy, with no significant difference between the pair-level means. So a large share of group discussion is not closely represented in the channel's posts. However, this does not prove that these topics originated in the groups.");
 
   // ================= 6. Functions =================
-  s = S("What the unmatched messages do", "Content and crypto");
+  s = S("What the non-aligned messages do", "Content and crypto");
   const fl = ["Discussion / opinion", "Greeting / social", "Question / help", "News sharing", "Promotion"];
   s.addChart(pres.charts.BAR, [
     { name: "Crypto", labels: fl, values: [25.9, 20.9, 15.0, 2.6, 5.3] },
@@ -200,55 +210,55 @@ async function icon(Comp, color, size = 256) {
   text(s, [
     { text: "Crypto groups ", options: { bold: true } }, { text: "socialise and ask (gm, help, prices).", options: { breakLine: true } },
     { text: " ", options: { breakLine: true, fontSize: 6 } },
-    { text: "Conspiracy groups ", options: { bold: true } }, { text: "share news and argue.", options: { breakLine: true } },
+    { text: "Conspiracy groups ", options: { bold: true } }, { text: "share more news and express opinions.", options: { breakLine: true } },
     { text: " ", options: { breakLine: true, fontSize: 6 } },
-    { text: "Exploratory: 1,170 messages, 6 per pair, single coding pass.", options: { color: C.accent5, fontSize: 12 } },
+    { text: "Exploratory coding · 1,170 messages · 6 per pair · no independent label validation.", options: { color: C.accent5, fontSize: 12 } },
   ], { x: 6.9, y: 1.55, w: 2.45, h: 3.0, fontSize: 14 });
-  s.addNotes("MARCO (4:30-5:15). What are these unmatched messages? On a sample of six per pair we coded their communicative function. Crypto groups are social: greetings, questions, help. Conspiracy groups share news and argue: news sharing is 22% against 3% in crypto. Promotion is a small share in both. These estimates are exploratory: one coding pass, no second annotator.");
+  s.addNotes("MARCO (4:10-4:55). What are these non-aligned messages doing? We coded a separate sample of 1,170 messages, six per channel-group pair. Crypto groups show more greetings and social interaction, while conspiracy groups share much more news: about 22% of the coded conspiracy messages, against 3% in crypto. These findings are exploratory: a single coding pass without independent validation, so they are not definitive prevalence estimates.");
 
   // ================= 7. Crypto invitations =================
-  s = S("Crypto: channels invite, suspicious invites cluster", "Content and crypto");
+  s = S("Crypto: channels invite more, flagged invites cluster", "Content and crypto");
   s.addChart(pres.charts.BAR, [
-    { name: "Share of messages that invite to register", labels: ["Channel posts", "Group messages"], values: [3.72, 0.04] },
+    { name: "Share of messages that invite to register", labels: ["Channel posts", "Group messages (non-bot)"], values: [3.72, 0.04] },
   ], { x: 0.4, y: 1.2, w: 4.3, h: 3.75, barDir: "col", barGapWidthPct: 70, chartColors: [GRAY, CORAL],
-    showLegend: false, showTitle: true, title: "Invitations to register (median per pair, %)", titleFontSize: 12, titleColor: HEX.dk1,
+    showLegend: false, showTitle: true, title: "Invitation rate (median per pair, %)", titleFontSize: 12, titleColor: HEX.dk1,
     dataLabelPosition: "outEnd", dataLabelFormatCode: '0.00"%"', ...chartBase() });
   const inv = [
-    ["71 / 98", "pairs: group invites less than its channel"],
-    ["7,438 / 7,731", "suspicious invitations in groups come from one group"],
-    ["10,534", "bot invitations (token alerts) reported apart"],
+    ["71 / 98", "pairs: the group has a lower invitation rate than its channel"],
+    ["96.2%", "of group invitations flagged as suspicious come from one group"],
+    ["10,534", "bot invitations (token alerts), reported separately"],
   ];
   inv.forEach(([big, lab], i) => {
     const y = 1.3 + i * 1.2;
     card(s, 5.0, y, 4.5, 1.05, "inv card " + i);
-    text(s, big, { x: 5.2, y: y + 0.15, w: 1.9, h: 0.75, fontSize: 22, bold: true, color: i === 1 ? CORAL : C.text2, fontFace: "Arial", valign: "middle" });
-    text(s, lab, { x: 7.15, y: y + 0.15, w: 2.2, h: 0.75, fontSize: 13, valign: "middle" });
+    text(s, big, { x: 5.2, y: y + 0.15, w: 1.55, h: 0.75, fontSize: 22, bold: true, color: i === 1 ? CORAL : C.text2, fontFace: "Arial", valign: "middle" });
+    text(s, lab, { x: 6.8, y: y + 0.12, w: 2.55, h: 0.8, fontSize: 13, valign: "middle" });
   });
-  s.addNotes("MARCO (5:15-6:00). For crypto, the deep dive is invitations to register on a platform: referral links, sign-up links, deposit wording. The surprise: it is the channel that invites, about 4% of its posts, while group members almost never do. Suspicious invitations, to unknown platforms or with promises of fixed returns, are rare and concentrated: of 7,731 in groups, 7,438 are in a single referral group. Token-alert bots post another 10,000 invitations, which we report separately. Detector quality is moderate, precision about 0.6 against an LLM annotator. Now Simone on conspiracy.");
+  s.addNotes("MARCO (4:55-5:40). For the crypto deep dive we focused on invitations to register on platforms: referral links, sign-up links and related wording. In the typical pair the channel has a much higher invitation rate: about 3.7% of posts, against 0.04% of non-bot group messages. In absolute numbers groups still contain more invitations, because they have far more messages. The most striking result is concentration: of about 7,700 group invitations flagged as suspicious under our definition, more than 7,400, that is 96%, come from a single referral group. Flagged does not mean confirmed scam. We also report over 10,500 bot invitations separately.");
 
   // ================= 8. Voices =================
-  s = S("Who speaks: channels promote, members talk", "Content and crypto");
+  s = S("Who posts links: channels, then admins, then users", "Content and crypto");
   s.addChart(pres.charts.BAR, [
     { name: "Crypto", labels: ["Channel", "Admins in group", "Users"], values: [78.3, 8.6, 0.3] },
     { name: "Conspiracy", labels: ["Channel", "Admins in group", "Users"], values: [41.0, 8.8, 11.9] },
   ], { x: 0.4, y: 1.2, w: 5.8, h: 3.75, barDir: "col", barGrouping: "clustered", barGapWidthPct: 60,
     chartColors: [INK, CORAL], showLegend: true, legendPos: "t", legendFontSize: 11, legendColor: HEX.accent5,
-    showTitle: true, title: "Messages with a link, by voice (median %)", titleFontSize: 12, titleColor: HEX.dk1,
+    showTitle: true, title: "Messages with any link, by voice (median %)", titleFontSize: 12, titleColor: HEX.dk1,
     dataLabelPosition: "outEnd", dataLabelFormatCode: '0.0"%"', ...chartBase() });
   card(s, 6.5, 1.35, 3.0, 3.3, "voices card");
   text(s, [
     { text: "Three voices per pair", options: { bold: true, breakLine: true } },
     { text: "Channel, admins writing in the group, regular users.", options: { breakLine: true } },
     { text: " ", options: { breakLine: true, fontSize: 6 } },
-    { text: "Crypto: links come from the channel, almost never from users. Conspiracy users share links as often as admins.", options: { breakLine: true } },
+    { text: "Any link, not only invitations. Crypto users almost never post links; conspiracy users as often as admins.", options: { breakLine: true } },
     { text: " ", options: { breakLine: true, fontSize: 6 } },
     { text: "Pairs with ≥ 30 admin messages: 84 crypto, 73 conspiracy.", options: { color: C.accent5, fontSize: 12 } },
   ], { x: 6.7, y: 1.55, w: 2.65, h: 3.0, fontSize: 14 });
-  s.addNotes("MARCO or RICCARDO (optional, cut if short on time). Splitting each pair into three voices confirms it: the channel is where links and promotion live, especially in crypto where almost 80% of posts carry a link; admins in the group post far fewer links, and crypto users almost none. In conspiracy, users share links about as often as admins: news links.");
+  s.addNotes("MARCO (5:40-6:00, cut first if short on time). Separating the three voices gives more context. In crypto almost 80% of channel posts contain a link, against about 9% of admin messages in the group and less than 1% of regular users' messages, as median rates across eligible pairs. This counts any link, not only invitations. Now Simone will discuss toxicity in conspiracy communities.");
 
   // ================= 9. Toxicity =================
   pres.addSection({ title: "Conspiracy and wrap-up" });
-  s = S("Conspiracy: groups are 4× as toxic as their channels", "Conspiracy and wrap-up");
+  s = S("Conspiracy: groups are 4 times as toxic as their channels", "Conspiracy and wrap-up");
   s.addChart(pres.charts.BAR, [
     { name: "Toxic messages (%)", labels: ["Channels", "Groups"], values: [2.02, 8.56] },
   ], { x: 0.4, y: 1.2, w: 3.6, h: 3.75, barDir: "col", barGapWidthPct: 60, chartColors: [GRAY, CORAL],
@@ -261,50 +271,82 @@ async function icon(Comp, color, size = 256) {
     dataLabelPosition: "outEnd", dataLabelFormatCode: '0.0"%"', ...chartBase() });
   card(s, 7.6, 1.35, 1.9, 1.5, "pairs card");
   text(s, "82 / 96", { x: 7.75, y: 1.5, w: 1.65, h: 0.6, fontSize: 24, bold: true, color: CORAL, fontFace: "Arial" });
-  text(s, "pairs: group more toxic", { x: 7.75, y: 2.1, w: 1.65, h: 0.6, fontSize: 12 });
+  text(s, "pairs with higher group toxicity", { x: 7.75, y: 2.1, w: 1.65, h: 0.6, fontSize: 12 });
   card(s, 7.6, 3.05, 1.9, 1.6, "diff card");
   text(s, "+2.7 pp", { x: 7.75, y: 3.2, w: 1.65, h: 0.6, fontSize: 24, bold: true, color: C.text2, fontFace: "Arial" });
-  text(s, "median paired gap (CI 2.2–4.3)", { x: 7.75, y: 3.8, w: 1.65, h: 0.7, fontSize: 12 });
-  s.addNotes("SIMONE (6:00-7:30). For conspiracy we classified about one million messages with Toxicity-Lens, a multilingual model with seven categories. In channels 2% of messages are toxic, in groups 8.6%, roughly four times more. Pair by pair, the group is more toxic in 82 of 96 pairs, with a median gap of 2.7 percentage points; insults and profanity drive most of it. Splitting by voice: the channel is the cleanest, admins in the group are in between, regular users are the most toxic. The result holds when we change the threshold or drop the largest group.");
+  text(s, "median group–channel difference", { x: 7.75, y: 3.8, w: 1.65, h: 0.7, fontSize: 12 });
+  s.addNotes("SIMONE (6:00-7:10). For conspiracy communities we analysed about one million messages with Toxicity-Lens, a multilingual classifier for several forms of harmful language. At our main threshold, about 2% of channel posts and 8.6% of group messages are classified as toxic. Across the 96 completed pairs, the group is more toxic in 82 cases, with a median paired increase of about 2.7 percentage points. By voice, channels have the lowest classified toxicity, then group administrators, then regular users. These are model-based findings: independent human validation remains a limitation.");
 
   // ================= 10. Conversations =================
-  s = S("Toxicity attracts toxic replies", "Conspiracy and wrap-up");
+  s = S("Toxic messages are more likely to receive toxic replies", "Conspiracy and wrap-up");
   s.addChart(pres.charts.BAR, [
     { name: "Toxic replies (%)", labels: ["Replies to non-toxic messages", "Replies to toxic messages"], values: [7.92, 20.52] },
   ], { x: 0.4, y: 1.2, w: 5.0, h: 3.75, barDir: "col", barGapWidthPct: 60, chartColors: [GRAY, CORAL],
     showLegend: false, showTitle: true, title: "Share of replies that are toxic (%)", titleFontSize: 12, titleColor: HEX.dk1,
     dataLabelPosition: "outEnd", dataLabelFormatCode: '0.0"%"', ...chartBase() });
-  const conv = [["384 k", "reply pairs rebuilt from Telegram's reply links"], ["51 / 51", "groups show the same direction"], ["+7.5 pp", "median gap per group (CI 6.4–8.9)"]];
+  const conv = [["384k", "analysed parent–reply pairs"], ["51 / 51", "groups show the same direction"], ["+7.5 pp", "median difference across groups"]];
   conv.forEach(([big, lab], i) => {
     const y = 1.3 + i * 1.2;
     card(s, 5.7, y, 3.8, 1.05, "conv card " + i);
     text(s, big, { x: 5.9, y: y + 0.15, w: 1.4, h: 0.75, fontSize: 22, bold: true, color: i === 1 ? CORAL : C.text2, fontFace: "Arial", valign: "middle" });
     text(s, lab, { x: 7.35, y: y + 0.15, w: 2.05, h: 0.75, fontSize: 13, valign: "middle" });
   });
-  s.addNotes("SIMONE (7:30-8:30). Groups are conversations, so we rebuilt who replies to whom from Telegram's reply links: 384 thousand reply pairs. A reply to a toxic message is toxic 21% of the time, against 8% for a reply to a non-toxic one, and this holds in all 51 groups with enough replies. This is an association, not causation: topic, recurring users and moderation can all play a role. We also labelled each community's topic: political and geopolitical communities show the largest gaps, but the numbers per topic are small.");
+  s.addNotes("SIMONE (7:10-8:10). We also looked at how toxicity relates to conversations. Using Telegram's reply references we analysed about 384,000 parent-reply pairs. A reply to a message classified as toxic was itself toxic about 21% of the time, against about 8% after a non-toxic message. This positive association appears in all 51 groups that meet our minimum sample size. It does not establish causation: recurring users, discussion topics and moderation can also contribute.");
 
-  // ================= 11. Conclusions =================
+  // ================= 11. Takeaways =================
   s = pres.addSlide({ masterName: "Title Dark", sectionTitle: "Conspiracy and wrap-up" });
   text(s, "What groups add", { x: 0.6, y: 0.4, w: 8.8, h: 0.7, fontSize: 32, bold: true, color: C.background1, fontFace: "Arial" });
   const take = [
-    [ic.group, "Volume and new topics", "10–50× more messages; 3 in 4 off the channel's topics"],
-    [ic.channel, "Promotion stays upstream", "Crypto invitations come from channels; scams cluster in few groups"],
-    [ic.users, "Tone gets rougher", "Groups 4× more toxic; users > admins > channel; toxicity attracts toxicity"],
+    [ic.group, "Additional discussion", "10–50× more active; ~75% of messages semantically non-aligned with the channel"],
+    [ic.channel, "Different promotional roles", "Channels have higher invitation rates; flagged invitations cluster in few groups"],
+    [ic.users, "Different toxicity patterns", "Conspiracy groups ≈4× more toxic; toxic messages more likely to get toxic replies"],
   ];
   take.forEach(([img, head, sub], i) => {
     const x = 0.6 + i * 3.0;
     badge(s, img, x, 1.35, 0.6, i === 2 ? CORAL : HEX.accent5, "take " + i);
     text(s, head, { x, y: 2.1, w: 2.75, h: 0.4, fontSize: 16, bold: true, color: C.background1 });
-    text(s, sub, { x, y: 2.5, w: 2.75, h: 0.9, fontSize: 13, color: C.accent6 });
+    text(s, sub, { x, y: 2.5, w: 2.75, h: 1.0, fontSize: 13, color: C.accent6 });
   });
   text(s, [
     { text: "Limits: ", options: { bold: true, color: C.background1 } },
-    { text: "classifiers not hand-validated; topics labelled with an LLM; 195 non-random pairs, 14 weeks.", options: { breakLine: true } },
-    { text: "Next: ", options: { bold: true, color: C.background1 } },
-    { text: "unsolicited DMs to our passive accounts (23 crypto, 17 conspiracy so far) and the paper (January).", options: {} },
-  ], { x: 0.6, y: 3.75, w: 8.8, h: 0.9, fontSize: 13, color: C.accent6, paraSpaceAfter: 6 });
-  text(s, "Thank you · questions?", { x: 0.6, y: 4.85, w: 5, h: 0.35, fontSize: 14, bold: true, color: CORAL });
-  s.addNotes("SIMONE or RICCARDO (8:30-10:00). To sum up: looking inside the groups adds three things. Volume and new topics: groups are 10 to 50 times more active and mostly discuss things the channel never posted. Promotion stays upstream: in crypto, invitations to register come from the channel, and suspicious ones cluster in a handful of groups. And the tone gets rougher: conspiracy groups are four times as toxic as their channels, users more than admins, and toxic messages attract toxic replies. Limits: our classifiers are not validated by hand, and topics were labelled with an LLM. Next we analyse the unsolicited DMs our passive accounts received, and write the paper. Thank you.");
+    { text: "classifiers not hand-validated; topics labelled with an LLM; 195 non-random pairs, 14 weeks; associations, not causes.", options: {} },
+  ], { x: 0.6, y: 4.0, w: 8.8, h: 0.6, fontSize: 13, color: C.accent6 });
+  s.addNotes("SIMONE (8:10-8:45). Overall, our findings show three differences between channels and their groups. First, groups contain much more activity and a large share of semantically non-aligned discussion. Second, promotion differs between channels, administrators and users, and suspicious invitation signals are concentrated in a few crypto groups. Third, conspiracy groups show higher classified toxicity, and toxic replies are associated with toxic parent messages. Riccardo will close with our status and plan.");
+
+  // ================= 12. Status, plan, team =================
+  s = S("Project status and roadmap to 3 January", "Conspiracy and wrap-up");
+  const cols = [
+    [ic.check, "Completed", TEAL, [
+      "Data collection (195 pairs, 3.8 M messages)",
+      "Structure and robustness checks",
+      "Semantic non-alignment",
+      "Crypto invitations and three voices",
+      "Conspiracy toxicity and replies",
+    ]],
+    [ic.cal, "Remaining", CORAL, [
+      "Until 1 Dec: DM monitoring",
+      "December: analyse unsolicited DMs",
+      "December: related work, limitations, ethics",
+      "3 Jan 2027: final technical paper",
+    ]],
+    [ic.users, "Team", INK, [
+      "Equal contribution by all three",
+      "Marco: pair review, semantic content analysis",
+      "Simone: toxicity, topics, conversations",
+      "Riccardo: collection, structure, invitations, coordination",
+      "All three: DMs, writing, final review",
+    ]],
+  ];
+  cols.forEach(([img, head, col, items], i) => {
+    const x = 0.5 + i * 3.075;
+    card(s, x, 1.2, 2.85, 3.55, "status card " + i);
+    badge(s, img, x + 0.2, 1.38, 0.45, col, "status " + i);
+    text(s, head, { x: x + 0.75, y: 1.45, w: 2.0, h: 0.35, fontSize: 14, bold: true });
+    text(s, items.map((t, j) => ({ text: t, options: { bullet: true, breakLine: j < items.length - 1 } })),
+      { x: x + 0.2, y: 2.0, w: 2.5, h: 2.65, fontSize: 12, paraSpaceAfter: 5 });
+  });
+  text(s, "Thank you · questions and feedback welcome", { x: 4.6, y: 4.85, w: 4.9, h: 0.3, fontSize: 12, bold: true, color: CORAL, align: "right" });
+  s.addNotes("RICCARDO (8:45-10:00). These are our main findings so far, but the project is not finished. We have completed the data collection and the main structural, semantic, promotional and toxicity analyses. What remains: we keep monitoring unsolicited private messages until the first of December, then we analyse those contacts, write the related work, limitations and ethics, and integrate everything into our final technical paper, due on the third of January. We contributed equally: Marco focused on the pair review and the semantic content analysis, Simone on toxicity, topics and conversations, and I on data collection, structural measures, invitations and coordination. The DM analysis and the final writing and review we do together. Our goal is to show not only what Telegram channels publish, but what researchers miss when they do not look at the associated discussion groups. Thank you, we welcome your questions and feedback.");
 
   await pres.writeFile({ fileName: OUT });
   await applyTheme(OUT, THEME);
