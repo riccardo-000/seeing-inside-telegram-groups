@@ -40,3 +40,6 @@ venv/
 # Local AI session state (shared memory lives in memory/, not here)
 # ------------------------------------------------------------------
 .claude/settings.local.json
+
+# Office lock files
+~$*
