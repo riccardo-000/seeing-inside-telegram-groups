@@ -1,6 +1,6 @@
-# Speech draft — "Seeing Inside Telegram Groups" (10 min, 12 slides)
+# Speech draft — "Seeing Inside Telegram Groups" (10 min, 11 slides)
 
-Revised after Marco's review against the prof's brief (1 project, 2 type of paper, 3 status, 4 plan, 5 who does what). Same text as the speaker notes. Speakers: Riccardo 1–4, Marco 5–8, Simone 9–12. If short on time, cut slide 8 first; never cut slide 12 (it covers points 4 and 5 of the brief).
+Revised after Marco's review against the prof's brief (1 project, 2 type of paper, 3 status, 4 plan, 5 who does what). Same text as the speaker notes. Speakers: Riccardo 1–4, Marco 5–8, Simone 9–11. The takeaways are said on the last slide (status, plan, team). If short on time, cut slide 8 first; never cut the last slide (it covers points 4 and 5 of the brief).
 
 **Slide 1 — Seeing Inside Telegram Groups** · RICCARDO (0:00-0:15)
 
@@ -42,14 +42,9 @@ For conspiracy communities we analysed about one million messages with Toxicity-
 
 We also looked at how toxicity relates to conversations. Using Telegram's reply references we analysed about 384,000 parent-reply pairs. A reply to a message classified as toxic was itself toxic about 21% of the time, against about 8% after a non-toxic message. This positive association appears in all 51 groups that meet our minimum sample size. It does not establish causation: recurring users, discussion topics and moderation can also contribute.
 
-**Slide 11 — What groups add** · SIMONE (8:10-8:45)
+**Slide 11 — Project status and roadmap to 3 January** · SIMONE (8:10-10:00)
 
-Overall, our findings show three differences between channels and their groups. First, groups contain much more activity and a large share of semantically non-aligned discussion. Second, promotion differs between channels, administrators and users, and suspicious invitation signals are concentrated in a few crypto groups. Third, conspiracy groups show higher classified toxicity, and toxic replies are associated with toxic parent messages. Finally, our status and plan.
-
-**Slide 12 — Project status and roadmap to 3 January** · SIMONE (8:45-10:00)
-
-These are our main findings so far, but the project is not finished. We have completed the data collection and the main structural, semantic, promotional and toxicity analyses. What remains: we keep monitoring unsolicited private messages until the first of December, then we analyse those contacts, write the related work, limitations and ethics, and integrate everything into our final technical paper, due on the third of January. We contributed equally: Marco focused on the pair review and the semantic content analysis, Riccardo on data collection, structural measures, invitations and coordination, and I on toxicity, topics and conversations. The DM analysis and the final writing and review we do together. Our goal is to show not only what Telegram channels publish, but what researchers miss when they do not look at the associated discussion groups. Thank you, we welcome your questions and feedback.
-
+To sum up what we found so far: first, groups contain much more activity than their channels, and about three quarters of their messages are semantically non-aligned with the channel. Second, promotion works differently: channels have higher invitation rates, and invitations flagged as suspicious are concentrated in a few crypto groups. Third, conspiracy groups show higher classified toxicity, and toxic messages are more likely to receive toxic replies. These are associations measured with automatic classifiers that are not yet validated by hand, on 195 non-random pairs. But the project is not finished. We have completed the data collection and the main structural, semantic, promotional and toxicity analyses. What remains: we keep monitoring unsolicited private messages until the first of December, then we analyse those contacts, write the related work, limitations and ethics, and integrate everything into our final technical paper, due on the third of January. We contributed equally: Marco focused on the pair review and the semantic content analysis, Riccardo on data collection, structural measures, invitations and coordination, and I on toxicity, topics and conversations. The DM analysis and the final writing and review we do together. Our goal is to show not only what Telegram channels publish, but what researchers miss when they do not look at the associated discussion groups. Thank you, we welcome your questions and feedback.
 ---
 
 ## Possible questions (short answers)

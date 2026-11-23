@@ -293,26 +293,6 @@ async function icon(Comp, color, size = 256) {
   });
   s.addNotes("SIMONE (7:10-8:10). We also looked at how toxicity relates to conversations. Using Telegram's reply references we analysed about 384,000 parent-reply pairs. A reply to a message classified as toxic was itself toxic about 21% of the time, against about 8% after a non-toxic message. This positive association appears in all 51 groups that meet our minimum sample size. It does not establish causation: recurring users, discussion topics and moderation can also contribute.");
 
-  // ================= 11. Takeaways =================
-  s = pres.addSlide({ masterName: "Title Dark", sectionTitle: "Conspiracy and wrap-up" });
-  text(s, "What groups add", { x: 0.6, y: 0.4, w: 8.8, h: 0.7, fontSize: 32, bold: true, color: C.background1, fontFace: "Arial" });
-  const take = [
-    [ic.group, "Additional discussion", "10–50× more active; ~75% of messages semantically non-aligned with the channel"],
-    [ic.channel, "Different promotional roles", "Channels have higher invitation rates; flagged invitations cluster in few groups"],
-    [ic.users, "Different toxicity patterns", "Conspiracy groups ≈4× more toxic; toxic messages more likely to get toxic replies"],
-  ];
-  take.forEach(([img, head, sub], i) => {
-    const x = 0.6 + i * 3.0;
-    badge(s, img, x, 1.35, 0.6, i === 2 ? CORAL : HEX.accent5, "take " + i);
-    text(s, head, { x, y: 2.1, w: 2.75, h: 0.4, fontSize: 16, bold: true, color: C.background1 });
-    text(s, sub, { x, y: 2.5, w: 2.75, h: 1.0, fontSize: 13, color: C.accent6 });
-  });
-  text(s, [
-    { text: "Limits: ", options: { bold: true, color: C.background1 } },
-    { text: "classifiers not hand-validated; topics labelled with an LLM; 195 non-random pairs, 14 weeks; associations, not causes.", options: {} },
-  ], { x: 0.6, y: 4.0, w: 8.8, h: 0.6, fontSize: 13, color: C.accent6 });
-  s.addNotes("SIMONE (8:10-8:45). Overall, our findings show three differences between channels and their groups. First, groups contain much more activity and a large share of semantically non-aligned discussion. Second, promotion differs between channels, administrators and users, and suspicious invitation signals are concentrated in a few crypto groups. Third, conspiracy groups show higher classified toxicity, and toxic replies are associated with toxic parent messages. Finally, our status and plan.");
-
   // ================= 12. Status, plan, team =================
   s = S("Project status and roadmap to 3 January", "Conspiracy and wrap-up");
   const cols = [
@@ -346,7 +326,7 @@ async function icon(Comp, color, size = 256) {
       { x: x + 0.2, y: 2.0, w: 2.5, h: 2.65, fontSize: 12, paraSpaceAfter: 5 });
   });
   text(s, "Thank you · questions and feedback welcome", { x: 4.6, y: 4.85, w: 4.9, h: 0.3, fontSize: 12, bold: true, color: CORAL, align: "right" });
-  s.addNotes("SIMONE (8:45-10:00). These are our main findings so far, but the project is not finished. We have completed the data collection and the main structural, semantic, promotional and toxicity analyses. What remains: we keep monitoring unsolicited private messages until the first of December, then we analyse those contacts, write the related work, limitations and ethics, and integrate everything into our final technical paper, due on the third of January. We contributed equally: Marco focused on the pair review and the semantic content analysis, Riccardo on data collection, structural measures, invitations and coordination, and I on toxicity, topics and conversations. The DM analysis and the final writing and review we do together. Our goal is to show not only what Telegram channels publish, but what researchers miss when they do not look at the associated discussion groups. Thank you, we welcome your questions and feedback.");
+  s.addNotes("SIMONE (8:10-10:00). To sum up what we found so far: first, groups contain much more activity than their channels, and about three quarters of their messages are semantically non-aligned with the channel. Second, promotion works differently: channels have higher invitation rates, and invitations flagged as suspicious are concentrated in a few crypto groups. Third, conspiracy groups show higher classified toxicity, and toxic messages are more likely to receive toxic replies. These are associations measured with automatic classifiers that are not yet validated by hand, on 195 non-random pairs. But the project is not finished. We have completed the data collection and the main structural, semantic, promotional and toxicity analyses. What remains: we keep monitoring unsolicited private messages until the first of December, then we analyse those contacts, write the related work, limitations and ethics, and integrate everything into our final technical paper, due on the third of January. We contributed equally: Marco focused on the pair review and the semantic content analysis, Riccardo on data collection, structural measures, invitations and coordination, and I on toxicity, topics and conversations. The DM analysis and the final writing and review we do together. Our goal is to show not only what Telegram channels publish, but what researchers miss when they do not look at the associated discussion groups. Thank you, we welcome your questions and feedback.");
 
   await pres.writeFile({ fileName: OUT });
   await applyTheme(OUT, THEME);
